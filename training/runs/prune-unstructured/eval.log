@@ -1,0 +1,473 @@
+
+$ /home/jurica/benchmark/.venv/bin/python -m dtln.quantize --weights /home/jurica/benchmark/training/runs/prune-unstructured/best.authors.weights.h5 --out /home/jurica/benchmark/training/runs/prune-unstructured/tflite --tag i16 --scheme 16x8 --iln e2
+[/home/jurica/benchmark/training/runs/prune-unstructured/best.authors.weights.h5, states split, iln e2, scheme 16x8] split models rebuilt: 362,369 + 624,384 params
+Saved artifact at '/tmp/tmprs77wx34'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name='a_mag'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s0'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s1'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s2'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s3')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None)]
+Captures:
+  132087872286416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872286608: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872287952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872286992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872286032: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872289104: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872289296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872282768: TensorSpec(shape=(), dtype=tf.resource, name=None)
+Saved artifact at '/tmp/tmpayjsio61'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name='a_frame'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s0'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s1'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s2'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s3')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None)]
+Captures:
+  132087872287184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872288528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872289872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872289680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872287568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872288720: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872290448: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872289488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872290640: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872290064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872284688: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087545348368: TensorSpec(shape=(), dtype=tf.resource, name=None)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+float export:
+  model_f32_1.tflite: 1,457,668 B; 36 ops, 8 distinct: ADDx6 FULLY_CONNECTEDx5 LOGISTICx7 MULx6 RESHAPEx4 SPLITx2 TANHx4 UNPACKx2
+    populated buffers: FLOAT32 1,449,476 B, INT32 20 B
+    in  serving_default_b_s2:0               (1, 128)           float32  
+    in  serving_default_b_s1:0               (1, 128)           float32  
+    in  serving_default_b_s0:0               (1, 128)           float32  
+    in  serving_default_a_mag:0              (1, 1, 257)        float32  
+    in  serving_default_b_s3:0               (1, 128)           float32  
+    out StatefulPartitionedCall_1:4          (1, 128)           float32  
+    out StatefulPartitionedCall_1:1          (1, 128)           float32  
+    out StatefulPartitionedCall_1:3          (1, 128)           float32  
+    out StatefulPartitionedCall_1:0          (1, 1, 257)        float32  
+    out StatefulPartitionedCall_1:2          (1, 128)           float32  
+  model_f32_2.tflite: 2,512,684 B; 54 ops, 12 distinct: ADDx8 CONV_2Dx2 FULLY_CONNECTEDx5 LOGISTICx7 MEANx2 MULx11 RESHAPEx8 RSQRTx1 SPLITx2 SUBx2 TANHx4 UNPACKx2
+    populated buffers: FLOAT32 2,500,612 B, INT32 80 B
+    in  serving_default_a_frame:0            (1, 1, 512)        float32  
+    in  serving_default_b_s2:0               (1, 128)           float32  
+    in  serving_default_b_s1:0               (1, 128)           float32  
+    in  serving_default_b_s0:0               (1, 128)           float32  
+    in  serving_default_b_s3:0               (1, 128)           float32  
+    out StatefulPartitionedCall_1:4          (1, 128)           float32  
+    out StatefulPartitionedCall_1:1          (1, 128)           float32  
+    out StatefulPartitionedCall_1:3          (1, 128)           float32  
+    out StatefulPartitionedCall_1:0          (1, 1, 512)        float32  
+    out StatefulPartitionedCall_1:2          (1, 128)           float32  
+  re-export on p257_110.wav: finite output, rms 2707.5 LSB (no shipped TFLite pair to compare with)
+representative dataset: 200 calib utterances, every 16th hop -> 4610 samples per stage
+Saved artifact at '/tmp/tmpe7ajp0sc'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name='a_mag'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s0'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s1'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s2'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s3')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None)]
+Captures:
+  132087872286416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872286608: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872287952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872286992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872286032: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872289104: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872289296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872282768: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/home/jurica/benchmark/.venv/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+Saved artifact at '/tmp/tmpr65omus0'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name='a_frame'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s0'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s1'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s2'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s3')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None)]
+Captures:
+  132087872287184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872288528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872289872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872289680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872287568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872288720: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872290448: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872289488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872290640: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872290064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087872284688: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  132087545348368: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/home/jurica/benchmark/.venv/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+
+i16 (scheme 16x8, states split):
+  model_i16_1.tflite: 425,488 B; 36 ops, 8 distinct: ADDx6 FULLY_CONNECTEDx5 LOGISTICx7 MULx6 RESHAPEx4 SPLITx2 TANHx4 UNPACKx2
+    populated buffers: INT8 361,088 B, INT64 2,056 B, INT16 2,048 B, INT32 20 B
+    in  serving_default_b_s2:0               (1, 128)           int16    scale 3.05173e-05 zp 0
+    in  serving_default_b_s1:0               (1, 128)           int16    scale 0.0219849 zp 0
+    in  serving_default_b_s0:0               (1, 128)           int16    scale 3.05185e-05 zp 0
+    in  serving_default_a_mag:0              (1, 1, 257)        int16    scale 0.00280768 zp 0
+    in  serving_default_b_s3:0               (1, 128)           int16    scale 0.000527082 zp 0
+    out StatefulPartitionedCall_1:4          (1, 128)           int16    scale 0.00053183 zp 0
+    out StatefulPartitionedCall_1:1          (1, 128)           int16    scale 3.05185e-05 zp 0
+    out StatefulPartitionedCall_1:3          (1, 128)           int16    scale 3.05176e-05 zp 0
+    out StatefulPartitionedCall_1:0          (1, 1, 257)        int16    scale 3.05176e-05 zp 0
+    out StatefulPartitionedCall_1:2          (1, 128)           int16    scale 0.0220142 zp 0
+  model_i16_2.tflite: 723,928 B; 54 ops, 12 distinct: ADDx8 CONV_2Dx2 FULLY_CONNECTEDx5 LOGISTICx7 MEANx2 MULx11 RESHAPEx8 RSQRTx1 SPLITx2 SUBx2 TANHx4 UNPACKx2
+    populated buffers: INT8 622,592 B, INT64 8,192 B, INT16 3,074 B, INT32 80 B
+    in  serving_default_a_frame:0            (1, 1, 512)        int16    scale 1.63984e-05 zp 0
+    in  serving_default_b_s2:0               (1, 128)           int16    scale 3.05034e-05 zp 0
+    in  serving_default_b_s1:0               (1, 128)           int16    scale 0.000585661 zp 0
+    in  serving_default_b_s0:0               (1, 128)           int16    scale 3.02544e-05 zp 0
+    in  serving_default_b_s3:0               (1, 128)           int16    scale 0.00520056 zp 0
+    out StatefulPartitionedCall_1:4          (1, 128)           int16    scale 0.00521527 zp 0
+    out StatefulPartitionedCall_1:1          (1, 128)           int16    scale 3.0478e-05 zp 0
+    out StatefulPartitionedCall_1:3          (1, 128)           int16    scale 3.05008e-05 zp 0
+    out StatefulPartitionedCall_1:0          (1, 1, 512)        int16    scale 9.64257e-06 zp 0
+    out StatefulPartitionedCall_1:2          (1, 128)           int16    scale 0.000576579 zp 0
+  pair total 1,149,416 B; 12 distinct ops: ['ADD', 'CONV_2D', 'FULLY_CONNECTED', 'LOGISTIC', 'MEAN', 'MUL', 'RESHAPE', 'RSQRT', 'SPLIT', 'SUB', 'TANH', 'UNPACK']
+  float32 bytes left in the pair: 0 B (biases/params only)
+
+$ /home/jurica/benchmark/.venv/bin/python -m eval_harness.enhance --corpus voicebank16k --dtln-run /home/jurica/benchmark/training/runs/prune-unstructured/tflite --algo dtln-run-f32 dtln-run-i16-tflm
+Provenance (asserted, not assumed):
+  pesq_itu_sources   P.862/.1/.2 v2.0 (Oct 2005), vendored
+  pystoi             0.4.1
+  resampler          resample_poly(1,3), 577-tap Kaiser(12) @ 7800 Hz
+
+=== voicebank16k / bypass: 824 utterances in 39.7s (14 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       1.9707    [1.9191, 2.0222]    [1.9201, 2.0228]   1.8005   1.031   4.308
+  stoi               0.9210    [0.9162, 0.9259]    [0.9159, 0.9256]   0.9397   0.561   1.000
+  estoi              0.7867    [0.7765, 0.7969]    [0.7763, 0.7963]   0.8138   0.276   0.998
+  si_sdr             8.4455    [8.0614, 8.8297]    [8.0626, 8.8366]   7.3788  -3.121  17.099
+  largest t-vs-BCa edge discrepancy: 0.00691 (si_sdr), 10000 resamples, seed 20260913
+INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.
+
+INFO: INFO: INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.
+
+
+
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+=== voicebank16k / dtln-prune-unstructured-f32: 824 utterances in 51.8s (14 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       2.3334    [2.2936, 2.3732]    [2.2929, 2.3716]   2.3165   1.155   3.839
+  stoi               0.9254    [0.9210, 0.9298]    [0.9209, 0.9295]   0.9412   0.566   0.999
+  estoi              0.8184    [0.8101, 0.8266]    [0.8100, 0.8261]   0.8406   0.327   0.998
+  si_sdr            18.4935  [18.2108, 18.7762]  [18.2091, 18.7744]  18.9070   4.353  27.407
+  largest t-vs-BCa edge discrepancy: 0.00183 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_mos_lqo by noise x snr_db  (cells, BCa 95% per cell):
+    bus 2.5                n=42   mean 2.1400  sd 0.3790  [2.0229, 2.2502]
+    bus 7.5                n=41   mean 2.6060  sd 0.4172  [2.4766, 2.7262]
+    bus 12.5               n=41   mean 2.8720  sd 0.3887  [2.7429, 2.9799]
+    bus 17.5               n=40   mean 3.2074  sd 0.3565  [3.0880, 3.3061]
+    cafe 2.5               n=42   mean 1.4586  sd 0.2053  [1.4021, 1.5248]
+    cafe 7.5               n=40   mean 1.8272  sd 0.3233  [1.7382, 1.9350]
+    cafe 12.5              n=41   mean 2.0982  sd 0.3063  [2.0019, 2.1854]
+    cafe 17.5              n=41   mean 2.5226  sd 0.3190  [2.4234, 2.6168]
+    living 2.5             n=42   mean 1.5659  sd 0.2183  [1.5027, 1.6359]
+    living 7.5             n=42   mean 1.9284  sd 0.2920  [1.8385, 2.0120]
+    living 12.5            n=42   mean 2.1632  sd 0.3500  [2.0611, 2.2720]
+    living 17.5            n=40   mean 2.5187  sd 0.2969  [2.4267, 2.6082]
+    office 2.5             n=40   mean 2.1992  sd 0.3341  [2.0923, 2.2960]
+    office 7.5             n=41   mean 2.6053  sd 0.3474  [2.5014, 2.7125]
+    office 12.5            n=42   mean 2.8181  sd 0.3566  [2.7080, 2.9185]
+    office 17.5            n=41   mean 3.1824  sd 0.2757  [3.0943, 3.2604]
+    psquare 2.5            n=41   mean 1.8236  sd 0.2573  [1.7445, 1.8998]
+    psquare 7.5            n=42   mean 2.0234  sd 0.2095  [1.9547, 2.0806]
+    psquare 12.5           n=41   mean 2.3930  sd 0.3905  [2.2572, 2.4955]
+    psquare 17.5           n=42   mean 2.7685  sd 0.3894  [2.6416, 2.8771]
+    20 cells, min N = 40, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.
+
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+=== voicebank16k / dtln-prune-unstructured-i16-tflm: 824 utterances in 77.6s (14 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       2.2425    [2.2061, 2.2789]    [2.2054, 2.2779]   2.2212   1.155   3.551
+  stoi               0.9226    [0.9182, 0.9270]    [0.9180, 0.9266]   0.9381   0.531   0.999
+  estoi              0.8148    [0.8067, 0.8229]    [0.8065, 0.8224]   0.8358   0.327   0.997
+  si_sdr            18.2907  [18.0154, 18.5661]  [18.0144, 18.5633]  18.7825   4.391  26.880
+  largest t-vs-BCa edge discrepancy: 0.00286 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_mos_lqo by noise x snr_db  (cells, BCa 95% per cell):
+    bus 2.5                n=42   mean 2.0808  sd 0.3949  [1.9599, 2.1956]
+    bus 7.5                n=41   mean 2.5299  sd 0.4078  [2.4012, 2.6455]
+    bus 12.5               n=41   mean 2.7339  sd 0.3558  [2.6218, 2.8374]
+    bus 17.5               n=40   mean 2.9654  sd 0.3534  [2.8503, 3.0659]
+    cafe 2.5               n=42   mean 1.4304  sd 0.1952  [1.3772, 1.4937]
+    cafe 7.5               n=40   mean 1.7681  sd 0.2929  [1.6860, 1.8653]
+    cafe 12.5              n=41   mean 2.0246  sd 0.2857  [1.9333, 2.1060]
+    cafe 17.5              n=41   mean 2.3992  sd 0.3034  [2.3040, 2.4887]
+    living 2.5             n=42   mean 1.5313  sd 0.1929  [1.4749, 1.5933]
+    living 7.5             n=42   mean 1.8832  sd 0.2757  [1.7980, 1.9624]
+    living 12.5            n=42   mean 2.0967  sd 0.3315  [1.9968, 2.1982]
+    living 17.5            n=40   mean 2.4383  sd 0.2856  [2.3488, 2.5223]
+    office 2.5             n=40   mean 2.1119  sd 0.3006  [2.0128, 2.1984]
+    office 7.5             n=41   mean 2.5327  sd 0.3128  [2.4385, 2.6265]
+    office 12.5            n=42   mean 2.6944  sd 0.3082  [2.5968, 2.7795]
+    office 17.5            n=41   mean 2.9969  sd 0.1964  [2.9317, 3.0501]
+    psquare 2.5            n=41   mean 1.7421  sd 0.2441  [1.6678, 1.8158]
+    psquare 7.5            n=42   mean 1.9918  sd 0.1869  [1.9340, 2.0465]
+    psquare 12.5           n=41   mean 2.3038  sd 0.3696  [2.1785, 2.4018]
+    psquare 17.5           n=42   mean 2.6415  sd 0.3021  [2.5445, 2.7240]
+    20 cells, min N = 40, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+
+  bypass: every utterance bit-identical to its input; scores ARE the Noisy row.
+
+=== voicebank16k: enhanced (B, noise tracker mcra) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 8 tests (headline-pooled-per-corpus)
+
+  --- dtln-run-f32
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.9707   2.3334   +0.3526  [+0.3314, +0.3738]    0.10   2.6e-99         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.8506   (paired wilcoxon, n = 824)
+  stoi            0.9210   0.9254   +0.0033  [+0.0024, +0.0044]    0.01  2.23e-09  7.46e-21  different but equivalent (real, below the margin that matters)
+               rank-biserial r = +0.2405   (paired wilcoxon, n = 824)
+  estoi           0.7867   0.8184   +0.0280  [+0.0253, +0.0307]    0.01  1.38e-66         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.6932   (paired wilcoxon, n = 824)
+  si_sdr          8.4455  18.4935  +10.0480 [+9.7872, +10.3088]    0.50         0         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = +2.2100   (paired t, n = 824)
+
+  --- dtln-run-i16-tflm
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.9707   2.2425   +0.2695  [+0.2475, +0.2922]    0.10  5.12e-63         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.6738   (paired wilcoxon, n = 824)
+  stoi            0.9210   0.9226   +0.0010  [-0.0001, +0.0021]    0.01     0.132  2.45e-30  EQUIVALENT (same to the stated precision)
+               rank-biserial r = +0.0606   (paired wilcoxon, n = 824)
+  estoi           0.7867   0.8148   +0.0254  [+0.0226, +0.0283]    0.01  1.98e-47         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.5817   (paired wilcoxon, n = 824)
+  si_sdr          8.4455  18.2907   +9.8452 [+9.5860, +10.1044]    0.50         0         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = +2.1787   (paired t, n = 824)
+
+  Holm-adjusted p(diff):
+    dtln-run-f32pesq_mos_lqo   raw   2.6e-99  adj  1.56e-98  significant
+    dtln-run-f32stoi           raw  2.23e-09  adj  4.46e-09  significant
+    dtln-run-f32estoi          raw  1.38e-66  adj   6.9e-66  significant
+    dtln-run-f32si_sdr         raw         0  adj         0  significant
+    dtln-run-i16-tflmpesq_mos_lqo   raw  5.12e-63  adj  2.05e-62  significant
+    dtln-run-i16-tflmstoi           raw     0.132  adj     0.132  n.s.
+    dtln-run-i16-tflmestoi          raw  1.98e-47  adj  5.94e-47  significant
+    dtln-run-i16-tflmsi_sdr         raw         0  adj         0  significant
+
+=== DONE
+
+$ /home/jurica/benchmark/.venv/bin/python -m eval_harness.compare --corpus voicebank16k --a dtln-ft-f32-f32 --b dtln-prune-unstructured-f32
+=== voicebank16k: dtln-prune-unstructured-f32 (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    2.4574   2.3334   -0.1297  [-0.1396, -0.1198]    0.10  2.67e-65         1  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = -0.6863   (paired wilcoxon, n = 824)
+stoi            0.9334   0.9254   -0.0056  [-0.0063, -0.0049]    0.01  5.52e-48  9.63e-17  different but equivalent (real, below the margin that matters)
+             rank-biserial r = -0.5853   (paired wilcoxon, n = 824)
+estoi           0.8354   0.8184   -0.0141  [-0.0154, -0.0129]    0.01  5.41e-79         1  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = -0.7567   (paired wilcoxon, n = 824)
+si_sdr         19.0215  18.4935   -0.5280  [-0.5761, -0.4799]    0.50  1.07e-61     0.831  DIFFERENT (exceeds the pre-specified margin)
+             Cohen's d_z = -0.6293   (paired t, n = 824)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw  2.67e-65  adj     8e-65  significant
+  stoi           raw  5.52e-48  adj  5.52e-48  significant
+  estoi          raw  5.41e-79  adj  2.16e-78  significant
+  si_sdr         raw  1.07e-61  adj  2.15e-61  significant
+
+$ /home/jurica/benchmark/.venv/bin/python -m eval_harness.compare --corpus voicebank16k --a dtln-ft-f32-f32 --b dtln-prune-unstructured-i16-tflm
+=== voicebank16k: dtln-prune-unstructured-i16-tflm (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    2.4574   2.2425   -0.2228  [-0.2336, -0.2119]    0.10  1.09e-98         1  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = -0.8479   (paired wilcoxon, n = 824)
+stoi            0.9334   0.9226   -0.0085  [-0.0093, -0.0077]    0.01  1.46e-69   0.00173  different but equivalent (real, below the margin that matters)
+             rank-biserial r = -0.7089   (paired wilcoxon, n = 824)
+estoi           0.8354   0.8148   -0.0183  [-0.0196, -0.0170]    0.01  3.91e-93         1  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = -0.8232   (paired wilcoxon, n = 824)
+si_sdr         19.0215  18.2907   -0.7308  [-0.7792, -0.6823]    0.50 3.59e-102         1  DIFFERENT (exceeds the pre-specified margin)
+             Cohen's d_z = -0.8659   (paired t, n = 824)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw  1.09e-98  adj  3.26e-98  significant
+  stoi           raw  1.46e-69  adj  1.46e-69  significant
+  estoi          raw  3.91e-93  adj  7.82e-93  significant
+  si_sdr         raw 3.59e-102  adj 1.43e-101  significant
+
+$ /home/jurica/benchmark/.venv/bin/python -m eval_harness.enhance --corpus dns --dtln-run /home/jurica/benchmark/training/runs/prune-unstructured/tflite --algo dtln-run-f32 dtln-run-i16-tflm
+Provenance (asserted, not assumed):
+  pesq_itu_sources   P.862/.1/.2 v2.0 (Oct 2005), vendored
+  pystoi             0.4.1
+  resampler          resample_poly(1,3), 577-tap Kaiser(12) @ 7800 Hz
+
+=== dns / bypass: 150 utterances in 17.9s (14 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       1.5822    [1.5082, 1.6563]    [1.5163, 1.6652]   1.4536   1.034   3.337
+  stoi               0.9152    [0.9047, 0.9257]    [0.9041, 0.9249]   0.9312   0.687   0.997
+  estoi              0.8099    [0.7902, 0.8295]    [0.7895, 0.8284]   0.8406   0.391   0.990
+  si_sdr             9.2295   [8.3320, 10.1271]   [8.3433, 10.0922]   8.9981  -0.010  21.482
+  largest t-vs-BCa edge discrepancy: 0.03484 (si_sdr), 10000 resamples, seed 20260913
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.
+
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.
+
+
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+=== dns / dtln-prune-unstructured-f32: 150 utterances in 38.2s (14 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       1.7264    [1.6513, 1.8016]    [1.6563, 1.8038]   1.6050   1.090   2.975
+  stoi               0.9044    [0.8935, 0.9152]    [0.8929, 0.9146]   0.9228   0.657   0.990
+  estoi              0.8029    [0.7843, 0.8216]    [0.7833, 0.8206]   0.8271   0.389   0.968
+  si_sdr            11.5725  [10.7875, 12.3575]  [10.8037, 12.3556]  11.7633  -0.286  22.271
+  largest t-vs-BCa edge discrepancy: 0.01613 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_mos_lqo by snr_bin  (bins, BCa 95% per bin):
+    0-4 dB                 n=36   mean 1.2787  sd 0.1578  [1.2330, 1.3351]
+    5-9 dB                 n=44   mean 1.5912  sd 0.3299  [1.5123, 1.7096]
+    10-14 dB               n=40   mean 1.9405  sd 0.3876  [1.8323, 2.0717]
+    15-19 dB               n=30   mean 2.1767  sd 0.4138  [2.0421, 2.3355]
+    4 bins, min N = 30, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.
+
+
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.
+
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+=== dns / dtln-prune-unstructured-i16-tflm: 150 utterances in 46.0s (14 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       1.6443    [1.5760, 1.7126]    [1.5810, 1.7155]   1.5667   1.074   2.951
+  stoi               0.8956    [0.8838, 0.9073]    [0.8830, 0.9066]   0.9168   0.624   0.986
+  estoi              0.7895    [0.7699, 0.8091]    [0.7692, 0.8082]   0.8140   0.317   0.963
+  si_sdr            11.0771  [10.3012, 11.8531]  [10.3227, 11.8496]  11.5340  -0.243  22.055
+  largest t-vs-BCa edge discrepancy: 0.02158 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_mos_lqo by snr_bin  (bins, BCa 95% per bin):
+    0-4 dB                 n=36   mean 1.2491  sd 0.1512  [1.2063, 1.3049]
+    5-9 dB                 n=44   mean 1.5342  sd 0.3005  [1.4609, 1.6390]
+    10-14 dB               n=40   mean 1.8321  sd 0.3650  [1.7314, 1.9590]
+    15-19 dB               n=30   mean 2.0296  sd 0.4081  [1.8997, 2.1932]
+    4 bins, min N = 30, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+
+  bypass: every utterance bit-identical to its input; scores ARE the Noisy row.
+
+=== dns: enhanced (B, noise tracker mcra) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 8 tests (headline-pooled-per-corpus)
+
+  --- dtln-run-f32
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.5822   1.7264   +0.1323  [+0.1038, +0.1662]    0.10  8.46e-12     0.968  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.6429   (paired wilcoxon, n = 150)
+  stoi            0.9152   0.9044   -0.0084  [-0.0109, -0.0063]    0.01  2.61e-10      0.14  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.5949   (paired wilcoxon, n = 150)
+  estoi           0.8099   0.8029   -0.0078  [-0.0124, -0.0029]    0.01    0.0112     0.225  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.2389   (paired wilcoxon, n = 150)
+  si_sdr          9.2295  11.5725   +2.3430  [+1.9059, +2.7801]    0.50  2.07e-15         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = +0.7244   (paired t, n = 150)
+
+  --- dtln-run-i16-tflm
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.5822   1.6443   +0.0672  [+0.0393, +0.0956]    0.10  0.000201    0.0314  different but equivalent (real, below the margin that matters)
+               rank-biserial r = +0.3499   (paired wilcoxon, n = 150)
+  stoi            0.9152   0.8956   -0.0145  [-0.0180, -0.0116]    0.01  4.83e-16     0.996  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.7639   (paired wilcoxon, n = 150)
+  estoi           0.8099   0.7895   -0.0188  [-0.0237, -0.0139]    0.01  8.46e-09     0.998  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.5421   (paired wilcoxon, n = 150)
+  si_sdr          9.2295  11.0771   +1.8476  [+1.3931, +2.3021]    0.50  3.44e-10         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = +0.5494   (paired t, n = 150)
+
+  Holm-adjusted p(diff):
+    dtln-run-f32pesq_mos_lqo   raw  8.46e-12  adj  5.08e-11  significant
+    dtln-run-f32stoi           raw  2.61e-10  adj  1.31e-09  significant
+    dtln-run-f32estoi          raw    0.0112  adj    0.0112  significant
+    dtln-run-f32si_sdr         raw  2.07e-15  adj  1.45e-14  significant
+    dtln-run-i16-tflmpesq_mos_lqo   raw  0.000201  adj  0.000402  significant
+    dtln-run-i16-tflmstoi           raw  4.83e-16  adj  3.86e-15  significant
+    dtln-run-i16-tflmestoi          raw  8.46e-09  adj  2.54e-08  significant
+    dtln-run-i16-tflmsi_sdr         raw  3.44e-10  adj  1.38e-09  significant
+
+=== DONE
+
+$ /home/jurica/benchmark/.venv/bin/python -m eval_harness.compare --corpus dns --a dtln-ft-f32-f32 --b dtln-prune-unstructured-f32
+=== dns: dtln-prune-unstructured-f32 (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 150; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    2.0536   1.7264   -0.3099  [-0.3428, -0.2789]    0.10  7.95e-25         1  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = -0.9684   (paired wilcoxon, n = 150)
+stoi            0.9259   0.9044   -0.0208  [-0.0239, -0.0180]    0.01  1.06e-18         1  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = -0.8310   (paired wilcoxon, n = 150)
+estoi           0.8497   0.8029   -0.0449  [-0.0499, -0.0404]    0.01  4.01e-23         1  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = -0.9322   (paired wilcoxon, n = 150)
+si_sdr         14.0664  11.5725   -2.4939  [-2.8046, -2.1832]    0.50  4.58e-27         1  DIFFERENT (exceeds the pre-specified margin)
+             Cohen's d_z = -1.0848   (paired t, n = 150)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw  7.95e-25  adj  2.39e-24  significant
+  stoi           raw  1.06e-18  adj  1.06e-18  significant
+  estoi          raw  4.01e-23  adj  8.02e-23  significant
+  si_sdr         raw  4.58e-27  adj  1.83e-26  significant
+
+$ /home/jurica/benchmark/.venv/bin/python -m eval_harness.compare --corpus dns --a dtln-ft-f32-f32 --b dtln-prune-unstructured-i16-tflm
+=== dns: dtln-prune-unstructured-i16-tflm (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 150; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    2.0536   1.6443   -0.3946  [-0.4310, -0.3591]    0.10  6.13e-26         1  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = -0.9913   (paired wilcoxon, n = 150)
+stoi            0.9259   0.8956   -0.0276  [-0.0317, -0.0242]    0.01  4.07e-21         1  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = -0.8877   (paired wilcoxon, n = 150)
+estoi           0.8497   0.7895   -0.0568  [-0.0623, -0.0517]    0.01  8.77e-25         1  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = -0.9675   (paired wilcoxon, n = 150)
+si_sdr         14.0664  11.0771   -2.9893  [-3.3160, -2.6626]    0.50  5.94e-32         1  DIFFERENT (exceeds the pre-specified margin)
+             Cohen's d_z = -1.2364   (paired t, n = 150)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw  6.13e-26  adj  1.84e-25  significant
+  stoi           raw  4.07e-21  adj  4.07e-21  significant
+  estoi          raw  8.77e-25  adj  1.75e-24  significant
+  si_sdr         raw  5.94e-32  adj  2.38e-31  significant

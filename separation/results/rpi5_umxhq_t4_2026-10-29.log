@@ -1,0 +1,54 @@
+=== umxhq threads=4 13:04:16 governor=performance temp=56.0'C throttled=0x0
+conditions: {"threads": 4, "affinity": [0, 1, 2, 3], "torch": "2.15.0+cpu", "machine": "aarch64", "node": "rpibench", "governor": "performance", "throttled": "throttled=0x0"}
+[1/50] AM Contra - Heart Peripheral             210.106 s  wall 117.255 s  rtf 0.5581  ok
+[2/50] Al James - Schoolboy Facination          200.527 s  wall 112.256 s  rtf 0.5598  ok
+[3/50] Angels In Amplifiers - I'm Alright       179.594 s  wall 99.585 s  rtf 0.5545  ok
+[4/50] Arise - Run Run Run                      219.393 s  wall 121.926 s  rtf 0.5557  ok
+[5/50] BKS - Bulldozer                          337.04 s  wall 188.234 s  rtf 0.5585  ok
+[6/50] BKS - Too Much                           220.125 s  wall 121.085 s  rtf 0.5501  ok
+[7/50] Ben Carrigan - We'll Talk About It All T 254.911 s  wall 143.279 s  rtf 0.5621  ok
+[8/50] Bobby Nobody - Stitch Up                 221.25 s  wall 122.9 s  rtf 0.5555  ok
+[9/50] Buitraker - Revo X                       275.826 s  wall 155.03 s  rtf 0.5621  ok
+[10/50] Carlos Gonzalez - A Place For Us         250.219 s  wall 140.435 s  rtf 0.5612  ok
+[11/50] Cristina Vane - So Easy                  254.134 s  wall 141.771 s  rtf 0.5579  ok
+[12/50] Detsky Sad - Walkie Talkie               190.482 s  wall 106.571 s  rtf 0.5595  ok
+[13/50] Enda Reilly - Cur An Long Ag Seol        186.996 s  wall 103.037 s  rtf 0.551  ok
+[14/50] Forkupines - Semantics                   273.585 s  wall 151.791 s  rtf 0.5548  ok
+[15/50] Georgia Wonder - Siren                   430.375 s  wall 242.511 s  rtf 0.5635  ok
+[16/50] Girls Under Glass - We Feel Alright      317.281 s  wall 178.385 s  rtf 0.5622  ok
+[17/50] Hollow Ground - Ill Fate                 141.674 s  wall 77.94 s  rtf 0.5501  ok
+[18/50] James Elder & Mark M Thompson - The Engl 205.473 s  wall 114.542 s  rtf 0.5575  ok
+[19/50] Juliet's Rescue - Heartbeats             267.652 s  wall 149.834 s  rtf 0.5598  ok
+[20/50] Little Chicago's Finest - My Own         281.612 s  wall 158.29 s  rtf 0.5621  ok
+[21/50] Louis Cressy Band - Good Time            292.821 s  wall 163.742 s  rtf 0.5592  ok
+[22/50] Lyndsey Ollard - Catching Up             227.429 s  wall 126.632 s  rtf 0.5568  ok
+[23/50] M.E.R.C. Music - Knockout                270.0 s  wall 151.827 s  rtf 0.5623  ok
+[24/50] Moosmusic - Big Dummy Shake              198.857 s  wall 111.541 s  rtf 0.5609  ok
+[25/50] Motor Tapes - Shore                      246.723 s  wall 137.865 s  rtf 0.5588  ok
+[26/50] Mu - Too Bright                          272.165 s  wall 152.114 s  rtf 0.5589  ok
+[27/50] Nerve 9 - Pray For The Rain              343.714 s  wall 194.274 s  rtf 0.5652  ok
+[28/50] PR - Happy Daze                          162.702 s  wall 89.583 s  rtf 0.5506  ok
+[29/50] PR - Oh No                               76.194 s  wall 41.179 s  rtf 0.5404  ok
+[30/50] Punkdisco - Oral Hygiene                 221.598 s  wall 123.56 s  rtf 0.5576  ok
+[31/50] Raft Monk - Tiring                       212.246 s  wall 117.627 s  rtf 0.5542  ok
+[32/50] Sambasevam Shanmugam - Kaathaadi         317.879 s  wall 177.984 s  rtf 0.5599  ok
+[33/50] Secretariat - Borderline                 286.846 s  wall 161.647 s  rtf 0.5635  ok
+[34/50] Secretariat - Over The Top               251.096 s  wall 139.515 s  rtf 0.5556  ok
+[35/50] Side Effects Project - Sing With Me      243.683 s  wall 136.758 s  rtf 0.5612  ok
+[36/50] Signe Jakobsen - What Have You Done To M 177.397 s  wall 98.079 s  rtf 0.5529  ok
+[37/50] Skelpolu - Resurrection                  395.663 s  wall 225.711 s  rtf 0.5705  ok
+[38/50] Speak Softly - Broken Man                253.16 s  wall 141.514 s  rtf 0.559  ok
+[39/50] Speak Softly - Like Horses               312.667 s  wall 174.44 s  rtf 0.5579  ok
+[40/50] The Doppler Shift - Atrophy              331.442 s  wall 186.139 s  rtf 0.5616  ok
+[41/50] The Easton Ellises (Baumi) - SDRNR       234.684 s  wall 132.547 s  rtf 0.5648  ok
+[42/50] The Easton Ellises - Falcon 69           246.991 s  wall 138.498 s  rtf 0.5607  ok
+[43/50] The Long Wait - Dark Horses              305.721 s  wall 170.328 s  rtf 0.5571  ok
+[44/50] The Mountaineering Club - Mallory        244.46 s  wall 138.324 s  rtf 0.5658  ok
+[45/50] The Sunshine Garcia Band - For I Am The  320.297 s  wall 180.691 s  rtf 0.5641  ok
+[46/50] Timboz - Pony                            253.049 s  wall 140.658 s  rtf 0.5559  ok
+[47/50] Tom McKenzie - Directions                175.853 s  wall 97.391 s  rtf 0.5538  ok
+[48/50] Triviul feat. The Fiend - Widow          235.11 s  wall 130.358 s  rtf 0.5545  ok
+[49/50] We Fell From The Sky - Not You           207.897 s  wall 115.164 s  rtf 0.5539  ok
+[50/50] Zeno - Signs                             234.384 s  wall 130.811 s  rtf 0.5581  ok
+done: 50 tracks in 7116 s -> /home/jurica/benchmark/results_sd/umxhq_t4/umx_run_umxhq_t4.csv
+=== done 15:03:00 temp=59.8'C throttled=0x0 cgroup memory.peak= swap.peak=

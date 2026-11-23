@@ -1,0 +1,51 @@
+=== voicebank48k / rnnoise-s3: 824 utterances in 31.4s; failed 0
+   pesq_mos_lqo  mean 2.3180
+   stoi          mean 0.9197
+   estoi         mean 0.8160
+   si_sdr        mean 13.0564
+wrote /mnt/data/benchmark-data/enhanced/rnnoise-s3/voicebank48k.csv
+=== voicebank48k / rnnoise-s3-fw: 824 utterances in 31.5s; failed 0
+   pesq_mos_lqo  mean 2.3180
+   stoi          mean 0.9197
+   estoi         mean 0.8160
+   si_sdr        mean 13.0564
+wrote /mnt/data/benchmark-data/enhanced/rnnoise-s3-fw/voicebank48k.csv
+=== compare: S3 as-shipped (B) vs host oracle (A)
+stoi            0.9197   0.9197   +0.0000  [-0.0000, +0.0000]    0.01     0.963 8.44e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = +0.0019   (paired wilcoxon, n = 824)
+estoi           0.8160   0.8160   +0.0000  [-0.0000, +0.0000]    0.01     0.254 8.44e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = +0.0459   (paired wilcoxon, n = 824)
+si_sdr         13.0564  13.0564   +0.0000  [-0.0000, +0.0000]    0.50     0.406         0  EQUIVALENT (same to the stated precision)
+             Cohen's d_z = +0.0290   (paired t, n = 824)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw      0.32  adj         1  n.s.
+  stoi           raw     0.963  adj         1  n.s.
+  estoi          raw     0.254  adj         1  n.s.
+  si_sdr         raw     0.406  adj         1  n.s.
+=== compare: S3 +FW (B) vs host oracle (A)
+stoi            0.9197   0.9197   -0.0000  [-0.0000, +0.0000]    0.01     0.958 8.44e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = -0.0021   (paired wilcoxon, n = 824)
+estoi           0.8160   0.8160   +0.0000  [-0.0000, +0.0000]    0.01     0.798 8.44e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = +0.0103   (paired wilcoxon, n = 824)
+si_sdr         13.0564  13.0564   +0.0000  [-0.0000, +0.0000]    0.50     0.403         0  EQUIVALENT (same to the stated precision)
+             Cohen's d_z = +0.0291   (paired t, n = 824)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw     0.422  adj         1  n.s.
+  stoi           raw     0.958  adj         1  n.s.
+  estoi          raw     0.798  adj         1  n.s.
+  si_sdr         raw     0.403  adj         1  n.s.
+=== compare: S3 +FW (B) vs S3 as-shipped (A)
+stoi            0.9197   0.9197   +0.0000  [-0.0000, +0.0000]    0.01     0.793 8.44e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = +0.0106   (paired wilcoxon, n = 824)
+estoi           0.8160   0.8160   -0.0000  [-0.0000, +0.0000]    0.01     0.263 8.44e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = -0.0450   (paired wilcoxon, n = 824)
+si_sdr         13.0564  13.0564   +0.0000  [-0.0000, +0.0000]    0.50      0.48         0  EQUIVALENT (same to the stated precision)
+             Cohen's d_z = +0.0246   (paired t, n = 824)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw     0.796  adj         1  n.s.
+  stoi           raw     0.793  adj         1  n.s.
+  estoi          raw     0.263  adj         1  n.s.
+  si_sdr         raw      0.48  adj         1  n.s.

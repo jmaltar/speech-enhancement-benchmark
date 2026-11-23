@@ -1,0 +1,20 @@
+device   : ESP32S3 build 'Release 20261028T0957+F' image_crc32=50ad5aa1 tick_hz=240000000  (verified against results/rnnoise/variant_both_corpus_2026-10-28/image.bin)
+[50/824] 201s  last p232_054: hops=371 overruns=0 proc_mean=2162615.1 max|d|=1 status=ok
+[100/824] 338s  last p232_104: hops=392 overruns=0 proc_mean=2158224.3 max|d|=1 status=ok
+[150/824] 476s  last p232_158: hops=269 overruns=0 proc_mean=2163977.3 max|d|=1 status=ok
+[200/824] 617s  last p232_211: hops=141 overruns=0 proc_mean=2151698.3 max|d|=1 status=ok
+[250/824] 767s  last p232_265: hops=189 overruns=0 proc_mean=2160814.7 max|d|=1 status=ok
+[300/824] 909s  last p232_316: hops=164 overruns=0 proc_mean=2159869.1 max|d|=1 status=ok
+[350/824] 1047s  last p232_367: hops=183 overruns=0 proc_mean=2158314.5 max|d|=1 status=ok
+[400/824] 1207s  last p257_008: hops=559 overruns=0 proc_mean=2159434.5 max|d|=1 status=ok
+[450/824] 1375s  last p257_059: hops=373 overruns=0 proc_mean=2156887.0 max|d|=1 status=ok
+[500/824] 1516s  last p257_109: hops=212 overruns=0 proc_mean=2155405.3 max|d|=1 status=ok
+[550/824] 1654s  last p257_160: hops=252 overruns=0 proc_mean=2151882.0 max|d|=1 status=ok
+[600/824] 1799s  last p257_210: hops=252 overruns=0 proc_mean=2154722.8 max|d|=1 status=ok
+[650/824] 1950s  last p257_260: hops=271 overruns=0 proc_mean=2154715.9 max|d|=1 status=ok
+[700/824] 2088s  last p257_310: hops=157 overruns=0 proc_mean=2160141.1 max|d|=1 status=ok
+[750/824] 2225s  last p257_360: hops=283 overruns=0 proc_mean=2156285.4 max|d|=1 status=ok
+[800/824] 2363s  last p257_410: hops=359 overruns=0 proc_mean=2154398.9 max|d|=1 status=ok
+[824/824] 2426s  last p257_434: hops=209 overruns=0 proc_mean=2144776.2 max|d|=1 status=ok
+done     : 824 runs in 2426s -> results/rnnoise/variant_both_corpus_2026-10-28/voicebank48k_rnnoise-v0.1.1_paced.csv
+summary  : fails=0 total_overruns=1 worst max|d|=228 LSB  worst n_diff=27892  worst NMSE=-53.9 dB

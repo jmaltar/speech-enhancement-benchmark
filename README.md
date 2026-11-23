@@ -1,0 +1,394 @@
+# Speech enhancement on four embedded platforms: predicted and measured cost
+
+Code, measurement data and firmware images for the paper
+
+> J. Maltar, D. Ševerdija, R. Čorić and J. Benić, *Predicted and Measured Processing Cost of
+> Real-Time Speech Enhancement on Four Embedded Platforms*, manuscript in preparation, 2026.
+
+Before a speech enhancer is ported to a small processor, its cost is usually estimated: the
+operations of the neural network are counted and divided by a throughput that was measured once.
+We wanted to know how far such an estimate is from the cost after the port. This repository
+contains what we used to find out:
+
+- timing probes for the routines (kernels) that the enhancers call, on each board,
+- the cost model built from those timings and the twenty predictions recorded from it,
+- the ports of five enhancers to four boards,
+- the harness that sends the test audio through a board and times every frame,
+- the scoring on a PC and the check that each board produces the same output as the PC,
+- the power measurements,
+- the result files, the analysis scripts and the firmware images that were measured.
+
+**Contents:** [Boards and enhancers](#boards-and-enhancers) ·
+[Main results](#main-results) · [Repository layout](#repository-layout) ·
+[Result files](#result-files) · [What is not in the repository](#what-is-not-in-the-repository) ·
+[Reproducing the results](#reproducing-the-results) · [Datasets](#datasets) ·
+[Licence](#licence) · [Citation](#citation)
+
+## Boards and enhancers
+
+| board | processor | clock | short name in the code |
+|---|---|---|---|
+| WeAct STM32F411CEU6 "Black Pill" | Cortex-M4F | 96 MHz | `f411` |
+| WeAct STM32H723VGT6 core board | Cortex-M7 | 550 MHz | `h723` |
+| ESP32-S3 (S3R8, 16 MB flash, 8 MB PSRAM) | Xtensa LX7 | 240 MHz | `s3` |
+| Raspberry Pi 5 (8 GB) | Cortex-A76 | 2.4 GHz | `rpi5` |
+
+| enhancer | kind | source |
+|---|---|---|
+| spectral subtraction, Wiener filter, MMSE-STSA | classical, 16 kHz, 32 ms frames, 16 ms hop | `classical/` (ours) |
+| RNNoise | signal processing with a small recurrent network, 48 kHz, 10 ms hop | Xiph.Org release v0.1.1, vendored in `rnnoise/` |
+| DTLN | two LSTM stages, 16 kHz, 8 ms hop | the authors' pretrained models in `dtln/`, run with TensorFlow Lite Micro |
+
+The Raspberry Pi 5 also runs a music separator (Open-Unmix, `separation/`), which the paper
+mentions only briefly.
+
+Some terms used below:
+
+- **Hop.** The step between two consecutive frames of audio. A frame must be finished within
+  one hop.
+- **Real-time factor (RTF).** The processing time of one hop divided by the hop. An enhancer
+  runs in real time when it is below one.
+- **Paced run.** The PC sends the audio at the rate at which it would arrive from a microphone.
+  In an unpaced run, it sends the next hop as soon as the board has answered.
+- **16x8.** A quantized network with 16-bit activations and 8-bit weights.
+
+## Main results
+
+The table gives the predicted RTF and, after the arrow, the measured one.
+
+| enhancer | F411 | H723 | S3 | Pi 5 |
+|---|---|---|---|---|
+| spectral subtraction | 0.064 → 0.111 | 0.007 → 0.0144 | 0.031 → 0.085 | 0.001 → 0.0019 |
+| Wiener filter | 0.064 → 0.112 | 0.006 → 0.0145 | 0.027 → 0.085 | 0.001 → 0.0019 |
+| MMSE-STSA | 0.117 → 0.189 | 0.013 → 0.0252 | 0.062 → 0.139 | 0.001 → 0.0024 |
+| RNNoise, as released | 1.116 → 3.17 | 0.113 → 0.323 | 0.206 → **1.31** | 0.009 → 0.0170 |
+| DTLN | no fit → not run | 0.149 → **no fit (flash)** | no fit → no fit | 0.003 → 0.162 |
+
+- Eighteen of the twenty predictions of "fits" or "does not fit" held. The two that did not are
+  in bold: RNNoise on the S3 misses the deadline, and DTLN as released does not fit the flash of
+  the H723.
+- Every measured cost is higher than the predicted one: 1.6 to 3.1 times for the classical
+  enhancers, 1.9 to 6.4 times for RNNoise, and 26 times for DTLN on the Pi 5 (at the 8 ms hop
+  of the model; the recorded prediction assumed a 16 ms hop).
+- DTLN, together with its inference library, needs more flash than any of the three
+  microcontrollers has free in our configuration. A pruned DTLN fits the H723 (RTF 0.389) and
+  the S3, where it misses the deadline (RTF 4.59 with the reference kernels, 1.95 with a 16-bit
+  kernel that we wrote).
+- With two changes to the port, RNNoise runs in real time on the S3 (RTF 0.898).
+- Power was measured on every board with RNNoise. Where RNNoise runs in real time, a board
+  draws most of its energy while it waits, except for the modified S3 build.
+
+The dated record of the predictions and of each outcome is in [`PREDICTIONS.md`](PREDICTIONS.md).
+
+## Repository layout
+
+| path | contents |
+|---|---|
+| `budget_model.py` | the cost model: budgets per board and predicted cost per enhancer, from the measured kernel timings (`python3 budget_model.py` prints all tables) |
+| `benchmark_f411/`, `benchmark_h723/` | STM32 firmware (CMake projects generated by STM32CubeMX, with the vendor HAL, CMSIS-DSP 1.10.0 and TinyUSB 0.21.0): kernel probe, audio harness over USB, the enhancers, linker scripts; `results/` holds the run files and the measured images |
+| `benchmark_s3/` | ESP-IDF v5.4.1 project for the ESP32-S3 (esp-dsp, esp-nn, esp_tinyusb as fixed by `dependencies.lock`), same structure |
+| `benchmark_rpi5/` | probe and run tools for the Raspberry Pi 5 (plain CMake), power logging from the board's own power controller |
+| `harness/` | the frame format in which audio travels to a board and back (`abf_frame.h`, specified in `FRAME_FORMAT.md`), its USB and file transports, the PC-side tools `abf_host.py` and `abf_batch_file.py`, tests |
+| `classical/` | the three classical enhancers in portable C behind one short-time Fourier transform, two noise trackers, tests |
+| `rnnoise/` | Xiph's RNNoise at v0.1.1 and v0.1, our wrapper, and a variant whose network runs on 8-bit CMSIS-NN kernels (`nn8/`) |
+| `dtln/` | the pretrained DTLN models, our quantized exports, the PC reference (`oracle.py`), the C model arrays and the TensorFlow Lite Micro processor that the boards run (`port/`) |
+| `training/` | pruning and quantization-aware training of DTLN, with the exported weights and logs of every run |
+| `separation/` | Open-Unmix on MUSDB18-HQ, on the PC and on the Pi 5 |
+| `eval_harness/` | corpus loader, resampler, PESQ, STOI, ESTOI and SI-SDR, statistics (equivalence tests, Holm correction, bootstrap intervals) with their tests |
+| `analysis/` | collects the run files into the result tables, runs the statistical tests, computes energy and draws the figures; `results/` and `figures/` hold its output |
+| `power_logger_f411/` | firmware and scripts of the power logger (an STM32F411 that reads an INA226 current sensor) |
+| `results/power/` | the power sessions: logger readings, run files, summaries |
+| `tflm_footprint/` | measurement of the flash that TensorFlow Lite Micro needs for DTLN |
+| `prepare_datasets.py` | unpacks, indexes and verifies the corpora |
+| `docs/` | wiring of the power measurement (PDF guides and figure sources) |
+
+Third-party code is kept exactly as it was built and measured. Its licences are listed in
+[`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md).
+
+## Result files
+
+**Tables, in `analysis/results/`.**
+
+| file | contents |
+|---|---|
+| `cost.csv` | one row per board and build: cycles per hop, RTF, hops that missed the deadline, whether it fits, latency, energy per second of audio |
+| `quality_classes.csv` | quality of every enhancer on the PC, per corpus (PESQ, STOI, ESTOI, SI-SDR with intervals) |
+| `quality_utterances.csv.gz`, `quality_summary.csv` | the same scores per utterance, and summarized per scored output |
+| `per_platform.csv` | output of each board against the output of the PC: largest sample difference and equivalence test per metric |
+| `headline.csv`, `tost_claims.csv`, `percell.csv`, `sample_size.csv` | difference and equivalence tests between enhancers, per corpus and per noise condition, and the sample sizes they need |
+| `power.csv` | idle, active and mean power of the five power sessions, and the energy derived from them |
+| `frontier_membership.csv`, `frontier_energy_membership.csv` | which builds are best in quality for their RTF or their energy |
+| `separation.csv` | the music separator on the PC and on the Pi 5 |
+
+**Build labels in `cost.csv`.** The column `label` names the build that was measured.
+
+| label | meaning | build option |
+|---|---|---|
+| `as shipped` | RNNoise as released, unchanged | `BENCH_RNNOISE_VARIANT=ship` |
+| `+F` | the three double-precision math calls replaced by single-precision ones | `splibm` |
+| `+FS` | `+F`, and all constants in single precision | `spconst` |
+| `+N` | the three recurrent layers of RNNoise on the 8-bit CMSIS-NN kernel | `nn8` |
+| `+M` | `+N` and `+FS` together | `nn8fs` |
+| `+W` | S3 only: the weights copied from the flash to the internal RAM at start | `ramw` |
+| `+FW` | S3 only: `+F` and `+W` together (the "modified build" above) | `both` |
+| `+P` | S3 and DTLN only: our 16-bit matrix-vector kernel in the vector instructions of the LX7 | `BENCH_DTLN_FC=pie` |
+| `as built` | a classical enhancer (the column `variant` names the noise tracker, MCRA) | |
+| `CMSIS-NN s16 ...`, `TFLM reference kernels` | DTLN with the 16-bit kernels of CMSIS-NN, or with the portable kernels of TensorFlow Lite Micro | |
+
+**Run files, in `benchmark_<board>/results/`.** A run over a corpus writes one CSV with one row
+per utterance, e.g. `benchmark_h723/results/rnnoise/voicebank48k_rnnoise-v0.1.1_paced.csv`.
+Its columns are the number of hops, the hops that missed the deadline (`overruns`), transport
+errors, the cycles per hop (`proc_min`, `proc_max`, `proc_mean`, `proc_median_data`), the delay
+from sending a hop to receiving it (`e2e_median_us`), and the comparison of the output with the
+PC reference (`max_abs_lsb`, `n_diff`, `nmse_db`).
+
+**Power sessions, in `results/power/<board>_<enhancer>/`.** `power_idle.csv`,
+`power_unpaced.csv` and `power_paced.csv` hold the readings of the logger (about 28 per second),
+and `power_summary.json` the figures computed from them.
+
+## What is not in the repository
+
+- **Audio.** No corpus audio and no enhanced output is redistributed. See *Datasets* below.
+- **TensorFlow Lite Micro.** Its source trees are generated from the upstream project, see
+  step 3 below.
+- **The Python environment.** It is rebuilt from `requirements-eval.txt`.
+- **The paper and the working notes.** Comments in the code, and the columns `source` and
+  `note` of some tables, refer to `CLAUDE.md`, to `RESULTS.md` files and to task numbers. These
+  are the project's internal notes, which are not published. What is needed to repeat the
+  measurements is in this file.
+
+## Reproducing the results
+
+Steps 1 to 5 need only a PC. Each step depends on the ones before it. Every command of steps 3
+to 6 and 9 was run in a fresh clone of this repository (Ubuntu 26.04, CMake 4.2, gcc 15), except
+the build on the Pi 5. The steps that need a board, the Pi 5 or a GPU are given as they were
+run during the project.
+
+### 1. Python environment
+
+Python 3.11.15 and the 78 pinned packages:
+
+```sh
+uv python install 3.11.15
+uv venv .venv --python 3.11.15
+uv pip install -r requirements-eval.txt
+```
+
+The scoring refuses to run with other versions of `pesq` (0.0.4) or `pystoi` (0.4.1). For
+training on a GPU, run `source gpu_env.sh` first.
+
+### 2. Datasets
+
+Download the corpora listed under [Datasets](#datasets) into one folder and build the index:
+
+```sh
+export BENCHMARK_DATA_ROOT=/path/to/data      # default: /mnt/data/benchmark-data
+python3 prepare_datasets.py --data-root "$BENCHMARK_DATA_ROOT"
+```
+
+This writes `manifest.csv` (14,630 rows) and verifies every corpus against the files on disk.
+
+### 3. TensorFlow Lite Micro trees
+
+Two source trees must stand in the top folder of the repository. They are needed by the PC
+build of RNNoise (step 5), by every build for the ESP32-S3, by the DTLN builds for the H723 and
+the Pi 5, and by the RNNoise builds on CMSIS-NN kernels. Generate them from commit `64b3de8` of
+`tensorflow/tflite-micro`, the commit from which the pinned `tflite-micro` Python package was
+built, so that a board computes the same integers as the PC:
+
+```sh
+git clone https://github.com/tensorflow/tflite-micro.git      # inside this repository's folder
+cd tflite-micro
+git checkout 64b3de836daf42ef5094d06035742c058e7638f6
+# Cortex-M7 with CMSIS-NN kernels (H723, and the CMSIS-NN kernels for RNNoise)
+python3 tensorflow/lite/micro/tools/project_generation/create_tflm_tree.py ../tflm_tree_64b3de8 \
+  --makefile_options="TARGET=cortex_m_generic TARGET_ARCH=cortex-m7+fp OPTIMIZED_KERNEL_DIR=cmsis_nn"
+# reference kernels (S3 and Pi 5)
+python3 tensorflow/lite/micro/tools/project_generation/create_tflm_tree.py ../tflm_tree_64b3de8_generic
+cd ..
+```
+
+The script downloads its dependencies (about 1.1 GB, among them an Arm compiler). The two trees
+have 608 and 444 files. Git ignores the trees and the `tflite-micro` folder, which can be
+deleted afterwards.
+
+### 4. Check of the scoring
+
+```sh
+python -m eval_harness.validate --corpus voicebank16k
+python -m unittest discover -s eval_harness -t . -p 'test_*.py'
+```
+
+The first command scores the unprocessed noisy speech of the 824 test utterances in about half
+a minute. It must give PESQ 1.97 and STOI 0.921, the values that the literature reports for
+this corpus. The second runs the 58 tests of the statistics.
+
+### 5. References on the PC
+
+```sh
+cmake -S harness   -B harness/build   && cmake --build harness/build   && ctest --test-dir harness/build
+cmake -S classical -B classical/build && cmake --build classical/build && ctest --test-dir classical/build
+cmake -S rnnoise   -B rnnoise/build   && cmake --build rnnoise/build       # needs step 3
+python -m eval_harness.enhance --corpus voicebank16k      # classical enhancers and DTLN; also dns, noizeus
+python -m rnnoise.check_rnnoise
+python -m dtln.check_oracle --dtln-src dtln/upstream      # needs TensorFlow
+python -m dtln.quantize --scheme 16x8                     # re-exports the DTLN models that the boards run
+```
+
+The scored output of each enhancer is written under `$BENCHMARK_DATA_ROOT/enhanced/`.
+
+### 6. Firmware
+
+The versions that the measurements were taken with:
+
+| board | libraries | tools |
+|---|---|---|
+| F411 | STM32CubeMX 6.18.1, STM32Cube FW_F4 V1.28.3, CMSIS-DSP 1.10.0, TinyUSB 0.21.0 | arm-none-eabi-gcc 14.2.1, CMake, Ninja, OpenOCD 0.12.0 with an ST-Link V2.1 |
+| H723 | STM32CubeMX 6.18.1, STM32Cube FW_H7 V1.13.0, CMSIS-DSP 1.10.0, TinyUSB 0.21.0, TensorFlow Lite Micro with CMSIS-NN | the same |
+| S3 | ESP-IDF v5.4.1, esp-dsp 1.5.2, esp-nn 1.3.2, esp_tinyusb 1.7.6, TensorFlow Lite Micro | xtensa-esp-elf-gcc 14.2.0, esptool 5.6.0 |
+| Pi 5 | Debian 13, TensorFlow Lite Micro | gcc 14.2.0, CMake 3.31.6, Ninja |
+
+Each firmware image holds one job, because the RAM of the microcontrollers does not hold all
+of them at once. The options named `BENCH_...` choose the job. Every build checks the compiler
+flags and library switches that change a measurement and stops with a message when one differs.
+
+**F411** (in `benchmark_f411/`; the image is `build/<name>/benchmark_f411.bin`):
+
+```sh
+cmake --preset Release && cmake --build --preset Release                                     # kernel probe
+cmake --preset Release -B build/classical -DBENCH_WITH_PROBE=OFF && cmake --build build/classical
+cmake --preset Release -B build/rnnoise -DBENCH_WITH_PROBE=OFF -DBENCH_WITH_RNNOISE=ON && cmake --build build/rnnoise
+```
+
+**H723** (in `benchmark_h723/`). The default options put the probe and DTLN into one image,
+which does not fit the RAM and does not link. Use one of these:
+
+```sh
+cmake --preset Release -B build/probe     -DBENCH_WITH_DTLN=OFF && cmake --build build/probe
+cmake --preset Release -B build/classical -DBENCH_WITH_PROBE=OFF -DBENCH_WITH_DTLN=OFF && cmake --build build/classical
+cmake --preset Release -B build/rnnoise   -DBENCH_WITH_PROBE=OFF -DBENCH_WITH_DTLN=OFF -DBENCH_WITH_RNNOISE=ON && cmake --build build/rnnoise
+cmake --preset Release -B build/dtln      -DBENCH_WITH_PROBE=OFF -DBENCH_DTLN_ARENA1_BYTES=12288 -DBENCH_DTLN_ARENA2_BYTES=20480 && cmake --build build/dtln
+```
+
+On both STM32 boards, add `-DBENCH_RNNOISE_VARIANT=splibm`, `spconst`, `nn8` or `nn8fs` to an
+RNNoise build for the builds labelled `+F`, `+FS`, `+N` and `+M`.
+
+**S3** (in `benchmark_s3/`, after ESP-IDF has been activated with its `export.sh`):
+
+```sh
+idf.py build                                                                                  # kernel probe
+idf.py -B build_abf     -DBENCH_WITH_PROBE=0 build                                            # classical enhancers
+idf.py -B build_rnnoise -DBENCH_WITH_PROBE=0 -DBENCH_WITH_CDSP=0 -DBENCH_WITH_RNNOISE=1 build
+idf.py -B build_dtln    -DBENCH_WITH_PROBE=0 -DBENCH_WITH_DTLN=1 build
+```
+
+Add `-DBENCH_RNNOISE_VARIANT=splibm`, `ramw` or `both` for `+F`, `+W` and `+FW`, and
+`-DBENCH_DTLN_FC=pie` for `+P`.
+
+**Pi 5** (on the Pi): `cmake -S benchmark_rpi5 -B benchmark_rpi5/build && cmake --build
+benchmark_rpi5/build` for the probe, the builds of step 5 for the classical enhancers and
+RNNoise (`classical/build/cdsp_run`, `rnnoise/build/rnnoise_run`), and
+`benchmark_rpi5/dtln_run/build.sh` for the two DTLN programs.
+
+**The measured images** are in the repository, so the measurements can be repeated without a
+build. A rebuilt image carries its own build stamp and therefore differs from the archived one.
+For the RNNoise image of the F411, the stamp is the only difference (5 of 144,516 bytes).
+
+| image | CRC-32 |
+|---|---|
+| `benchmark_f411/results/rnnoise_candidate_image.bin` (RNNoise as released) | `9f322114` |
+| `benchmark_h723/results/rnnoise_image.bin` (RNNoise as released) | `0b3cc69b` |
+| `benchmark_s3/results/rnnoise/variant_both_corpus_2026-10-28/image.bin` (RNNoise, modified build) | `50ad5aa1` |
+
+**Flashing.**
+
+```sh
+power_logger_f411/flash_dut.sh f411 benchmark_f411/results/rnnoise_candidate_image.bin   # STM32, with OpenOCD and an ST-Link
+power_logger_f411/flash_dut.sh h723 benchmark_h723/results/rnnoise_image.bin
+esptool --chip esp32s3 -p <port> -b 921600 write-flash 0x10000 <image.bin>              # S3, application image
+```
+
+The S3 must already hold the bootloader and the partition table of this project. Flash it once
+with `idf.py -B <build folder> -p <port> flash`.
+
+**Reading the kernel probe.** The probe runs once after a reset. On the H723,
+`benchmark_h723/read_probe.sh <image.elf>` reads its results through the debugger. The S3
+prints them on its serial console, and the Pi 5 on the terminal.
+
+### 7. Runs on the boards
+
+A microcontroller receives the audio over USB and returns the enhanced audio together with the
+cycle count of every hop:
+
+```sh
+python harness/abf_host.py batch "$BENCHMARK_DATA_ROOT/manifest.csv" out_dir \
+  --corpus voicebank48k --algo rnnoise --paced --keep --port /dev/ttyACM0 --check-bin image.bin
+```
+
+`--check-bin` compares the image on the board with the file before any audio is sent, and
+`--keep` keeps the output audio for step 8. `--algo` is `specsub`, `wiener`, `mmse`, `rnnoise`
+or `dtln`, and the corpus is `voicebank16k` for all but RNNoise. RNNoise over the whole test set
+takes about 2 h on the F411, 36 min on the H723 and 54 min on the S3.
+
+The Pi 5 reads the same frames from files. During a measurement, its clock is held at the full
+frequency (the `performance` governor), and the program runs alone on one core with real-time
+priority:
+
+```sh
+python harness/abf_batch_file.py "$BENCHMARK_DATA_ROOT/manifest.csv" out_dir \
+  --runner rnnoise/build/rnnoise_run --corpus voicebank48k --algo rnnoise --paced --keep --core 3 --rtprio 50
+```
+
+### 8. Scoring the output of a board
+
+```sh
+python -m eval_harness.score_dir --corpus voicebank48k --dir out_dir --variant rnnoise --tag rnnoise-h723
+python -m eval_harness.compare --corpus voicebank48k --a rnnoise --b rnnoise-h723   # board against PC
+```
+
+### 9. Analysis
+
+```sh
+python -m analysis.collect --inventory   # these two need the scored files of steps 5 and 8
+python -m analysis.tests
+python -m analysis.power                 # these two need only what is in the repository
+python -m analysis.frontiers
+```
+
+### 10. Power
+
+One board at a time, with one INA226 current sensor (0.1 Ω shunt) in the 5 V supply of the
+board. A spare STM32F411 passes the USB connection through and logs the sensor. The wiring is
+drawn in [`docs/power-wiring.pdf`](docs/power-wiring.pdf) and, board by board, in
+[`docs/power-wiring-boards.pdf`](docs/power-wiring-boards.pdf). A session (idle, unpaced run,
+paced run) is run by `power_logger_f411/power_session.sh` and summarized by
+`power_logger_f411/power_summary.py`. The Pi 5 is measured through its own power controller
+(`benchmark_rpi5/power_session_rpi5.sh`), which leaves out the losses of its voltage converters.
+
+### 11. Compression of DTLN and the music separator (optional)
+
+`python -m training.check_model` compares our model code with the authors' model,
+`training/arm_b.sh` runs the pruning and quantization experiments (days on one laptop GPU), and
+`python -m training.evaluate --shrunk <run>` scores a run. The exported weights of every run are
+in `training/runs/`. For the separator, `python separation/umx_run.py --verify-lowmem` separates
+the 50 test tracks of MUSDB18-HQ and `python -m eval_harness.separation` scores them.
+
+## Datasets
+
+| corpus | where to get it | licence |
+|---|---|---|
+| VoiceBank-DEMAND, 16 kHz, and its 48 kHz test set | Edinburgh DataShare, DOI [10.7488/ds/2117](https://doi.org/10.7488/ds/2117). We used the 16 kHz mirror `JacobLinCool/VoiceBank-DEMAND-16k` on Hugging Face (revision `4497db3`) with the log files of the original for noise type and SNR | CC BY 4.0 |
+| NOIZEUS | `github.com/chmodsss/noizeus_corpora` (Hu and Loizou, 2007) | see the source |
+| DNS Challenge, INTERSPEECH 2020, synthetic test set without reverberation | `github.com/microsoft/DNS-Challenge`, branch `interspeech2020/master` | see the source |
+| MUSDB18-HQ (music separator only) | Zenodo, DOI [10.5281/zenodo.3338373](https://doi.org/10.5281/zenodo.3338373) | non-commercial |
+
+## Licence
+
+Our own code and documents are released under the MIT License, see [`LICENSE`](LICENSE).
+Third-party components keep their own licences, see
+[`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md).
+
+## Citation
+
+The paper is in preparation. Until it is published, please cite this repository
+(see [`CITATION.cff`](CITATION.cff)). Questions are welcome as GitHub issues.

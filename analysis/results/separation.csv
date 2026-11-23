@@ -1,0 +1,18 @@
+kind,source,metric,n_tracks,median,mean,bca_median_lo,bca_median_hi,file,q1,q3,total_rtf,threads,throttled_any
+quality,host,vocals_sdr,50,6.391750321232912,5.322436746451432,4.875763487471471,7.1536346704442035,separation/results/host_umxhq_score_2026-10-29.csv,,,,,
+quality,host,vocals_sir,50,15.193636077845794,12.87626325366522,13.502749027708049,16.595339870852797,separation/results/host_umxhq_score_2026-10-29.csv,,,,,
+quality,host,vocals_sar,50,6.707758690743466,6.276453585987083,5.240167231236137,7.64293587836033,separation/results/host_umxhq_score_2026-10-29.csv,,,,,
+quality,host,accompaniment_sdr,50,12.814338842413274,12.226514292225739,11.687387669535356,13.419073556758976,separation/results/host_umxhq_score_2026-10-29.csv,,,,,
+quality,host,accompaniment_sir,50,18.81646743385035,19.158260644471028,17.517763154421445,21.121516428130093,separation/results/host_umxhq_score_2026-10-29.csv,,,,,
+quality,host,accompaniment_sar,50,14.240328958335496,13.99625158983773,13.068935889845086,14.903227000187758,separation/results/host_umxhq_score_2026-10-29.csv,,,,,
+quality,rpi5 (scored on host),vocals_sdr,50,6.391751368146798,5.3224367253487275,4.875763035545548,7.153634939544112,separation/results/rpi5_umxhq_score_2026-10-29.csv,,,,,
+quality,rpi5 (scored on host),vocals_sir,50,15.19363669130611,12.876264163186372,13.502749226214231,16.59533848974627,separation/results/rpi5_umxhq_score_2026-10-29.csv,,,,,
+quality,rpi5 (scored on host),vocals_sar,50,6.707759746556533,6.276453562875365,5.240163797642774,7.642937531778173,separation/results/rpi5_umxhq_score_2026-10-29.csv,,,,,
+quality,rpi5 (scored on host),accompaniment_sdr,50,12.81434065329612,12.226511525867524,11.687387909600869,13.41906906694003,separation/results/rpi5_umxhq_score_2026-10-29.csv,,,,,
+quality,rpi5 (scored on host),accompaniment_sir,50,18.816466279563766,19.15826685125733,17.517765900988444,21.121520359236484,separation/results/rpi5_umxhq_score_2026-10-29.csv,,,,,
+quality,rpi5 (scored on host),accompaniment_sar,50,14.240327697971,13.996256410795166,13.06893920219796,14.90321254288638,separation/results/rpi5_umxhq_score_2026-10-29.csv,,,,,
+quality (four-target anchor),host,vocals_sdr,50,6.2646231877212095,5.297304856708644,,,separation/results/host_umxhq_score4_2026-10-30.csv,,,,,
+quality (four-target anchor),host,drums_sdr,50,5.734138560712866,6.324592844041153,,,separation/results/host_umxhq_score4_2026-10-30.csv,,,,,
+quality (four-target anchor),host,bass_sdr,50,5.003886607191864,4.668597349146637,,,separation/results/host_umxhq_score4_2026-10-30.csv,,,,,
+quality (four-target anchor),host,other_sdr,50,4.327331628797337,3.461966170798171,,,separation/results/host_umxhq_score4_2026-10-30.csv,,,,,
+cost,rpi5,rtf (median over tracks),50,0.55865,0.5582339999999999,,,separation/results/rpi5_umx_run_umxhq_t4_2026-10-29.csv,0.555525,0.5615,0.559150629906239,4.0,False

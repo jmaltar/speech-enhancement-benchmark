@@ -1,0 +1,17 @@
+{
+ "out": "training/runs/smoke-fq",
+ "init": null,
+ "epochs": 2,
+ "steps": 50,
+ "batch": 32,
+ "seg_seconds": 4.0,
+ "lr": 0.001,
+ "dropout": 0.25,
+ "prune_lambda": 0.0,
+ "prune_temp": 0.2,
+ "fixed_prune": null,
+ "fq": true,
+ "limit": 600,
+ "smoke": true,
+ "seed": 20261019
+}

@@ -1,0 +1,37 @@
+device   : STM32F411 build 'Release 20261022T0849' image_crc32=9f322114 tick_hz=96000000  (verified against benchmark_f411/results/rnnoise_candidate_image.bin)
+[25/824] 405s  last p232_029: hops=342 overruns=343 proc_mean=3056787.6 max|d|=1 status=ok
+[50/824] 600s  last p232_054: hops=371 overruns=372 proc_mean=3058987.3 max|d|=1 status=ok
+[75/824] 801s  last p232_079: hops=240 overruns=241 proc_mean=3045759.2 max|d|=1 status=ok
+[100/824] 1003s  last p232_104: hops=392 overruns=393 proc_mean=3050966.8 max|d|=1 status=ok
+[125/824] 1217s  last p232_131: hops=306 overruns=307 proc_mean=3058683.2 max|d|=1 status=ok
+[150/824] 1407s  last p232_158: hops=269 overruns=270 proc_mean=3061243.7 max|d|=1 status=ok
+[175/824] 1619s  last p232_185: hops=286 overruns=287 proc_mean=3047733.1 max|d|=1 status=ok
+[200/824] 1823s  last p232_211: hops=141 overruns=142 proc_mean=3034727.4 max|d|=1 status=ok
+[225/824] 2037s  last p232_239: hops=187 overruns=188 proc_mean=3059738.5 max|d|=1 status=ok
+[250/824] 2267s  last p232_265: hops=189 overruns=190 proc_mean=3058365.0 max|d|=1 status=ok
+[275/824] 2488s  last p232_290: hops=188 overruns=189 proc_mean=3033187.1 max|d|=1 status=ok
+[300/824] 2685s  last p232_316: hops=164 overruns=165 proc_mean=3052644.7 max|d|=1 status=ok
+[325/824] 2883s  last p232_341: hops=260 overruns=261 proc_mean=3059983.4 max|d|=1 status=ok
+[350/824] 3091s  last p232_367: hops=183 overruns=184 proc_mean=3053565.0 max|d|=1 status=ok
+[375/824] 3310s  last p232_393: hops=328 overruns=329 proc_mean=3041044.7 max|d|=1 status=ok
+[400/824] 3562s  last p257_008: hops=559 overruns=560 proc_mean=3049009.5 max|d|=1 status=ok
+[425/824] 3862s  last p257_034: hops=192 overruns=193 proc_mean=3038985.7 max|d|=1 status=ok
+[450/824] 4060s  last p257_059: hops=373 overruns=374 proc_mean=3048606.5 max|d|=1 status=ok
+[475/824] 4265s  last p257_084: hops=289 overruns=290 proc_mean=3054288.9 max|d|=1 status=ok
+[500/824] 4472s  last p257_109: hops=212 overruns=213 proc_mean=3041668.6 max|d|=1 status=ok
+[525/824] 4676s  last p257_135: hops=349 overruns=350 proc_mean=3050721.5 max|d|=1 status=ok
+Traceback (most recent call last):
+  File "/home/jurica/Desktop/work/benchmark/harness/abf_host.py", line 725, in <module>
+    main()
+  File "/home/jurica/Desktop/work/benchmark/harness/abf_host.py", line 721, in main
+    sys.exit(a.fn(a) or 0)
+             ^^^^^^^
+  File "/home/jurica/Desktop/work/benchmark/harness/abf_host.py", line 623, in cmd_batch
+    rep = run_stream(stream, port, pings=0, timeout=a.timeout, check_bin=a.check_bin,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jurica/Desktop/work/benchmark/harness/abf_host.py", line 515, in run_stream
+    S.step(0.05)
+  File "/home/jurica/Desktop/work/benchmark/harness/abf_host.py", line 371, in step
+    r, w, _ = select.select([self.fd], w, [], timeout)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

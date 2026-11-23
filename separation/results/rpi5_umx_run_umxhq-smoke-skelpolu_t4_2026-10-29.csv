@@ -1,0 +1,2 @@
+track,seconds,wall_s,proc_s,rtf,threads,affinity,governor,throttled,vocals_peak,status
+Skelpolu - Resurrection,395.663,220.941,859.343,0.5584,4,"[0, 1, 2, 3]",performance,throttled=0x0,0.3566,ok

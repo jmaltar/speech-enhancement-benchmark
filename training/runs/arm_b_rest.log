@@ -1,0 +1,7 @@
+[12:21:52] qat starts in parallel with prune-learned (cap 3500 MB)
+[12:21:52] waiting for prune-learned to finish
+[13:45:58] qat done + scored
+[13:49:53] prune-learned done; scoring
+[13:50:07] prune-fixed to 30,58,0,11
+[14:22:32] prune-fixed done + scored
+[14:22:32] chain done

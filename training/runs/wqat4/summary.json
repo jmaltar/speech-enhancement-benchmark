@@ -1,0 +1,37 @@
+{
+ "mode": "fixed magnitude pruning to [30, 58, 0, 11] units, then fine-tune + weight-only QAT of encoder/decoder (int8 per output channel) and dense2 (int8 per tensor), everything else frozen",
+ "wq_only": true,
+ "epochs": 4,
+ "steps": 500,
+ "batch": 32,
+ "seg_seconds": 4.0,
+ "start_val": -14.12036971388192,
+ "best_val": -14.129020164752829,
+ "best_epoch": 4,
+ "final_epoch": 4,
+ "final_val": -14.129020164752829,
+ "live_units": [
+  30,
+  58,
+  0,
+  11
+ ],
+ "live_basis": 256,
+ "dense_params": 336627,
+ "dense_params_full": 986753,
+ "fq_sites": null,
+ "prune_basis_lambda": 0.0,
+ "fq_scheme": null,
+ "fq_bits": 8,
+ "calibration": null,
+ "unstructured": null,
+ "lstm_weight_nonzeros": 55340,
+ "fq_clips": null,
+ "minutes": 41.66668137311935,
+ "steps_per_s": 0.799999717636208,
+ "train_utterances": 10660,
+ "val_speakers": [
+  "p239",
+  "p244"
+ ]
+}

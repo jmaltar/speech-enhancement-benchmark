@@ -1,0 +1,2 @@
+id,variant,hops,nres,overruns,crc_errors,resyncs,proc_min,proc_max,proc_mean,proc_median_data,e2e_median_us,ref,max_abs_lsb,n_diff,nmse_db,status
+p232_001,rnnoise-v0.1.1,175,176,176,0,0,3064298,3178438,3131541.1,3136761,45026,,,,,no ref

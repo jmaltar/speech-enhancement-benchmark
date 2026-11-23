@@ -1,0 +1,6 @@
+=== voicebank48k / rnnoise-h723-m: 824 utterances in 30.0s; failed 0
+   pesq_mos_lqo  mean 2.3178
+   stoi          mean 0.9197
+   estoi         mean 0.8161
+   si_sdr        mean 13.0555
+wrote /mnt/data/benchmark-data/enhanced/rnnoise-h723-m/voicebank48k.csv

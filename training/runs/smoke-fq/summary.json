@@ -1,0 +1,27 @@
+{
+ "mode": "float fine-tune + fake quantization (QAT) in all four LSTM cells",
+ "epochs": 2,
+ "steps": 50,
+ "batch": 32,
+ "seg_seconds": 4.0,
+ "start_val": -14.671521663665771,
+ "best_val": -15.733669757843018,
+ "best_epoch": 2,
+ "final_epoch": 2,
+ "final_val": -15.733669757843018,
+ "live_units": [
+  128,
+  128,
+  128,
+  128
+ ],
+ "dense_params": 986753,
+ "dense_params_full": 986753,
+ "minutes": 1.578897245724996,
+ "steps_per_s": 1.0555890645697903,
+ "train_utterances": 554,
+ "val_speakers": [
+  "p239",
+  "p244"
+ ]
+}

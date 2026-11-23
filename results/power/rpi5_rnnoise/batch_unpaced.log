@@ -1,0 +1,13 @@
+device   : RPI5 build 'Release gcc14.2 20261104T1223' tick_hz=1000000000 (ns)  conditions: core=2 affinity=ok sched_policy=1(SCHED_FIFO) rtprio=50 mlockall=ok cur_khz=2400000 max_khz=2400000
+platform : platform  : governor performance on 4 cpus, throttled=0x0
+[100/824] 8s  last p232_104: hops=392 overruns=0 proc_mean=170198.1 ns max|d|=1 duty=0.01702 void=0 status=ok
+[200/824] 15s  last p232_211: hops=141 overruns=0 proc_mean=170160.0 ns max|d|=1 duty=0.01702 void=0 status=ok
+[300/824] 23s  last p232_316: hops=164 overruns=0 proc_mean=170645.8 ns max|d|=1 duty=0.01706 void=0 status=ok
+[400/824] 30s  last p257_008: hops=559 overruns=0 proc_mean=170105.9 ns max|d|=1 duty=0.01701 void=0 status=ok
+[500/824] 38s  last p257_109: hops=212 overruns=0 proc_mean=170313.2 ns max|d|=1 duty=0.01703 void=0 status=ok
+[600/824] 45s  last p257_210: hops=252 overruns=0 proc_mean=169987.6 ns max|d|=1 duty=0.017 void=0 status=ok
+[700/824] 52s  last p257_310: hops=157 overruns=0 proc_mean=170873.2 ns max|d|=1 duty=0.01709 void=0 status=ok
+[800/824] 59s  last p257_410: hops=359 overruns=0 proc_mean=169779.1 ns max|d|=1 duty=0.01698 void=0 status=ok
+[824/824] 60s  last p257_434: hops=209 overruns=0 proc_mean=168958.4 ns max|d|=1 duty=0.0169 void=0 status=ok
+done     : 824 runs in 60s -> /dev/shm/results_power_rnnoise/unpaced/voicebank48k_rnnoise-v0.1.1.csv
+summary  : fails=0 void_runs=0 total_overruns=0 worst max|d|=228 LSB  worst n_diff=27890  worst NMSE=-53.9 dB

@@ -1,0 +1,28 @@
+device   : STM32F411 build 'Release 20261022T0849' image_crc32=9f322114 tick_hz=96000000  (verified against benchmark_f411/results/rnnoise_candidate_image.bin)
+[25/824] 405s  last p232_029: hops=342 overruns=343 proc_mean=3056720.4 max|d|=1 status=ok
+[50/824] 600s  last p232_054: hops=371 overruns=372 proc_mean=3059016.4 max|d|=1 status=ok
+[75/824] 801s  last p232_079: hops=240 overruns=241 proc_mean=3045788.1 max|d|=1 status=ok
+[100/824] 1003s  last p232_104: hops=392 overruns=393 proc_mean=3050933.7 max|d|=1 status=ok
+[125/824] 1218s  last p232_131: hops=306 overruns=307 proc_mean=3058691.2 max|d|=1 status=ok
+[150/824] 1409s  last p232_158: hops=269 overruns=270 proc_mean=3061261.4 max|d|=1 status=ok
+[175/824] 1621s  last p232_185: hops=286 overruns=287 proc_mean=3047765.5 max|d|=1 status=ok
+[200/824] 1825s  last p232_211: hops=141 overruns=142 proc_mean=3034729.8 max|d|=1 status=ok
+[225/824] 2038s  last p232_239: hops=187 overruns=188 proc_mean=3059655.3 max|d|=1 status=ok
+[250/824] 2267s  last p232_265: hops=189 overruns=190 proc_mean=3058368.3 max|d|=1 status=ok
+[275/824] 2489s  last p232_290: hops=188 overruns=189 proc_mean=3033227.3 max|d|=1 status=ok
+[300/824] 2686s  last p232_316: hops=164 overruns=165 proc_mean=3052685.3 max|d|=1 status=ok
+Traceback (most recent call last):
+  File "/home/jurica/Desktop/benchmark/harness/abf_host.py", line 725, in <module>
+    main()
+  File "/home/jurica/Desktop/benchmark/harness/abf_host.py", line 721, in main
+    sys.exit(a.fn(a) or 0)
+             ^^^^^^^
+  File "/home/jurica/Desktop/benchmark/harness/abf_host.py", line 623, in cmd_batch
+    rep = run_stream(stream, port, pings=0, timeout=a.timeout, check_bin=a.check_bin,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jurica/Desktop/benchmark/harness/abf_host.py", line 515, in run_stream
+    S.step(0.05)
+  File "/home/jurica/Desktop/benchmark/harness/abf_host.py", line 371, in step
+    r, w, _ = select.select([self.fd], w, [], timeout)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

@@ -1,0 +1,3 @@
+=== 2026-11-01T16:58:46+01:00 flash nn8_stamp_axi (benchmark_f411/results/rnnoise_nn8_stamp_axi_image.bin)
+Error: couldn't open benchmark_f411/results/rnnoise_nn8_stamp_axi_image.bin
+CDC did not enumerate after flashing nn8_stamp_axi

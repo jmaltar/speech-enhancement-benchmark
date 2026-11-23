@@ -1,0 +1,41 @@
+=== 2026-11-04T12:09:17+01:00 session h723 image rnnoise_image.bin crc32 0b3cc69b clk 550 MHz hop 0.010 s -> results/power/h723_rnnoise
+=== 2026-11-04T12:09:17+01:00 idle 60 s
+857,7183,3650
+# ina226-logger 1 uid=0058002B3130510F35363330 clk=hsi16 i2c=sw90k uart=115200
+# usb_clock=off pa11_pa12=analog sysclk=hsi reset=0x0E
+# ina226 mfg=0x5449 die=0x2260 cfg=0x4527
+# fields D,seq,t_us,vshunt_raw,vbus_raw  lsb_shunt_nV=2500 lsb_bus_uV=1250  vbus is the supply side: v_board = vbus - vshunt
+# i2c scan: scl=1 sda=1 ack: 0x40
+1769 readings, 1957 dropped, written to results/power/h723_rnnoise/power_idle.csv
+=== 2026-11-04T12:10:17+01:00 unpaced batch
+75,3649
+# ina226-logger 1 uid=0058002B3130510F35363330 clk=hsi16 i2c=sw90k uart=115200
+# usb_clock=off pa11_pa12=analog sysclk=hsi reset=0x0E
+# ina226 mfg=0x5449 die=0x2260 cfg=0x4527
+# fields D,seq,t_us,vshunt_raw,vbus_raw  lsb_shunt_nV=2500 lsb_bus_uV=1250  vbus is the supply side: v_board = vbus - vshunt
+# i2c scan: scl=1 sda=1 ack: 0x40
+Terminated                 python3 "$here/ina226_log.py" --port "$PORT" --quiet "$@"
+done     : 824 runs in 1158s -> results/power/h723_rnnoise/unpaced/voicebank48k_rnnoise-v0.1.1.csv
+summary  : fails=0 total_overruns=0 worst max|d|=228 LSB  worst n_diff=27883  worst NMSE=-53.9 dB
+=== 2026-11-04T12:52:22+01:00 paced batch
+75867,2646327788,6548,3666
+# ina226-logger 1 uid=0058002B3130510F35363330 clk=hsi16 i2c=sw90k uart=115200
+# usb_clock=off pa11_pa12=analog sysclk=hsi reset=0x0E
+# ina226 mfg=0x5449 die=0x2260 cfg=0x4527
+# fields D,seq,t_us,vshunt_raw,vbus_raw  lsb_shunt_nV=2500 lsb_bus_uV=1250  vbus is the supply side: v_board = vbus - vshunt
+# i2c scan: scl=1 sda=1 ack: 0x40
+62007 readings, 0 dropped, written to results/power/h723_rnnoise/power_paced.csv
+done     : 824 runs in 2183s -> results/power/h723_rnnoise/paced/voicebank48k_rnnoise-v0.1.1_paced.csv
+summary  : fails=0 total_overruns=0 worst max|d|=228 LSB  worst n_diff=27883  worst NMSE=-53.9 dB
+=== 2026-11-04T13:28:51+01:00 summary
+# power session: results/power/h723_rnnoise  (clk 550 MHz, hop 10 ms, budget 5,500,000 cycles)
+
+| leg | n | span s | I mA | V | P mW | duty (board cycles / wall) | RTF | overruns | E mJ per audio-s |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| idle | 1614 | 57 | 181.51 ± 0.20 | 4.543 | 824.7 | 0.000 | 0.000 |  | nan |
+| unpaced | 32846 | 1160 | 158.72 ± 4.72 | 4.571 | 725.4 | 0.578 | 0.323 | 0 | 405.2 |
+| paced | 61921 | 2186 | 162.34 ± 2.82 | 4.569 | 741.7 | 0.307 | 0.322 | 0 | 781.0 |
+
+P_idle = 824.7 mW, P_active (solved from the unpaced leg at duty 0.578) = 653.1 mW
+paced, measured: 781.0 mJ per audio-second at RTF 0.322
+corrected form P_active*RTF + P_idle*(1-RTF) = 769.4 mJ/s; the PDF's P_active*RTF alone = 210.6 mJ/s

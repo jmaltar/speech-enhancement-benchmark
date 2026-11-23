@@ -1,0 +1,83 @@
+{
+ "mode": "fixed magnitude pruning to [30, 58, 0, 11] units, then fine-tune + gate clip 16 + learned state clip + fake quantization (QAT, 16-bit activations) in all four LSTM cells, fixed calibrated scales + fake quantization at the six non-cell sites (mask dense x2, encoder, layer norm, estimate, decoder; 8-bit weights)",
+ "epochs": 2,
+ "steps": 50,
+ "batch": 32,
+ "seg_seconds": 4.0,
+ "start_val": -13.293412685394287,
+ "best_val": -13.844103813171387,
+ "best_epoch": 2,
+ "final_epoch": 2,
+ "final_val": -13.844103813171387,
+ "live_units": [
+  30,
+  58,
+  0,
+  11
+ ],
+ "live_basis": 256,
+ "dense_params": 336627,
+ "dense_params_full": 986753,
+ "fq_sites": "all",
+ "prune_basis_lambda": 0.0,
+ "fq_scheme": "fixed",
+ "fq_bits": 16,
+ "calibration": {
+  "fq_mask1": {
+   "absmax": 1.0
+  },
+  "fq_enc": {
+   "absmax": 5.022541046142578
+  },
+  "fq_iln": {
+   "absmax": 4.8600897789001465
+  },
+  "fq_mask2": {
+   "absmax": 1.0
+  },
+  "fq_est": {
+   "absmax": 0.1471647322177887
+  },
+  "fq_dec": {
+   "absmax": 0.4798305928707123
+  },
+  "lstm0": {
+   "x": 72.37202453613281,
+   "z": 291.06494140625,
+   "c": 1.999999761581421
+  },
+  "lstm1": {
+   "x": 0.7615894079208374,
+   "z": 8.220718383789062,
+   "c": 1.8617689609527588
+  },
+  "lstm2": {
+   "x": 1.000030517578125,
+   "z": 1e-06,
+   "c": 1e-06
+  },
+  "lstm3": {
+   "x": 1e-06,
+   "z": 6.0005693435668945,
+   "c": 1.9156609773635864
+  }
+ },
+ "unstructured": null,
+ "lstm_weight_nonzeros": 55340,
+ "fq_clips": {
+  "z_clip": 16.0,
+  "c_clip": [
+   2.0767219066619873,
+   1.9147002696990967,
+   -2.308996549515996e-09,
+   1.9171773195266724
+  ]
+ },
+ "minutes": 2.015888301531474,
+ "steps_per_s": 0.8267653844712016,
+ "train_utterances": 554,
+ "val_speakers": [
+  "p239",
+  "p244"
+ ]
+}

@@ -1,0 +1,1 @@
+failed (-6): /home/jurica/Desktop/benchmark/.venv/bin/python -m dtln.quantize --weights /home/jurica/Desktop/benchmark/training/runs/prune-learned/best.authors.weights.h5 --out /home/jurica/Desktop/benchmark/training/runs/prune-learned/tflite --tag i16 --scheme 16x8 --iln e2 -- see /home/jurica/Desktop/benchmark/training/runs/prune-learned/eval.log

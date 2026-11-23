@@ -1,0 +1,141 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792401844.998761  126297 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792401845.893350  126297 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+[/home/jurica/Desktop/benchmark/training/runs/smoke/best.authors.weights.h5, states split, iln e2, scheme 16x8] split models rebuilt: 362,369 + 624,384 params
+Saved artifact at '/tmp/tmpevvf5_vt'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name='a_mag'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s0'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s1'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s2'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s3')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None)]
+Captures:
+  127350588925968: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588925776: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588927696: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588927312: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588926160: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588928656: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588928848: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588927504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+Saved artifact at '/tmp/tmp23djuaw9'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name='a_frame'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s0'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s1'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s2'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s3')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None)]
+Captures:
+  127350588926736: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588926544: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588929424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588929232: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588928272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588930576: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588929808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588927120: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588931536: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588931728: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588930000: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588928080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+float export:
+  model_reexport_f32_1.tflite: 1,457,668 B; 36 ops, 8 distinct: ADDx6 FULLY_CONNECTEDx5 LOGISTICx7 MULx6 RESHAPEx4 SPLITx2 TANHx4 UNPACKx2
+    populated buffers: FLOAT32 1,449,476 B, INT32 20 B
+    in  serving_default_b_s2:0               (1, 128)           float32  
+    in  serving_default_b_s1:0               (1, 128)           float32  
+    in  serving_default_b_s0:0               (1, 128)           float32  
+    in  serving_default_a_mag:0              (1, 1, 257)        float32  
+    in  serving_default_b_s3:0               (1, 128)           float32  
+    out StatefulPartitionedCall_1:4          (1, 128)           float32  
+    out StatefulPartitionedCall_1:1          (1, 128)           float32  
+    out StatefulPartitionedCall_1:3          (1, 128)           float32  
+    out StatefulPartitionedCall_1:0          (1, 1, 257)        float32  
+    out StatefulPartitionedCall_1:2          (1, 128)           float32  
+  model_reexport_f32_2.tflite: 2,512,684 B; 54 ops, 12 distinct: ADDx8 CONV_2Dx2 FULLY_CONNECTEDx5 LOGISTICx7 MEANx2 MULx11 RESHAPEx8 RSQRTx1 SPLITx2 SUBx2 TANHx4 UNPACKx2
+    populated buffers: FLOAT32 2,500,612 B, INT32 80 B
+    in  serving_default_a_frame:0            (1, 1, 512)        float32  
+    in  serving_default_b_s2:0               (1, 128)           float32  
+    in  serving_default_b_s1:0               (1, 128)           float32  
+    in  serving_default_b_s0:0               (1, 128)           float32  
+    in  serving_default_b_s3:0               (1, 128)           float32  
+    out StatefulPartitionedCall_1:4          (1, 128)           float32  
+    out StatefulPartitionedCall_1:1          (1, 128)           float32  
+    out StatefulPartitionedCall_1:3          (1, 128)           float32  
+    out StatefulPartitionedCall_1:0          (1, 1, 512)        float32  
+    out StatefulPartitionedCall_1:2          (1, 128)           float32  
+  re-export on p257_110.wav: finite output, rms 2648.9 LSB (no shipped TFLite pair to compare with)
+representative dataset: 200 calib utterances, every 16th hop -> 4610 samples per stage
+Saved artifact at '/tmp/tmpy8wh7dgn'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name='a_mag'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s0'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s1'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s2'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s3')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None)]
+Captures:
+  127350588925968: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588925776: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588927696: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588927312: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588926160: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588928656: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588928848: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588927504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/home/jurica/Desktop/benchmark/.venv/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+Saved artifact at '/tmp/tmpm9fexwui'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name='a_frame'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s0'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s1'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s2'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s3')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None)]
+Captures:
+  127350588926736: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588926544: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588929424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588929232: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588928272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588930576: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588929808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588927120: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588931536: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588931728: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588930000: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  127350588928080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/home/jurica/Desktop/benchmark/.venv/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+
+i16 (scheme 16x8, states split):
+  model_i16_1.tflite: 425,488 B; 36 ops, 8 distinct: ADDx6 FULLY_CONNECTEDx5 LOGISTICx7 MULx6 RESHAPEx4 SPLITx2 TANHx4 UNPACKx2
+    populated buffers: INT8 361,088 B, INT64 2,056 B, INT16 2,048 B, INT32 20 B
+    in  serving_default_b_s2:0               (1, 128)           int16    scale 3.05069e-05 zp 0
+    in  serving_default_b_s1:0               (1, 128)           int16    scale 0.0180761 zp 0
+    in  serving_default_b_s0:0               (1, 128)           int16    scale 3.05185e-05 zp 0
+    in  serving_default_a_mag:0              (1, 1, 257)        int16    scale 0.00280768 zp 0
+    in  serving_default_b_s3:0               (1, 128)           int16    scale 0.0010892 zp 0
+    out StatefulPartitionedCall_1:4          (1, 128)           int16    scale 0.00108922 zp 0
+    out StatefulPartitionedCall_1:1          (1, 128)           int16    scale 3.05185e-05 zp 0
+    out StatefulPartitionedCall_1:3          (1, 128)           int16    scale 3.04987e-05 zp 0
+    out StatefulPartitionedCall_1:0          (1, 1, 257)        int16    scale 3.05176e-05 zp 0
+    out StatefulPartitionedCall_1:2          (1, 128)           int16    scale 0.0181066 zp 0
+  model_i16_2.tflite: 723,928 B; 54 ops, 12 distinct: ADDx8 CONV_2Dx2 FULLY_CONNECTEDx5 LOGISTICx7 MEANx2 MULx11 RESHAPEx8 RSQRTx1 SPLITx2 SUBx2 TANHx4 UNPACKx2
+    populated buffers: INT8 622,592 B, INT64 8,192 B, INT16 3,074 B, INT32 80 B
+    in  serving_default_a_frame:0            (1, 1, 512)        int16    scale 1.6438e-05 zp 0
+    in  serving_default_b_s2:0               (1, 128)           int16    scale 3.0517e-05 zp 0
+    in  serving_default_b_s1:0               (1, 128)           int16    scale 0.000279112 zp 0
+    in  serving_default_b_s0:0               (1, 128)           int16    scale 2.919e-05 zp 0
+    in  serving_default_b_s3:0               (1, 128)           int16    scale 0.0107623 zp 0
+    out StatefulPartitionedCall_1:4          (1, 128)           int16    scale 0.0107915 zp 0
+    out StatefulPartitionedCall_1:1          (1, 128)           int16    scale 3.00146e-05 zp 0
+    out StatefulPartitionedCall_1:3          (1, 128)           int16    scale 3.05178e-05 zp 0
+    out StatefulPartitionedCall_1:0          (1, 1, 512)        int16    scale 9.95816e-06 zp 0
+    out StatefulPartitionedCall_1:2          (1, 128)           int16    scale 0.000287343 zp 0
+  pair total 1,149,416 B; 12 distinct ops: ['ADD', 'CONV_2D', 'FULLY_CONNECTED', 'LOGISTIC', 'MEAN', 'MUL', 'RESHAPE', 'RSQRT', 'SPLIT', 'SUB', 'TANH', 'UNPACK']
+  float32 bytes left in the pair: 0 B (biases/params only)

@@ -1,0 +1,24 @@
+=== 2026-10-30T18:23:48+01:00 flash stamp (benchmark_f411/results/rnnoise_stamp_image.bin)
+Bus 003 Device 009: ID cafe:4001 Benchmark STM32F411 Audio Bench
+=== 2026-10-30T18:24:04+01:00 corpus stamp
+device   : STM32F411 build 'Release 20261030T1721+T' image_crc32=653540c3 tick_hz=96000000  (verified against benchmark_f411/results/rnnoise_stamp_image.bin)
+[25/824] 407s  last p232_029: hops=342 overruns=343 proc_mean=3054579.7 max|d|=1 status=ok
+[50/824] 603s  last p232_054: hops=371 overruns=372 proc_mean=3056978.1 max|d|=1 status=ok
+[75/824] 806s  last p232_079: hops=240 overruns=241 proc_mean=3043694.9 max|d|=1 status=ok
+[100/824] 1009s  last p232_104: hops=392 overruns=393 proc_mean=3048963.3 max|d|=1 status=ok
+[125/824] 1225s  last p232_131: hops=306 overruns=307 proc_mean=3056545.6 max|d|=1 status=ok
+[150/824] 1416s  last p232_158: hops=269 overruns=270 proc_mean=3059250.9 max|d|=1 status=ok
+[175/824] 1629s  last p232_185: hops=286 overruns=287 proc_mean=3045662.5 max|d|=1 status=ok
+[200/824] 1835s  last p232_211: hops=141 overruns=142 proc_mean=3032705.4 max|d|=1 status=ok
+[225/824] 2048s  last p232_239: hops=187 overruns=188 proc_mean=3057631.9 max|d|=1 status=ok
+[250/824] 2280s  last p232_265: hops=189 overruns=190 proc_mean=3056389.3 max|d|=1 status=ok
+=== 2026-10-30T19:02:42+01:00 stamp corpus STOPPED at the user's request (continue tomorrow); partial read below
+== RNNoise stage sums stamp_partial: frames=67058 silent=0 total=201,883,580,219 cycles  per-frame=3,010,582
+  0 hp + analysis window + 960-pt fwd transform + band E       29,393,975,742       438,337/frame   14.6 %
+  1 pitch downsample + pitch search + doubling                 23,734,581,252       353,941/frame   11.8 %
+  2 pitch window + 960-pt fwd transform + band E/corr          14,575,238,914       217,353/frame    7.2 %
+  3 remaining features (log, DCTs, cepstra, variability)        7,696,556,940       114,775/frame    3.8 %
+  4 GRU network (compute_rnn)                                 101,336,779,742     1,511,181/frame   50.2 %
+  5 pitch filter + gain smoothing + interp + apply             14,693,293,842       219,113/frame    7.3 %
+  6 synthesis: 960-pt inv transform + window + OLA             10,453,153,787       155,882/frame    5.2 %
+  7 (unused)                                                                0             0/frame    0.0 %

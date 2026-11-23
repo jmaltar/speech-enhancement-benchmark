@@ -1,0 +1,19 @@
+scored prune-l005: ['f32', 'i16'] on voicebank16k,dns; log /home/jurica/benchmark/training/runs/prune-l005/eval.log
+  === voicebank16k: enhanced (B, noise tracker mcra) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 8 tests (headline-pooled-per-corpus
+  === voicebank16k: dtln-prune-l005-shrunk-f32 (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.4574   2.4123   -0.0471  [-0.0541, -0.0402]    0.10  1.97e-25  9.45e-32  different but equivalent (real, below the margin that matte
+  stoi            0.9334   0.9317   -0.0014  [-0.0019, -0.0010]    0.01   8.9e-09  2.08e-73  different but equivalent (real, below the margin that matte
+  si_sdr         19.0215  18.7293   -0.2922  [-0.3475, -0.2369]    0.50  1.85e-17  4.91e-10  different but equivalent (real, below the margin that matte
+  === voicebank16k: dtln-prune-l005-shrunk-i16-tflm (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.4574   2.3665   -0.0932  [-0.1006, -0.0857]    0.10   3.2e-66    0.0652  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9334   0.9308   -0.0023  [-0.0028, -0.0019]    0.01  7.95e-17  9.81e-65  different but equivalent (real, below the margin that matte
+  si_sdr         19.0215  18.6434   -0.3781  [-0.4332, -0.3229]    0.50   1.4e-27  0.000145  different but equivalent (real, below the margin that matte
+  === dns: enhanced (B, noise tracker mcra) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 8 tests (headline-pooled-per-corpus)
+  === dns: dtln-prune-l005-shrunk-f32 (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 150; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.0536   1.8786   -0.1586  [-0.1836, -0.1353]    0.10   9.9e-21         1  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9259   0.9134   -0.0096  [-0.0119, -0.0076]    0.01  4.19e-15     0.372  DIFFERENT (exceeds the pre-specified margin)
+  si_sdr         14.0664  12.4799   -1.5865  [-1.8753, -1.2977]    0.50  5.64e-16         1  DIFFERENT (exceeds the pre-specified margin)
+  === dns: dtln-prune-l005-shrunk-i16-tflm (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 150; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.0536   1.8461   -0.1915  [-0.2166, -0.1669]    0.10  3.94e-23         1  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9259   0.9111   -0.0117  [-0.0139, -0.0096]    0.01  3.72e-17     0.911  DIFFERENT (exceeds the pre-specified margin)
+  si_sdr         14.0664  12.2672   -1.7992  [-2.0872, -1.5113]    0.50   3.1e-19         1  DIFFERENT (exceeds the pre-specified margin)

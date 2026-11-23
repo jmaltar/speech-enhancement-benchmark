@@ -1,0 +1,6 @@
+id,variant,hops,nres,overruns,crc_errors,resyncs,proc_min,proc_max,proc_mean,proc_median_data,e2e_median_us,ref,max_abs_lsb,n_diff,nmse_db,status
+p232_001,rnnoise-v0.1.1,175,176,0,0,0,999731,1697093,1022771.4,1016327,4894,/mnt/data/benchmark-data/enhanced/rnnoise/voicebank48k/p232_001.wav,85,54303,-54.77,ok
+p232_002,rnnoise-v0.1.1,272,273,0,0,0,999101,1051622,1019037.2,1018721,4357,/mnt/data/benchmark-data/enhanced/rnnoise/voicebank48k/p232_002.wav,159,105822,-51.85,ok
+p232_003,rnnoise-v0.1.1,719,720,0,0,0,992871,1052871,1017685.4,1016562,4393,/mnt/data/benchmark-data/enhanced/rnnoise/voicebank48k/p232_003.wav,425,258490,-46.23,ok
+p232_005,rnnoise-v0.1.1,625,626,0,0,0,999461,1051997,1019711.4,1017111,4895,/mnt/data/benchmark-data/enhanced/rnnoise/voicebank48k/p232_005.wav,1490,255433,-35.03,ok
+p232_006,rnnoise-v0.1.1,511,512,0,0,0,999371,1051649,1024375.1,1022649,5037,/mnt/data/benchmark-data/enhanced/rnnoise/voicebank48k/p232_006.wav,82,162059,-53.93,ok

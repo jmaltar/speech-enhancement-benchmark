@@ -1,0 +1,29 @@
+=== rnnoise v0.1.1 paced 13:16:48
+device   : RPI5 build 'Release gcc14.2 20261026T1316' tick_hz=1000000000 (ns)  conditions: core=2 affinity=ok sched_policy=1(SCHED_FIFO) rtprio=50 mlockall=ok cur_khz=2400000 max_khz=2400000
+platform : platform  : governor performance on 4 cpus, throttled=0x0
+[100/824] 294s  last p232_104: hops=392 overruns=0 proc_mean=170166.0 ns max|d|=1 duty=0.01702 void=0 status=ok
+[200/824] 535s  last p232_211: hops=141 overruns=0 proc_mean=169956.8 ns max|d|=1 duty=0.017 void=0 status=ok
+[300/824] 787s  last p232_316: hops=164 overruns=0 proc_mean=171049.0 ns max|d|=1 duty=0.0171 void=0 status=ok
+[400/824] 1045s  last p257_008: hops=559 overruns=0 proc_mean=170026.4 ns max|d|=1 duty=0.017 void=0 status=ok
+[500/824] 1313s  last p257_109: hops=212 overruns=0 proc_mean=170394.0 ns max|d|=1 duty=0.01704 void=0 status=ok
+[600/824] 1558s  last p257_210: hops=252 overruns=0 proc_mean=170164.6 ns max|d|=1 duty=0.01702 void=0 status=ok
+[700/824] 1808s  last p257_310: hops=157 overruns=0 proc_mean=171088.5 ns max|d|=1 duty=0.01711 void=0 status=ok
+[800/824] 2045s  last p257_410: hops=359 overruns=0 proc_mean=170256.2 ns max|d|=1 duty=0.01703 void=0 status=ok
+[824/824] 2099s  last p257_434: hops=209 overruns=0 proc_mean=169197.0 ns max|d|=1 duty=0.01692 void=0 status=ok
+done     : 824 runs in 2099s -> /dev/shm/results_rnnoise/voicebank48k_rnnoise-v0.1.1_paced.csv
+summary  : fails=0 void_runs=0 total_overruns=0 worst max|d|=228 LSB  worst n_diff=27890  worst NMSE=-53.9 dB
+=== rnnoise v0.1.1 unpaced 13:51:47
+device   : RPI5 build 'Release gcc14.2 20261026T1316' tick_hz=1000000000 (ns)  conditions: core=2 affinity=ok sched_policy=1(SCHED_FIFO) rtprio=50 mlockall=ok cur_khz=2400000 max_khz=2400000
+platform : platform  : governor performance on 4 cpus, throttled=0x0
+[100/824] 8s  last p232_104: hops=392 overruns=0 proc_mean=170153.8 ns max|d|=1 duty=0.01702 void=0 status=ok
+[200/824] 15s  last p232_211: hops=141 overruns=0 proc_mean=170155.1 ns max|d|=1 duty=0.01702 void=0 status=ok
+[300/824] 23s  last p232_316: hops=164 overruns=0 proc_mean=170968.2 ns max|d|=1 duty=0.0171 void=0 status=ok
+[400/824] 30s  last p257_008: hops=559 overruns=0 proc_mean=170041.0 ns max|d|=1 duty=0.017 void=0 status=ok
+[500/824] 37s  last p257_109: hops=212 overruns=0 proc_mean=170229.8 ns max|d|=1 duty=0.01702 void=0 status=ok
+[600/824] 44s  last p257_210: hops=252 overruns=0 proc_mean=170287.6 ns max|d|=1 duty=0.01703 void=0 status=ok
+[700/824] 52s  last p257_310: hops=157 overruns=0 proc_mean=171126.1 ns max|d|=1 duty=0.01711 void=0 status=ok
+[800/824] 58s  last p257_410: hops=359 overruns=0 proc_mean=170128.5 ns max|d|=1 duty=0.01701 void=0 status=ok
+[824/824] 60s  last p257_434: hops=209 overruns=0 proc_mean=169029.3 ns max|d|=1 duty=0.0169 void=0 status=ok
+done     : 824 runs in 60s -> /dev/shm/results_rnnoise/voicebank48k_rnnoise-v0.1.1.csv
+summary  : fails=0 void_runs=0 total_overruns=0 worst max|d|=228 LSB  worst n_diff=27890  worst NMSE=-53.9 dB
+=== all done 13:52:47

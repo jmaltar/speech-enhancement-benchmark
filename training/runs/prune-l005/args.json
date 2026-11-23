@@ -1,0 +1,19 @@
+{
+ "out": "training/runs/prune-l005",
+ "init": "training/runs/ft-f32/best.authors.weights.h5",
+ "epochs": 6,
+ "steps": 500,
+ "batch": 32,
+ "seg_seconds": 4.0,
+ "lr": 0.001,
+ "dropout": 0.25,
+ "prune_lambda": 0.005,
+ "prune_temp": 0.2,
+ "prune_start_q": 0.05,
+ "fixed_prune": null,
+ "fq": false,
+ "limit": null,
+ "smoke": false,
+ "seed": 20261019,
+ "gpu_mem_mb": 3300
+}

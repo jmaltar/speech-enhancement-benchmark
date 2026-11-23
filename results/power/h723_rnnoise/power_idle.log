@@ -1,0 +1,10 @@
+# host port=/dev/ttyACM1 shunt_ohm=0.1 gain=1.0 started=1793790557.307
+1793790557.308 857,7183,3650
+1793790557.310 unparsed 'D,679,23732111,'
+1793790557.315 # ina226-logger 1 uid=0058002B3130510F35363330 clk=hsi16 i2c=sw90k uart=115200
+1793790557.320 # usb_clock=off pa11_pa12=analog sysclk=hsi reset=0x0E
+1793790557.324 # ina226 mfg=0x5449 die=0x2260 cfg=0x4527
+1793790557.335 # fields D,seq,t_us,vshunt_raw,vbus_raw  lsb_shunt_nV=2500 lsb_bus_uV=1250  vbus is the supply side: v_board = vbus - vshunt
+1793790557.356 # i2c scan: scl=1 sda=1 ack: 0x40
+1793790557.360 gap seq 678 -> 2636
+# stopped=1793790617.323 rows=1769 drops=1957

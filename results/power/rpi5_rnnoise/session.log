@@ -1,0 +1,21 @@
+=== 2026-11-04T12:23:53+01:00 power session rpi5 rnnoise runner /home/jurica/benchmark/rnnoise/build/rnnoise_run (c7a544d9) -> /dev/shm/results_power_rnnoise
+conditions:       4 performance  throttled=0x0 temp=53.2'C
+=== 2026-11-04T12:23:53+01:00 idle 60 s
+=== 2026-11-04T12:24:53+01:00 unpaced batch
+Terminated
+done     : 824 runs in 60s -> /dev/shm/results_power_rnnoise/unpaced/voicebank48k_rnnoise-v0.1.1.csv
+summary  : fails=0 void_runs=0 total_overruns=0 worst max|d|=228 LSB  worst n_diff=27890  worst NMSE=-53.9 dB
+=== 2026-11-04T12:52:28+01:00 paced batch
+done     : 824 runs in 2100s -> /dev/shm/results_power_rnnoise/paced/voicebank48k_rnnoise-v0.1.1_paced.csv
+summary  : fails=0 void_runs=0 total_overruns=0 worst max|d|=228 LSB  worst n_diff=27890  worst NMSE=-53.9 dB
+=== 2026-11-04T13:27:35+01:00 summary (tick = 1 ns, so clk 1000 'MHz'; PMIC figure excludes converter loss and 5V-direct loads)
+Traceback (most recent call last):
+  File "/home/jurica/benchmark/power_logger_f411/power_summary.py", line 80, in <module>
+    main()
+    ~~~~^^
+  File "/home/jurica/benchmark/power_logger_f411/power_summary.py", line 47, in main
+    L = leg(f, a.skip_s)
+  File "/home/jurica/benchmark/power_logger_f411/power_summary.py", line 17, in leg
+    t0 = float(rows[0]["host_s"])
+ValueError: could not convert string to float: '# method=vcgencmd pmic_read_adc'
+conditions after: throttled=0x0 temp=57.1'C

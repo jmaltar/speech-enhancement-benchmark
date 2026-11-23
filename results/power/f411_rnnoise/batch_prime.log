@@ -1,0 +1,4 @@
+device   : STM32F411 build 'Release 20261022T0849' image_crc32=9f322114 tick_hz=96000000  (verified against benchmark_f411/results/rnnoise_candidate_image.bin)
+[1/1] 6s  last p232_001: hops=175 overruns=176 proc_mean=3092980.8 max|d|=1 status=ok
+done     : 1 runs in 6s -> results/power/f411_rnnoise/prime/voicebank48k_rnnoise-v0.1.1_smoke.csv
+summary  : fails=0 total_overruns=176 worst max|d|=1 LSB  worst n_diff=27  worst NMSE=-104.3 dB

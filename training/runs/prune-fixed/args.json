@@ -1,0 +1,19 @@
+{
+ "out": "training/runs/prune-fixed",
+ "init": "training/runs/ft-f32/best.authors.weights.h5",
+ "epochs": 6,
+ "steps": 500,
+ "batch": 32,
+ "seg_seconds": 4.0,
+ "lr": 0.001,
+ "dropout": 0.25,
+ "prune_lambda": 0.0,
+ "prune_temp": 0.2,
+ "prune_start_q": 0.05,
+ "fixed_prune": "30,58,0,11",
+ "fq": false,
+ "limit": null,
+ "smoke": false,
+ "seed": 20261019,
+ "gpu_mem_mb": 3500
+}

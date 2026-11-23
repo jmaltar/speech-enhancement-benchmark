@@ -1,0 +1,54 @@
+{
+ "mode": "float fine-tune + fake quantization (QAT, 8-bit activations) in all four LSTM cells, fixed calibrated scales",
+ "epochs": 6,
+ "steps": 500,
+ "batch": 32,
+ "seg_seconds": 4.0,
+ "start_val": -13.6984632755148,
+ "best_val": -14.65019308287522,
+ "best_epoch": 1,
+ "final_epoch": 1,
+ "final_val": -14.65019308287522,
+ "live_units": [
+  128,
+  128,
+  128,
+  128
+ ],
+ "dense_params": 986753,
+ "dense_params_full": 986753,
+ "fq_scheme": "fixed",
+ "fq_bits": 8,
+ "calibration": {
+  "lstm0": {
+   "x": 70.43597412109375,
+   "z": 265.43695068359375,
+   "c": 1.2959880828857422
+  },
+  "lstm1": {
+   "x": 0.6299212574958801,
+   "z": 12.183968544006348,
+   "c": 1.295987844467163
+  },
+  "lstm2": {
+   "x": 4.980160713195801,
+   "z": 20.0800724029541,
+   "c": 1.295987844467163
+  },
+  "lstm3": {
+   "x": 0.6299212574958801,
+   "z": 28.440567016601562,
+   "c": 1.2959880828857422
+  }
+ },
+ "unstructured": null,
+ "lstm_weight_nonzeros": 655872,
+ "fq_clips": null,
+ "minutes": 160.13934579690297,
+ "steps_per_s": 0.3122280770611652,
+ "train_utterances": 10660,
+ "val_speakers": [
+  "p239",
+  "p244"
+ ]
+}

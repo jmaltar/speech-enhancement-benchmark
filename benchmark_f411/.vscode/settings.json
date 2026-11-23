@@ -1,0 +1,13 @@
+{
+    "cmake.cmakePath": "cmake",
+    "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
+    "cmake.configureOnOpen": true,
+    "cmake.preferredGenerators": [
+        "Ninja"
+    ],
+    "clangd.arguments": [
+        "--query-driver=/usr/bin/arm-none-eabi-gcc*,/usr/bin/arm-none-eabi-g++*"
+    ],
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "C_Cpp.errorSquiggles": "disabled"
+}

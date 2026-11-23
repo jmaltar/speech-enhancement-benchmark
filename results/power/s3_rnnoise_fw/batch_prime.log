@@ -1,0 +1,4 @@
+device   : ESP32S3 build 'Release 20261028T0957+F' image_crc32=50ad5aa1 tick_hz=240000000  (verified against benchmark_s3/results/rnnoise/variant_both_corpus_2026-10-28/image.bin)
+[1/1] 2s  last p232_001: hops=175 overruns=1 proc_mean=2200084.9 max|d|=1 status=ok
+done     : 1 runs in 2s -> results/power/s3_rnnoise_fw/prime/voicebank48k_rnnoise-v0.1.1_smoke.csv
+summary  : fails=0 total_overruns=1 worst max|d|=1 LSB  worst n_diff=36  worst NMSE=-103.0 dB

@@ -1,0 +1,3 @@
+# host port=/dev/serial/by-id/usb-STMicroelectronics_STM32_STLink_066BFF373841423043114439-if01 shunt_ohm=0.1 gain=1.0 started=1793885109.285
+1793885109.285 383560,499641618,1913,3765
+# stopped=1793887532.656 rows=68643 drops=0

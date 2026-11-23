@@ -1,0 +1,693 @@
+skip all
+skip none
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_in'] -> 824 files in 4 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/in-s1_in
+=== voicebank16k / dtln-resid-in-s1_in: 824 utterances in 36.2s; failed 0
+   pesq_mos_lqo  mean 2.4371
+   stoi          mean 0.9263
+   estoi         mean 0.8184
+   si_sdr        mean 18.4478
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-in-s1_in/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_w'] -> 824 files in 4 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/in-s1_w
+=== voicebank16k / dtln-resid-in-s1_w: 824 utterances in 35.3s; failed 0
+   pesq_mos_lqo  mean 2.4338
+   stoi          mean 0.9259
+   estoi         mean 0.8182
+   si_sdr        mean 18.3995
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-in-s1_w/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_z'] -> 824 files in 5 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/in-s1_z
+=== voicebank16k / dtln-resid-in-s1_z: 824 utterances in 39.4s; failed 0
+   pesq_mos_lqo  mean 2.4378
+   stoi          mean 0.9263
+   estoi         mean 0.8184
+   si_sdr        mean 18.4479
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-in-s1_z/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_act'] -> 824 files in 6 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/in-s1_act
+=== voicebank16k / dtln-resid-in-s1_act: 824 utterances in 36.8s; failed 0
+   pesq_mos_lqo  mean 2.4371
+   stoi          mean 0.9263
+   estoi         mean 0.8185
+   si_sdr        mean 18.4478
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-in-s1_act/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_c'] -> 824 files in 6 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/in-s1_c
+=== voicebank16k / dtln-resid-in-s1_c: 824 utterances in 35.9s; failed 0
+   pesq_mos_lqo  mean 2.4354
+   stoi          mean 0.9263
+   estoi         mean 0.8185
+   si_sdr        mean 18.4455
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-in-s1_c/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_h'] -> 824 files in 5 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/in-s1_h
+=== voicebank16k / dtln-resid-in-s1_h: 824 utterances in 46.1s; failed 0
+   pesq_mos_lqo  mean 2.4371
+   stoi          mean 0.9263
+   estoi         mean 0.8184
+   si_sdr        mean 18.4478
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-in-s1_h/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_mask'] -> 824 files in 18 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/in-s1_mask
+=== voicebank16k / dtln-resid-in-s1_mask: 824 utterances in 49.9s; failed 0
+   pesq_mos_lqo  mean 2.4371
+   stoi          mean 0.9263
+   estoi         mean 0.8184
+   si_sdr        mean 18.4478
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-in-s1_mask/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s2_in'] -> 824 files in 15 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/in-s2_in
+=== voicebank16k / dtln-resid-in-s2_in: 824 utterances in 50.6s; failed 0
+   pesq_mos_lqo  mean 2.4369
+   stoi          mean 0.9263
+   estoi         mean 0.8184
+   si_sdr        mean 18.4477
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-in-s2_in/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s2_encw'] -> 824 files in 11 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/in-s2_encw
+=== voicebank16k / dtln-resid-in-s2_encw: 824 utterances in 34.6s; failed 0
+   pesq_mos_lqo  mean 2.4087
+   stoi          mean 0.9262
+   estoi         mean 0.8181
+   si_sdr        mean 18.4217
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-in-s2_encw/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s2_enc'] -> 824 files in 4 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/in-s2_enc
+=== voicebank16k / dtln-resid-in-s2_enc: 824 utterances in 36.5s; failed 0
+   pesq_mos_lqo  mean 2.4357
+   stoi          mean 0.9263
+   estoi         mean 0.8184
+   si_sdr        mean 18.4451
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-in-s2_enc/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s2_lstm'] -> 824 files in 5 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/in-s2_lstm
+=== voicebank16k / dtln-resid-in-s2_lstm: 824 utterances in 31.7s; failed 0
+   pesq_mos_lqo  mean 2.4371
+   stoi          mean 0.9263
+   estoi         mean 0.8184
+   si_sdr        mean 18.4439
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-in-s2_lstm/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s2_mask'] -> 824 files in 4 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/in-s2_mask
+=== voicebank16k / dtln-resid-in-s2_mask: 824 utterances in 33.1s; failed 0
+   pesq_mos_lqo  mean 2.4228
+   stoi          mean 0.9262
+   estoi         mean 0.8182
+   si_sdr        mean 18.4172
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-in-s2_mask/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s2_est'] -> 824 files in 4 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/in-s2_est
+=== voicebank16k / dtln-resid-in-s2_est: 824 utterances in 34.3s; failed 0
+   pesq_mos_lqo  mean 2.4352
+   stoi          mean 0.9263
+   estoi         mean 0.8184
+   si_sdr        mean 18.4473
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-in-s2_est/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s2_decw'] -> 824 files in 3 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/in-s2_decw
+=== voicebank16k / dtln-resid-in-s2_decw: 824 utterances in 34.2s; failed 0
+   pesq_mos_lqo  mean 2.3794
+   stoi          mean 0.9262
+   estoi         mean 0.8178
+   si_sdr        mean 18.4152
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-in-s2_decw/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s2_out'] -> 824 files in 4 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/in-s2_out
+=== voicebank16k / dtln-resid-in-s2_out: 824 utterances in 33.2s; failed 0
+   pesq_mos_lqo  mean 2.4369
+   stoi          mean 0.9263
+   estoi         mean 0.8184
+   si_sdr        mean 18.4478
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-in-s2_out/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_act', 's1_c', 's1_h', 's1_mask', 's1_w', 's1_z', 's2_decw', 's2_enc', 's2_encw', 's2_est', 's2_in', 's2_lstm', 's2_mask', 's2_out'] -> 824 files in 9 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/out-s1_in
+=== voicebank16k / dtln-resid-out-s1_in: 824 utterances in 34.1s; failed 0
+   pesq_mos_lqo  mean 2.3370
+   stoi          mean 0.9255
+   estoi         mean 0.8168
+   si_sdr        mean 18.3056
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-out-s1_in/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_act', 's1_c', 's1_h', 's1_in', 's1_mask', 's1_z', 's2_decw', 's2_enc', 's2_encw', 's2_est', 's2_in', 's2_lstm', 's2_mask', 's2_out'] -> 824 files in 9 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/out-s1_w
+=== voicebank16k / dtln-resid-out-s1_w: 824 utterances in 33.5s; failed 0
+   pesq_mos_lqo  mean 2.3391
+   stoi          mean 0.9259
+   estoi         mean 0.8171
+   si_sdr        mean 18.3537
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-out-s1_w/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_act', 's1_c', 's1_h', 's1_in', 's1_mask', 's1_w', 's2_decw', 's2_enc', 's2_encw', 's2_est', 's2_in', 's2_lstm', 's2_mask', 's2_out'] -> 824 files in 8 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/out-s1_z
+=== voicebank16k / dtln-resid-out-s1_z: 824 utterances in 33.8s; failed 0
+   pesq_mos_lqo  mean 2.3365
+   stoi          mean 0.9255
+   estoi         mean 0.8168
+   si_sdr        mean 18.3056
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-out-s1_z/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_c', 's1_h', 's1_in', 's1_mask', 's1_w', 's1_z', 's2_decw', 's2_enc', 's2_encw', 's2_est', 's2_in', 's2_lstm', 's2_mask', 's2_out'] -> 824 files in 8 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/out-s1_act
+=== voicebank16k / dtln-resid-out-s1_act: 824 utterances in 33.2s; failed 0
+   pesq_mos_lqo  mean 2.3370
+   stoi          mean 0.9255
+   estoi         mean 0.8168
+   si_sdr        mean 18.3057
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-out-s1_act/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_act', 's1_h', 's1_in', 's1_mask', 's1_w', 's1_z', 's2_decw', 's2_enc', 's2_encw', 's2_est', 's2_in', 's2_lstm', 's2_mask', 's2_out'] -> 824 files in 9 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/out-s1_c
+=== voicebank16k / dtln-resid-out-s1_c: 824 utterances in 33.3s; failed 0
+   pesq_mos_lqo  mean 2.3381
+   stoi          mean 0.9255
+   estoi         mean 0.8168
+   si_sdr        mean 18.3071
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-out-s1_c/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_act', 's1_c', 's1_in', 's1_mask', 's1_w', 's1_z', 's2_decw', 's2_enc', 's2_encw', 's2_est', 's2_in', 's2_lstm', 's2_mask', 's2_out'] -> 824 files in 9 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/out-s1_h
+=== voicebank16k / dtln-resid-out-s1_h: 824 utterances in 32.5s; failed 0
+   pesq_mos_lqo  mean 2.3370
+   stoi          mean 0.9255
+   estoi         mean 0.8168
+   si_sdr        mean 18.3056
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-out-s1_h/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_act', 's1_c', 's1_h', 's1_in', 's1_w', 's1_z', 's2_decw', 's2_enc', 's2_encw', 's2_est', 's2_in', 's2_lstm', 's2_mask', 's2_out'] -> 824 files in 9 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/out-s1_mask
+=== voicebank16k / dtln-resid-out-s1_mask: 824 utterances in 33.4s; failed 0
+   pesq_mos_lqo  mean 2.3371
+   stoi          mean 0.9255
+   estoi         mean 0.8168
+   si_sdr        mean 18.3057
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-out-s1_mask/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_act', 's1_c', 's1_h', 's1_in', 's1_mask', 's1_w', 's1_z', 's2_decw', 's2_enc', 's2_encw', 's2_est', 's2_lstm', 's2_mask', 's2_out'] -> 824 files in 9 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/out-s2_in
+=== voicebank16k / dtln-resid-out-s2_in: 824 utterances in 30.1s; failed 0
+   pesq_mos_lqo  mean 2.3371
+   stoi          mean 0.9255
+   estoi         mean 0.8168
+   si_sdr        mean 18.3058
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-out-s2_in/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_act', 's1_c', 's1_h', 's1_in', 's1_mask', 's1_w', 's1_z', 's2_decw', 's2_enc', 's2_est', 's2_in', 's2_lstm', 's2_mask', 's2_out'] -> 824 files in 9 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/out-s2_encw
+=== voicebank16k / dtln-resid-out-s2_encw: 824 utterances in 31.3s; failed 0
+   pesq_mos_lqo  mean 2.3606
+   stoi          mean 0.9256
+   estoi         mean 0.8172
+   si_sdr        mean 18.3299
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-out-s2_encw/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_act', 's1_c', 's1_h', 's1_in', 's1_mask', 's1_w', 's1_z', 's2_decw', 's2_encw', 's2_est', 's2_in', 's2_lstm', 's2_mask', 's2_out'] -> 824 files in 9 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/out-s2_enc
+=== voicebank16k / dtln-resid-out-s2_enc: 824 utterances in 33.1s; failed 0
+   pesq_mos_lqo  mean 2.3385
+   stoi          mean 0.9255
+   estoi         mean 0.8168
+   si_sdr        mean 18.3082
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-out-s2_enc/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_act', 's1_c', 's1_h', 's1_in', 's1_mask', 's1_w', 's1_z', 's2_decw', 's2_enc', 's2_encw', 's2_est', 's2_in', 's2_mask', 's2_out'] -> 824 files in 8 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/out-s2_lstm
+=== voicebank16k / dtln-resid-out-s2_lstm: 824 utterances in 33.2s; failed 0
+   pesq_mos_lqo  mean 2.3371
+   stoi          mean 0.9255
+   estoi         mean 0.8168
+   si_sdr        mean 18.3029
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-out-s2_lstm/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_act', 's1_c', 's1_h', 's1_in', 's1_mask', 's1_w', 's1_z', 's2_decw', 's2_enc', 's2_encw', 's2_est', 's2_in', 's2_lstm', 's2_out'] -> 824 files in 9 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/out-s2_mask
+=== voicebank16k / dtln-resid-out-s2_mask: 824 utterances in 34.6s; failed 0
+   pesq_mos_lqo  mean 2.3476
+   stoi          mean 0.9256
+   estoi         mean 0.8171
+   si_sdr        mean 18.3396
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-out-s2_mask/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_act', 's1_c', 's1_h', 's1_in', 's1_mask', 's1_w', 's1_z', 's2_decw', 's2_enc', 's2_encw', 's2_in', 's2_lstm', 's2_mask', 's2_out'] -> 824 files in 9 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/out-s2_est
+=== voicebank16k / dtln-resid-out-s2_est: 824 utterances in 34.5s; failed 0
+   pesq_mos_lqo  mean 2.3390
+   stoi          mean 0.9255
+   estoi         mean 0.8169
+   si_sdr        mean 18.3060
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-out-s2_est/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_act', 's1_c', 's1_h', 's1_in', 's1_mask', 's1_w', 's1_z', 's2_enc', 's2_encw', 's2_est', 's2_in', 's2_lstm', 's2_mask', 's2_out'] -> 824 files in 9 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/out-s2_decw
+=== voicebank16k / dtln-resid-out-s2_decw: 824 utterances in 35.1s; failed 0
+   pesq_mos_lqo  mean 2.3870
+   stoi          mean 0.9257
+   estoi         mean 0.8174
+   si_sdr        mean 18.3363
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-out-s2_decw/voicebank16k.csv
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+  sig = lambda v: 1.0 / (1.0 + np.exp(-v))
+sim: on=['s1_act', 's1_c', 's1_h', 's1_in', 's1_mask', 's1_w', 's1_z', 's2_decw', 's2_enc', 's2_encw', 's2_est', 's2_in', 's2_lstm', 's2_mask'] -> 824 files in 10 s -> /tmp/claude-1000/-home-jurica-Desktop-benchmark/b2dcecdf-3748-45a3-828b-24c44e755653/scratchpad/resid/sim/out-s2_out
+=== voicebank16k / dtln-resid-out-s2_out: 824 utterances in 33.5s; failed 0
+   pesq_mos_lqo  mean 2.3372
+   stoi          mean 0.9255
+   estoi         mean 0.8168
+   si_sdr        mean 18.3057
+wrote /mnt/data/benchmark-data/enhanced/dtln-resid-out-s2_out/voicebank16k.csv
+PASS1 DONE

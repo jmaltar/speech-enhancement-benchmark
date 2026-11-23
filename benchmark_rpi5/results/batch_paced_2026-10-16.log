@@ -1,0 +1,15 @@
+=== mmse mcra paced 15:26:35 (second re-run; linger enabled)
+device   : RPI5 build 'Release gcc14.2 20261016T1526' tick_hz=1000000000 (ns)  conditions: core=2 affinity=ok sched_policy=1(SCHED_FIFO) rtprio=50 mlockall=ok cur_khz=2400000 max_khz=2400000
+platform : platform  : governor performance on 4 cpus, throttled=0x0
+[100/824] 293s  last p232_104: hops=245 overruns=0 proc_mean=38689.4 ns max|d|=1 duty=0.00242 void=0 status=ok
+[200/824] 533s  last p232_211: hops=88 overruns=0 proc_mean=38936.6 ns max|d|=1 duty=0.00243 void=0 status=ok
+[300/824] 784s  last p232_316: hops=102 overruns=0 proc_mean=38933.3 ns max|d|=1 duty=0.00243 void=0 status=ok
+[400/824] 1040s  last p257_008: hops=349 overruns=0 proc_mean=39006.3 ns max|d|=1 duty=0.00244 void=0 status=ok
+[500/824] 1307s  last p257_109: hops=133 overruns=0 proc_mean=38657.8 ns max|d|=1 duty=0.00242 void=0 status=ok
+[600/824] 1551s  last p257_210: hops=158 overruns=0 proc_mean=38767.9 ns max|d|=1 duty=0.00242 void=0 status=ok
+[700/824] 1800s  last p257_310: hops=98 overruns=0 proc_mean=38994.8 ns max|d|=1 duty=0.00244 void=0 status=ok
+[800/824] 2036s  last p257_410: hops=224 overruns=0 proc_mean=38427.9 ns max|d|=1 duty=0.0024 void=0 status=ok
+[824/824] 2090s  last p257_434: hops=131 overruns=0 proc_mean=38556.1 ns max|d|=1 duty=0.00241 void=0 status=ok
+done     : 824 runs in 2090s -> /dev/shm/results/voicebank16k_mmse-mcra_paced.csv
+summary  : fails=0 void_runs=0 total_overruns=0 worst max|d|=1 LSB  worst n_diff=1098  worst NMSE=-85.1 dB
+=== done 16:01:25 rc=0

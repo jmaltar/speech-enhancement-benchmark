@@ -1,0 +1,2 @@
+id,variant,hops,nres,overruns,crc_errors,resyncs,proc_min,proc_max,proc_mean,proc_median_data,e2e_median_us,ref,max_abs_lsb,n_diff,nmse_db,status
+p232_001,bypass,175,176,0,0,0,1334,9241,1387.4,1334,3887,/mnt/data/benchmark-data/voicebank48k/test/noisy/p232_001.wav,0,0,-inf,ok

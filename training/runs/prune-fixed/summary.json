@@ -1,0 +1,27 @@
+{
+ "mode": "fixed magnitude pruning to [30, 58, 0, 11] units, then fine-tune",
+ "epochs": 6,
+ "steps": 500,
+ "batch": 32,
+ "seg_seconds": 4.0,
+ "start_val": 17.683191167897192,
+ "best_val": -13.449793420988938,
+ "best_epoch": 6,
+ "final_epoch": 6,
+ "final_val": -13.449793420988938,
+ "live_units": [
+  30,
+  58,
+  0,
+  11
+ ],
+ "dense_params": 336627,
+ "dense_params_full": 986753,
+ "minutes": 31.618122506141663,
+ "steps_per_s": 1.5813715691147616,
+ "train_utterances": 10660,
+ "val_speakers": [
+  "p239",
+  "p244"
+ ]
+}

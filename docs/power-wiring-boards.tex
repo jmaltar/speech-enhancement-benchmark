@@ -1,0 +1,191 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,landscape,margin=1.3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\setlist{nosep, leftmargin=1.6em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.25em}
+\pagestyle{empty}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\wire}[2]{\textcolor{#1}{\rule[0.25ex]{1.6em}{1.6pt}}\,\textbf{#2}}
+\definecolor{wred}{RGB}{220,20,20}
+\definecolor{wwhite}{RGB}{170,170,170}
+\definecolor{wgreen}{RGB}{10,170,50}
+\definecolor{worange}{RGB}{250,140,0}
+\definecolor{wyellow}{RGB}{220,190,0}
+\definecolor{wblue}{RGB}{30,90,250}
+\definecolor{wgrey}{RGB}{154,160,166}
+% the debugger harness, colours as delivered
+\definecolor{hOrange}{HTML}{EE8A5C}
+\definecolor{hPurple}{HTML}{5A2F8C}
+\definecolor{hBrown}{HTML}{5B4038}
+\definecolor{hBlack}{HTML}{25211F}
+\definecolor{hYellow}{HTML}{E8CF2A}
+\definecolor{hTeal}{HTML}{1F7A68}
+\newcommand{\pic}[1]{\begin{center}\includegraphics[width=\linewidth,height=0.56\textheight,keepaspectratio]{figures/power-bench-#1.pdf}\end{center}\vspace{-0.8em}}
+\newcommand{\head}[2]{{\Large\bfseries #1}\hfill{\small 2 November 2026, revision 3 \quad #2}\par\smallskip}
+
+% the part shared by the three microcontroller boards: wired once, left wired between their sessions
+\newcommand{\fixturesteps}{%
+\item A \textbf{standard USB-A to USB-C cable} from the laptop into the \textbf{spare F411}'s USB-C socket.
+\item \wire{wred}{5V}: spare F411 \code{5V} (the one next to \code{B9}) $\to$ M1 \code{IN+}; M1 \code{IN-} $\to$
+breakout \code{VBUS}. M1's pins all sit on its one header and point down: the wires go on from underneath.
+\item \wire{wwhite}{A11$\to$D$-$}, \wire{wgreen}{A12$\to$D+}, \wire{black}{G$\to$GND}: spare F411 to your breakout
+(twist the two data wires).
+\item Spare F411 to M1: \wire{wyellow}{B6$\to$SCL}, \wire{wblue}{B7$\to$SDA}, \wire{worange}{3V3$\to$VCC},
+\wire{black}{GND$\to$GND} (the \code{GND} on its small 4-pin end header), \wire{wgrey}{5V$\to$VBS} (its \emph{other}
+\code{5V}, at the USB end; sense only, the logger subtracts the shunt drop). \code{ALE} stays free.
+\item Debugger to the spare F411, by its own harness colours: \wire{hOrange}{TXD$\to$A3}, \wire{hPurple}{RXD$\to$A2},
+\wire{hBrown}{GND$\to$G} (the \code{G} next to \code{5V}, USB end); the debugger in the laptop's other USB port. Its red
+(\code{3V3}) and light-grey (\code{5V}) wires are never connected.}
+\newcommand{\fixturechecks}{%
+\textbf{Steps 1--5 are the same on all three microcontroller pages:} leave them wired; between sessions only the
+board, its cable and the debugger's three SWD wires change. Wire by the printed pin labels; the pictured pin positions
+are approximate.}
+
+\begin{document}
+
+%=========================================================== overview page
+\head{Power measurement wiring --- all four boards}{overview}
+
+\textbf{One board at a time.} Each page below is one session: wire it, measure, move to the next. \textbf{Nothing is
+cut, nothing is bought, and every cable is a standard USB cable.} The Pi needs no wiring at all: it reports its own
+power (page 5).
+
+\begin{center}
+\begin{tabular}{@{}lllll@{}}
+\textbf{page} & \textbf{board measured} & \textbf{module} & \textbf{debugger's SWD wires} & \textbf{new image onto the board}\\
+\hline
+2 & STM32H723 & M1, \code{R100} & to the H723 & by script, debugger stays wired\\
+3 & ESP32-S3 & M1, \code{R100} & unused & over \code{COM}, then \code{COM} unplugged\\
+4 & main STM32F411 & M1, \code{R100} & to the main F411 & by script, debugger stays wired\\
+5 & Raspberry Pi 5 & none: its own power telemetry & unused & copied over the network, as always\\
+\end{tabular}
+\end{center}
+
+\textbf{One extra board, always the same one: the spare F411.} It is the USB breakout and the logger at once, in every
+session. Its USB-C socket is wired to its own header pins \code{5V}, \code{G}, \code{A11} (USB D$-$) and \code{A12}
+(USB D+). It runs the logger firmware, which never switches its own USB on and leaves \code{A11}/\code{A12} idle, so the
+USB lines pass straight through it to your USB-A female breakout, with the 5\,V line going through the current-sense
+module. The measured board's usual cable plugs into the breakout. The logger reads the module over I$^2$C and sends the
+readings to the laptop through the debugger's serial port. Its own current is drawn before the module, so it is not
+part of any reading.
+
+\textbf{The debugger stays wired for good.} Its harness wires keep their delivered colours, and they do not follow the
+usual convention: \textbf{black is SWDIO and red is 3V3}. Its \wire{hOrange}{TXD}, \wire{hPurple}{RXD} and
+\wire{hBrown}{GND} go to the spare F411 (the readings); its \wire{hBlack}{SWDIO}, \wire{hYellow}{SWCLK} and
+\wire{hTeal}{GND} go to whichever STM32 is measured, so a script can flash one
+image after another without touching a wire. \textbf{One catch:} when OpenOCD connects it switches on the chip's debug
+clocks, and they stay on through a reset; only a power cycle clears them. So the flash script switches them off again
+(writes 0 to \code{DBGMCU\_CR} and reads it back) and quits OpenOCD before any reading is taken. Check it once per STM32
+board: the idle reading after a scripted flash must equal the idle reading after unplugging and replugging the board's
+cable with the SWD wires off. If the two differ, replug the board's cable after every flash instead.
+
+\textbf{Check once, before the first session:} with only the spare F411 plugged in and running the logger,
+\code{dmesg -w} prints nothing (an \code{error -71} line means something sits on the USB data lines), its \code{5V}
+pin reads about 4.7\,V (after its input diode; the module records the actual voltage), and the readings arrive on the
+debugger's serial port. Then stream one utterance through the whole chain and confirm the output is bit-exact.
+
+\textbf{Every session:} \code{IN+} towards the supply, \code{IN-} towards the board, one common ground; run the exact
+image whose timing figures are in the results; two minutes' settling, then one minute each of idle, active (unpaced)
+and a short paced run as the check.
+
+{\scriptsize\color{black!60} The pictures are drawn to scale from the parts' own drawings (\code{docs/figures/},
+\code{bench-parts.tex}; the same figures go into the paper). The debugger's harness is drawn in its delivered colours;
+the INA226 module is drawn from a photo of the one on the bench; only the USB-A breakout is still generic. Revision 1 used both
+F411s in rotation; revision 2 merges the breakout and logger jobs into the spare F411; revision 3 (same day) measures
+the Pi with its own telemetry.}
+
+%=========================================================== H723
+\newpage
+\head{Session 1: STM32H723}{page 2 of 5}
+\pic{h723}
+\begin{minipage}[t]{0.53\linewidth}
+\begin{enumerate}
+\fixturesteps
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\begin{enumerate}[start=6]
+\item Debugger to the H723's SWD header (\code{GND CLK DIO 3.3V}, top edge): \wire{hBlack}{SWDIO$\to$DIO},
+\wire{hYellow}{SWCLK$\to$CLK}, \wire{hTeal}{GND$\to$GND}; its \code{3.3V} pin left free.
+\item The H723's usual USB-A to USB-C cable into your breakout, and into the H723. Flash the measurement image
+\code{0b3cc69b} by script.
+\end{enumerate}
+\smallskip
+{\small\fixturechecks}
+\end{minipage}
+
+%=========================================================== S3
+\newpage
+\head{Session 2: ESP32-S3}{page 3 of 5}
+\pic{s3}
+\begin{minipage}[t]{0.53\linewidth}
+\begin{enumerate}
+\fixturesteps
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\begin{enumerate}[start=6]
+\item The debugger's SWD wires stay unconnected: the S3 is flashed over \code{COM}. Flash the measurement image
+(\code{1f3cbc53}) over \code{COM}, then \textbf{unplug \code{COM}}: with both cables in, part of the board's current
+would come in through the second one and M1 would not see it. A new image means plugging \code{COM} back in for the
+flash.
+\item The S3's usual USB-A to USB-C cable into your breakout, and into \textbf{the S3's port marked \code{USB}} (the left-hand one with the antenna away from you; \code{COM} is the right-hand one).
+\end{enumerate}
+\smallskip
+{\small\fixturechecks}
+\end{minipage}
+
+%=========================================================== F411
+\newpage
+\head{Session 3: the main STM32F411}{page 4 of 5}
+\pic{f411}
+\begin{minipage}[t]{0.53\linewidth}
+\begin{enumerate}
+\fixturesteps
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\begin{enumerate}[start=6]
+\item Debugger to the main F411's 4-pin SWD end header (\code{3V3 DIO SCK GND}): \wire{hBlack}{SWDIO$\to$DIO},
+\wire{hYellow}{SWCLK$\to$SCK}, \wire{hTeal}{GND$\to$GND}; its \code{3V3} pin left free.
+\item The main F411's usual USB-A to USB-C cable into your breakout, and into the main F411. Flash its measurement
+image by script.
+\end{enumerate}
+\smallskip
+{\small\fixturechecks{} Two F411s are on the bench in this session only because one of them is the board measured;
+the spare F411 does exactly what it does in the other sessions.}
+\end{minipage}
+
+%=========================================================== Pi 5
+\newpage
+\head{Session 4: Raspberry Pi 5}{page 5 of 5}
+
+\textbf{Nothing to wire.} The Pi 5's power-management chip reports the voltage and current of each of its supply rails,
+\code{vcgencmd pmic\_read\_adc}. The Pi's power is the sum of voltage times current over those rails. \textbf{Decided
+2 November 2026:} the Pi is measured this way rather than with a module in its supply cable, so no part has to be bought
+and no session waits for one.
+
+\textbf{What the number leaves out, and the paper says so.} The rails are measured \emph{after} the chip's own converters,
+so the Pi's figure does not contain the conversion losses, or anything fed straight from the 5\,V input (USB ports, the
+fan). Every microcontroller figure is taken at the 5\,V input and does contain its regulator's losses. The Pi therefore
+looks better than it would on the same footing, by roughly the converters' loss. State it beside every Pi energy figure.
+
+\begin{enumerate}
+\item Official supply and cable as always; Ethernet; HDMI and USB devices unplugged.
+\item Sample \code{vcgencmd pmic\_read\_adc} once a second from a script \textbf{pinned to a core the benchmark does not
+use}: the sampler runs on the machine it measures, so keep it slow and off the measured core. Log the fan's PWM setting
+beside it.
+\item Two minutes' settling, then one minute each of idle, active (unpaced) and a short paced run, as on the other
+boards; \code{vcgencmd get\_throttled} must read \code{0x0} before and after.
+\end{enumerate}
+
+{\small\textbf{Check:} sum the rails at idle and compare with a typical Pi 5 idle draw; a figure far off means a rail is
+missing from the sum or a unit is wrong.}
+
+\end{document}

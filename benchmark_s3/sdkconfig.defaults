@@ -1,0 +1,82 @@
+# ============================================================================
+# benchmark_s3 -- pinned configuration.
+#
+# Every line here exists because leaving it at the ESP-IDF default would change
+# what the probe measures. This file is the ESP counterpart of the three
+# CMakeLists.txt edits recorded for the F411, and of the -O2/NDEBUG defect found
+# on the H723 on 2026-09-11: on that board the build system silently selected
+# -Os with assert() live, and it presented as a hardware anomaly. ESP-IDF
+# defaults to exactly the same two things, so they are pinned first.
+# ============================================================================
+
+# --- Clock ------------------------------------------------------------------
+# The IDF default for the S3 is 160 MHz. Benchmarking at 160 while reporting 240
+# is this platform's version of accidentally benchmarking on the HSI, which is
+# the failure the F411 bring-up had to rule out at register level.
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ=240
+
+# --- Optimisation: the direct analogue of the H723 -Os defect ---------------
+# IDF defaults to CONFIG_COMPILER_OPTIMIZATION_SIZE (-Os). The probe must be
+# built as the deployed firmware is, and -Os cost the H723 its vsqrt inlining
+# and made the M7 look 2.2x slower than the M4 on sqrt kernels.
+CONFIG_COMPILER_OPTIMIZATION_PERF=y
+
+# --- Assertions: the NDEBUG analogue ---------------------------------------
+# IDF enables assertions by default, which puts them inside timed regions --
+# the same thing -DNDEBUG was added to prevent on the STM32s.
+CONFIG_COMPILER_OPTIMIZATION_ASSERTIONS_DISABLE=y
+
+# --- Cache -----------------------------------------------------------------
+# Code runs XIP from flash through the instruction cache, so cache geometry is a
+# measured variable here the way DTCM-vs-AXI is on the H723. Pinned at the
+# larger configuration; the smaller ones are the comparison, not the default.
+CONFIG_ESP32S3_INSTRUCTION_CACHE_32KB=y
+CONFIG_ESP32S3_INSTRUCTION_CACHE_LINE_32B=y
+CONFIG_ESP32S3_DATA_CACHE_64KB=y
+CONFIG_ESP32S3_DATA_CACHE_LINE_32B=y
+
+# --- Flash ------------------------------------------------------------------
+# The module carries 16 MB, confirmed by esptool on 2026-09-11. The IDF default
+# of 2 MB is not merely wasteful here: task 4's Model Size row for this tier is
+# derived from flash remaining, so leaving it at 2 MB would understate the S3's
+# model budget by 8x and could manufacture a false "does not fit" verdict.
+CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
+CONFIG_ESPTOOLPY_FLASHMODE_QIO=y
+CONFIG_ESPTOOLPY_FLASHFREQ_80M=y
+
+# --- PSRAM ------------------------------------------------------------------
+# Confirmed present 2026-09-11: "Embedded PSRAM 8MB (AP_3v3)", i.e. an
+# ESP32-S3R8 with OCTAL PSRAM. Enabled so the internal-SRAM-vs-PSRAM placement
+# comparison is available -- that comparison is this tier's methodological
+# contribution, the counterpart of the H723's DTCM-vs-AXI matrix.
+#
+# Enabling it does NOT move the benchmark working set: the weight pool is a
+# static array and stays in internal .bss. g_plat.pool_addr witnesses where it
+# actually landed, which is the point -- buffers silently landing in octal-SPI
+# PSRAM collapse throughput, and that must be a measured row, never an accident.
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_MODE_OCT=y
+CONFIG_SPIRAM_SPEED_80M=y
+CONFIG_SPIRAM_USE_MALLOC=y
+# Required for the linker fragment that moves the benchmark working set into
+# PSRAM (-DBENCH_MEM=1). Harmless when unused: without the fragment nothing is
+# placed there, which the pool_addr witness confirms.
+CONFIG_SPIRAM_ALLOW_BSS_SEG_EXTERNAL_MEMORY=y
+
+# --- USB CDC ---------------------------------------------------------------
+# TinyUSB on the S3's native USB, matching the STM32 tiers. Not the USB-Serial-
+# JTAG peripheral: that is a different controller and would not be the same
+# measurement. CDC, not UAC, per the locked toolchain decision.
+CONFIG_TINYUSB_CDC_ENABLED=y
+CONFIG_TINYUSB_CDC_RX_BUFSIZE=1024
+CONFIG_TINYUSB_CDC_TX_BUFSIZE=1024
+
+# --- FreeRTOS / core pinning -----------------------------------------------
+# Which core ran, and what the other was doing, is a recorded output: it feeds
+# the duty-cycle logging that the power measurement depends on.
+CONFIG_FREERTOS_UNICORE=n
+CONFIG_FREERTOS_HZ=1000
+
+# --- Console ---------------------------------------------------------------
+CONFIG_ESP_CONSOLE_UART_DEFAULT=y

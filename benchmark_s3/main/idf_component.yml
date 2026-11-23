@@ -1,0 +1,13 @@
+## Managed component dependencies.
+## Versions are PINNED for the same reason CMSIS-DSP 1.10.0 and TinyUSB 0.21.0
+## are vendored at fixed versions on the STM32 tiers: task 3 records flash/SRAM
+## remaining after the vendor libraries are linked, and a moving dependency
+## makes those figures non-reproducible.
+dependencies:
+  idf: ">=5.4"
+  espressif/esp-dsp: "~1.5.0"
+  espressif/esp_tinyusb: "~1.7.0"
+  ## The CMSIS-NN analogue. esp-dsp has no int8 matvec at all, so this is what a
+  ## deployed INT8 model actually calls and it is the only credible basis for
+  ## costing the compression programme on this tier.
+  espressif/esp-nn: "^1.0.0"

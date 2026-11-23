@@ -1,0 +1,131 @@
+=== score p020 voicebank16k 09:57:02
+=== voicebank16k / dtln-rpi5-p020-i16pt: 824 utterances in 28.0s; failed 0
+   pesq_mos_lqo  mean 2.3371
+   stoi          mean 0.9255
+   estoi         mean 0.8168
+   si_sdr        mean 18.3060
+wrote /mnt/data/benchmark-data/enhanced/dtln-rpi5-p020-i16pt/voicebank16k.csv
+=== score full voicebank16k 09:57:30
+=== voicebank16k / dtln-rpi5-full-i16: 824 utterances in 27.6s; failed 0
+   pesq_mos_lqo  mean 2.3659
+   stoi          mean 0.9175
+   estoi         mean 0.8237
+   si_sdr        mean 16.9005
+wrote /mnt/data/benchmark-data/enhanced/dtln-rpi5-full-i16/voicebank16k.csv
+=== score p020 dns 09:57:59
+=== dns / dtln-rpi5-p020-i16pt: 150 utterances in 11.2s; failed 0
+   pesq_mos_lqo  mean 1.7191
+   stoi          mean 0.8974
+   estoi         mean 0.7990
+   si_sdr        mean 11.3064
+wrote /mnt/data/benchmark-data/enhanced/dtln-rpi5-p020-i16pt/dns.csv
+=== score full dns 09:58:11
+=== dns / dtln-rpi5-full-i16: 150 utterances in 11.3s; failed 0
+   pesq_mos_lqo  mean 2.3004
+   stoi          mean 0.9456
+   estoi         mean 0.8834
+   si_sdr        mean 16.2314
+wrote /mnt/data/benchmark-data/enhanced/dtln-rpi5-full-i16/dns.csv
+=== compare p020 vs host oracle voicebank16k
+=== voicebank16k: dtln-rpi5-p020-i16pt (B) vs dtln-prune-learned-shrunk-i16pt-tflm (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    2.3371   2.3371   -0.0000  [-0.0000, +0.0000]    0.10      0.37 8.44e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = -0.0361   (paired wilcoxon, n = 824)
+stoi            0.9255   0.9255   +0.0000  [-0.0000, +0.0000]    0.01     0.648 8.44e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = +0.0184   (paired wilcoxon, n = 824)
+estoi           0.8168   0.8168   +0.0000  [-0.0000, +0.0000]    0.01     0.518 8.44e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = +0.0260   (paired wilcoxon, n = 824)
+si_sdr         18.3060  18.3060   +0.0000  [-0.0001, +0.0001]    0.50     0.777         0  EQUIVALENT (same to the stated precision)
+             Cohen's d_z = +0.0099   (paired t, n = 824)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw      0.37  adj         1  n.s.
+  stoi           raw     0.648  adj         1  n.s.
+  estoi          raw     0.518  adj         1  n.s.
+  si_sdr         raw     0.777  adj         1  n.s.
+=== compare p020 vs H723 voicebank16k
+=== voicebank16k: dtln-rpi5-p020-i16pt (B) vs dtln-h723-p020-i16pt (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    2.3371   2.3371   -0.0000  [-0.0000, +0.0000]    0.10      0.24 8.44e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = -0.0473   (paired wilcoxon, n = 824)
+stoi            0.9255   0.9255   -0.0000  [-0.0000, +0.0000]    0.01     0.341 8.44e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = -0.0383   (paired wilcoxon, n = 824)
+estoi           0.8168   0.8168   -0.0000  [-0.0000, +0.0000]    0.01     0.947 8.44e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = -0.0027   (paired wilcoxon, n = 824)
+si_sdr         18.3060  18.3060   -0.0000  [-0.0001, +0.0000]    0.50      0.45         0  EQUIVALENT (same to the stated precision)
+             Cohen's d_z = -0.0263   (paired t, n = 824)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw      0.24  adj      0.96  n.s.
+  stoi           raw     0.341  adj         1  n.s.
+  estoi          raw     0.947  adj         1  n.s.
+  si_sdr         raw      0.45  adj         1  n.s.
+=== compare full vs host oracle voicebank16k
+=== voicebank16k: dtln-rpi5-full-i16 (B) vs dtln-i16-tflm (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    2.3660   2.3659   -0.0000  [-0.0001, +0.0001]    0.10     0.587 8.47e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = -0.0219   (paired wilcoxon, n = 824)
+stoi            0.9175   0.9175   -0.0000  [-0.0000, +0.0000]    0.01      0.94 8.44e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = -0.0030   (paired wilcoxon, n = 824)
+estoi           0.8237   0.8237   +0.0000  [-0.0000, +0.0000]    0.01      0.52 8.44e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = +0.0259   (paired wilcoxon, n = 824)
+si_sdr         16.9004  16.9005   +0.0001  [-0.0009, +0.0011]    0.50     0.842         0  EQUIVALENT (same to the stated precision)
+             Cohen's d_z = +0.0069   (paired t, n = 824)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw     0.587  adj         1  n.s.
+  stoi           raw      0.94  adj         1  n.s.
+  estoi          raw      0.52  adj         1  n.s.
+  si_sdr         raw     0.842  adj         1  n.s.
+=== compare p020 vs host oracle dns
+=== dns: dtln-rpi5-p020-i16pt (B) vs dtln-prune-learned-shrunk-i16pt-tflm (A), paired by utterance, n = 150; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    1.7190   1.7191   +0.0000  [-0.0000, +0.0000]    0.10     0.735  1.15e-26  EQUIVALENT (same to the stated precision)
+             rank-biserial r = +0.0319   (paired wilcoxon, n = 150)
+stoi            0.8974   0.8974   +0.0000  [-0.0000, +0.0000]    0.01      0.65  1.15e-26  EQUIVALENT (same to the stated precision)
+             rank-biserial r = +0.0426   (paired wilcoxon, n = 150)
+estoi           0.7990   0.7990   -0.0000  [-0.0000, +0.0000]    0.01     0.581  1.15e-26  EQUIVALENT (same to the stated precision)
+             rank-biserial r = -0.0520   (paired wilcoxon, n = 150)
+si_sdr         11.3066  11.3064   -0.0002  [-0.0006, +0.0002]    0.50     0.426         0  EQUIVALENT (same to the stated precision)
+             Cohen's d_z = -0.0652   (paired t, n = 150)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw     0.735  adj         1  n.s.
+  stoi           raw      0.65  adj         1  n.s.
+  estoi          raw     0.581  adj         1  n.s.
+  si_sdr         raw     0.426  adj         1  n.s.
+=== compare p020 vs H723 dns
+=== dns: dtln-rpi5-p020-i16pt (B) vs dtln-h723-p020-i16pt (A), paired by utterance, n = 150; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    1.7190   1.7191   +0.0000  [-0.0000, +0.0000]    0.10     0.204  1.15e-26  EQUIVALENT (same to the stated precision)
+             rank-biserial r = +0.1195   (paired wilcoxon, n = 150)
+stoi            0.8974   0.8974   -0.0000  [-0.0000, +0.0000]    0.01     0.981  1.15e-26  EQUIVALENT (same to the stated precision)
+             rank-biserial r = -0.0022   (paired wilcoxon, n = 150)
+estoi           0.7990   0.7990   -0.0000  [-0.0000, +0.0000]    0.01     0.239  1.15e-26  EQUIVALENT (same to the stated precision)
+             rank-biserial r = -0.1108   (paired wilcoxon, n = 150)
+si_sdr         11.3069  11.3064   -0.0005  [-0.0012, +0.0002]    0.50     0.264  1.3e-298  EQUIVALENT (same to the stated precision)
+             Cohen's d_z = -0.0916   (paired t, n = 150)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw     0.204  adj     0.817  n.s.
+  stoi           raw     0.981  adj     0.981  n.s.
+  estoi          raw     0.239  adj     0.817  n.s.
+  si_sdr         raw     0.264  adj     0.817  n.s.
+=== compare full vs host oracle dns
+=== dns: dtln-rpi5-full-i16 (B) vs dtln-i16-tflm (A), paired by utterance, n = 150; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    2.3006   2.3004   +0.0001  [-0.0004, +0.0005]    0.10     0.772  1.15e-26  EQUIVALENT (same to the stated precision)
+             rank-biserial r = +0.0273   (paired wilcoxon, n = 150)
+stoi            0.9456   0.9456   -0.0000  [-0.0000, +0.0000]    0.01     0.817  1.15e-26  EQUIVALENT (same to the stated precision)
+             rank-biserial r = -0.0218   (paired wilcoxon, n = 150)
+estoi           0.8834   0.8834   +0.0000  [-0.0000, +0.0000]    0.01     0.837  1.15e-26  EQUIVALENT (same to the stated precision)
+             rank-biserial r = +0.0193   (paired wilcoxon, n = 150)
+si_sdr         16.2298  16.2314   +0.0017  [-0.0024, +0.0058]    0.50     0.501 9.55e-184  EQUIVALENT (same to the stated precision)
+             Cohen's d_z = +0.0551   (paired t, n = 150)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw     0.772  adj         1  n.s.
+  stoi           raw     0.817  adj         1  n.s.
+  estoi          raw     0.837  adj         1  n.s.
+  si_sdr         raw     0.501  adj         1  n.s.
+=== SCORING DONE 09:58:27

@@ -1,0 +1,37 @@
+=== bypass default 14:19:02
+device   : STM32H723 build 'Release DTCM 20261014T1' image_crc32=52d67c14 tick_hz=550000000  (verified against ../benchmark_h723/results/image_52d67c14.bin)
+[200/824] 56s  last p232_211: hops=88 overruns=0 proc_mean=403.8 max|d|=0 status=ok
+[400/824] 110s  last p257_008: hops=349 overruns=0 proc_mean=403.9 max|d|=0 status=ok
+[600/824] 164s  last p257_210: hops=158 overruns=0 proc_mean=404.2 max|d|=0 status=ok
+[800/824] 216s  last p257_410: hops=224 overruns=0 proc_mean=403.7 max|d|=0 status=ok
+[824/824] 222s  last p257_434: hops=131 overruns=0 proc_mean=404.1 max|d|=0 status=ok
+done     : 824 runs in 222s -> ../benchmark_h723/results/voicebank16k_bypass.csv
+summary  : fails=0 total_overruns=0 worst max|d|=0 LSB  worst n_diff=0  worst NMSE=-inf dB
+=== specsub mcra 14:22:44
+device   : STM32H723 build 'Release DTCM 20261014T1' image_crc32=52d67c14 tick_hz=550000000  (verified against ../benchmark_h723/results/image_52d67c14.bin)
+[200/824] 62s  last p232_211: hops=88 overruns=0 proc_mean=125829.7 max|d|=1 status=ok
+[400/824] 122s  last p257_008: hops=349 overruns=0 proc_mean=126604.7 max|d|=3 status=ok
+[600/824] 182s  last p257_210: hops=158 overruns=0 proc_mean=126389.5 max|d|=1 status=ok
+[800/824] 241s  last p257_410: hops=224 overruns=0 proc_mean=126504.8 max|d|=1 status=ok
+[824/824] 248s  last p257_434: hops=131 overruns=0 proc_mean=126345.4 max|d|=1 status=ok
+done     : 824 runs in 248s -> ../benchmark_h723/results/voicebank16k_specsub-mcra.csv
+summary  : fails=0 total_overruns=0 worst max|d|=3 LSB  worst n_diff=3321  worst NMSE=-80.2 dB
+=== wiener mcra 14:26:52
+device   : STM32H723 build 'Release DTCM 20261014T1' image_crc32=52d67c14 tick_hz=550000000  (verified against ../benchmark_h723/results/image_52d67c14.bin)
+[200/824] 62s  last p232_211: hops=88 overruns=0 proc_mean=126970.5 max|d|=1 status=ok
+[400/824] 122s  last p257_008: hops=349 overruns=0 proc_mean=127615.8 max|d|=7 status=ok
+[600/824] 183s  last p257_210: hops=158 overruns=0 proc_mean=127369.7 max|d|=1 status=ok
+[800/824] 241s  last p257_410: hops=224 overruns=0 proc_mean=127380.4 max|d|=1 status=ok
+[824/824] 248s  last p257_434: hops=131 overruns=0 proc_mean=127204.9 max|d|=1 status=ok
+done     : 824 runs in 248s -> ../benchmark_h723/results/voicebank16k_wiener-mcra.csv
+summary  : fails=0 total_overruns=0 worst max|d|=7 LSB  worst n_diff=2974  worst NMSE=-77.0 dB
+=== mmse mcra 14:31:00
+device   : STM32H723 build 'Release DTCM 20261014T1' image_crc32=52d67c14 tick_hz=550000000  (verified against ../benchmark_h723/results/image_52d67c14.bin)
+[200/824] 68s  last p232_211: hops=88 overruns=0 proc_mean=224851.2 max|d|=1 status=ok
+[400/824] 133s  last p257_008: hops=349 overruns=0 proc_mean=225371.0 max|d|=2 status=ok
+[600/824] 199s  last p257_210: hops=158 overruns=0 proc_mean=224794.4 max|d|=1 status=ok
+[800/824] 263s  last p257_410: hops=224 overruns=0 proc_mean=222148.1 max|d|=1 status=ok
+[824/824] 270s  last p257_434: hops=131 overruns=0 proc_mean=221573.0 max|d|=1 status=ok
+done     : 824 runs in 270s -> ../benchmark_h723/results/voicebank16k_mmse-mcra.csv
+summary  : fails=0 total_overruns=0 worst max|d|=2 LSB  worst n_diff=2932  worst NMSE=-81.6 dB
+BATCH-DONE

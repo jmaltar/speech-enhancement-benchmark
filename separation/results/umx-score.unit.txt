@@ -1,0 +1,7 @@
+Running as unit: umx-score.service; invocation ID: 515c88b306994715abb144006b4a4b71
+          Finished with result: success
+Main processes terminated with: code=exited, status=0/SUCCESS
+               Service runtime: 26min 12.632s
+             CPU time consumed: 32min 41.963s
+                   Memory peak: 7G (swap: 1G)
+exit=0

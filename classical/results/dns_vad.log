@@ -1,0 +1,118 @@
+Provenance (asserted, not assumed):
+  pesq_itu_sources   P.862/.1/.2 v2.0 (Oct 2005), vendored
+  pystoi             0.4.1
+  resampler          resample_poly(1,3), 577-tap Kaiser(12) @ 7800 Hz
+
+=== dns / bypass: 150 utterances in 13.9s (12 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       1.5822    [1.5082, 1.6563]    [1.5163, 1.6652]   1.4536   1.034   3.337
+  stoi               0.9152    [0.9047, 0.9257]    [0.9041, 0.9249]   0.9312   0.687   0.997
+  estoi              0.8099    [0.7902, 0.8295]    [0.7895, 0.8284]   0.8406   0.391   0.990
+  si_sdr             9.2295   [8.3320, 10.1271]   [8.3433, 10.0922]   8.9981  -0.010  21.482
+  largest t-vs-BCa edge discrepancy: 0.03484 (si_sdr), 10000 resamples, seed 20260913
+
+=== dns / specsub: 150 utterances in 12.5s (12 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       1.5022    [1.4422, 1.5622]    [1.4496, 1.5661]   1.3906   1.053   2.759
+  stoi               0.8982    [0.8876, 0.9088]    [0.8872, 0.9081]   0.9134   0.679   0.994
+  estoi              0.7811    [0.7627, 0.7994]    [0.7625, 0.7985]   0.8055   0.415   0.976
+  si_sdr             8.8483    [8.0901, 9.6065]    [8.1045, 9.5869]   8.8436  -1.014  21.453
+  largest t-vs-BCa edge discrepancy: 0.01963 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_mos_lqo by snr_bin  (bins, BCa 95% per bin):
+    0-4 dB                 n=36   mean 1.1755  sd 0.1111  [1.1442, 1.2166]
+    5-9 dB                 n=44   mean 1.4122  sd 0.2817  [1.3481, 1.5213]
+    10-14 dB               n=40   mean 1.6206  sd 0.3230  [1.5300, 1.7295]
+    15-19 dB               n=30   mean 1.8684  sd 0.3679  [1.7492, 2.0087]
+    4 bins, min N = 30, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+
+=== dns / wiener: 150 utterances in 13.3s (12 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       1.3095    [1.2684, 1.3505]    [1.2727, 1.3539]   1.2465   1.044   2.299
+  stoi               0.8086    [0.7946, 0.8226]    [0.7940, 0.8218]   0.8228   0.578   0.971
+  estoi              0.6658    [0.6456, 0.6860]    [0.6455, 0.6852]   0.6787   0.321   0.924
+  si_sdr             5.6251    [4.9144, 6.3359]    [4.9287, 6.3512]   5.2334  -4.233  18.684
+  largest t-vs-BCa edge discrepancy: 0.01528 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_mos_lqo by snr_bin  (bins, BCa 95% per bin):
+    0-4 dB                 n=36   mean 1.1381  sd 0.0891  [1.1135, 1.1714]
+    5-9 dB                 n=44   mean 1.2715  sd 0.2259  [1.2211, 1.3604]
+    10-14 dB               n=40   mean 1.4049  sd 0.2551  [1.3364, 1.4930]
+    15-19 dB               n=30   mean 1.4435  sd 0.3010  [1.3561, 1.5733]
+    4 bins, min N = 30, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+
+=== dns / mmse: 150 utterances in 12.8s (12 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       1.4607    [1.4098, 1.5117]    [1.4144, 1.5142]   1.3855   1.048   2.601
+  stoi               0.8223    [0.8091, 0.8356]    [0.8085, 0.8348]   0.8363   0.610   0.973
+  estoi              0.6734    [0.6535, 0.6932]    [0.6532, 0.6924]   0.6823   0.359   0.921
+  si_sdr             6.7179    [6.0390, 7.3968]    [6.0559, 7.4003]   6.6221  -3.388  19.447
+  largest t-vs-BCa edge discrepancy: 0.01687 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_mos_lqo by snr_bin  (bins, BCa 95% per bin):
+    0-4 dB                 n=36   mean 1.1819  sd 0.1118  [1.1516, 1.2265]
+    5-9 dB                 n=44   mean 1.4060  sd 0.2566  [1.3438, 1.4985]
+    10-14 dB               n=40   mean 1.5754  sd 0.2813  [1.4913, 1.6622]
+    15-19 dB               n=30   mean 1.7229  sd 0.3215  [1.6207, 1.8481]
+    4 bins, min N = 30, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+
+  bypass: every utterance bit-identical to its input; scores ARE the Noisy row.
+
+=== dns: enhanced (B) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 12 tests (headline-pooled-per-corpus)
+
+  --- specsub
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.5822   1.5022   -0.0474  [-0.0809, -0.0190]    0.10   0.00155   0.00506  different but equivalent (real, below the margin that matters)
+               rank-biserial r = -0.2978   (paired wilcoxon, n = 150)
+  stoi            0.9152   0.8982   -0.0149  [-0.0181, -0.0119]    0.01  2.36e-18     0.997  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.8225   (paired wilcoxon, n = 150)
+  estoi           0.8099   0.7811   -0.0262  [-0.0328, -0.0200]    0.01  7.72e-12         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.6442   (paired wilcoxon, n = 150)
+  si_sdr          9.2295   8.8483   -0.3812  [-0.7282, -0.0343]    0.50     0.071     0.286  INCONCLUSIVE -- underpowered. This is NOT a no-difference result: the data cannot rule out a difference larger than the margin.
+               Cohen's d_z = -0.1485   (paired t, n = 150)
+
+  --- wiener
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.5822   1.3095   -0.2288  [-0.2819, -0.1803]    0.10  9.62e-15         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.7289   (paired wilcoxon, n = 150)
+  stoi            0.9152   0.8086   -0.1047  [-0.1136, -0.0964]    0.01  2.35e-26         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.9998   (paired wilcoxon, n = 150)
+  estoi           0.8099   0.6658   -0.1420  [-0.1567, -0.1279]    0.01  1.31e-25         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.9846   (paired wilcoxon, n = 150)
+  si_sdr          9.2295   5.6251   -3.6044  [-4.2412, -2.9676]    0.50   1.1e-16         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = -0.7649   (paired t, n = 150)
+
+  --- mmse
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.5822   1.4607   -0.0853  [-0.1266, -0.0487]    0.10  6.41e-05     0.286  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.3762   (paired wilcoxon, n = 150)
+  stoi            0.9152   0.8223   -0.0911  [-0.0990, -0.0838]    0.01  2.35e-26         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.9998   (paired wilcoxon, n = 150)
+  estoi           0.8099   0.6734   -0.1341  [-0.1464, -0.1222]    0.01  2.93e-26         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.9979   (paired wilcoxon, n = 150)
+  si_sdr          9.2295   6.7179   -2.5116  [-3.0757, -1.9475]    0.50  1.09e-11         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = -0.6017   (paired t, n = 150)
+
+  Holm-adjusted p(diff):
+    specsub pesq_mos_lqo   raw   0.00155  adj   0.00311  significant
+    specsub stoi           raw  2.36e-18  adj  1.89e-17  significant
+    specsub estoi          raw  7.72e-12  adj  3.86e-11  significant
+    specsub si_sdr         raw     0.071  adj     0.071  n.s.
+    wiener  pesq_mos_lqo   raw  9.62e-15  adj  5.77e-14  significant
+    wiener  stoi           raw  2.35e-26  adj  2.82e-25  significant
+    wiener  estoi          raw  1.31e-25  adj  1.17e-24  significant
+    wiener  si_sdr         raw   1.1e-16  adj  7.69e-16  significant
+    mmse    pesq_mos_lqo   raw  6.41e-05  adj  0.000192  significant
+    mmse    stoi           raw  2.35e-26  adj  2.82e-25  significant
+    mmse    estoi          raw  2.93e-26  adj  2.93e-25  significant
+    mmse    si_sdr         raw  1.09e-11  adj  4.37e-11  significant
+
+=== DONE
+exit=0

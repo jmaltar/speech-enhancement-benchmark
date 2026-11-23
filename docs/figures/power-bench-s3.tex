@@ -1,0 +1,18 @@
+% Power-measurement bench, ESP32-S3 session (top view). Build: pdflatex in this directory.
+\documentclass[tikz, border=1.5mm]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{tikz}
+\usetikzlibrary{calc, positioning}
+\input{bench-parts.tex}
+
+\begin{document}
+\newif\ifSWD \SWDfalse
+\def\DUTname{ESP32-S3 (S3R8 devkit): cable in its\\USB port (left), COM port unplugged}
+\def\DUTpre{\coordinate (dutUSB) at (155.0,-15.5);}   % the USB port is the LEFT one on this board (149 + 6.0)
+\def\DUTshadow{\shadow{149}{-14}{25.4}{63}}
+\def\DUTboard{\DevKitS{s3}{149}{-14}}
+\def\DUTpost{}
+\input{power-bench-body.tex}
+\end{document}

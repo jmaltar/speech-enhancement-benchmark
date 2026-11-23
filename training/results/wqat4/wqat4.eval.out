@@ -1,0 +1,43 @@
+scored wqat4: ['f32', 'i16pt'] on voicebank16k; log /home/jurica/benchmark/training/runs/wqat4/eval.log
+  === voicebank16k: enhanced (B, noise tracker mcra) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 8 tests (headline-pooled-per-corpus
+  === voicebank16k: dtln-wqat4-shrunk-f32 (B) vs dtln-prune-learned-shrunk-f32 (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.4371   2.3674   -0.0594  [-0.0638, -0.0553]    0.10 2.84e-127  2.28e-39  different but equivalent (real, below the margin that matte
+  stoi            0.9263   0.9261   -0.0003  [-0.0003, -0.0002]    0.01  1.23e-24 8.44e-137  different but equivalent (real, below the margin that matte
+  si_sdr         18.4478  18.3546   -0.0932  [-0.0991, -0.0872]    0.50 1.26e-108         0  different but equivalent (real, below the margin that matte
+  === voicebank16k: dtln-wqat4-shrunk-i16pt-tflm (B) vs dtln-prune-learned-shrunk-f32 (A), paired by utterance, n = 824; Holm over 4 metrics of this pai
+  pesq_mos_lqo    2.4371   2.3266   -0.0950  [-0.1011, -0.0892]    0.10 1.99e-129     0.089  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9263   0.9254   -0.0008  [-0.0009, -0.0008]    0.01   1.4e-47 1.07e-136  different but equivalent (real, below the margin that matte
+  si_sdr         18.4478  18.2976   -0.1502  [-0.1595, -0.1408]    0.50 9.54e-112 2.79e-310  different but equivalent (real, below the margin that matte
+=== voicebank16k: dtln-wqat4-shrunk-i16pt-tflm (B) vs dtln-prune-learned-shrunk-i16pt-tflm (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    2.3371   2.3266   -0.0092  [-0.0103, -0.0082]    0.10  3.65e-56 1.69e-135  different but equivalent (real, below the margin that matters)
+             rank-biserial r = -0.6350   (paired wilcoxon, n = 824)
+stoi            0.9255   0.9254   -0.0000  [-0.0001, +0.0000]    0.01     0.367 8.44e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = -0.0363   (paired wilcoxon, n = 824)
+estoi           0.8168   0.8166   -0.0002  [-0.0003, -0.0001]    0.01  0.000628 8.56e-137  different but equivalent (real, below the margin that matters)
+             rank-biserial r = -0.1375   (paired wilcoxon, n = 824)
+si_sdr         18.3060  18.2976   -0.0084  [-0.0119, -0.0049]    0.50  9.51e-05         0  different but equivalent (real, below the margin that matters)
+             Cohen's d_z = -0.1366   (paired t, n = 824)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw  3.65e-56  adj  1.46e-55  significant
+  stoi           raw     0.367  adj     0.367  n.s.
+  estoi          raw  0.000628  adj   0.00126  significant
+  si_sdr         raw  9.51e-05  adj  0.000285  significant
+=== voicebank16k: dtln-wqat4-shrunk-i16pt-tflm (B) vs dtln-wqat3-shrunk-i16pt-tflm (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    2.2916   2.3266   +0.0301  [+0.0280, +0.0321]    0.10 3.98e-123 3.25e-127  different but equivalent (real, below the margin that matters)
+             rank-biserial r = +0.9490   (paired wilcoxon, n = 824)
+stoi            0.9250   0.9254   +0.0004  [+0.0004, +0.0005]    0.01  9.15e-52    1e-136  different but equivalent (real, below the margin that matters)
+             rank-biserial r = +0.6087   (paired wilcoxon, n = 824)
+estoi           0.8156   0.8166   +0.0010  [+0.0009, +0.0011]    0.01  8.52e-44 6.47e-136  different but equivalent (real, below the margin that matters)
+             rank-biserial r = +0.5581   (paired wilcoxon, n = 824)
+si_sdr         18.0590  18.2976   +0.2386  [+0.2245, +0.2526]    0.50 5.45e-122 4.66e-139  different but equivalent (real, below the margin that matters)
+             Cohen's d_z = +0.9770   (paired t, n = 824)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw 3.98e-123  adj 1.59e-122  significant
+  stoi           raw  9.15e-52  adj  1.83e-51  significant
+  estoi          raw  8.52e-44  adj  8.52e-44  significant
+  si_sdr         raw 5.45e-122  adj 1.64e-121  significant
+WQAT4_QUEUE_DONE

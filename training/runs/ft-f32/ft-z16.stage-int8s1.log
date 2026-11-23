@@ -1,0 +1,83 @@
+Provenance (asserted, not assumed):
+  pesq_itu_sources   P.862/.1/.2 v2.0 (Oct 2005), vendored
+  pystoi             0.4.1
+  resampler          resample_poly(1,3), 577-tap Kaiser(12) @ 7800 Hz
+
+=== voicebank16k / bypass: 824 utterances in 31.9s (14 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       1.9707    [1.9191, 2.0222]    [1.9201, 2.0228]   1.8005   1.031   4.308
+  stoi               0.9210    [0.9162, 0.9259]    [0.9159, 0.9256]   0.9397   0.561   1.000
+  estoi              0.7867    [0.7765, 0.7969]    [0.7763, 0.7963]   0.8138   0.276   0.998
+  si_sdr             8.4455    [8.0614, 8.8297]    [8.0626, 8.8366]   7.3788  -3.121  17.099
+  largest t-vs-BCa edge discrepancy: 0.00691 (si_sdr), 10000 resamples, seed 20260913
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.
+
+INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.
+
+INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.
+
+INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.INFO: Created TensorFlow Lite XNNPACK delegate for CPU.INFO: 
+Created TensorFlow Lite XNNPACK delegate for CPU.
+Created TensorFlow Lite XNNPACK delegate for CPU.
+
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+=== voicebank16k / dtln-ft-z16-int8s1-tflm: 824 utterances in 58.1s (14 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       1.6831    [1.6510, 1.7153]    [1.6507, 1.7165]   1.6181   1.028   2.943
+  stoi               0.8859    [0.8808, 0.8911]    [0.8806, 0.8908]   0.9068   0.487   0.982
+  estoi              0.7232    [0.7134, 0.7330]    [0.7131, 0.7326]   0.7518   0.214   0.957
+  si_sdr             4.3686    [4.0487, 4.6886]    [4.0490, 4.6958]   5.4135  -9.113  12.177
+  largest t-vs-BCa edge discrepancy: 0.00719 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_mos_lqo by noise x snr_db  (cells, BCa 95% per cell):
+    bus 2.5                n=42   mean 1.4510  sd 0.2744  [1.3803, 1.5456]
+    bus 7.5                n=41   mean 1.8523  sd 0.3923  [1.7335, 1.9730]
+    bus 12.5               n=41   mean 2.1270  sd 0.3514  [2.0164, 2.2283]
+    bus 17.5               n=40   mean 2.3883  sd 0.3231  [2.2872, 2.4825]
+    cafe 2.5               n=42   mean 1.1405  sd 0.1017  [1.1158, 1.1798]
+    cafe 7.5               n=40   mean 1.3304  sd 0.1559  [1.2859, 1.3812]
+    cafe 12.5              n=41   mean 1.5837  sd 0.2786  [1.4952, 1.6638]
+    cafe 17.5              n=41   mean 1.9106  sd 0.3144  [1.8027, 1.9955]
+    living 2.5             n=42   mean 1.1574  sd 0.0820  [1.1351, 1.1843]
+    living 7.5             n=42   mean 1.3906  sd 0.2312  [1.3249, 1.4629]
+    living 12.5            n=42   mean 1.7076  sd 0.3706  [1.5994, 1.8237]
+    living 17.5            n=40   mean 2.0337  sd 0.4033  [1.9019, 2.1491]
+    office 2.5             n=40   mean 1.3718  sd 0.2260  [1.3113, 1.4516]
+    office 7.5             n=41   mean 1.7332  sd 0.2446  [1.6627, 1.8110]
+    office 12.5            n=42   mean 2.0076  sd 0.2934  [1.9127, 2.0889]
+    office 17.5            n=41   mean 2.2504  sd 0.3545  [2.1316, 2.3450]
+    psquare 2.5            n=41   mean 1.1525  sd 0.0844  [1.1305, 1.1837]
+    psquare 7.5            n=42   mean 1.3097  sd 0.1812  [1.2633, 1.3732]
+    psquare 12.5           n=41   mean 1.7156  sd 0.3663  [1.6031, 1.8247]
+    psquare 17.5           n=42   mean 2.0882  sd 0.3072  [1.9902, 2.1771]
+    20 cells, min N = 40, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+
+  bypass: every utterance bit-identical to its input; scores ARE the Noisy row.
+
+=== voicebank16k: enhanced (B, noise tracker mcra) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 4 tests (headline-pooled-per-corpus)
+
+  --- dtln-run-int8s1-tflm
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.9707   1.6831   -0.2331  [-0.2582, -0.2077]    0.10  2.52e-74         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.7335   (paired wilcoxon, n = 824)
+  stoi            0.9210   0.8859   -0.0316  [-0.0329, -0.0304]    0.01 5.98e-131         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.9792   (paired wilcoxon, n = 824)
+  estoi           0.7867   0.7232   -0.0597  [-0.0624, -0.0571]    0.01  9.9e-125         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.9553   (paired wilcoxon, n = 824)
+  si_sdr          8.4455   4.3686   -4.0769  [-4.2176, -3.9362]    0.50 3.27e-239         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = -1.6623   (paired t, n = 824)
+
+  Holm-adjusted p(diff):
+    dtln-run-int8s1-tflmpesq_mos_lqo   raw  2.52e-74  adj  2.52e-74  significant
+    dtln-run-int8s1-tflmstoi           raw 5.98e-131  adj 1.79e-130  significant
+    dtln-run-int8s1-tflmestoi          raw  9.9e-125  adj 1.98e-124  significant
+    dtln-run-int8s1-tflmsi_sdr         raw 3.27e-239  adj 1.31e-238  significant
+
+=== DONE

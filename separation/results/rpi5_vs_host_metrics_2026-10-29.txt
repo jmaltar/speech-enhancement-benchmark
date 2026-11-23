@@ -1,0 +1,28 @@
+paired tracks: 50 (50 in host, 50 in rpi5)
+metric                med host    med rpi5    med d      BCa95 on med d   mean d     BCa95 on mean d  max|d| |d|>0.5
+vocals_sdr               6.392       6.392    0.000     [-0.000, 0.000]   -0.000     [-0.000, 0.000]   0.000       0
+vocals_isr              13.662      13.662   -0.000     [-0.000, 0.000]   -0.000    [-0.000, -0.000]   0.000       0
+vocals_sir              15.194      15.194   -0.000     [-0.000, 0.000]    0.000     [-0.000, 0.000]   0.000       0
+vocals_sar               6.708       6.708   -0.000     [-0.000, 0.000]   -0.000     [-0.000, 0.000]   0.000       0
+accompaniment_sdr       12.814      12.814   -0.000     [-0.000, 0.000]   -0.000    [-0.000, -0.000]   0.000       0
+accompaniment_isr       21.983      21.983   -0.000    [-0.000, -0.000]    0.000     [-0.000, 0.000]   0.001       0
+accompaniment_sir       18.816      18.816    0.000      [0.000, 0.000]    0.000      [0.000, 0.000]   0.000       0
+accompaniment_sar       14.240      14.240   -0.000     [-0.000, 0.000]    0.000     [-0.000, 0.000]   0.000       0
+
+(|d|>0.5 counts tracks beyond the SI-SDR margin of 0.5 dB, borrowed for orientation only; no equivalence margin is locked for BSS Eval SDR.)
+
+vocals_sdr: largest |d| tracks
+                      track  vocals_sdr_a  vocals_sdr_b         d
+        Motor Tapes - Shore      1.886142      1.886131 -0.000010
+Moosmusic - Big Dummy Shake      7.820287      7.820279 -0.000007
+   Punkdisco - Oral Hygiene      4.311160      4.311164  0.000005
+        Arise - Run Run Run      4.291433      4.291438  0.000005
+   Secretariat - Borderline      4.702705      4.702701 -0.000004
+
+accompaniment_sdr: largest |d| tracks
+                           track  accompaniment_sdr_a  accompaniment_sdr_b         d
+                      PR - Oh No             8.088356             8.088262 -0.000094
+    Juliet's Rescue - Heartbeats            15.645245            15.645229 -0.000016
+       Speak Softly - Broken Man            14.039725            14.039711 -0.000014
+Little Chicago's Finest - My Own            14.494946            14.494957  0.000011
+                 BKS - Bulldozer            16.977206            16.977197 -0.000009

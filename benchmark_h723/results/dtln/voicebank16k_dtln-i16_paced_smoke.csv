@@ -1,0 +1,3 @@
+id,variant,hops,nres,overruns,crc_errors,resyncs,proc_min,proc_max,proc_mean,proc_median_data,e2e_median_us,ref,max_abs_lsb,n_diff,nmse_db,status
+p232_001,dtln-i16,218,221,0,0,0,1708875,1715025,1711773.8,1711767,3675,/mnt/data/benchmark-data/enhanced/dtln-prune-learned-shrunk-i16pt-tflm/voicebank16k/p232_001.wav,3,5641,-75.53,ok
+p232_002,dtln-i16,340,343,0,0,0,1709141,1715267,1711832.0,1711783,3670,/mnt/data/benchmark-data/enhanced/dtln-prune-learned-shrunk-i16pt-tflm/voicebank16k/p232_002.wav,2,2888,-81.01,ok

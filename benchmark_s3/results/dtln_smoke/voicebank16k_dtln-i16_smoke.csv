@@ -1,0 +1,2 @@
+id,variant,hops,nres,overruns,crc_errors,resyncs,proc_min,proc_max,proc_mean,proc_median_data,e2e_median_us,ref,max_abs_lsb,n_diff,nmse_db,status
+p232_001,dtln-i16,218,221,221,0,0,8816379,8895701,8826009.2,8825151,190059,/mnt/data/benchmark-data/enhanced/dtln-prune-learned-shrunk-i16pt-tflm/voicebank16k/p232_001.wav,3,7776,-74.09,ok

@@ -1,0 +1,18 @@
+% Power-measurement bench, STM32H723 session (top view). Build: pdflatex in this directory.
+\documentclass[tikz, border=1.5mm]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{tikz}
+\usetikzlibrary{calc, positioning}
+\input{bench-parts.tex}
+
+\begin{document}
+\newif\ifSWD \SWDtrue
+\def\DUTname{STM32H723 (WeAct core board)}
+\def\DUTpre{\coordinate (dutUSB) at (170.27,-15);}
+\def\DUTshadow{\shadow{142}{-14}{40.64}{66.88}}
+\def\DUTboard{\HSevenTwoThree{h7}{142}{-14}\coordinate (dutGND) at (h7-SWGND);\coordinate (dutCLK) at (h7-SWCLK);\coordinate (dutDIO) at (h7-SWDIO);}
+\def\DUTpost{\foreach \c/\t in {dutGND/GND, dutCLK/CLK, dutDIO/DIO} {\node[vtag, anchor=west] at ($(\c)+(0,9.3)$) {\t};}}
+\input{power-bench-body.tex}
+\end{document}

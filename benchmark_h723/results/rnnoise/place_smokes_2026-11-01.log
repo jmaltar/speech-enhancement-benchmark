@@ -1,0 +1,114 @@
+=== 2026-11-01T16:59:33+01:00 flash nn8_stamp_axi (benchmark_h723/results/rnnoise_nn8_stamp_axi_image.bin)
+Bus 003 Device 014: ID cafe:4101 Benchmark STM32H723 Audio Bench
+=== 2026-11-01T16:59:46+01:00 smoke nn8_stamp_axi (limit 5)
+device   : STM32H723 build 'Release DTCM 20261101T1' image_crc32=6d755727 tick_hz=550000000  (verified against benchmark_h723/results/rnnoise_nn8_stamp_axi_image.bin)
+[1/5] 2s  last p232_001: hops=175 overruns=0 proc_mean=1012569.0 max|d|=85 status=ok
+[2/5] 5s  last p232_002: hops=272 overruns=0 proc_mean=1008879.3 max|d|=159 status=ok
+[3/5] 12s  last p232_003: hops=719 overruns=0 proc_mean=1007514.7 max|d|=425 status=ok
+[4/5] 18s  last p232_005: hops=625 overruns=0 proc_mean=1009490.4 max|d|=1490 status=ok
+[5/5] 24s  last p232_006: hops=511 overruns=0 proc_mean=1014232.0 max|d|=82 status=ok
+done     : 5 runs in 24s -> benchmark_h723/results/rnnoise/nn8_stamp_axi_smoke5/voicebank48k_rnnoise-v0.1.1_paced_smoke.csv
+summary  : fails=0 total_overruns=0 worst max|d|=1490 LSB  worst n_diff=258490  worst NMSE=-35.0 dB
+=== 2026-11-01T17:00:09+01:00 done nn8_stamp_axi (exit 0)
+== placement witnesses: itcm_addr=0x00000000 itcm_bytes=258,351,155 axi_addr=0x00000000 axi_bytes=2,307 verified=281196158
+== RNNoise stage sums nn8_stamp_axi_smoke5: frames=2307 silent=0 total=2,252,661,829 cycles  per-frame=976,446
+  0 hp + analysis window + 960-pt fwd transform + band E          281,196,158       121,888/frame   12.5 %
+  1 pitch downsample + pitch search + doubling                    530,559,701       229,978/frame   23.6 %
+  2 pitch window + 960-pt fwd transform + band E/corr             266,415,284       115,481/frame   11.8 %
+  3 remaining features (log, DCTs, cepstra, variability)           65,305,131        28,307/frame    2.9 %
+  4 GRU network (compute_rnn)                                     714,054,049       309,516/frame   31.7 %
+  5 pitch filter + gain smoothing + interp + apply                177,622,101        76,993/frame    7.9 %
+  6 synthesis: 960-pt inv transform + window + OLA                217,509,405        94,282/frame    9.7 %
+  7 (unused)                                                                0             0/frame    0.0 %
+=== 2026-11-01T17:00:10+01:00 flash nn8_stamp_itcm (benchmark_h723/results/rnnoise_nn8_stamp_itcm_image.bin)
+Bus 003 Device 015: ID cafe:4101 Benchmark STM32H723 Audio Bench
+=== 2026-11-01T17:00:22+01:00 smoke nn8_stamp_itcm (limit 5)
+device   : STM32H723 build 'Release DTCM 20261101T1' image_crc32=8b74017c tick_hz=550000000  (verified against benchmark_h723/results/rnnoise_nn8_stamp_itcm_image.bin)
+[1/5] 2s  last p232_001: hops=175 overruns=0 proc_mean=1022395.9 max|d|=85 status=ok
+[2/5] 5s  last p232_002: hops=272 overruns=0 proc_mean=1018759.1 max|d|=159 status=ok
+[3/5] 12s  last p232_003: hops=719 overruns=0 proc_mean=1017408.4 max|d|=425 status=ok
+[4/5] 18s  last p232_005: hops=625 overruns=0 proc_mean=1019381.0 max|d|=1490 status=ok
+[5/5] 24s  last p232_006: hops=511 overruns=0 proc_mean=1024082.0 max|d|=82 status=ok
+done     : 5 runs in 24s -> benchmark_h723/results/rnnoise/nn8_stamp_itcm_smoke5/voicebank48k_rnnoise-v0.1.1_paced_smoke.csv
+summary  : fails=0 total_overruns=0 worst max|d|=1490 LSB  worst n_diff=258490  worst NMSE=-35.0 dB
+=== 2026-11-01T17:00:46+01:00 done nn8_stamp_itcm (exit 0)
+== placement witnesses: itcm_addr=0x00000000 itcm_bytes=268,193,049 axi_addr=0x00000000 axi_bytes=2,307 verified=280773750
+== RNNoise stage sums nn8_stamp_itcm_smoke5: frames=2307 silent=0 total=2,281,062,566 cycles  per-frame=988,757
+  0 hp + analysis window + 960-pt fwd transform + band E          280,773,750       121,705/frame   12.3 %
+  1 pitch downsample + pitch search + doubling                    529,542,131       229,537/frame   23.2 %
+  2 pitch window + 960-pt fwd transform + band E/corr             266,304,529       115,433/frame   11.7 %
+  3 remaining features (log, DCTs, cepstra, variability)           64,995,919        28,173/frame    2.8 %
+  4 GRU network (compute_rnn)                                     744,469,197       322,700/frame   32.6 %
+  5 pitch filter + gain smoothing + interp + apply                177,692,245        77,023/frame    7.8 %
+  6 synthesis: 960-pt inv transform + window + OLA                217,284,795        94,185/frame    9.5 %
+  7 (unused)                                                                0             0/frame    0.0 %
+=== 2026-11-01T17:00:46+01:00 flash nn8_stamp_axi_itcm (benchmark_h723/results/rnnoise_nn8_stamp_axi_itcm_image.bin)
+Bus 003 Device 016: ID cafe:4101 Benchmark STM32H723 Audio Bench
+=== 2026-11-01T17:00:59+01:00 smoke nn8_stamp_axi_itcm (limit 5)
+device   : STM32H723 build 'Release DTCM 20261101T1' image_crc32=5f574c5f tick_hz=550000000  (verified against benchmark_h723/results/rnnoise_nn8_stamp_axi_itcm_image.bin)
+[1/5] 2s  last p232_001: hops=175 overruns=0 proc_mean=1009040.5 max|d|=85 status=ok
+[2/5] 5s  last p232_002: hops=272 overruns=0 proc_mean=1005360.6 max|d|=159 status=ok
+[3/5] 12s  last p232_003: hops=719 overruns=0 proc_mean=1004001.4 max|d|=425 status=ok
+[4/5] 18s  last p232_005: hops=625 overruns=0 proc_mean=1005986.6 max|d|=1490 status=ok
+[5/5] 24s  last p232_006: hops=511 overruns=0 proc_mean=1010692.2 max|d|=82 status=ok
+done     : 5 runs in 24s -> benchmark_h723/results/rnnoise/nn8_stamp_axi_itcm_smoke5/voicebank48k_rnnoise-v0.1.1_paced_smoke.csv
+summary  : fails=0 total_overruns=0 worst max|d|=1490 LSB  worst n_diff=258490  worst NMSE=-35.0 dB
+=== 2026-11-01T17:01:23+01:00 done nn8_stamp_axi_itcm (exit 0)
+== placement witnesses: itcm_addr=0x00000000 itcm_bytes=243,443,535 axi_addr=0x00000000 axi_bytes=2,307 verified=280761105
+== RNNoise stage sums nn8_stamp_axi_itcm_smoke5: frames=2307 silent=0 total=2,250,186,163 cycles  per-frame=975,373
+  0 hp + analysis window + 960-pt fwd transform + band E          280,761,105       121,700/frame   12.5 %
+  1 pitch downsample + pitch search + doubling                    529,544,293       229,538/frame   23.5 %
+  2 pitch window + 960-pt fwd transform + band E/corr             266,293,150       115,428/frame   11.8 %
+  3 remaining features (log, DCTs, cepstra, variability)           64,997,833        28,174/frame    2.9 %
+  4 GRU network (compute_rnn)                                     713,676,428       309,353/frame   31.7 %
+  5 pitch filter + gain smoothing + interp + apply                177,628,559        76,995/frame    7.9 %
+  6 synthesis: 960-pt inv transform + window + OLA                217,284,795        94,185/frame    9.7 %
+  7 (unused)                                                                0             0/frame    0.0 %
+=== 2026-11-01T17:01:23+01:00 flash stamp_itcm (benchmark_h723/results/rnnoise_stamp_itcm_image.bin)
+Bus 003 Device 017: ID cafe:4101 Benchmark STM32H723 Audio Bench
+=== 2026-11-01T17:01:35+01:00 smoke stamp_itcm (limit 5)
+device   : STM32H723 build 'Release DTCM 20261101T1' image_crc32=f6a8a883 tick_hz=550000000  (verified against benchmark_h723/results/rnnoise_stamp_itcm_image.bin)
+[1/5] 2s  last p232_001: hops=175 overruns=0 proc_mean=1775208.8 max|d|=1 status=ok
+[2/5] 5s  last p232_002: hops=272 overruns=0 proc_mean=1772077.3 max|d|=1 status=ok
+[3/5] 12s  last p232_003: hops=719 overruns=0 proc_mean=1770333.0 max|d|=1 status=ok
+[4/5] 18s  last p232_005: hops=625 overruns=0 proc_mean=1772135.9 max|d|=1 status=ok
+[5/5] 24s  last p232_006: hops=511 overruns=0 proc_mean=1776889.9 max|d|=1 status=ok
+done     : 5 runs in 24s -> benchmark_h723/results/rnnoise/stamp_itcm_smoke5/voicebank48k_rnnoise-v0.1.1_paced_smoke.csv
+summary  : fails=0 total_overruns=0 worst max|d|=1 LSB  worst n_diff=129  worst NMSE=-101.8 dB
+=== 2026-11-01T17:01:58+01:00 done stamp_itcm (exit 0)
+== placement witnesses: itcm_addr=0x00000000 itcm_bytes=244,895,170 axi_addr=0x00000000 axi_bytes=2,307 verified=281826776
+== RNNoise stage sums stamp_itcm_smoke5: frames=2307 silent=0 total=4,017,964,093 cycles  per-frame=1,741,640
+  0 hp + analysis window + 960-pt fwd transform + band E          281,826,776       122,162/frame    7.0 %
+  1 pitch downsample + pitch search + doubling                    529,538,146       229,535/frame   13.2 %
+  2 pitch window + 960-pt fwd transform + band E/corr             267,402,581       115,909/frame    6.7 %
+  3 remaining features (log, DCTs, cepstra, variability)           65,002,823        28,176/frame    1.6 %
+  4 GRU network (compute_rnn)                                   2,478,066,692     1,074,151/frame   61.7 %
+  5 pitch filter + gain smoothing + interp + apply                177,691,145        77,023/frame    4.4 %
+  6 synthesis: 960-pt inv transform + window + OLA                218,435,930        94,684/frame    5.4 %
+  7 (unused)                                                                0             0/frame    0.0 %
+=== 2026-11-01T17:01:59+01:00 flash stamp_axi (benchmark_h723/results/rnnoise_stamp_axi_image.bin)
+Bus 003 Device 018: ID cafe:4101 Benchmark STM32H723 Audio Bench
+=== 2026-11-01T17:02:10+01:00 smoke stamp_axi (limit 5)
+device   : STM32H723 build 'Release DTCM 20261101T1' image_crc32=d31610a4 tick_hz=550000000  (verified against benchmark_h723/results/rnnoise_stamp_axi_image.bin)
+[1/5] 2s  last p232_001: hops=175 overruns=0 proc_mean=1768739.3 max|d|=1 status=ok
+[2/5] 5s  last p232_002: hops=272 overruns=0 proc_mean=1764908.7 max|d|=1 status=ok
+[3/5] 12s  last p232_003: hops=719 overruns=0 proc_mean=1763402.6 max|d|=1 status=ok
+[4/5] 18s  last p232_005: hops=625 overruns=0 proc_mean=1765593.2 max|d|=1 status=ok
+[5/5] 24s  last p232_006: hops=511 overruns=0 proc_mean=1770124.9 max|d|=1 status=ok
+done     : 5 runs in 24s -> benchmark_h723/results/rnnoise/stamp_axi_smoke5/voicebank48k_rnnoise-v0.1.1_paced_smoke.csv
+summary  : fails=0 total_overruns=0 worst max|d|=1 LSB  worst n_diff=129  worst NMSE=-101.8 dB
+=== 2026-11-01T17:02:34+01:00 done stamp_axi (exit 0)
+== placement witnesses: itcm_addr=0x00000000 itcm_bytes=255,820,009 axi_addr=0x00000000 axi_bytes=2,307 verified=282306925
+== RNNoise stage sums stamp_axi_smoke5: frames=2307 silent=0 total=3,996,658,343 cycles  per-frame=1,732,405
+  0 hp + analysis window + 960-pt fwd transform + band E          282,306,925       122,370/frame    7.1 %
+  1 pitch downsample + pitch search + doubling                    530,566,649       229,981/frame   13.3 %
+  2 pitch window + 960-pt fwd transform + band E/corr             267,473,727       115,940/frame    6.7 %
+  3 remaining features (log, DCTs, cepstra, variability)           65,154,227        28,242/frame    1.6 %
+  4 GRU network (compute_rnn)                                   2,454,857,703     1,064,091/frame   61.4 %
+  5 pitch filter + gain smoothing + interp + apply                177,640,826        77,001/frame    4.4 %
+  6 synthesis: 960-pt inv transform + window + OLA                218,658,286        94,780/frame    5.5 %
+  7 (unused)                                                                0             0/frame    0.0 %
+nn8_stamp_axi        == placement witnesses: itcm_addr=0x00000000 itcm_bytes=0 axi_addr=0x24000000 axi_bytes=171,552 verified=1
+nn8_stamp_itcm       == placement witnesses: itcm_addr=0x00000000 itcm_bytes=20,960 axi_addr=0x00000000 axi_bytes=0 verified=1
+nn8_stamp_axi_itcm   == placement witnesses: itcm_addr=0x00000000 itcm_bytes=20,960 axi_addr=0x24000000 axi_bytes=171,552 verified=1
+stamp_itcm           == placement witnesses: itcm_addr=0x00000000 itcm_bytes=19,672 axi_addr=0x00000000 axi_bytes=0 verified=1

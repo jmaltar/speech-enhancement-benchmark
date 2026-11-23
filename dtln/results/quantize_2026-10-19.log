@@ -1,0 +1,186 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792398371.814389   83116 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1792398371.814869   83116 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792398372.913001   83116 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1792398372.913276   83116 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+E0000 00:00:1792398373.418716   83116 cuda_executor.cc:1737] INTERNAL: CUDA Runtime error: Failed call to cudaGetRuntimeVersion: Error loading CUDA libraries. GPU will not be used.: Error loading CUDA libraries. GPU will not be used.
+split models rebuilt: 362,369 + 624,384 params
+Saved artifact at '/tmp/tmppddpxesd'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name='keras_tensor_25'), TensorSpec(shape=(1, 2, 128, 2), dtype=tf.float32, name='keras_tensor_26')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name=None), TensorSpec(shape=(1, 2, 128, 2), dtype=tf.float32, name=None)]
+Captures:
+  124728907852752: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907851216: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907853136: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907851792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907851984: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907854288: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907854480: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907852368: TensorSpec(shape=(), dtype=tf.resource, name=None)
+Saved artifact at '/tmp/tmpiavq0m4j'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name='keras_tensor_53'), TensorSpec(shape=(1, 2, 128, 2), dtype=tf.float32, name='keras_tensor_54')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name=None), TensorSpec(shape=(1, 2, 128, 2), dtype=tf.float32, name=None)]
+Captures:
+  124728907852944: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907854672: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907855248: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907855056: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907853520: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907856784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907856016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907855824: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907857744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907856400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907856208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907857552: TensorSpec(shape=(), dtype=tf.resource, name=None)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+float re-export:
+  reexport_f32_1.tflite: 1,459,380 B; 43 ops, 10 distinct: ADDx6 FULLY_CONNECTEDx5 LOGISTICx7 MULx6 PACKx3 RESHAPEx4 SPLITx2 STRIDED_SLICEx4 TANHx4 UNPACKx2
+    in  serving_default_keras_tensor_26:0 (np.int32(1), np.int32(2), np.int32(128), np.int32(2)) float32  scale - zp -
+    in  serving_default_keras_tensor_25:0 (np.int32(1), np.int32(1), np.int32(257)) float32  scale - zp -
+    out StatefulPartitionedCall_1:1 (np.int32(1), np.int32(2), np.int32(128), np.int32(2)) float32  scale - zp -
+    out StatefulPartitionedCall_1:0 (np.int32(1), np.int32(1), np.int32(257)) float32  scale - zp -
+  reexport_f32_2.tflite: 2,514,500 B; 59 ops, 15 distinct: ADDx8 CONV_2Dx2 FULLY_CONNECTEDx5 LOGISTICx7 MEANx2 MULx9 PACKx3 RESHAPEx8 RSQRTx1 SPLITx2 SQUARED_DIFFERENCEx1 STRIDED_SLICEx4 SUBx1 TANHx4 UNPACKx2
+    in  serving_default_keras_tensor_54:0 (np.int32(1), np.int32(2), np.int32(128), np.int32(2)) float32  scale - zp -
+    in  serving_default_keras_tensor_53:0 (np.int32(1), np.int32(1), np.int32(512)) float32  scale - zp -
+    out StatefulPartitionedCall_1:1 (np.int32(1), np.int32(2), np.int32(128), np.int32(2)) float32  scale - zp -
+    out StatefulPartitionedCall_1:0 (np.int32(1), np.int32(1), np.int32(512)) float32  scale - zp -
+  re-export vs shipped float pair on p257_110.wav: max 0 LSB, 0 of 25526 samples differ
+representative dataset: 200 calib utterances, every 16th hop -> 4610 samples per stage
+Saved artifact at '/tmp/tmpwbrisd9a'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name='keras_tensor_25'), TensorSpec(shape=(1, 2, 128, 2), dtype=tf.float32, name='keras_tensor_26')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name=None), TensorSpec(shape=(1, 2, 128, 2), dtype=tf.float32, name=None)]
+Captures:
+  124728907852752: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907851216: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907853136: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907851792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907851984: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907854288: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907854480: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907852368: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/home/jurica/Desktop/benchmark/.venv/lib/python3.11/site-packages/tensorflow/lite/python/convert.py:846: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+/home/jurica/Desktop/benchmark/.venv/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+Saved artifact at '/tmp/tmpptw9amjp'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name='keras_tensor_53'), TensorSpec(shape=(1, 2, 128, 2), dtype=tf.float32, name='keras_tensor_54')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name=None), TensorSpec(shape=(1, 2, 128, 2), dtype=tf.float32, name=None)]
+Captures:
+  124728907852944: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907854672: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907855248: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907855056: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907853520: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907856784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907856016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907855824: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907857744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907856400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907856208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907857552: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/home/jurica/Desktop/benchmark/.venv/lib/python3.11/site-packages/tensorflow/lite/python/convert.py:846: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+/home/jurica/Desktop/benchmark/.venv/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+
+int8 (int8 I/O):
+  model_int8_1.tflite: 499,352 B; 45 ops, 12 distinct: ADDx6 DEQUANTIZEx1 FULLY_CONNECTEDx5 LOGISTICx7 MULx6 PACKx3 QUANTIZEx1 RESHAPEx4 SPLITx2 STRIDED_SLICEx4 TANHx4 UNPACKx2
+    in  serving_default_keras_tensor_26:0 (np.int32(1), np.int32(2), np.int32(128), np.int32(2)) int8     scale 4.266687393188477 zp 21
+    in  serving_default_keras_tensor_25:0 (np.int32(1), np.int32(1), np.int32(257)) int8     scale 0.3607809543609619 zp -128
+    out StatefulPartitionedCall_1:1 (np.int32(1), np.int32(2), np.int32(128), np.int32(2)) int8     scale 4.274387359619141 zp 21
+    out StatefulPartitionedCall_1:0 (np.int32(1), np.int32(1), np.int32(257)) int8     scale 0.00390625 zp -128
+  model_int8_2.tflite: 787,184 B; 61 ops, 17 distinct: ADDx8 CONV_2Dx2 DEQUANTIZEx1 FULLY_CONNECTEDx5 LOGISTICx7 MEANx2 MULx9 PACKx3 QUANTIZEx1 RESHAPEx8 RSQRTx1 SPLITx2 SQUARED_DIFFERENCEx1 STRIDED_SLICEx4 SUBx1 TANHx4 UNPACKx2
+    in  serving_default_keras_tensor_54:0 (np.int32(1), np.int32(2), np.int32(128), np.int32(2)) int8     scale 1.7445025444030762 zp 12
+    in  serving_default_keras_tensor_53:0 (np.int32(1), np.int32(1), np.int32(512)) int8     scale 0.004216001369059086 zp 1
+    out StatefulPartitionedCall_1:1 (np.int32(1), np.int32(2), np.int32(128), np.int32(2)) int8     scale 1.7473218441009521 zp 12
+    out StatefulPartitionedCall_1:0 (np.int32(1), np.int32(1), np.int32(512)) int8     scale 0.0023379591293632984 zp -10
+  pair total 1,286,536 B; op set ['ADD', 'CONV_2D', 'DEQUANTIZE', 'FULLY_CONNECTED', 'LOGISTIC', 'MEAN', 'MUL', 'PACK', 'QUANTIZE', 'RESHAPE', 'RSQRT', 'SPLIT', 'SQUARED_DIFFERENCE', 'STRIDED_SLICE', 'SUB', 'TANH', 'UNPACK']
+Saved artifact at '/tmp/tmpsoe_gm12'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name='keras_tensor_25'), TensorSpec(shape=(1, 2, 128, 2), dtype=tf.float32, name='keras_tensor_26')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name=None), TensorSpec(shape=(1, 2, 128, 2), dtype=tf.float32, name=None)]
+Captures:
+  124728907852752: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907851216: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907853136: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907851792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907851984: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907854288: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907854480: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907852368: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/home/jurica/Desktop/benchmark/.venv/lib/python3.11/site-packages/tensorflow/lite/python/convert.py:846: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+/home/jurica/Desktop/benchmark/.venv/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+fully_quantize: 0, inference_type: 6, input_inference_type: FLOAT32, output_inference_type: FLOAT32
+Saved artifact at '/tmp/tmpsbcx5dsz'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name='keras_tensor_53'), TensorSpec(shape=(1, 2, 128, 2), dtype=tf.float32, name='keras_tensor_54')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name=None), TensorSpec(shape=(1, 2, 128, 2), dtype=tf.float32, name=None)]
+Captures:
+  124728907852944: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907854672: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907855248: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907855056: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907853520: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907856784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907856016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907855824: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907857744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907856400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907856208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  124728907857552: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/home/jurica/Desktop/benchmark/.venv/lib/python3.11/site-packages/tensorflow/lite/python/convert.py:846: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+/home/jurica/Desktop/benchmark/.venv/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+fully_quantize: 0, inference_type: 6, input_inference_type: FLOAT32, output_inference_type: FLOAT32
+
+int8f (float32 I/O):
+  model_int8f_1.tflite: 499,816 B; 49 ops, 12 distinct: ADDx6 DEQUANTIZEx3 FULLY_CONNECTEDx5 LOGISTICx7 MULx6 PACKx3 QUANTIZEx3 RESHAPEx4 SPLITx2 STRIDED_SLICEx4 TANHx4 UNPACKx2
+    in  serving_default_keras_tensor_26:0 (np.int32(1), np.int32(2), np.int32(128), np.int32(2)) float32  scale - zp -
+    in  serving_default_keras_tensor_25:0 (np.int32(1), np.int32(1), np.int32(257)) float32  scale - zp -
+    out StatefulPartitionedCall_1:1 (np.int32(1), np.int32(2), np.int32(128), np.int32(2)) float32  scale - zp -
+    out StatefulPartitionedCall_1:0 (np.int32(1), np.int32(1), np.int32(257)) float32  scale - zp -
+  model_int8f_2.tflite: 787,704 B; 65 ops, 17 distinct: ADDx8 CONV_2Dx2 DEQUANTIZEx3 FULLY_CONNECTEDx5 LOGISTICx7 MEANx2 MULx9 PACKx3 QUANTIZEx3 RESHAPEx8 RSQRTx1 SPLITx2 SQUARED_DIFFERENCEx1 STRIDED_SLICEx4 SUBx1 TANHx4 UNPACKx2
+    in  serving_default_keras_tensor_54:0 (np.int32(1), np.int32(2), np.int32(128), np.int32(2)) float32  scale - zp -
+    in  serving_default_keras_tensor_53:0 (np.int32(1), np.int32(1), np.int32(512)) float32  scale - zp -
+    out StatefulPartitionedCall_1:1 (np.int32(1), np.int32(2), np.int32(128), np.int32(2)) float32  scale - zp -
+    out StatefulPartitionedCall_1:0 (np.int32(1), np.int32(1), np.int32(512)) float32  scale - zp -
+  pair total 1,287,520 B; op set ['ADD', 'CONV_2D', 'DEQUANTIZE', 'FULLY_CONNECTED', 'LOGISTIC', 'MEAN', 'MUL', 'PACK', 'QUANTIZE', 'RESHAPE', 'RSQRT', 'SPLIT', 'SQUARED_DIFFERENCE', 'STRIDED_SLICE', 'SUB', 'TANH', 'UNPACK']

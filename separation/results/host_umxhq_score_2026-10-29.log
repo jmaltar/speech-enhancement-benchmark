@@ -1,0 +1,21 @@
+--- 2026-10-29 12:00:26 scoring 50 umxhq host estimates, 1 worker, unit umx-score, MemoryHigh=7G MemoryMax=8G ---
+=== eval_harness separation tier: SDR/SIR/SAR via museval ===
+    MUSDB18-HQ, 44.1 kHz stereo. NEVER pooled with the 16 kHz speech results.
+
+    museval 0.4.1, musdb 0.4.3, BSS Eval v4, win=44100, hop=44100
+    accompaniment reference = sum of ('drums', 'bass', 'other'), formed at eval time
+
+  50 tracks in 1571s
+
+  metric                   median        BCa 95% (median)     mean      min      max
+  vocals_sdr                6.392          [4.876, 7.154]    5.322  -15.224   10.307
+  vocals_isr               13.662        [10.426, 14.577]   12.063   -9.016   22.147
+  vocals_sir               15.194        [13.503, 16.595]   12.876  -34.353   23.973
+  vocals_sar                6.708          [5.240, 7.643]    6.276   -0.668   12.394
+  accompaniment_sdr        12.814        [11.687, 13.419]   12.227    6.935   17.153
+  accompaniment_isr        21.983        [20.373, 24.101]   21.678    8.675   36.542
+  accompaniment_sir        18.816        [17.518, 21.122]   19.158   -4.219   47.503
+  accompaniment_sar        14.240        [13.069, 14.903]   13.996    1.309   33.016
+
+  per-track results -> separation/results/host_umxhq_score_2026-10-29.csv
+--- unit umx-score: success, runtime 26m13s, MemoryPeak 7G + 1G swap under MemoryHigh=7G (one worker; museval on the 400 s tracks is the peak) ---

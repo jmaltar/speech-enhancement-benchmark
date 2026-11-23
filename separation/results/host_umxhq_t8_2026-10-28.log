@@ -1,0 +1,146 @@
+warning: governor is 'powersave', not 'performance' -- the RTF column of this run is not a quotable cost figure
+conditions: {"threads": 8, "affinity": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], "torch": "2.14.1+cu130", "machine": "x86_64", "node": "jurica-Legion-Pro-5-16ARX8", "governor": "powersave", "throttled": "n/a"}
+[1/50] AM Contra - Heart Peripheral             210.106 s  wall 14.567 s  rtf 0.0693  ok
+[2/50] Al James - Schoolboy Facination          200.527 s  wall 9.238 s  rtf 0.0461  ok
+[3/50] Angels In Amplifiers - I'm Alright       179.594 s  wall 8.35 s  rtf 0.0465  ok
+[4/50] Arise - Run Run Run                      219.393 s  wall 11.35 s  rtf 0.0517  ok
+[5/50] BKS - Bulldozer                          337.04 s  wall 51.153 s  rtf 0.1518  ok
+[6/50] BKS - Too Much                           220.125 s  wall 10.344 s  rtf 0.047  ok
+[7/50] Ben Carrigan - We'll Talk About It All T 254.911 s  wall 16.104 s  rtf 0.0632  ok
+[8/50] Bobby Nobody - Stitch Up                 221.25 s  wall 10.766 s  rtf 0.0487  ok
+[9/50] Buitraker - Revo X                       275.826 s  wall 14.218 s  rtf 0.0515  ok
+[10/50] Carlos Gonzalez - A Place For Us         250.219 s  wall 12.375 s  rtf 0.0495  ok
+[11/50] Cristina Vane - So Easy                  254.134 s  wall 12.361 s  rtf 0.0486  ok
+[12/50] Detsky Sad - Walkie Talkie               190.482 s  wall 9.974 s  rtf 0.0524  ok
+[13/50] Enda Reilly - Cur An Long Ag Seol        186.996 s  wall 9.383 s  rtf 0.0502  ok
+[14/50] Forkupines - Semantics                   273.585 s  wall 13.001 s  rtf 0.0475  ok
+[15/50] Georgia Wonder - Siren                   430.375 s  wall 20.038 s  rtf 0.0466  ok
+[16/50] Girls Under Glass - We Feel Alright      317.281 s  wall 19.197 s  rtf 0.0605  ok
+[17/50] Hollow Ground - Ill Fate                 141.674 s  wall 9.79 s  rtf 0.0691  ok
+[18/50] James Elder & Mark M Thompson - The Engl 205.473 s  wall 13.671 s  rtf 0.0665  ok
+[19/50] Juliet's Rescue - Heartbeats             267.652 s  wall 16.117 s  rtf 0.0602  ok
+[20/50] Little Chicago's Finest - My Own         281.612 s  wall 18.666 s  rtf 0.0663  ok
+[21/50] Louis Cressy Band - Good Time            292.821 s  wall 21.971 s  rtf 0.075  ok
+[22/50] Lyndsey Ollard - Catching Up             227.429 s  wall 17.026 s  rtf 0.0749  ok
+[23/50] M.E.R.C. Music - Knockout                270.0 s  wall 12.691 s  rtf 0.047  ok
+[24/50] Moosmusic - Big Dummy Shake              198.857 s  wall 8.991 s  rtf 0.0452  ok
+[25/50] Motor Tapes - Shore                      246.723 s  wall 15.414 s  rtf 0.0625  ok
+[26/50] Mu - Too Bright                          272.165 s  wall 19.605 s  rtf 0.072  ok
+[27/50] Nerve 9 - Pray For The Rain              343.714 s  wall 23.817 s  rtf 0.0693  ok
+[28/50] PR - Happy Daze                          162.702 s  wall 12.237 s  rtf 0.0752  ok
+[29/50] PR - Oh No                               76.194 s  wall 6.045 s  rtf 0.0793  ok
+[30/50] Punkdisco - Oral Hygiene                 221.598 s  wall 19.626 s  rtf 0.0886  ok
+[31/50] Raft Monk - Tiring                       212.246 s  wall 15.766 s  rtf 0.0743  ok
+[32/50] Sambasevam Shanmugam - Kaathaadi         317.879 s  wall 17.247 s  rtf 0.0543  ok
+[33/50] Secretariat - Borderline                 286.846 s  wall 12.797 s  rtf 0.0446  ok
+[34/50] Secretariat - Over The Top               251.096 s  wall 12.07 s  rtf 0.0481  ok
+[35/50] Side Effects Project - Sing With Me      243.683 s  wall 11.51 s  rtf 0.0472  ok
+[36/50] Signe Jakobsen - What Have You Done To M 177.397 s  wall 8.076 s  rtf 0.0455  ok
+--- 15:13 OOM-killed on track 37 (global OOM, 9.8G peak); resumed 15:21:33 with --forward lowmem --resume, MemoryMax=8G ---
+warning: governor is 'powersave', not 'performance' -- the RTF column of this run is not a quotable cost figure
+conditions: {"threads": 8, "affinity": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], "torch": "2.14.1+cu130", "machine": "x86_64", "node": "jurica-Legion-Pro-5-16ARX8", "governor": "powersave", "throttled": "n/a"}
+resume: 36 of 50 tracks already in umx_run_umxhq_t8.csv
+[1/50] AM Contra - Heart Peripheral             skipped (resume)
+[2/50] Al James - Schoolboy Facination          skipped (resume)
+[3/50] Angels In Amplifiers - I'm Alright       skipped (resume)
+[4/50] Arise - Run Run Run                      skipped (resume)
+[5/50] BKS - Bulldozer                          skipped (resume)
+[6/50] BKS - Too Much                           skipped (resume)
+[7/50] Ben Carrigan - We'll Talk About It All T skipped (resume)
+[8/50] Bobby Nobody - Stitch Up                 skipped (resume)
+[9/50] Buitraker - Revo X                       skipped (resume)
+[10/50] Carlos Gonzalez - A Place For Us         skipped (resume)
+[11/50] Cristina Vane - So Easy                  skipped (resume)
+[12/50] Detsky Sad - Walkie Talkie               skipped (resume)
+[13/50] Enda Reilly - Cur An Long Ag Seol        skipped (resume)
+[14/50] Forkupines - Semantics                   skipped (resume)
+[15/50] Georgia Wonder - Siren                   skipped (resume)
+[16/50] Girls Under Glass - We Feel Alright      skipped (resume)
+[17/50] Hollow Ground - Ill Fate                 skipped (resume)
+[18/50] James Elder & Mark M Thompson - The Engl skipped (resume)
+[19/50] Juliet's Rescue - Heartbeats             skipped (resume)
+[20/50] Little Chicago's Finest - My Own         skipped (resume)
+[21/50] Louis Cressy Band - Good Time            skipped (resume)
+[22/50] Lyndsey Ollard - Catching Up             skipped (resume)
+[23/50] M.E.R.C. Music - Knockout                skipped (resume)
+[24/50] Moosmusic - Big Dummy Shake              skipped (resume)
+[25/50] Motor Tapes - Shore                      skipped (resume)
+[26/50] Mu - Too Bright                          skipped (resume)
+[27/50] Nerve 9 - Pray For The Rain              skipped (resume)
+[28/50] PR - Happy Daze                          skipped (resume)
+[29/50] PR - Oh No                               skipped (resume)
+[30/50] Punkdisco - Oral Hygiene                 skipped (resume)
+[31/50] Raft Monk - Tiring                       skipped (resume)
+[32/50] Sambasevam Shanmugam - Kaathaadi         skipped (resume)
+[33/50] Secretariat - Borderline                 skipped (resume)
+[34/50] Secretariat - Over The Top               skipped (resume)
+[35/50] Side Effects Project - Sing With Me      skipped (resume)
+[36/50] Signe Jakobsen - What Have You Done To M skipped (resume)
+[37/50] Skelpolu - Resurrection                  395.663 s  wall 99.131 s  rtf 0.2505  ok
+[38/50] Speak Softly - Broken Man                253.16 s  wall 14.192 s  rtf 0.0561  ok
+[39/50] Speak Softly - Like Horses               312.667 s  wall 14.496 s  rtf 0.0464  ok
+[40/50] The Doppler Shift - Atrophy              331.442 s  wall 15.118 s  rtf 0.0456  ok
+[41/50] The Easton Ellises (Baumi) - SDRNR       234.684 s  wall 10.448 s  rtf 0.0445  ok
+[42/50] The Easton Ellises - Falcon 69           246.991 s  wall 11.134 s  rtf 0.0451  ok
+[43/50] The Long Wait - Dark Horses              305.721 s  wall 14.074 s  rtf 0.046  ok
+[44/50] The Mountaineering Club - Mallory        244.46 s  wall 10.752 s  rtf 0.044  ok
+[45/50] The Sunshine Garcia Band - For I Am The  320.297 s  wall 16.362 s  rtf 0.0511  ok
+[46/50] Timboz - Pony                            253.049 s  wall 17.517 s  rtf 0.0692  ok
+[47/50] Tom McKenzie - Directions                175.853 s  wall 8.071 s  rtf 0.0459  ok
+[48/50] Triviul feat. The Fiend - Widow          235.11 s  wall 11.314 s  rtf 0.0481  ok
+--- 2026-10-29 11:57:07 resumed for the 2 missing tracks (49-50) with --forward lowmem --resume --all-stems, systemd-run unit umx-resume49, MemoryHigh=7G MemoryMax=8G ---
+warning: governor is 'powersave', not 'performance' -- the RTF column of this run is not a quotable cost figure
+conditions: {"threads": 8, "affinity": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], "torch": "2.14.1+cu130", "machine": "x86_64", "node": "jurica-Legion-Pro-5-16ARX8", "governor": "powersave", "throttled": "n/a"}
+resume: 48 of 50 tracks already in umx_run_umxhq_t8.csv
+[1/50] AM Contra - Heart Peripheral             skipped (resume)
+[2/50] Al James - Schoolboy Facination          skipped (resume)
+[3/50] Angels In Amplifiers - I'm Alright       skipped (resume)
+[4/50] Arise - Run Run Run                      skipped (resume)
+[5/50] BKS - Bulldozer                          skipped (resume)
+[6/50] BKS - Too Much                           skipped (resume)
+[7/50] Ben Carrigan - We'll Talk About It All T skipped (resume)
+[8/50] Bobby Nobody - Stitch Up                 skipped (resume)
+[9/50] Buitraker - Revo X                       skipped (resume)
+[10/50] Carlos Gonzalez - A Place For Us         skipped (resume)
+[11/50] Cristina Vane - So Easy                  skipped (resume)
+[12/50] Detsky Sad - Walkie Talkie               skipped (resume)
+[13/50] Enda Reilly - Cur An Long Ag Seol        skipped (resume)
+[14/50] Forkupines - Semantics                   skipped (resume)
+[15/50] Georgia Wonder - Siren                   skipped (resume)
+[16/50] Girls Under Glass - We Feel Alright      skipped (resume)
+[17/50] Hollow Ground - Ill Fate                 skipped (resume)
+[18/50] James Elder & Mark M Thompson - The Engl skipped (resume)
+[19/50] Juliet's Rescue - Heartbeats             skipped (resume)
+[20/50] Little Chicago's Finest - My Own         skipped (resume)
+[21/50] Louis Cressy Band - Good Time            skipped (resume)
+[22/50] Lyndsey Ollard - Catching Up             skipped (resume)
+[23/50] M.E.R.C. Music - Knockout                skipped (resume)
+[24/50] Moosmusic - Big Dummy Shake              skipped (resume)
+[25/50] Motor Tapes - Shore                      skipped (resume)
+[26/50] Mu - Too Bright                          skipped (resume)
+[27/50] Nerve 9 - Pray For The Rain              skipped (resume)
+[28/50] PR - Happy Daze                          skipped (resume)
+[29/50] PR - Oh No                               skipped (resume)
+[30/50] Punkdisco - Oral Hygiene                 skipped (resume)
+[31/50] Raft Monk - Tiring                       skipped (resume)
+[32/50] Sambasevam Shanmugam - Kaathaadi         skipped (resume)
+[33/50] Secretariat - Borderline                 skipped (resume)
+[34/50] Secretariat - Over The Top               skipped (resume)
+[35/50] Side Effects Project - Sing With Me      skipped (resume)
+[36/50] Signe Jakobsen - What Have You Done To M skipped (resume)
+[37/50] Skelpolu - Resurrection                  skipped (resume)
+[38/50] Speak Softly - Broken Man                skipped (resume)
+[39/50] Speak Softly - Like Horses               skipped (resume)
+[40/50] The Doppler Shift - Atrophy              skipped (resume)
+[41/50] The Easton Ellises (Baumi) - SDRNR       skipped (resume)
+[42/50] The Easton Ellises - Falcon 69           skipped (resume)
+[43/50] The Long Wait - Dark Horses              skipped (resume)
+[44/50] The Mountaineering Club - Mallory        skipped (resume)
+[45/50] The Sunshine Garcia Band - For I Am The  skipped (resume)
+[46/50] Timboz - Pony                            skipped (resume)
+[47/50] Tom McKenzie - Directions                skipped (resume)
+[48/50] Triviul feat. The Fiend - Widow          skipped (resume)
+[49/50] We Fell From The Sky - Not You           207.897 s  wall 9.839 s  rtf 0.0473  ok
+[50/50] Zeno - Signs                             234.384 s  wall 10.907 s  rtf 0.0465  ok
+done: 50 tracks in 23 s -> /mnt/data/benchmark-data/enhanced/umxhq/musdb18hq/umx_run_umxhq_t8.csv
+--- unit umx-resume49: success, runtime 27.4 s, MemoryPeak 4.3G, swap 0 ---

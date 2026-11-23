@@ -1,0 +1,41 @@
+=== stall test 14:50:44
+stall: host pushed 8192 of 57656 B blind; writer finished 121 ms after reads resumed; got STATS
+stats    : in=109 out=110 overruns=0 resyncs=0 crc_err=0
+vs ref   : identical=True worst=0 LSB  nonzero=0
+=== bypass default 14:50:46
+device   : ESP32S3 build 'Release 20261014T1243' image_crc32=43ba3cff tick_hz=240000000  (verified against ../benchmark_s3/results/image_43ba3cff.bin)
+[200/824] 59s  last p232_211: hops=88 overruns=0 proc_mean=775.3 max|d|=0 status=ok
+[400/824] 116s  last p257_008: hops=349 overruns=0 proc_mean=783.2 max|d|=0 status=ok
+[600/824] 174s  last p257_210: hops=158 overruns=0 proc_mean=781.8 max|d|=0 status=ok
+[800/824] 230s  last p257_410: hops=224 overruns=0 proc_mean=781.8 max|d|=0 status=ok
+[824/824] 236s  last p257_434: hops=131 overruns=0 proc_mean=782.8 max|d|=0 status=ok
+done     : 824 runs in 236s -> ../benchmark_s3/results/voicebank16k_bypass.csv
+summary  : fails=0 total_overruns=0 worst max|d|=0 LSB  worst n_diff=0  worst NMSE=-inf dB
+=== specsub mcra 14:54:42
+device   : ESP32S3 build 'Release 20261014T1243' image_crc32=43ba3cff tick_hz=240000000  (verified against ../benchmark_s3/results/image_43ba3cff.bin)
+[200/824] 125s  last p232_211: hops=88 overruns=0 proc_mean=325735.2 max|d|=1 status=ok
+[400/824] 246s  last p257_008: hops=349 overruns=0 proc_mean=327729.1 max|d|=1 status=ok
+[600/824] 367s  last p257_210: hops=158 overruns=0 proc_mean=326900.9 max|d|=1 status=ok
+[800/824] 483s  last p257_410: hops=224 overruns=0 proc_mean=327236.7 max|d|=1 status=ok
+[824/824] 496s  last p257_434: hops=131 overruns=0 proc_mean=326758.4 max|d|=1 status=ok
+done     : 824 runs in 496s -> ../benchmark_s3/results/voicebank16k_specsub-mcra.csv
+summary  : fails=0 total_overruns=0 worst max|d|=1 LSB  worst n_diff=496  worst NMSE=-86.9 dB
+=== wiener mcra 15:02:58
+device   : ESP32S3 build 'Release 20261014T1243' image_crc32=43ba3cff tick_hz=240000000  (verified against ../benchmark_s3/results/image_43ba3cff.bin)
+[200/824] 125s  last p232_211: hops=88 overruns=0 proc_mean=325785.0 max|d|=1 status=ok
+[400/824] 246s  last p257_008: hops=349 overruns=0 proc_mean=328141.3 max|d|=1 status=ok
+[600/824] 367s  last p257_210: hops=158 overruns=0 proc_mean=326291.8 max|d|=1 status=ok
+[800/824] 483s  last p257_410: hops=224 overruns=0 proc_mean=326549.8 max|d|=1 status=ok
+[824/824] 496s  last p257_434: hops=131 overruns=0 proc_mean=324998.1 max|d|=1 status=ok
+done     : 824 runs in 496s -> ../benchmark_s3/results/voicebank16k_wiener-mcra.csv
+summary  : fails=0 total_overruns=0 worst max|d|=1 LSB  worst n_diff=1296  worst NMSE=-82.0 dB
+=== mmse mcra 15:11:14
+device   : ESP32S3 build 'Release 20261014T1243' image_crc32=43ba3cff tick_hz=240000000  (verified against ../benchmark_s3/results/image_43ba3cff.bin)
+[200/824] 156s  last p232_211: hops=88 overruns=0 proc_mean=538708.0 max|d|=1 status=ok
+[400/824] 306s  last p257_008: hops=349 overruns=0 proc_mean=539932.7 max|d|=1 status=ok
+[600/824] 457s  last p257_210: hops=158 overruns=0 proc_mean=538905.3 max|d|=1 status=ok
+[800/824] 601s  last p257_410: hops=224 overruns=0 proc_mean=534554.9 max|d|=1 status=ok
+[824/824] 618s  last p257_434: hops=131 overruns=0 proc_mean=534197.9 max|d|=1 status=ok
+done     : 824 runs in 618s -> ../benchmark_s3/results/voicebank16k_mmse-mcra.csv
+summary  : fails=0 total_overruns=0 worst max|d|=1 LSB  worst n_diff=1108  worst NMSE=-83.1 dB
+BATCH-DONE

@@ -1,0 +1,59 @@
+Executing action: flash
+Running ninja in directory /home/jurica/Desktop/work/benchmark/benchmark_s3/build_rnnoise_splibm
+Executing "ninja flash"...
+[1/5] cd /home/jurica/Desktop/work/benchmark/benchmark_s3/build_rnnoise_splibm/esp-idf/esptool_py && /home/jurica/.espressif/python_env/idf5.4_py3.12_env/bin/python /home/jurica/.espressif/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/jurica/Desktop/work/benchmark/benchmark_s3/build_rnnoise_splibm/partition_table/partition-table.bin /home/jurica/Desktop/work/benchmark/benchmark_s3/build_rnnoise_splibm/benchmark_s3.bin
+benchmark_s3.bin binary size 0x56ba0 bytes. Smallest app partition is 0x100000 bytes. 0xa9460 bytes (66%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /home/jurica/Desktop/work/benchmark/benchmark_s3/build_rnnoise_splibm/bootloader/esp-idf/esptool_py && /home/jurica/.espressif/python_env/idf5.4_py3.12_env/bin/python /home/jurica/.espressif/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/jurica/Desktop/work/benchmark/benchmark_s3/build_rnnoise_splibm/bootloader/bootloader.bin
+Bootloader binary size 0x5280 bytes. 0x2d80 bytes (36%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] cd /home/jurica/.espressif/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/jurica/.espressif/esp-idf -D "SERIAL_TOOL=/home/jurica/.espressif/python_env/idf5.4_py3.12_env/bin/python;;/home/jurica/.espressif/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32s3" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/jurica/Desktop/work/benchmark/benchmark_s3/build_rnnoise_splibm -P /home/jurica/.espressif/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32s3 -p /dev/ttyACM2 -b 921600 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 16MB 0x0 bootloader/bootloader.bin 0x10000 benchmark_s3.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.12.0
+Serial port /dev/ttyACM2
+Connecting....
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+MAC: cc:ba:97:0a:2b:0c
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 921600
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x00066fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 21120 bytes to 13535...
+Writing at 0x00000000... (100 %)
+Wrote 21120 bytes (13535 compressed) at 0x00000000 in 0.6 seconds (effective 305.1 kbit/s)...
+Hash of data verified.
+Compressed 355232 bytes to 240243...
+Writing at 0x00010000... (6 %)
+Writing at 0x0001902a... (13 %)
+Writing at 0x0001d14d... (20 %)
+Writing at 0x00021402... (26 %)
+Writing at 0x000255c1... (33 %)
+Writing at 0x0002967d... (40 %)
+Writing at 0x0002decc... (46 %)
+Writing at 0x000345ba... (53 %)
+Writing at 0x0003a31a... (60 %)
+Writing at 0x0003f7f5... (66 %)
+Writing at 0x00044ef6... (73 %)
+Writing at 0x0004b3d1... (80 %)
+Writing at 0x0005558b... (86 %)
+Writing at 0x0005c70b... (93 %)
+Writing at 0x00062775... (100 %)
+Wrote 355232 bytes (240243 compressed) at 0x00010000 in 4.0 seconds (effective 702.2 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 543.4 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+Done

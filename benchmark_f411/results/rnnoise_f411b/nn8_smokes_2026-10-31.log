@@ -1,0 +1,33 @@
+=== 2026-10-31T17:52:00+01:00 flash nn8_fpc0 (benchmark_f411/results/rnnoise_nn8_fpc0_image.bin)
+Bus 003 Device 012: ID cafe:4001 Benchmark STM32F411 Audio Bench
+=== 2026-10-31T17:52:17+01:00 smoke nn8_fpc0 (limit 5)
+device   : STM32F411 build 'Release 20261031T1427+N' image_crc32=e0a4f520 tick_hz=96000000  (verified against benchmark_f411/results/rnnoise_nn8_fpc0_image.bin)
+[1/5] 4s  last p232_001: hops=175 overruns=176 proc_mean=2142831.1 max|d|=85 status=ok
+[2/5] 11s  last p232_002: hops=272 overruns=273 proc_mean=2100610.8 max|d|=159 status=ok
+[3/5] 29s  last p232_003: hops=719 overruns=720 proc_mean=2094628.9 max|d|=425 status=ok
+[4/5] 44s  last p232_005: hops=625 overruns=626 proc_mean=2096953.4 max|d|=1490 status=ok
+[5/5] 57s  last p232_006: hops=511 overruns=512 proc_mean=2113546.6 max|d|=88 status=ok
+done     : 5 runs in 57s -> benchmark_f411/results/rnnoise_f411b/nn8_fpc0_smoke5/voicebank48k_rnnoise-v0.1.1_paced_smoke.csv
+summary  : fails=0 total_overruns=2307 worst max|d|=1490 LSB  worst n_diff=255631  worst NMSE=-35.0 dB
+=== 2026-10-31T17:53:13+01:00 done nn8_fpc0 (exit 0)
+=== 2026-10-31T17:53:13+01:00 flash nn8_stamp (benchmark_f411/results/rnnoise_nn8_stamp_image.bin)
+Bus 003 Device 013: ID cafe:4001 Benchmark STM32F411 Audio Bench
+=== 2026-10-31T17:53:31+01:00 smoke nn8_stamp (limit 5)
+device   : STM32F411 build 'Release 20261031T1608+X' image_crc32=73889ade tick_hz=96000000  (verified against benchmark_f411/results/rnnoise_nn8_stamp_image.bin)
+[1/5] 4s  last p232_001: hops=175 overruns=176 proc_mean=2125328.9 max|d|=85 status=ok
+[2/5] 11s  last p232_002: hops=272 overruns=273 proc_mean=2083345.1 max|d|=159 status=ok
+[3/5] 28s  last p232_003: hops=719 overruns=720 proc_mean=2077115.0 max|d|=425 status=ok
+[4/5] 44s  last p232_005: hops=625 overruns=626 proc_mean=2079052.9 max|d|=1490 status=ok
+[5/5] 56s  last p232_006: hops=511 overruns=512 proc_mean=2095775.5 max|d|=82 status=ok
+done     : 5 runs in 56s -> benchmark_f411/results/rnnoise_f411b/nn8_stamp_smoke5/voicebank48k_rnnoise-v0.1.1_paced_smoke.csv
+summary  : fails=0 total_overruns=2307 worst max|d|=1490 LSB  worst n_diff=258490  worst NMSE=-35.0 dB
+=== 2026-10-31T17:54:27+01:00 done nn8_stamp (exit 0)
+== RNNoise stage sums nn8_stamp_smoke5: frames=2307 silent=0 total=4,719,981,791 cycles  per-frame=2,045,939
+  0 hp + analysis window + 960-pt fwd transform + band E        1,018,717,366       441,577/frame   21.6 %
+  1 pitch downsample + pitch search + doubling                    809,564,676       350,917/frame   17.2 %
+  2 pitch window + 960-pt fwd transform + band E/corr             501,410,343       217,343/frame   10.6 %
+  3 remaining features (log, DCTs, cepstra, variability)          264,617,938       114,702/frame    5.6 %
+  4 GRU network (compute_rnn)                                   1,257,359,429       545,019/frame   26.6 %
+  5 pitch filter + gain smoothing + interp + apply                508,693,663       220,500/frame   10.8 %
+  6 synthesis: 960-pt inv transform + window + OLA                359,618,376       155,881/frame    7.6 %
+  7 (unused)                                                                0             0/frame    0.0 %

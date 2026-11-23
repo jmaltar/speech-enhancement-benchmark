@@ -1,0 +1,51 @@
+scored qat-pruned-i16: ['f32', 'i16'] on voicebank16k,dns; log /home/jurica/benchmark/training/runs/qat-pruned-i16/eval.log
+  === voicebank16k: enhanced (B, noise tracker mcra) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 8 tests (headline-pooled-per-corpus
+  === voicebank16k: dtln-qat-pruned-i16-shrunk-f32 (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.4574   2.4154   -0.0521  [-0.0641, -0.0403]    0.10  6.03e-12  1.87e-11  different but equivalent (real, below the margin that matte
+  stoi            0.9334   0.9275   -0.0045  [-0.0051, -0.0040]    0.01   2.9e-40  2.46e-31  different but equivalent (real, below the margin that matte
+  si_sdr         19.0215  18.5444   -0.4771  [-0.5214, -0.4328]    0.50  6.37e-60     0.197  DIFFERENT (exceeds the pre-specified margin)
+  === voicebank16k: dtln-qat-pruned-i16-shrunk-i16-tflm (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.4574   2.3374   -0.1282  [-0.1383, -0.1180]    0.10  7.81e-63         1  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9334   0.9271   -0.0049  [-0.0055, -0.0043]    0.01  1.79e-44  4.95e-29  different but equivalent (real, below the margin that matte
+  si_sdr         19.0215  18.4847   -0.5368  [-0.5801, -0.4936]    0.50  2.32e-75     0.919  DIFFERENT (exceeds the pre-specified margin)
+  === dns: enhanced (B, noise tracker mcra) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 8 tests (headline-pooled-per-corpus)
+  === dns: dtln-qat-pruned-i16-shrunk-f32 (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 150; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.0536   1.7858   -0.2505  [-0.2783, -0.2243]    0.10  2.86e-23         1  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9259   0.9028   -0.0181  [-0.0217, -0.0149]    0.01  3.78e-21         1  DIFFERENT (exceeds the pre-specified margin)
+  si_sdr         14.0664  11.7061   -2.3603  [-2.7227, -1.9980]    0.50  2.15e-20         1  DIFFERENT (exceeds the pre-specified margin)
+  === dns: dtln-qat-pruned-i16-shrunk-i16-tflm (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 150; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.0536   1.7599   -0.2752  [-0.3050, -0.2482]    0.10   3.6e-24         1  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9259   0.9008   -0.0196  [-0.0235, -0.0164]    0.01  1.57e-21         1  DIFFERENT (exceeds the pre-specified margin)
+  si_sdr         14.0664  11.5249   -2.5415  [-2.9021, -2.1809]    0.50  9.52e-23         1  DIFFERENT (exceeds the pre-specified margin)
+=== voicebank16k: dtln-qat-pruned-i16-shrunk-i16-tflm (B) vs dtln-prune-learned-shrunk-i16-tflm (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    2.3415   2.3374   -0.0039  [-0.0091, +0.0015]    0.10     0.228  5.24e-95  EQUIVALENT (same to the stated precision)
+             rank-biserial r = -0.0485   (paired wilcoxon, n = 824)
+stoi            0.9261   0.9271   +0.0008  [+0.0005, +0.0011]    0.01  2.72e-06 3.93e-110  different but equivalent (real, below the margin that matters)
+             rank-biserial r = +0.1886   (paired wilcoxon, n = 824)
+estoi           0.8174   0.8203   +0.0023  [+0.0017, +0.0029]    0.01  1.19e-10  4.64e-59  different but equivalent (real, below the margin that matters)
+             rank-biserial r = +0.2590   (paired wilcoxon, n = 824)
+si_sdr         18.3546  18.4847   +0.1300  [+0.1111, +0.1489]    0.50  9.65e-28 2.61e-148  different but equivalent (real, below the margin that matters)
+             Cohen's d_z = +0.3946   (paired t, n = 824)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw     0.228  adj     0.228  n.s.
+  stoi           raw  2.72e-06  adj  5.44e-06  significant
+  estoi          raw  1.19e-10  adj  3.57e-10  significant
+  si_sdr         raw  9.65e-28  adj  3.86e-27  significant
+=== dns: dtln-qat-pruned-i16-shrunk-i16-tflm (B) vs dtln-prune-learned-shrunk-i16-tflm (A), paired by utterance, n = 150; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    1.7286   1.7599   +0.0271  [+0.0172, +0.0376]    0.10   1.8e-05  6.55e-15  different but equivalent (real, below the margin that matters)
+             rank-biserial r = +0.4036   (paired wilcoxon, n = 150)
+stoi            0.8985   0.9008   +0.0034  [+0.0023, +0.0045]    0.01  2.13e-05  5.35e-12  different but equivalent (real, below the margin that matters)
+             rank-biserial r = +0.4001   (paired wilcoxon, n = 150)
+estoi           0.8006   0.8087   +0.0084  [+0.0067, +0.0102]    0.01   1.6e-10     0.071  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = +0.6019   (paired wilcoxon, n = 150)
+si_sdr         11.3771  11.5249   +0.1478  [-0.0029, +0.2985]    0.50     0.107  8.17e-05  EQUIVALENT (same to the stated precision)
+             Cohen's d_z = +0.1326   (paired t, n = 150)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw   1.8e-05  adj  5.41e-05  significant
+  stoi           raw  2.13e-05  adj  5.41e-05  significant
+  estoi          raw   1.6e-10  adj  6.42e-10  significant
+  si_sdr         raw     0.107  adj     0.107  n.s.

@@ -1,0 +1,45 @@
+quality_summary.csv: 655 rows over 105 tags
+quality_utterances.csv.gz: 28562 rows over 27 tags
+cost.csv: 34 rows
+platform algorithm                      label    cyc_hop  cyc_hop_med_of_medians      rtf   fit  overruns   e2e_ms  duty_cycle
+    f411   specsub                   as built  170349.25                170690.0 0.110904  True         0   5.8470    0.110904
+    f411    wiener                   as built  172369.80                172742.0 0.112220  True         0   5.9070    0.112220
+    f411      mmse                   as built  290938.95                297663.0 0.189413  True         0   8.4415    0.189413
+    f411     noisy     bypass (harness floor)     953.50                   949.0 0.000621  True         0   2.3120    0.000621
+    h723   specsub                   as built  126301.80                126806.0 0.014352  True         0   2.3810    0.014352
+    h723    wiener                   as built  127262.45                127744.0 0.014462  True         0   2.3820    0.014462
+    h723      mmse                   as built  221411.95                224680.0 0.025160  True         0   2.7370    0.025160
+    h723     noisy     bypass (harness floor)     404.00                   402.0 0.000046  True         0   1.9350    0.000046
+      s3   specsub                   as built  326706.45                327692.5 0.085080  True         0   9.8210    0.085080
+      s3    wiener                   as built  326198.55                327161.5 0.084948  True         0   9.8240    0.084948
+      s3      mmse                   as built  533498.15                539885.0 0.138932  True         0  12.8060    0.138932
+      s3     noisy     bypass (harness floor)     782.20                   782.0 0.000204  True         0   3.4190    0.000204
+    rpi5   specsub                   as built   71715.60                 71688.0 0.001868  True         0      NaN    0.001870
+    rpi5    wiener                   as built   71969.76                 71954.4 0.001874  True         0      NaN    0.001870
+    rpi5      mmse                   as built   92441.16                 92932.8 0.002407  True         0      NaN    0.002410
+    rpi5     noisy     bypass (harness floor)     213.84                   177.6 0.000006  True         0      NaN    0.000010
+    f411   rnnoise                 as shipped 3045682.60               3040894.5 3.172586 False    208429  67.5815    1.000000
+    f411   rnnoise                         +F 2764289.65               2760599.0 2.879468 False    208429  62.1060    1.000000
+    f411   rnnoise                        +FS 2609447.95               2605312.0 2.718175 False    208429  58.9310    1.000000
+    f411   rnnoise                         +N 2079494.95               2074595.5 2.166141 False    208429  47.9005    1.000000
+    f411   rnnoise                         +M 1675902.80               1671895.0 1.745732 False    208429  39.4600    1.000000
+    h723   rnnoise                 as shipped 1776259.45               1773387.0 0.322956  True         0   5.1740    0.322956
+    h723   rnnoise                        +FS 1765824.45               1763417.0 0.321059  True         0   5.7120    0.321059
+    h723   rnnoise                         +N 1019550.80               1016620.0 0.185373  True         0   4.3620    0.185373
+    h723   rnnoise                         +M 1009461.00               1006474.0 0.183538  True         0   4.6830    0.183538
+      s3   rnnoise                 as shipped 3132550.90               3131207.0 1.305230 False    208429  45.0300    1.000000
+      s3   rnnoise                         +W 2378800.00               2376842.0 0.991167 False     36278  36.0250    0.991167
+      s3   rnnoise                        +FW 2156066.15               2155223.5 0.898361  True         1  33.0250    0.898361
+    rpi5   rnnoise                 as shipped  409111.20                407731.2 0.017046  True         0      NaN    0.017050
+    h723      dtln CMSIS-NN s16 (DTCM arenas) 1712403.80               1712355.0 0.389183  True         0   7.2450    0.389183
+      s3      dtln     TFLM reference kernels 8822368.95               8822539.0 4.594984 False    261877 190.1850    1.000000
+      s3      dtln                         +P 3747529.35               3748208.0 1.951838 False    261877  85.2300    1.000000
+    rpi5      dtln     TFLM reference kernels 1250688.12               1250491.2 0.065140  True         0      NaN    0.065140
+    rpi5      dtln     TFLM reference kernels 3113816.88               3112942.8 0.162178  True         0      NaN    0.162180
+separation.csv: 17 rows
+scored tags not declared (diagnostic / Arm B rows; in quality_summary.csv only):
+  dtln-f32n
+  dtln-ft-f32-f32
+  dtln-ft-f32-i16-tflm
+  dtln-ft-z16-f32
+  dtln-ft-z16-int8-tflm ... (135 lines, results/inventory.txt)

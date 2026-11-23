@@ -1,0 +1,7 @@
+=== rnnoise v0.1.1 stamped paced smoke 11:16:34
+device   : RPI5 build 'Release gcc14.2 stamp 20261102T1116' tick_hz=1000000000 (ns)  conditions: core=2 affinity=ok sched_policy=1(SCHED_FIFO) rtprio=50 mlockall=ok cur_khz=2400000 max_khz=2400000
+platform : platform  : governor performance on 4 cpus, throttled=0x0
+[3/3] 12s  last p232_003: hops=719 overruns=0 proc_mean=170855.3 ns max|d|=1 duty=0.01709 void=0 status=ok
+done     : 3 runs in 12s -> /dev/shm/results_rnnoise_stamp_smoke/voicebank48k_rnnoise-v0.1.1_paced_smoke.csv
+summary  : fails=0 void_runs=0 total_overruns=0 worst max|d|=1 LSB  worst n_diff=91  worst NMSE=-102.9 dB
+=== all done 11:16:46

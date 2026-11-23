@@ -1,0 +1,18 @@
+/home/jurica/Desktop/work/benchmark/.venv/lib/python3.11/site-packages/scipy/stats/_axis_nan_policy.py:592: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  res = hypotest_fun_out(*samples, **kwds)
+=== voicebank48k: rnnoise-h723-n (B) vs rnnoise-f411-n (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    2.3176   2.3176   +0.0000  [+0.0000, +0.0000]    0.10         1 1.63e-181  EQUIVALENT (same to the stated precision)
+             rank-biserial r = +0.0000   (paired wilcoxon, n = 824)
+stoi            0.9197   0.9197   +0.0000  [+0.0000, +0.0000]    0.01         1 1.63e-181  EQUIVALENT (same to the stated precision)
+             rank-biserial r = +0.0000   (paired wilcoxon, n = 824)
+estoi           0.8161   0.8161   +0.0000  [+0.0000, +0.0000]    0.01      0.21 1.97e-138  EQUIVALENT (same to the stated precision)
+             rank-biserial r = -0.0626   (paired wilcoxon, n = 824)
+si_sdr         13.0556  13.0556   +0.0000  [+0.0000, +0.0000]    0.50         1         0  EQUIVALENT (same to the stated precision)
+             Cohen's d_z = +0.0000   (paired t, n = 824)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw         1  adj         1  n.s.
+  stoi           raw         1  adj         1  n.s.
+  estoi          raw      0.21  adj     0.839  n.s.
+  si_sdr         raw         1  adj         1  n.s.

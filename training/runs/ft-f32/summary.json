@@ -1,0 +1,27 @@
+{
+ "mode": "float fine-tune",
+ "epochs": 6,
+ "steps": 500,
+ "batch": 32,
+ "seg_seconds": 4.0,
+ "start_val": -13.472812192193393,
+ "best_val": -15.341587494159567,
+ "best_epoch": 5,
+ "final_epoch": 5,
+ "final_val": -15.341587494159567,
+ "live_units": [
+  128,
+  128,
+  128,
+  128
+ ],
+ "dense_params": 986753,
+ "dense_params_full": 986753,
+ "minutes": 32.09180872042974,
+ "steps_per_s": 1.5580299769196198,
+ "train_utterances": 10660,
+ "val_speakers": [
+  "p239",
+  "p244"
+ ]
+}

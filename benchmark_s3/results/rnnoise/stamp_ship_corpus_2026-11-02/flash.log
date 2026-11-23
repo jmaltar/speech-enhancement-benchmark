@@ -1,0 +1,38 @@
+esptool v5.6.0
+Serial port /dev/serial/by-id/usb-1a86_USB_Single_Serial_5981000468-if00:
+Connecting....
+Connected to ESP32-S3 on /dev/serial/by-id/usb-1a86_USB_Single_Serial_5981000468-if00:
+Chip type:          ESP32-S3 (QFN56) (revision v0.2)
+Features:           Wi-Fi, BT 5 (LE), Dual Core + LP Core, 240MHz, Embedded PSRAM 8MB (AP_3v3)
+Crystal frequency:  40MHz
+MAC:                cc:ba:97:0a:2b:0c
+
+Uploading stub flasher...
+Running stub flasher...
+Stub flasher running.
+Changing baud rate to 921600...
+Changed.
+
+Configuring flash size...
+Flash will be erased from 0x00010000 to 0x00067fff...
+Compressed 357472 bytes to 241636...
+Writing at 0x0001903e ━━                               6.8% 16.00kB/235.97kB [0s] 
+Writing at 0x0001d15a ━━━━                            13.6% 32.00kB/235.97kB [0s] 
+Writing at 0x0002140f ━━━━━━                          20.3% 48.00kB/235.97kB [0s] 
+Writing at 0x000255d0 ━━━━━━━━                        27.1% 64.00kB/235.97kB [0s] 
+Writing at 0x0002968d ━━━━━━━━━━                      33.9% 80.00kB/235.97kB [0s] 
+Writing at 0x0002de44 ━━━━━━━━━━━━                    40.7% 96.00kB/235.97kB [1s] 
+Writing at 0x000345b0 ━━━━━━━━━━━━━━                  47.5% 112.00kB/235.97kB [1s] 
+Writing at 0x0003a31d ━━━━━━━━━━━━━━━━                54.2% 128.00kB/235.97kB [1s] 
+Writing at 0x0003f7f6 ━━━━━━━━━━━━━━━━━━              61.0% 144.00kB/235.97kB [2s] 
+Writing at 0x00044e7d ━━━━━━━━━━━━━━━━━━━━            67.8% 160.00kB/235.97kB [2s] 
+Writing at 0x0004b356 ━━━━━━━━━━━━━━━━━━━━━━          74.6% 176.00kB/235.97kB [2s] 
+Writing at 0x000556a7 ━━━━━━━━━━━━━━━━━━━━━━━━        81.4% 192.00kB/235.97kB [2s] 
+Writing at 0x0005c750 ━━━━━━━━━━━━━━━━━━━━━━━━━━      88.1% 208.00kB/235.97kB [2s] 
+Writing at 0x0006273d ━━━━━━━━━━━━━━━━━━━━━━━━━━━━    94.9% 224.00kB/235.97kB [2s] 
+Writing at 0x00067460 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.0% 235.97kB/235.97kB [3s] 
+Wrote 357472 bytes (241636 compressed) at 0x00010000 in 3.3 seconds (868.8 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Hard resetting via RTS pin...

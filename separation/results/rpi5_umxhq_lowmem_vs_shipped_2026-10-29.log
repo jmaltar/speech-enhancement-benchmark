@@ -1,0 +1,21 @@
+torch 2.15.0+cpu targets ['vocals', 'drums', 'bass', 'other']
+AM Contra - Heart Peripheral 10 s (shipped 5.4 s, lowmem 5.4 s): float max|d| 2.235e-08, mean|d| 2.064e-12, 0.20 % of float samples differ, torch.equal False
+  vocals: PCM_16 max 0 LSB, 0 of 882000 samples differ (0.0000 %)
+  accompaniment: PCM_16 max 1 LSB, 1 of 882000 samples differ (0.0001 %)
+  lowmem run-to-run torch.equal: True
+  shipped run-to-run torch.equal: True
+  max RSS so far 0.80 GiB
+PR - Oh No full 76.2 s (shipped 41.0 s, lowmem 41.1 s): float max|d| 0.000e+00, mean|d| 0.000e+00, 0.00 % of float samples differ, torch.equal True
+  vocals: PCM_16 max 0 LSB, 0 of 6720354 samples differ (0.0000 %)
+  accompaniment: PCM_16 max 0 LSB, 0 of 6720354 samples differ (0.0000 %)
+  lowmem run-to-run torch.equal: True
+  shipped run-to-run torch.equal: True
+  max RSS so far 2.68 GiB
+AM Contra - Heart Peripheral full 210.1 s (shipped 115.9 s, lowmem 115.6 s): float max|d| 5.457e-12, mean|d| 3.417e-17, 0.01 % of float samples differ, torch.equal False
+  vocals: PCM_16 max 0 LSB, 0 of 18531328 samples differ (0.0000 %)
+  accompaniment: PCM_16 max 0 LSB, 0 of 18531328 samples differ (0.0000 %)
+  lowmem run-to-run torch.equal: True
+  shipped run-to-run torch.equal: True
+  max RSS so far 6.34 GiB
+=== exit 0
+umx-lmdiff.service max_rss_kb=5613696 (5.35 GiB)

@@ -1,0 +1,39 @@
+=== 2026-11-05T13:43:19+01:00 session s3 image image.bin crc32 50ad5aa1 clk 240 MHz hop 0.010 s -> results/power/s3_rnnoise_fw
+=== 2026-11-05T13:43:19+01:00 fresh-boot idle 20 s (record only)
+11751,2285948947,1806,3765
+# usb_clock=off pa11_pa12=analog sysclk=hsi reset=0x0E
+# ina226 mfg=0x5449 die=0x2260 cfg=0x4527
+# fields D,seq,t_us,vshunt_raw,vbus_raw  lsb_shunt_nV=2500 lsb_bus_uV=1250  vbus is the supply side: v_board = vbus - vshunt
+# i2c scan: scl=1 sda=1 ack: 0x40
+603 readings, 687 dropped, written to results/power/s3_rnnoise_fw/power_idle_boot.csv
+=== 2026-11-05T13:43:39+01:00 priming stream (1 utterance, smoke)
+=== 2026-11-05T13:43:44+01:00 idle 60 s (post-stream: the P_idle the model uses)
+1748 readings, 100 dropped, written to results/power/s3_rnnoise_fw/power_idle.csv
+=== 2026-11-05T13:44:44+01:00 unpaced batch
+3765
+# ina226-logger 1 uid=0058002B3130510F35363330 clk=hsi16 i2c=sw90k uart=115200
+# usb_clock=off pa11_pa12=analog sysclk=hsi reset=0x0E
+# ina226 mfg=0x5449 die=0x2260 cfg=0x4527
+# fields D,seq,t_us,vshunt_raw,vbus_raw  lsb_shunt_nV=2500 lsb_bus_uV=1250  vbus is the supply side: v_board = vbus - vshunt
+# i2c scan: scl=1 sda=1 ack: 0x40
+68668 readings, 0 dropped, written to results/power/s3_rnnoise_fw/power_unpaced.csv
+done     : 824 runs in 2419s -> results/power/s3_rnnoise_fw/unpaced/voicebank48k_rnnoise-v0.1.1.csv
+summary  : fails=0 total_overruns=0 worst max|d|=228 LSB  worst n_diff=27892  worst NMSE=-53.9 dB
+=== 2026-11-05T14:25:09+01:00 paced batch
+383560,499641618,1913,3765
+68643 readings, 0 dropped, written to results/power/s3_rnnoise_fw/power_paced.csv
+done     : 824 runs in 2418s -> results/power/s3_rnnoise_fw/paced/voicebank48k_rnnoise-v0.1.1_paced.csv
+summary  : fails=0 total_overruns=0 worst max|d|=228 LSB  worst n_diff=27892  worst NMSE=-53.9 dB
+=== 2026-11-05T15:05:32+01:00 summary
+# power session: results/power/s3_rnnoise_fw  (clk 240 MHz, hop 10 ms, budget 2,400,000 cycles)
+
+| leg | n | span s | I mA | V | P mW | duty (board cycles / wall) | RTF | overruns | E mJ per audio-s |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| idle_boot | 482 | 17 | 45.41 ± 0.04 | 4.702 | 213.5 | 0.000 | 0.000 |  | nan |
+| idle | 1615 | 57 | 45.64 ± 0.07 | 4.702 | 214.6 | 0.000 | 0.000 |  | nan |
+| unpaced | 68582 | 2421 | 76.65 ± 5.71 | 4.663 | 357.4 | 0.771 | 0.898 | 0 | 416.8 |
+| paced | 68557 | 2420 | 76.68 ± 5.56 | 4.663 | 357.6 | 0.771 | 0.898 | 0 | 416.8 |
+
+P_idle = 214.6 mW, P_active (solved from the unpaced leg at duty 0.771) = 399.9 mW
+paced, measured: 416.8 mJ per audio-second at RTF 0.898
+corrected form P_active*RTF + P_idle*(1-RTF) = 381.0 mJ/s; the PDF's P_active*RTF alone = 359.2 mJ/s

@@ -1,0 +1,156 @@
+% Shared body of the power-bench figures (revision 5, 2026-11-04: M1 moved 6 mm right so the SWD-GND lane and its entry
+% into M1's GND pin clear the pin tags; revision 4, 2026-11-03: paper version — orthogonal bundled routing,
+% a pin tag at every connection, one key). The wrapper defines \DUTpre, \DUTboard, \DUTshadow, \DUTname, \DUTpost
+% and \ifSWD. Coordinates are real millimetres scaled by the picture's x/y units.
+\begin{tikzpicture}[x=0.62mm, y=0.62mm]
+
+\tikzset{
+  ptag/.style={font=\fontsize{4.6}{4.6}\selectfont\sffamily, inner sep=0.45pt, fill=white, draw=black!45,
+               line width=0.25pt, rounded corners=0.5pt, text=black!90},
+  vtag/.style={ptag, rotate=90},
+  note/.style={font=\fontsize{6.2}{7}\selectfont\sffamily, text=black!65, align=left, inner sep=1pt},
+  keyhead/.style={font=\scriptsize\sffamily\bfseries, anchor=west, inner sep=0pt},
+  wire/.style={line cap=round, line join=round, rounded corners=2.2},
+}
+% soft shadow under a board: \shadow{x0}{y0}{w}{h}
+\newcommand{\shadow}[4]{\fill[black, opacity=0.16, rounded corners=1.5pt] (#1+1.3,#2-1.5) rectangle +(#3,#4);}
+% orthogonal wires: same stacking as \jumper / \hwire, with rounded corners
+\newcommand{\jw}[2]{%
+  \draw[wire, line width=3.3pt, #1!45!black] #2; \draw[wire, line width=2.5pt, #1] #2;
+  \draw[wire, line width=0.7pt, white, opacity=0.35] #2;}
+\newcommand{\hw}[2]{%
+  \draw[wire, line width=2.3pt, #1!45!black] #2; \draw[wire, line width=1.7pt, #1] #2;
+  \draw[wire, line width=0.5pt, white, opacity=0.35] #2;}
+
+% ============================================================ cables and plugs (boards drawn later cover the plug metal)
+\usbcable{(-51,10.5) -- (-15.8,10.5)}
+\usbcable{(-51,64) .. controls (-40,64) and (-38,49) .. (-24.4,49)}
+\DUTpre
+\usbcable{(127,-8.3) .. controls (150,-8.3) and ($(dutUSB)+(0,-42)$) .. ($(dutUSB)+(0,-13.4)$)}
+\usbAplug{(-78,10.5)}{180}
+\usbAplug{(-78,64)}{180}
+\usbCplug{(5.2,10.5)}{0}
+\usbCplug{(-3.4,49)}{0}
+\usbCplug{($(dutUSB)+(0,6.6)$)}{90}
+\usbAplug{(100,-8.3)}{180}
+
+% ============================================================ host PC edge, with its two ports named
+\fill[alu, draw=aludk, line width=0.5pt, rounded corners=3pt] (-96,-2) rectangle (-66,74);
+\fill[white, opacity=0.35, rounded corners=2pt] (-93,1) rectangle (-89,71);
+\foreach \y in {10.5,64}{\fill[black!80, rounded corners=0.4pt] (-68.2,\y-3.6) rectangle (-65.4,\y+3.6);}
+\node[rotate=90, font=\small\sffamily\bfseries, text=black!75] at (-84,37) {Host PC};
+\node[note, anchor=south east, align=right, text=black!60] at (-69,68.6) {USB:\\debugger};
+\node[note, anchor=north east, align=right, text=black!60] at (-69,5.9) {USB:\\audio};
+
+% ============================================================ boards (shadows first)
+\shadow{0}{0}{53}{21}
+\shadow{-8}{42}{36}{14}
+\shadow{68}{-66}{19.5}{20.6}
+\shadow{92}{-19.3}{18}{22}
+\DUTshadow
+\BlackPill{fx}{53}{0}{90}{y}
+\MiniDebugger{db}{-8}{42}
+\INAcoords{m1}{68}{-66}
+\USBAbreakout{bo}{92}{-19.3}
+\DUTboard
+
+% ============================================================ Dupont housings on every pin in use
+\foreach \c in {fx-A11,fx-A12,fx-B6,fx-B7,fx-5VL,fx-GL,fx-3V3L,fx-SWGND,fx-A2,fx-A3,fx-GR,fx-5VR,
+                bo-GND,bo-DP,bo-DM,bo-VBUS}
+  {\dupont{(\c)}}
+
+% ============================================================ jumper wires
+% --- USB pass-through: data and ground straight across to the breakout (a 3-wire bus under the logger)
+\jw{jBlack}{(fx-GL)  -- (48.72,-4.49) -- (bo-GND)}
+\jw{jGreen}{(fx-A12) -- (23.32,-7.03) -- (bo-DP)}
+\jw{jWhite}{(fx-A11) -- (20.78,-9.57) -- (bo-DM)}
+% --- 5 V: logger 5V -> M1 IN+ ; M1 IN- (under the module, out at its right edge, up beside the breakout) -> breakout VBUS
+\jw{jRed}{(fx-5VL) -- (46.18,-46.9) -- (m1-INP)}
+\jw{jRed}{(m1-INM) -- (90.5,-49.44) -- (90.5,-12.11) -- (bo-VBUS)}
+% --- M1 supply and I2C (software I2C on PB6/PB7), GND from the SWD header's GND pin: its lane at x=57.5 runs in the
+%     clear gap left of M1's pin tags (M1 sits at x=68 since revision 5 so the entry run into GND is visible)
+\jw{jYellow}{(fx-B6)    -- (36.02,-57.06) -- (m1-SCL)}
+\jw{jBlue}{(fx-B7)      -- (38.56,-59.6)  -- (m1-SDA)}
+\jw{jBlack}{(fx-SWGND)  -- (57.5,13.62) -- (57.5,-62.14) -- (m1-GND)}
+\jw{jOrange}{(fx-3V3L)  -- (51.26,-64.68) -- (m1-VCC)}
+% --- VBS: bus-voltage sense, no current, from the logger's other 5V pin round the USB end
+\jw{jGrey}{(fx-5VR) -- (3,35) -- (-19,35) -- (-19,-51.98) -- (m1-VBS)}
+% the module on top of its wire ends, then the hidden IN- run shown dashed
+\INAmodule{m1}{68}{-66}{R100}
+\draw[jRed!70, line width=0.8pt, dash pattern=on 1.2pt off 1pt] (m1-INM) -- (87.5,-49.44);
+
+% ============================================================ debugger harness (its own wire colours)
+% serial link to the logger: TXD -> PA3, RXD -> PA2, GND -> G; fanned out of the plug, then orthogonal
+\hw{hBrown}{(db-w8)  .. controls (40,45.5) and (52,45.5) .. (52,40) -- (52,32) -- (5.54,32) -- (fx-GR)}
+\hw{hOrange}{(db-w6) .. controls (42,47.5) and (55,47.5) .. (55,40) -- (55,29) -- (30.94,29) -- (fx-A3)}
+\hw{hPurple}{(db-w7) .. controls (44,46.5) and (58,46.5) .. (58,40) -- (58,26) -- (33.48,26) -- (fx-A2)}
+\ifSWD
+% SWD to the board under test, over the top
+\foreach \c in {dutGND,dutCLK,dutDIO} {\dupont{(\c)}}
+\hw{hTeal}{(db-w3)   .. controls (38,50.5) and (46,50.5) .. (46,55) -- (46,61)   -- (dutGND |- 0,61)   -- (dutGND)}
+\hw{hYellow}{(db-w2) .. controls (36,51.5) and (43,51.5) .. (43,56) -- (43,63.5) -- (dutCLK |- 0,63.5) -- (dutCLK)}
+\hw{hBlack}{(db-w1)  .. controls (34,52.5) and (40,52.5) .. (40,57) -- (40,66)   -- (dutDIO |- 0,66)   -- (dutDIO)}
+\fi
+% wires of the harness that are not used: short, with a dot, and one note
+\ifSWD \def\ncstub{db-w0,db-w4,db-w5,db-w9} \else \def\ncstub{db-w0,db-w1,db-w2,db-w3,db-w4,db-w5,db-w9} \fi
+\foreach \c/\col in {db-w0/hRed,db-w1/hBlack,db-w2/hYellow,db-w3/hTeal,db-w4/hNavy,db-w5/hWhite,db-w9/hGrey}{
+  \edef\tmp{\c}
+  \foreach \s in \ncstub {\ifx\s\tmp \hw{\col}{(\c) -- ++(2.6,0)} \fill[black!70] ($(\c)+(2.6,0)$) circle (0.55); \fi}}
+
+% ============================================================ pin tags (readable names at every connection)
+% logger, bottom row (wires leave downward) and top row (wires arrive from above)
+\foreach \x/\t in {20.78/A11, 23.32/A12, 36.02/B6, 38.56/B7, 46.18/5V, 48.72/G, 51.26/3V3}
+  {\node[vtag, anchor=east] at (\x,-2.6) {\t};}
+\node[ptag, anchor=west] at (54.6,13.62) {GND};
+\foreach \x/\t in {3/5V, 5.54/G, 30.94/A3, 33.48/A2} {\node[vtag, anchor=west] at (\x,20.6) {\t};}
+% harness signal names on their runs
+\node[ptag] at (18,32) {GND};  \node[ptag] at (44,29) {TXD};  \node[ptag] at (47,26) {RXD};
+% M1 and the breakout
+\foreach \n/\t in {INP/IN+, INM/IN$-$, VBS/VBS, SCL/SCL, SDA/SDA, GND/GND, VCC/VCC}
+  {\node[ptag, anchor=east] at ($(m1-\n)+(-1.6,0)$) {\t};}
+\node[vtag] at (90.5,-38) {IN$-$};
+\foreach \n/\t in {GND/GND, DP/D+, DM/D$-$, VBUS/VBUS} {\node[ptag, anchor=east] at ($(bo-\n)+(-1.6,0)$) {\t};}
+\DUTpost
+
+% ============================================================ part labels
+\node[partlabel, anchor=south west] at (-8,58) {\textbf{Debugger} (ST-Link V2.1)};
+\node[partlabel, anchor=north west] at (-62,-5) {\textbf{Logger and USB pass-through}\\spare STM32F411 (WeAct Black Pill)};
+\node[partlabel, anchor=north west] at (68,-68.5) {\textbf{M1}: INA226, 0.1\,$\Omega$ shunt\\in the board's 5\,V supply};
+\node[partlabel, anchor=north west] at (92,-21.5) {\textbf{USB-A female}\\\textbf{breakout}};
+\node[partlabel, anchor=east, align=right] at (139,18) {\textbf{Board under test}\\\DUTname};
+\ifSWD
+\node[note, anchor=west] at (64,47.5) {3V3, 5V, NRST, SWO:\\not connected};
+\draw[black!45, line width=0.3pt] (63.5,48.2) -- (56,48.6);
+\else
+\node[note, anchor=west] at (64,49) {SWD unused (the S3 is flashed\\over its COM port); 3V3, 5V,\\NRST, SWO: not connected};
+\draw[black!45, line width=0.3pt] (63.5,50) -- (48,51.2);
+\fi
+
+% ============================================================ key
+\begin{scope}[shift={(-96,-24)}]
+  \draw[black!30, line width=0.3pt, rounded corners=1.5pt] (0,0) rectangle (70,\ifSWD-38\else-22\fi);
+  \node[keyhead] at (2.5,-4) {Debugger harness (WeAct Mini Debugger)};
+  \keywire{2.5}{-9.5}{h}{hOrange}{TXD $\to$ A3 (logger USART2 RX)}
+  \keywire{2.5}{-14.5}{h}{hPurple}{RXD $\to$ A2 (logger USART2 TX)}
+  \keywire{2.5}{-19.5}{h}{hBrown}{GND $\to$ G}
+\ifSWD
+  \keywire{2.5}{-25.5}{h}{hBlack}{SWDIO $\to$ DIO (board under test)}
+  \keywire{2.5}{-30.5}{h}{hYellow}{SWCLK $\to$ CLK}
+  \keywire{2.5}{-35.5}{h}{hTeal}{GND $\to$ GND}
+\fi
+\end{scope}
+\begin{scope}[shift={(114,-40)}]
+  \draw[black!30, line width=0.3pt, rounded corners=1.5pt] (0,0) rectangle (82,-50);
+  \node[keyhead] at (2.5,-4) {Jumper wires (Dupont)};
+  \keywire{2.5}{-9.5}{j}{jRed}{5\,V: logger $\to$ IN+, IN$-$ $\to$ VBUS}
+  \keywire{2.5}{-14.5}{j}{jWhite}{A11 $\to$ D$-$}
+  \keywire{2.5}{-19.5}{j}{jGreen}{A12 $\to$ D+}
+  \keywire{2.5}{-24.5}{j}{jBlack}{G $\to$ GND (breakout); SWD GND $\to$ M1}
+  \keywire{2.5}{-29.5}{j}{jYellow}{B6 $\to$ SCL}
+  \keywire{2.5}{-34.5}{j}{jBlue}{B7 $\to$ SDA}
+  \keywire{2.5}{-39.5}{j}{jOrange}{3V3 $\to$ VCC}
+  \keywire{2.5}{-44.5}{j}{jGrey}{other 5V $\to$ VBS (sense only)}
+\end{scope}
+\node[note, anchor=north west] at (-96,\ifSWD-66\else-56\fi) {M1's header is on its underside: the wires end beneath it, at the pins\\marked. Current flows IN+ $\to$ IN$-$; the logger reads $V_\mathrm{shunt}$ and $V_\mathrm{bus}$.};
+
+\end{tikzpicture}

@@ -1,0 +1,18 @@
+% Power-measurement bench, STM32F411 session (top view). Build: pdflatex in this directory.
+\documentclass[tikz, border=1.5mm]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{tikz}
+\usetikzlibrary{calc, positioning}
+\input{bench-parts.tex}
+
+\begin{document}
+\newif\ifSWD \SWDtrue
+\def\DUTname{STM32F411 (WeAct Black Pill)}
+\def\DUTpre{\coordinate (dutUSB) at (169.5,-14.4);}
+\def\DUTshadow{\shadow{159}{-13}{21}{53}}
+\def\DUTboard{\BlackPill{dut}{180}{40}{180}{y}\coordinate (dutGND) at (dut-SWGND);\coordinate (dutCLK) at (dut-SWCLK);\coordinate (dutDIO) at (dut-SWDIO);}
+\def\DUTpost{\foreach \c/\t in {dutGND/GND, dutCLK/CLK, dutDIO/DIO} {\node[vtag, anchor=west] at ($(\c)+(0,7.2)$) {\t};}}
+\input{power-bench-body.tex}
+\end{document}

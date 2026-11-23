@@ -1,0 +1,68 @@
+e2e figure dropped: {'rpi5': 'latency_e2e_ms is n/a: the Pi is fed files over SCP and streams no USB, so end-to-end latency has no comparable value on that tier'}
+
+=== si_sdr: deployable frontier (FIT points) per tier
+  f411  margin-aware FIT frontier: SpecSub, Wiener
+  f411  FIT frontier: SpecSub (0.1109, 10.222), Wiener (0.1122, 13.676)
+  h723  margin-aware FIT frontier: SpecSub, Wiener, DTLN-p34 CMSIS-NN
+  h723  FIT frontier: SpecSub (0.01435, 10.222), Wiener (0.01446, 13.676), DTLN-p34 CMSIS-NN (0.3892, 18.306)
+  s3    margin-aware FIT frontier: Wiener
+  s3    FIT frontier: Wiener (0.08495, 13.676) | all-points frontier adds (NO FIT): DTLN-p34 +P
+  rpi5  margin-aware FIT frontier: SpecSub, Wiener, DTLN-p34 ref
+  rpi5  FIT frontier: SpecSub (0.001868, 10.222), Wiener (0.001874, 13.676), DTLN-p34 ref (0.06514, 18.306)
+
+=== pesq_mos_lqo: deployable frontier (FIT points) per tier
+  f411  margin-aware FIT frontier: SpecSub, Wiener
+  f411  FIT frontier: SpecSub (0.1109, 2.059), Wiener (0.1122, 2.172), MMSE (0.1894, 2.196) | all-points frontier adds (NO FIT): RNNoise +M, RNNoise +FS
+  h723  margin-aware FIT frontier: SpecSub, Wiener, RNNoise +M
+  h723  FIT frontier: SpecSub (0.01435, 2.059), Wiener (0.01446, 2.172), MMSE (0.02516, 2.196), RNNoise +M (0.1835, 2.317), RNNoise +FS (0.3211, 2.318), DTLN-p34 CMSIS-NN (0.3892, 2.337)
+  s3    margin-aware FIT frontier: Wiener, RNNoise +FW
+  s3    FIT frontier: Wiener (0.08495, 2.172), MMSE (0.1389, 2.196), RNNoise +FW (0.8984, 2.318) | all-points frontier adds (NO FIT): DTLN-p34 +P
+  rpi5  margin-aware FIT frontier: SpecSub, Wiener, RNNoise
+  rpi5  FIT frontier: SpecSub (0.001868, 2.059), Wiener (0.001874, 2.172), MMSE (0.002407, 2.196), RNNoise (0.01705, 2.318), DTLN-p34 ref (0.06514, 2.337), DTLN-full ref (0.1622, 2.366)
+
+=== stoi: deployable frontier (FIT points) per tier
+  f411  margin-aware FIT frontier: SpecSub
+  f411  FIT frontier: SpecSub (0.1109, 0.920)
+  h723  margin-aware FIT frontier: SpecSub
+  h723  FIT frontier: SpecSub (0.01435, 0.920), DTLN-p34 CMSIS-NN (0.3892, 0.925)
+  s3    margin-aware FIT frontier: Wiener, SpecSub
+  s3    FIT frontier: Wiener (0.08495, 0.899), SpecSub (0.08508, 0.920) | all-points frontier adds (NO FIT): DTLN-p34 +P
+  rpi5  margin-aware FIT frontier: SpecSub
+  rpi5  FIT frontier: SpecSub (0.001868, 0.920), DTLN-p34 ref (0.06514, 0.925)
+
+=== si_sdr: ENERGY frontier (FIT rows; E = P_a·RTF + P_i·(1−RTF); ● measured session)
+  f411  margin-aware: SpecSub, Wiener
+  f411  strict: SpecSub (132 mJ/s, 10.222), Wiener (132 mJ/s, 13.676)
+  h723  margin-aware: DTLN-p34 CMSIS-NN
+  h723  strict: DTLN-p34 CMSIS-NN (733 mJ/s, 18.306)
+  s3    margin-aware: Wiener
+  s3    strict: Wiener (226 mJ/s, 13.676)
+  rpi5  margin-aware: SpecSub, Wiener, DTLN-p34 ref
+  rpi5  strict: SpecSub (1953 mJ/s, 10.222), Wiener (1953 mJ/s, 13.676), DTLN-p34 ref (2060 mJ/s, 18.306)
+  LADDER strict: F411 SpecSub (132, 10.222), F411 Wiener (132, 13.676), H723 DTLN-p34 CMSIS-NN (733, 18.306)
+  LADDER margin-aware: F411 SpecSub, F411 Wiener, H723 DTLN-p34 CMSIS-NN
+  composite SI-SDR / (E × algo latency), top 6: RPi5 Wiener 0.2335, RPi5 SpecSub 0.1751, RPi5 MMSE 0.1654, H723 Wiener 0.07903, H723 SpecSub 0.05951, F411 Wiener 0.05754
+
+=== pesq_mos_lqo: ENERGY frontier (FIT rows; E = P_a·RTF + P_i·(1−RTF); ● measured session)
+  f411  margin-aware: SpecSub, Wiener
+  f411  strict: SpecSub (132 mJ/s, 2.059), Wiener (132 mJ/s, 2.172), MMSE (134 mJ/s, 2.196)
+  h723  margin-aware: DTLN-p34 CMSIS-NN
+  h723  strict: DTLN-p34 CMSIS-NN (733 mJ/s, 2.337)
+  s3    margin-aware: Wiener, RNNoise +FW
+  s3    strict: Wiener (226 mJ/s, 2.172), MMSE (235 mJ/s, 2.196), RNNoise +FW● (381 mJ/s, 2.318)
+  rpi5  margin-aware: SpecSub, Wiener, RNNoise
+  rpi5  strict: SpecSub (1953 mJ/s, 2.059), Wiener (1953 mJ/s, 2.172), MMSE (1954 mJ/s, 2.196), RNNoise● (1979 mJ/s, 2.318), DTLN-p34 ref (2060 mJ/s, 2.337), DTLN-full ref (2224 mJ/s, 2.366)
+  LADDER strict: F411 SpecSub (132, 2.059), F411 Wiener (132, 2.172), F411 MMSE (134, 2.196), S3 RNNoise +FW (381, 2.318), H723 DTLN-p34 CMSIS-NN (733, 2.337), RPi5 DTLN-full ref (2224, 2.366)
+  LADDER margin-aware: F411 SpecSub, F411 Wiener, S3 RNNoise +FW
+
+=== stoi: ENERGY frontier (FIT rows; E = P_a·RTF + P_i·(1−RTF); ● measured session)
+  f411  margin-aware: SpecSub
+  f411  strict: SpecSub (132 mJ/s, 0.920)
+  h723  margin-aware: DTLN-p34 CMSIS-NN
+  h723  strict: DTLN-p34 CMSIS-NN (733 mJ/s, 0.925)
+  s3    margin-aware: Wiener, SpecSub
+  s3    strict: Wiener (226 mJ/s, 0.899), SpecSub (226 mJ/s, 0.920)
+  rpi5  margin-aware: SpecSub
+  rpi5  strict: SpecSub (1953 mJ/s, 0.920), DTLN-p34 ref (2060 mJ/s, 0.925)
+  LADDER strict: F411 SpecSub (132, 0.920), H723 DTLN-p34 CMSIS-NN (733, 0.925)
+  LADDER margin-aware: F411 SpecSub

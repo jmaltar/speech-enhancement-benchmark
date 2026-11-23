@@ -1,0 +1,9 @@
+== RNNoise stage sums nn8_stamp_smoke5: frames=2307 silent=0 total=2,276,114,225 cycles  per-frame=986,612
+  0 hp + analysis window + 960-pt fwd transform + band E          281,189,664       121,885/frame   12.4 %
+  1 pitch downsample + pitch search + doubling                    530,515,365       229,959/frame   23.3 %
+  2 pitch window + 960-pt fwd transform + band E/corr             266,380,185       115,466/frame   11.7 %
+  3 remaining features (log, DCTs, cepstra, variability)           65,319,410        28,314/frame    2.9 %
+  4 GRU network (compute_rnn)                                     737,565,227       319,708/frame   32.4 %
+  5 pitch filter + gain smoothing + interp + apply                177,628,250        76,995/frame    7.8 %
+  6 synthesis: 960-pt inv transform + window + OLA                217,516,124        94,285/frame    9.6 %
+  7 (unused)                                                                0             0/frame    0.0 %

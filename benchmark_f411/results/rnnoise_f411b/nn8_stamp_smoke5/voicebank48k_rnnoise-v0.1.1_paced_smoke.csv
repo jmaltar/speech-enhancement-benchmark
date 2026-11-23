@@ -1,0 +1,6 @@
+id,variant,hops,nres,overruns,crc_errors,resyncs,proc_min,proc_max,proc_mean,proc_median_data,e2e_median_us,ref,max_abs_lsb,n_diff,nmse_db,status
+p232_001,rnnoise-v0.1.1,175,176,176,0,0,1998631,10307150,2125328.9,2085563,48023,/mnt/data/benchmark-data/enhanced/rnnoise/voicebank48k/p232_001.wav,85,54303,-54.77,ok
+p232_002,rnnoise-v0.1.1,272,273,273,0,0,2009597,2160024,2083345.1,2089650,48027,/mnt/data/benchmark-data/enhanced/rnnoise/voicebank48k/p232_002.wav,159,105822,-51.85,ok
+p232_003,rnnoise-v0.1.1,719,720,720,0,0,2004037,2160064,2077115.0,2081562,47954,/mnt/data/benchmark-data/enhanced/rnnoise/voicebank48k/p232_003.wav,425,258490,-46.23,ok
+p232_005,rnnoise-v0.1.1,625,626,626,0,0,2016739,2154218,2079052.9,2083828,47961,/mnt/data/benchmark-data/enhanced/rnnoise/voicebank48k/p232_005.wav,1490,255433,-35.03,ok
+p232_006,rnnoise-v0.1.1,511,512,512,0,0,2008513,2166557,2095775.5,2099787,48255,/mnt/data/benchmark-data/enhanced/rnnoise/voicebank48k/p232_006.wav,82,162059,-53.93,ok

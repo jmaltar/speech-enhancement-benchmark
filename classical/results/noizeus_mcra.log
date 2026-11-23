@@ -1,0 +1,229 @@
+Provenance (asserted, not assumed):
+  pesq_itu_sources   P.862/.1/.2 v2.0 (Oct 2005), vendored
+  pystoi             0.4.1
+  resampler          resample_poly(1,3), 577-tap Kaiser(12) @ 7800 Hz
+
+=== noizeus / bypass: 960 utterances in 36.8s (12 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       1.7843    [1.7620, 1.8066]    [1.7616, 1.8068]   1.7322   1.100   2.955
+  pesq_raw_mos       1.9246    [1.9007, 1.9484]    [1.8996, 1.9485]   1.9403   0.525   2.823
+  stoi               0.8173    [0.8103, 0.8244]    [0.8100, 0.8244]   0.8377   0.512   0.990
+  estoi              0.6380    [0.6274, 0.6487]    [0.6272, 0.6486]   0.6516   0.269   0.957
+  si_sdr             6.9467    [6.5924, 7.3011]    [6.5793, 7.2971]   6.7982  -1.326  14.710
+  largest t-vs-BCa edge discrepancy: 0.01317 (si_sdr), 10000 resamples, seed 20260913
+
+=== noizeus / specsub-mcra: 960 utterances in 35.4s (12 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       1.9069    [1.8813, 1.9325]    [1.8807, 1.9326]   1.8390   1.204   3.134
+  pesq_raw_mos       2.0437    [2.0195, 2.0680]    [2.0185, 2.0680]   2.0482   1.008   2.922
+  stoi               0.8246    [0.8176, 0.8317]    [0.8173, 0.8316]   0.8480   0.525   0.990
+  estoi              0.6611    [0.6506, 0.6715]    [0.6505, 0.6714]   0.6836   0.289   0.961
+  si_sdr             8.5327    [8.1779, 8.8874]    [8.1623, 8.8815]   8.7833  -0.771  17.348
+  largest t-vs-BCa edge discrepancy: 0.01561 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_raw_mos by noise x snr_db  (cells, BCa 95% per cell):
+    airport 0.0            n=30   mean 1.6068  sd 0.1872  [1.5423, 1.6737]
+    airport 5.0            n=30   mean 1.9256  sd 0.1598  [1.8710, 1.9828]
+    airport 10.0           n=30   mean 2.2470  sd 0.1329  [2.2029, 2.2977]
+    airport 15.0           n=30   mean 2.5426  sd 0.1269  [2.5002, 2.5900]
+    babble 0.0             n=30   mean 1.5964  sd 0.1639  [1.5349, 1.6502]
+    babble 5.0             n=30   mean 1.8930  sd 0.1820  [1.8333, 1.9615]
+    babble 10.0            n=30   mean 2.2180  sd 0.1380  [2.1666, 2.2649]
+    babble 15.0            n=30   mean 2.5467  sd 0.1190  [2.5058, 2.5904]
+    car 0.0                n=30   mean 1.5906  sd 0.1651  [1.5328, 1.6494]
+    car 5.0                n=30   mean 1.8743  sd 0.1285  [1.8290, 1.9195]
+    car 10.0               n=30   mean 2.2130  sd 0.1075  [2.1730, 2.2488]
+    car 15.0               n=30   mean 2.5333  sd 0.1190  [2.4915, 2.5757]
+    exhibition 0.0         n=30   mean 1.5062  sd 0.1906  [1.4330, 1.5672]
+    exhibition 5.0         n=30   mean 1.8366  sd 0.1499  [1.7846, 1.8912]
+    exhibition 10.0        n=30   mean 2.1513  sd 0.1280  [2.1060, 2.1959]
+    exhibition 15.0        n=30   mean 2.4732  sd 0.1149  [2.4255, 2.5084]
+    restaurant 0.0         n=30   mean 1.6315  sd 0.1870  [1.5648, 1.6955]
+    restaurant 5.0         n=30   mean 1.8764  sd 0.1461  [1.8259, 1.9293]
+    restaurant 10.0        n=30   mean 2.2496  sd 0.1243  [2.2074, 2.2955]
+    restaurant 15.0        n=30   mean 2.5300  sd 0.1256  [2.4897, 2.5785]
+    station 0.0            n=30   mean 1.5759  sd 0.1843  [1.5173, 1.6492]
+    station 5.0            n=30   mean 1.9282  sd 0.1278  [1.8832, 1.9745]
+    station 10.0           n=30   mean 2.2357  sd 0.0989  [2.2014, 2.2720]
+    station 15.0           n=30   mean 2.5495  sd 0.1056  [2.5158, 2.5919]
+    street 0.0             n=30   mean 1.5692  sd 0.1845  [1.5042, 1.6336]
+    street 5.0             n=30   mean 1.8726  sd 0.1480  [1.8157, 1.9204]
+    street 10.0            n=30   mean 2.2142  sd 0.1589  [2.1578, 2.2706]
+    street 15.0            n=30   mean 2.4908  sd 0.1674  [2.4379, 2.5565]
+    train 0.0              n=30   mean 1.5341  sd 0.1894  [1.4629, 1.5974]
+    train 5.0              n=30   mean 1.8137  sd 0.1547  [1.7590, 1.8702]
+    train 10.0             n=30   mean 2.1156  sd 0.1165  [2.0727, 2.1545]
+    train 15.0             n=30   mean 2.4573  sd 0.1228  [2.4144, 2.5007]
+    32 cells, min N = 30, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+
+=== noizeus / wiener-mcra: 960 utterances in 36.1s (12 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       2.0159    [1.9861, 2.0458]    [1.9853, 2.0460]   1.9750   1.187   3.280
+  pesq_raw_mos       2.1283    [2.1013, 2.1552]    [2.1005, 2.1551]   2.1708   0.949   3.002
+  stoi               0.7870    [0.7793, 0.7946]    [0.7790, 0.7946]   0.8069   0.470   0.974
+  estoi              0.6369    [0.6262, 0.6476]    [0.6259, 0.6476]   0.6605   0.219   0.943
+  si_sdr             9.1628    [8.8428, 9.4828]    [8.8337, 9.4813]   9.7783  -1.156  17.763
+  largest t-vs-BCa edge discrepancy: 0.00906 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_raw_mos by noise x snr_db  (cells, BCa 95% per cell):
+    airport 0.0            n=30   mean 1.5342  sd 0.1821  [1.4672, 1.5971]
+    airport 5.0            n=30   mean 1.9705  sd 0.1588  [1.9174, 2.0294]
+    airport 10.0           n=30   mean 2.2969  sd 0.1086  [2.2617, 2.3390]
+    airport 15.0           n=30   mean 2.6553  sd 0.1199  [2.6098, 2.6948]
+    babble 0.0             n=30   mean 1.5895  sd 0.1675  [1.5299, 1.6490]
+    babble 5.0             n=30   mean 1.9497  sd 0.1770  [1.8895, 2.0144]
+    babble 10.0            n=30   mean 2.3045  sd 0.1319  [2.2580, 2.3507]
+    babble 15.0            n=30   mean 2.6491  sd 0.1065  [2.6137, 2.6899]
+    car 0.0                n=30   mean 1.7444  sd 0.1717  [1.6848, 1.8076]
+    car 5.0                n=30   mean 2.0705  sd 0.1217  [2.0271, 2.1127]
+    car 10.0               n=30   mean 2.4493  sd 0.1230  [2.3985, 2.4866]
+    car 15.0               n=30   mean 2.7326  sd 0.1109  [2.6940, 2.7737]
+    exhibition 0.0         n=30   mean 1.4248  sd 0.2665  [1.3255, 1.5132]
+    exhibition 5.0         n=30   mean 1.8879  sd 0.1581  [1.8328, 1.9437]
+    exhibition 10.0        n=30   mean 2.2754  sd 0.1120  [2.2355, 2.3144]
+    exhibition 15.0        n=30   mean 2.5826  sd 0.1154  [2.5425, 2.6236]
+    restaurant 0.0         n=30   mean 1.5893  sd 0.1784  [1.5269, 1.6553]
+    restaurant 5.0         n=30   mean 1.9152  sd 0.1181  [1.8728, 1.9556]
+    restaurant 10.0        n=30   mean 2.2856  sd 0.1105  [2.2457, 2.3235]
+    restaurant 15.0        n=30   mean 2.5746  sd 0.1024  [2.5413, 2.6134]
+    station 0.0            n=30   mean 1.5952  sd 0.2221  [1.5126, 1.6694]
+    station 5.0            n=30   mean 2.0414  sd 0.1277  [2.0017, 2.0923]
+    station 10.0           n=30   mean 2.3873  sd 0.1127  [2.3515, 2.4303]
+    station 15.0           n=30   mean 2.6787  sd 0.1366  [2.6268, 2.7238]
+    street 0.0             n=30   mean 1.6009  sd 0.1741  [1.5418, 1.6655]
+    street 5.0             n=30   mean 1.9489  sd 0.1729  [1.8858, 2.0086]
+    street 10.0            n=30   mean 2.2887  sd 0.1258  [2.2449, 2.3345]
+    street 15.0            n=30   mean 2.5673  sd 0.1190  [2.5241, 2.6089]
+    train 0.0              n=30   mean 1.5849  sd 0.1790  [1.5179, 1.6451]
+    train 5.0              n=30   mean 1.9714  sd 0.1697  [1.9052, 2.0268]
+    train 10.0             n=30   mean 2.2981  sd 0.1008  [2.2630, 2.3345]
+    train 15.0             n=30   mean 2.6592  sd 0.1335  [2.6095, 2.7046]
+    32 cells, min N = 30, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+
+=== noizeus / mmse-mcra: 960 utterances in 37.5s (12 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       2.0112    [1.9845, 2.0379]    [1.9839, 2.0379]   1.9617   1.210   3.156
+  pesq_raw_mos       2.1414    [2.1177, 2.1650]    [2.1172, 2.1647]   2.1594   1.030   2.934
+  stoi               0.7930    [0.7856, 0.8005]    [0.7852, 0.8004]   0.8130   0.495   0.976
+  estoi              0.6335    [0.6228, 0.6442]    [0.6226, 0.6443]   0.6550   0.236   0.947
+  si_sdr             8.9582    [8.6278, 9.2885]    [8.6161, 9.2839]   9.5900  -1.072  17.211
+  largest t-vs-BCa edge discrepancy: 0.01165 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_raw_mos by noise x snr_db  (cells, BCa 95% per cell):
+    airport 0.0            n=30   mean 1.6701  sd 0.1437  [1.6277, 1.7323]
+    airport 5.0            n=30   mean 2.0163  sd 0.1564  [1.9636, 2.0747]
+    airport 10.0           n=30   mean 2.3194  sd 0.1144  [2.2846, 2.3683]
+    airport 15.0           n=30   mean 2.6138  sd 0.1065  [2.5774, 2.6527]
+    babble 0.0             n=30   mean 1.6742  sd 0.1503  [1.6211, 1.7271]
+    babble 5.0             n=30   mean 2.0070  sd 0.1713  [1.9526, 2.0748]
+    babble 10.0            n=30   mean 2.3164  sd 0.1314  [2.2671, 2.3600]
+    babble 15.0            n=30   mean 2.6262  sd 0.1194  [2.5868, 2.6721]
+    car 0.0                n=30   mean 1.7373  sd 0.1539  [1.6782, 1.7867]
+    car 5.0                n=30   mean 2.0373  sd 0.1040  [2.0014, 2.0746]
+    car 10.0               n=30   mean 2.3587  sd 0.1113  [2.3148, 2.3940]
+    car 15.0               n=30   mean 2.6405  sd 0.1133  [2.6004, 2.6809]
+    exhibition 0.0         n=30   mean 1.5629  sd 0.2425  [1.4778, 1.6500]
+    exhibition 5.0         n=30   mean 1.9305  sd 0.1329  [1.8851, 1.9794]
+    exhibition 10.0        n=30   mean 2.2649  sd 0.1141  [2.2231, 2.3040]
+    exhibition 15.0        n=30   mean 2.5608  sd 0.1051  [2.5220, 2.5965]
+    restaurant 0.0         n=30   mean 1.6868  sd 0.1858  [1.6246, 1.7556]
+    restaurant 5.0         n=30   mean 1.9679  sd 0.1407  [1.9182, 2.0183]
+    restaurant 10.0        n=30   mean 2.3227  sd 0.1125  [2.2821, 2.3611]
+    restaurant 15.0        n=30   mean 2.5828  sd 0.1049  [2.5507, 2.6247]
+    station 0.0            n=30   mean 1.7110  sd 0.1891  [1.6483, 1.7814]
+    station 5.0            n=30   mean 2.0649  sd 0.1212  [2.0238, 2.1093]
+    station 10.0           n=30   mean 2.3503  sd 0.0837  [2.3211, 2.3799]
+    station 15.0           n=30   mean 2.6265  sd 0.1089  [2.5873, 2.6648]
+    street 0.0             n=30   mean 1.6759  sd 0.1849  [1.6086, 1.7386]
+    street 5.0             n=30   mean 1.9724  sd 0.1537  [1.9156, 2.0252]
+    street 10.0            n=30   mean 2.2847  sd 0.1414  [2.2373, 2.3367]
+    street 15.0            n=30   mean 2.5441  sd 0.1254  [2.5023, 2.5908]
+    train 0.0              n=30   mean 1.6691  sd 0.1734  [1.6084, 1.7321]
+    train 5.0              n=30   mean 1.9451  sd 0.1440  [1.8920, 1.9959]
+    train 10.0             n=30   mean 2.2329  sd 0.1000  [2.1992, 2.2699]
+    train 15.0             n=30   mean 2.5500  sd 0.1112  [2.5107, 2.5892]
+    32 cells, min N = 30, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+
+  bypass: every utterance bit-identical to its input; scores ARE the Noisy row.
+
+=== noizeus: enhanced (B, noise tracker mcra) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 15 tests (headline-pooled-per-corpus)
+
+  --- specsub
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.7843   1.9069   +0.1142  [+0.1090, +0.1195]    0.10 1.74e-146         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.9603   (paired wilcoxon, n = 960)
+  pesq_raw_mos    1.9246   2.0437   +0.1163  [+0.1120, +0.1205]    0.10  1.7e-145         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.9570   (paired wilcoxon, n = 960)
+  stoi            0.8173   0.8246   +0.0068  [+0.0064, +0.0072]    0.01 6.35e-124  2.82e-33  different but equivalent (real, below the margin that matters)
+               rank-biserial r = +0.8821   (paired wilcoxon, n = 960)
+  estoi           0.6380   0.6611   +0.0218  [+0.0210, +0.0226]    0.01 1.32e-157         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.9966   (paired wilcoxon, n = 960)
+  si_sdr          6.9467   8.5327   +1.5859  [+1.5469, +1.6249]    0.50         0         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = +2.1606   (paired t, n = 960)
+
+  --- wiener
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.7843   2.0159   +0.2203  [+0.2077, +0.2331]    0.10 1.31e-116         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.8553   (paired wilcoxon, n = 960)
+  pesq_raw_mos    1.9246   2.1283   +0.2079  [+0.1965, +0.2191]    0.10 6.48e-107         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.8183   (paired wilcoxon, n = 960)
+  stoi            0.8173   0.7870   -0.0294  [-0.0307, -0.0281]    0.01  9.4e-139         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.9342   (paired wilcoxon, n = 960)
+  estoi           0.6380   0.6369   -0.0024  [-0.0044, -0.0003]    0.01    0.0592  3.77e-10  EQUIVALENT (same to the stated precision)
+               rank-biserial r = -0.0703   (paired wilcoxon, n = 960)
+  si_sdr          6.9467   9.1628   +2.2160  [+2.1417, +2.2904]    0.50 6.49e-264         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = +1.5845   (paired t, n = 960)
+
+  --- mmse
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.7843   2.0112   +0.2210  [+0.2130, +0.2292]    0.10  5.2e-153         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.9817   (paired wilcoxon, n = 960)
+  pesq_raw_mos    1.9246   2.1414   +0.2135  [+0.2063, +0.2207]    0.10 3.22e-151         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.9759   (paired wilcoxon, n = 960)
+  stoi            0.8173   0.7930   -0.0238  [-0.0249, -0.0227]    0.01 4.81e-133         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.9145   (paired wilcoxon, n = 960)
+  estoi           0.6380   0.6335   -0.0049  [-0.0065, -0.0034]    0.01  4.09e-07  6.17e-08  different but equivalent (real, below the margin that matters)
+               rank-biserial r = -0.1887   (paired wilcoxon, n = 960)
+  si_sdr          6.9467   8.9582   +2.0114  [+1.9515, +2.0713]    0.50  1.4e-300         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = +1.7850   (paired t, n = 960)
+
+  Holm-adjusted p(diff):
+    specsub pesq_mos_lqo   raw 1.74e-146  adj 1.56e-145  significant
+    specsub pesq_raw_mos   raw  1.7e-145  adj 1.36e-144  significant
+    specsub stoi           raw 6.35e-124  adj 3.18e-123  significant
+    specsub estoi          raw 1.32e-157  adj 1.58e-156  significant
+    specsub si_sdr         raw         0  adj         0  significant
+    wiener  pesq_mos_lqo   raw 1.31e-116  adj 5.26e-116  significant
+    wiener  pesq_raw_mos   raw 6.48e-107  adj 1.95e-106  significant
+    wiener  stoi           raw  9.4e-139  adj 6.58e-138  significant
+    wiener  estoi          raw    0.0592  adj    0.0592  n.s.
+    wiener  si_sdr         raw 6.49e-264  adj 8.43e-263  significant
+    mmse    pesq_mos_lqo   raw  5.2e-153  adj 5.72e-152  significant
+    mmse    pesq_raw_mos   raw 3.22e-151  adj 3.22e-150  significant
+    mmse    stoi           raw 4.81e-133  adj 2.89e-132  significant
+    mmse    estoi          raw  4.09e-07  adj  8.18e-07  significant
+    mmse    si_sdr         raw  1.4e-300  adj 1.96e-299  significant
+
+  NOIZEUS per-cell RAW MOS (ours, N=30 each) beside Lu & Loizou 2008 Table 2
+  (raw P.862, Loizou MATLAB port (composite.zip); ranking precision -- see validate.NO_ANCHOR_NOTE)
+  cell          specsub oursspecsub pub   delta   mmse ours   mmse pub   delta
+  babble    0 dB        1.596       1.73  -0.134       1.674       1.76  -0.086   same order
+  babble    5 dB        1.893       2.04  -0.147       2.007       2.12  -0.113   same order
+  babble   10 dB        2.218       2.37  -0.152       2.316       2.51  -0.194   same order
+  car       0 dB        1.591       1.69  -0.099       1.737       1.93  -0.193   same order
+  car       5 dB        1.874       1.98  -0.106       2.037       2.28  -0.243   same order
+  car      10 dB        2.213       2.31  -0.097       2.359       2.66  -0.301   same order
+  street    0 dB        1.569       1.70  -0.131       1.676       1.80  -0.124   same order
+  street    5 dB        1.873       2.00  -0.127       1.972       2.20  -0.228   same order
+  street   10 dB        2.214       2.36  -0.146       2.285       2.58  -0.295   same order
+  MMSE-vs-SS ordering agrees with the published table in 9/9 cells
+
+=== DONE
+exit=0

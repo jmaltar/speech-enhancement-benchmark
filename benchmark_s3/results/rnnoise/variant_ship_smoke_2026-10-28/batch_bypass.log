@@ -1,0 +1,4 @@
+[1/2] p232_001: FAIL IMAGE MISMATCH: device reports 267e3f33, results/rnnoise/variant_ship_smoke_2026-10-28/image.bin is 1f3cbc53 -- refusing to run against an image that is not the one in the tree
+[2/2] p232_002: FAIL IMAGE MISMATCH: device reports 267e3f33, results/rnnoise/variant_ship_smoke_2026-10-28/image.bin is 1f3cbc53 -- refusing to run against an image that is not the one in the tree
+done     : 2 runs in 0s -> results/rnnoise/variant_ship_smoke_2026-10-28/voicebank48k_bypass_paced_smoke.csv
+summary  : fails=2 total_overruns=0 worst max|d|=0 LSB  worst n_diff=0  worst NMSE=-inf dB

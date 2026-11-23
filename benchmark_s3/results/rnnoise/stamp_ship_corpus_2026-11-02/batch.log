@@ -1,0 +1,52 @@
+=== 2026-11-02T11:10:13+01:00 flash benchmark_s3/results/rnnoise_stamp_image.bin
+Hash of data verified.
+
+Hard resetting via RTS pin...
+=== 2026-11-02T11:10:23+01:00 batch corpus -> benchmark_s3/results/rnnoise/stamp_ship_corpus_2026-11-02
+device   : ESP32S3 build 'Release 20261102T1006' image_crc32=19b77504 tick_hz=240000000  (verified against benchmark_s3/results/rnnoise_stamp_image.bin)
+[25/824] 182s  last p232_029: hops=342 overruns=343 proc_mean=3140391.1 max|d|=1 status=ok
+[50/824] 271s  last p232_054: hops=371 overruns=372 proc_mean=3140242.3 max|d|=1 status=ok
+[75/824] 362s  last p232_079: hops=240 overruns=241 proc_mean=3132612.3 max|d|=1 status=ok
+[100/824] 454s  last p232_104: hops=392 overruns=393 proc_mean=3137263.3 max|d|=1 status=ok
+[125/824] 551s  last p232_131: hops=306 overruns=307 proc_mean=3141567.3 max|d|=1 status=ok
+[150/824] 638s  last p232_158: hops=269 overruns=270 proc_mean=3142481.6 max|d|=1 status=ok
+[175/824] 734s  last p232_185: hops=286 overruns=287 proc_mean=3134535.7 max|d|=1 status=ok
+[200/824] 827s  last p232_211: hops=141 overruns=142 proc_mean=3126868.8 max|d|=1 status=ok
+[225/824] 923s  last p232_239: hops=187 overruns=188 proc_mean=3141498.4 max|d|=1 status=ok
+[250/824] 1027s  last p232_265: hops=189 overruns=190 proc_mean=3140347.0 max|d|=1 status=ok
+[275/824] 1128s  last p232_290: hops=188 overruns=189 proc_mean=3125260.6 max|d|=1 status=ok
+[300/824] 1217s  last p232_316: hops=164 overruns=165 proc_mean=3136635.9 max|d|=1 status=ok
+[325/824] 1308s  last p232_341: hops=260 overruns=261 proc_mean=3141453.1 max|d|=1 status=ok
+[350/824] 1403s  last p232_367: hops=183 overruns=184 proc_mean=3136829.6 max|d|=1 status=ok
+[375/824] 1502s  last p232_393: hops=328 overruns=329 proc_mean=3129609.1 max|d|=1 status=ok
+[400/824] 1617s  last p257_008: hops=559 overruns=560 proc_mean=3135581.2 max|d|=1 status=ok
+[425/824] 1753s  last p257_034: hops=192 overruns=193 proc_mean=3127331.3 max|d|=1 status=ok
+[450/824] 1843s  last p257_059: hops=373 overruns=374 proc_mean=3136223.0 max|d|=1 status=ok
+[475/824] 1937s  last p257_084: hops=289 overruns=290 proc_mean=3137380.4 max|d|=1 status=ok
+[500/824] 2031s  last p257_109: hops=212 overruns=213 proc_mean=3130925.6 max|d|=1 status=ok
+[525/824] 2124s  last p257_135: hops=349 overruns=350 proc_mean=3136703.4 max|d|=1 status=ok
+[550/824] 2217s  last p257_160: hops=252 overruns=253 proc_mean=3128933.9 max|d|=1 status=ok
+[575/824] 2313s  last p257_185: hops=225 overruns=226 proc_mean=3132143.1 max|d|=1 status=ok
+[600/824] 2411s  last p257_210: hops=252 overruns=253 proc_mean=3128986.2 max|d|=1 status=ok
+[625/824] 2512s  last p257_235: hops=226 overruns=227 proc_mean=3132663.4 max|d|=1 status=ok
+[650/824] 2614s  last p257_260: hops=271 overruns=272 proc_mean=3129870.1 max|d|=1 status=ok
+[675/824] 2709s  last p257_285: hops=146 overruns=147 proc_mean=3129115.1 max|d|=1 status=ok
+[700/824] 2800s  last p257_310: hops=157 overruns=158 proc_mean=3138617.1 max|d|=1 status=ok
+[725/824] 2886s  last p257_335: hops=159 overruns=160 proc_mean=3126066.5 max|d|=1 status=ok
+[750/824] 2983s  last p257_360: hops=283 overruns=284 proc_mean=3133568.0 max|d|=1 status=ok
+[775/824] 3078s  last p257_385: hops=222 overruns=223 proc_mean=3125321.9 max|d|=1 status=ok
+[800/824] 3167s  last p257_410: hops=359 overruns=360 proc_mean=3130313.2 max|d|=1 status=ok
+[824/824] 3252s  last p257_434: hops=209 overruns=210 proc_mean=3118816.9 max|d|=1 status=ok
+done     : 824 runs in 3252s -> benchmark_s3/results/rnnoise/stamp_ship_corpus_2026-11-02/voicebank48k_rnnoise-v0.1.1_paced.csv
+summary  : fails=0 total_overruns=208429 worst max|d|=228 LSB  worst n_diff=27882  worst NMSE=-53.9 dB
+=== 2026-11-02T12:04:34+01:00 batch done; waiting for the console's RN_STAGES line
+== RNNoise stage sums stamp_ship_corpus: frames=208429 silent=0 total=644,048,442,837 cycles  per-frame=3,090,014   (1 RN_STAGES line(s) in the log; the last is used)
+  0 hp + analysis window + 960-pt fwd transform + band E      104,972,661,733       503,638/frame   16.3 %
+  1 pitch downsample + pitch search + doubling                 54,490,802,586       261,436/frame    8.5 %
+  2 pitch window + 960-pt fwd transform + band E/corr          44,628,457,154       214,118/frame    6.9 %
+  3 remaining features (log, DCTs, cepstra, variability)       24,345,008,428       116,802/frame    3.8 %
+  4 GRU network (compute_rnn)                                 338,132,442,666     1,622,291/frame   52.5 %
+  5 pitch filter + gain smoothing + interp + apply             52,787,884,809       253,266/frame    8.2 %
+  6 synthesis: 960-pt inv transform + window + OLA             24,691,185,461       118,463/frame    3.8 %
+  7 (unused)                                                                0             0/frame    0.0 %
+=== 2026-11-02T12:04:39+01:00 stamps read

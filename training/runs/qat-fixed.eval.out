@@ -1,0 +1,27 @@
+scored qat-fixed: ['f32', 'i16', 'int8'] on voicebank16k,dns; log /home/jurica/benchmark/training/runs/qat-fixed/eval.log
+  === voicebank16k: enhanced (B, noise tracker mcra) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 12 tests (headline-pooled-per-corpu
+  === voicebank16k: dtln-qat-fixed-shrunk-f32 (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.4574   2.2270   -0.2270  [-0.2394, -0.2144]    0.10 3.63e-104         1  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9334   0.9193   -0.0125  [-0.0134, -0.0116]    0.01  4.15e-94         1  DIFFERENT (exceeds the pre-specified margin)
+  si_sdr         19.0215  18.4949   -0.5266  [-0.5691, -0.4841]    0.50  3.09e-75     0.849  DIFFERENT (exceeds the pre-specified margin)
+  === voicebank16k: dtln-qat-fixed-shrunk-i16-tflm (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.4574   2.1806   -0.2695  [-0.2835, -0.2551]    0.10 4.51e-111         1  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9334   0.9175   -0.0140  [-0.0149, -0.0131]    0.01 1.33e-100         1  DIFFERENT (exceeds the pre-specified margin)
+  si_sdr         19.0215  18.4120   -0.6096  [-0.6524, -0.5667]    0.50  2.44e-93         1  DIFFERENT (exceeds the pre-specified margin)
+  === voicebank16k: dtln-qat-fixed-shrunk-int8-tflm (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.4574   1.1261   -1.3268  [-1.3593, -1.2942]    0.10 1.69e-136         1  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9334   0.7949   -0.1378  [-0.1397, -0.1358]    0.01 1.69e-136         1  DIFFERENT (exceeds the pre-specified margin)
+  si_sdr         19.0215   0.7295  -18.2920[-18.4626, -18.1214]    0.50         0         1  DIFFERENT (exceeds the pre-specified margin)
+  === dns: enhanced (B, noise tracker mcra) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 12 tests (headline-pooled-per-corpus)
+  === dns: dtln-qat-fixed-shrunk-f32 (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 150; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.0536   1.9318   -0.1177  [-0.1438, -0.0912]    0.10  1.14e-11     0.864  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9259   0.9193   -0.0088  [-0.0106, -0.0069]    0.01  2.29e-10      0.13  DIFFERENT (exceeds the pre-specified margin)
+  si_sdr         14.0664  13.8099   -0.2565  [-0.5461, +0.0331]    0.50     0.145    0.0831  INCONCLUSIVE -- underpowered. This is NOT a no-difference r
+  === dns: dtln-qat-fixed-shrunk-i16-tflm (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 150; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.0536   1.8875   -0.1588  [-0.1866, -0.1315]    0.10  4.61e-16         1  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9259   0.9159   -0.0119  [-0.0138, -0.0101]    0.01  1.85e-13     0.955  DIFFERENT (exceeds the pre-specified margin)
+  si_sdr         14.0664  13.5475   -0.5189  [-0.8132, -0.2245]    0.50   0.00407     0.542  DIFFERENT (exceeds the pre-specified margin)
+  === dns: dtln-qat-fixed-shrunk-int8-tflm (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 150; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.0536   1.1362   -0.9019  [-0.9799, -0.8300]    0.10   2.3e-26         1  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9259   0.8011   -0.1258  [-0.1321, -0.1200]    0.01  4.64e-26         1  DIFFERENT (exceeds the pre-specified margin)
+  si_sdr         14.0664   2.8091  -11.2573[-11.8163, -10.6983]    0.50  5.86e-71         1  DIFFERENT (exceeds the pre-specified margin)

@@ -1,0 +1,19 @@
+scored ft-f32: ['f32', 'i16'] on voicebank16k,dns; log /home/jurica/Desktop/benchmark/training/runs/ft-f32/eval.log
+  === voicebank16k: enhanced (B, noise tracker mcra) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 8 tests (headline-pooled-per-corpus
+  === voicebank16k: dtln-ft-f32-f32 (B) vs dtln-f32 (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.4350   2.4574   +0.0231  [+0.0133, +0.0329]    0.10  0.000119  8.27e-33  different but equivalent (real, below the margin that matte
+  stoi            0.9196   0.9334   +0.0115  [+0.0104, +0.0126]    0.01   7.8e-75     0.989  DIFFERENT (exceeds the pre-specified margin)
+  si_sdr         16.8498  19.0215   +2.1717  [+2.0036, +2.3399]    0.50  2.42e-80         1  DIFFERENT (exceeds the pre-specified margin)
+  === voicebank16k: dtln-ft-f32-i16-tflm (B) vs dtln-f32 (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.4350   2.3916   -0.0425  [-0.0536, -0.0315]    0.10  4.31e-10  1.32e-16  different but equivalent (real, below the margin that matte
+  stoi            0.9196   0.9329   +0.0109  [+0.0098, +0.0120]    0.01   4.3e-68     0.917  DIFFERENT (exceeds the pre-specified margin)
+  si_sdr         16.8498  18.9435   +2.0937  [+1.9271, +2.2604]    0.50   7.1e-77         1  DIFFERENT (exceeds the pre-specified margin)
+  === dns: enhanced (B, noise tracker mcra) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 8 tests (headline-pooled-per-corpus)
+  === dns: dtln-ft-f32-f32 (B) vs dtln-f32 (A), paired by utterance, n = 150; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.3593   2.0536   -0.2752  [-0.3062, -0.2454]    0.10  2.18e-25         1  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9477   0.9259   -0.0142  [-0.0170, -0.0116]    0.01  4.04e-24     0.998  DIFFERENT (exceeds the pre-specified margin)
+  si_sdr         16.4724  14.0664   -2.4060  [-2.7951, -2.0169]    0.50     6e-19         1  DIFFERENT (exceeds the pre-specified margin)
+  === dns: dtln-ft-f32-i16-tflm (B) vs dtln-f32 (A), paired by utterance, n = 150; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.3593   2.0023   -0.3290  [-0.3618, -0.2972]    0.10  4.55e-26         1  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9477   0.9231   -0.0157  [-0.0189, -0.0130]    0.01  8.77e-25         1  DIFFERENT (exceeds the pre-specified margin)
+  si_sdr         16.4724  13.8143   -2.6581  [-3.0466, -2.2696]    0.50  7.73e-22         1  DIFFERENT (exceeds the pre-specified margin)

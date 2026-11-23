@@ -1,0 +1,16 @@
+=== voicebank48k: rnnoise-h723-fs (B) vs rnnoise (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    2.3180   2.3180   +0.0000  [-0.0000, +0.0000]    0.10     0.632 8.41e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = +0.0195   (paired wilcoxon, n = 824)
+stoi            0.9197   0.9197   +0.0000  [-0.0000, +0.0000]    0.01     0.586 8.44e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = +0.0219   (paired wilcoxon, n = 824)
+estoi           0.8160   0.8160   +0.0000  [-0.0000, +0.0000]    0.01       0.8 8.44e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = +0.0102   (paired wilcoxon, n = 824)
+si_sdr         13.0564  13.0564   +0.0000  [-0.0000, +0.0000]    0.50      0.34         0  EQUIVALENT (same to the stated precision)
+             Cohen's d_z = +0.0332   (paired t, n = 824)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw     0.632  adj         1  n.s.
+  stoi           raw     0.586  adj         1  n.s.
+  estoi          raw       0.8  adj         1  n.s.
+  si_sdr         raw      0.34  adj         1  n.s.

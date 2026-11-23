@@ -1,0 +1,143 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792412768.556102  176996 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792412769.609753  176996 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+E0000 00:00:1792412770.038601  176996 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+live units [30, 58, 0, 11]
+shrunk params 336,671 (full 986,753 -> 34.1 %)
+Saved artifact at '/tmp/tmp4p111nxr'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name='a_mag'), TensorSpec(shape=(1, 30), dtype=tf.float32, name='b_s0'), TensorSpec(shape=(1, 30), dtype=tf.float32, name='b_s1'), TensorSpec(shape=(1, 58), dtype=tf.float32, name='b_s2'), TensorSpec(shape=(1, 58), dtype=tf.float32, name='b_s3')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name=None), TensorSpec(shape=(1, 30), dtype=tf.float32, name=None), TensorSpec(shape=(1, 30), dtype=tf.float32, name=None), TensorSpec(shape=(1, 58), dtype=tf.float32, name=None), TensorSpec(shape=(1, 58), dtype=tf.float32, name=None)]
+Captures:
+  125826132972304: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968391952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968393680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968392720: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968392528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968394640: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968393296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968393872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+Saved artifact at '/tmp/tmpu3jna941'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name='a_frame'), TensorSpec(shape=(1, 11), dtype=tf.float32, name='b_s2'), TensorSpec(shape=(1, 11), dtype=tf.float32, name='b_s3')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name=None), TensorSpec(shape=(1, 11), dtype=tf.float32, name=None), TensorSpec(shape=(1, 11), dtype=tf.float32, name=None)]
+Captures:
+  125825968392912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968393488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968395408: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968395216: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968394256: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968396944: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968395600: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968392144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968395792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+float:
+  model_f32_1.tflite: 290,192 B; 36 ops, 8 distinct: ADDx6 FULLY_CONNECTEDx5 LOGISTICx7 MULx6 RESHAPEx4 SPLITx2 TANHx4 UNPACKx2
+    populated buffers: FLOAT32 281,484 B, INT32 36 B
+    in  serving_default_b_s2:0               (1, 58)            float32  
+    in  serving_default_b_s1:0               (1, 30)            float32  
+    in  serving_default_b_s0:0               (1, 30)            float32  
+    in  serving_default_a_mag:0              (1, 1, 257)        float32  
+    in  serving_default_b_s3:0               (1, 58)            float32  
+    out StatefulPartitionedCall_1:4          (1, 58)            float32  
+    out StatefulPartitionedCall_1:1          (1, 30)            float32  
+    out StatefulPartitionedCall_1:3          (1, 58)            float32  
+    out StatefulPartitionedCall_1:0          (1, 1, 257)        float32  
+    out StatefulPartitionedCall_1:2          (1, 30)            float32  
+  model_f32_2.tflite: 1,078,252 B; 39 ops, 13 distinct: ADDx5 CONV_2Dx2 FULLY_CONNECTEDx3 LOGISTICx4 MEANx2 MULx9 RESHAPEx6 RSQRTx1 SPLITx1 STRIDED_SLICEx1 SUBx2 TANHx2 UNPACKx1
+    populated buffers: FLOAT32 1,068,280 B, INT32 116 B
+    in  serving_default_a_frame:0            (1, 1, 512)        float32  
+    in  serving_default_b_s2:0               (1, 11)            float32  
+    in  serving_default_b_s3:0               (1, 11)            float32  
+    out StatefulPartitionedCall_1:1          (1, 11)            float32  
+    out StatefulPartitionedCall_1:0          (1, 1, 512)        float32  
+    out StatefulPartitionedCall_1:2          (1, 11)            float32  
+shrunk vs full-size zeroed export on p257_110: max 0 LSB
+representative dataset: 200 calib utterances, every 16th hop -> 4610 samples per stage
+Saved artifact at '/tmp/tmphrbguo_y'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name='a_mag'), TensorSpec(shape=(1, 30), dtype=tf.float32, name='b_s0'), TensorSpec(shape=(1, 30), dtype=tf.float32, name='b_s1'), TensorSpec(shape=(1, 58), dtype=tf.float32, name='b_s2'), TensorSpec(shape=(1, 58), dtype=tf.float32, name='b_s3')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name=None), TensorSpec(shape=(1, 30), dtype=tf.float32, name=None), TensorSpec(shape=(1, 30), dtype=tf.float32, name=None), TensorSpec(shape=(1, 58), dtype=tf.float32, name=None), TensorSpec(shape=(1, 58), dtype=tf.float32, name=None)]
+Captures:
+  125826132972304: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968391952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968393680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968392720: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968392528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968394640: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968393296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968393872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/home/jurica/Desktop/benchmark/.venv/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+Saved artifact at '/tmp/tmp8l0ilibn'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name='a_frame'), TensorSpec(shape=(1, 11), dtype=tf.float32, name='b_s2'), TensorSpec(shape=(1, 11), dtype=tf.float32, name='b_s3')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name=None), TensorSpec(shape=(1, 11), dtype=tf.float32, name=None), TensorSpec(shape=(1, 11), dtype=tf.float32, name=None)]
+Captures:
+  125825968392912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968393488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968395408: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968395216: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968394256: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968396944: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968395600: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968392144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125825968395792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/home/jurica/Desktop/benchmark/.venv/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+[RecordingMicroAllocator] Arena allocation total 16304 bytes
+[RecordingMicroAllocator] Arena allocation head 1648 bytes
+[RecordingMicroAllocator] Arena allocation tail 14656 bytes
+[RecordingMicroAllocator] 'TfLiteEvalTensor data' used 1440 bytes with alignment overhead (requested 1440 bytes for 60 allocations)
+[RecordingMicroAllocator] 'Persistent TfLiteTensor data' used 640 bytes with alignment overhead (requested 640 bytes for 10 tensors)
+[RecordingMicroAllocator] 'Persistent TfLiteTensor quantization data' used 320 bytes with alignment overhead (requested 320 bytes for 20 allocations)
+[RecordingMicroAllocator] 'Persistent buffer data' used 9048 bytes with alignment overhead (requested 8880 bytes for 40 allocations)
+[RecordingMicroAllocator] 'NodeAndRegistration struct' used 2304 bytes with alignment overhead (requested 2304 bytes for 36 NodeAndRegistration structs)
+[RecordingMicroAllocator] Arena allocation total 18448 bytes
+[RecordingMicroAllocator] Arena allocation head 2112 bytes
+[RecordingMicroAllocator] Arena allocation tail 16336 bytes
+[RecordingMicroAllocator] 'TfLiteEvalTensor data' used 1656 bytes with alignment overhead (requested 1656 bytes for 69 allocations)
+[RecordingMicroAllocator] 'Persistent TfLiteTensor data' used 384 bytes with alignment overhead (requested 384 bytes for 6 tensors)
+[RecordingMicroAllocator] 'Persistent TfLiteTensor quantization data' used 192 bytes with alignment overhead (requested 192 bytes for 12 allocations)
+[RecordingMicroAllocator] 'Persistent buffer data' used 10560 bytes with alignment overhead (requested 10344 bytes for 43 allocations)
+[RecordingMicroAllocator] 'NodeAndRegistration struct' used 2496 bytes with alignment overhead (requested 2496 bytes for 39 NodeAndRegistration structs)
+16x8:
+  model_i16_1.tflite: 106,416 B; 36 ops, 8 distinct: ADDx6 FULLY_CONNECTEDx5 LOGISTICx7 MULx6 RESHAPEx4 SPLITx2 TANHx4 UNPACKx2
+    populated buffers: INT8 69,762 B, INT64 2,056 B, INT16 704 B, INT32 36 B
+    in  serving_default_b_s2:0               (1, 58)            int16    scale 3.04966e-05 zp 0
+    in  serving_default_b_s1:0               (1, 30)            int16    scale 0.0106234 zp 0
+    in  serving_default_b_s0:0               (1, 30)            int16    scale 3.05185e-05 zp 0
+    in  serving_default_a_mag:0              (1, 1, 257)        int16    scale 0.00280768 zp 0
+    in  serving_default_b_s3:0               (1, 58)            int16    scale 0.00108611 zp 0
+    out StatefulPartitionedCall_1:4          (1, 58)            int16    scale 0.00103584 zp 0
+    out StatefulPartitionedCall_1:1          (1, 30)            int16    scale 3.05185e-05 zp 0
+    out StatefulPartitionedCall_1:3          (1, 58)            int16    scale 3.05004e-05 zp 0
+    out StatefulPartitionedCall_1:0          (1, 1, 257)        int16    scale 3.05176e-05 zp 0
+    out StatefulPartitionedCall_1:2          (1, 30)            int16    scale 0.0104751 zp 0
+  model_i16_2.tflite: 322,456 B; 39 ops, 13 distinct: ADDx5 CONV_2Dx2 FULLY_CONNECTEDx3 LOGISTICx4 MEANx2 MULx9 RESHAPEx6 RSQRTx1 SPLITx1 STRIDED_SLICEx1 SUBx2 TANHx2 UNPACKx1
+    populated buffers: INT8 265,488 B, INT64 8,192 B, INT16 1,116 B, INT32 116 B
+    in  serving_default_a_frame:0            (1, 1, 512)        int16    scale 1.62293e-05 zp 0
+    in  serving_default_b_s2:0               (1, 11)            int16    scale 3.0283e-05 zp 0
+    in  serving_default_b_s3:0               (1, 11)            int16    scale 0.00119955 zp 0
+    out StatefulPartitionedCall_1:1          (1, 11)            int16    scale 3.0283e-05 zp 0
+    out StatefulPartitionedCall_1:0          (1, 1, 512)        int16    scale 1.03837e-05 zp 0
+    out StatefulPartitionedCall_1:2          (1, 11)            int16    scale 0.00119955 zp 0
+16x8 pair 428,872 B, TFLM arena [-1, -1] B; summary /home/jurica/Desktop/benchmark/training/runs/prune-learned/shrunk/summary.json

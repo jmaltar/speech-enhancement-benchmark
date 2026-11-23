@@ -1,0 +1,18 @@
+{
+ "live_units": [
+  128,
+  128,
+  128,
+  128
+ ],
+ "shrunk_params": 986753,
+ "f32_bytes": 3971068,
+ "i16_bytes": 1150128,
+ "int8_bytes": 1098744,
+ "tflm_arena_bytes": [
+  29456,
+  39056
+ ],
+ "shrunk_vs_full_lsb": 0,
+ "clips": null
+}

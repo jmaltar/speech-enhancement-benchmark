@@ -1,0 +1,166 @@
+Provenance (asserted, not assumed):
+  pesq_itu_sources   P.862/.1/.2 v2.0 (Oct 2005), vendored
+  pystoi             0.4.1
+  resampler          resample_poly(1,3), 577-tap Kaiser(12) @ 7800 Hz
+
+=== voicebank16k / bypass: 824 utterances in 32.9s (12 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       1.9707    [1.9191, 2.0222]    [1.9201, 2.0228]   1.8005   1.031   4.308
+  stoi               0.9210    [0.9162, 0.9259]    [0.9159, 0.9256]   0.9397   0.561   1.000
+  estoi              0.7867    [0.7765, 0.7969]    [0.7763, 0.7963]   0.8138   0.276   0.998
+  si_sdr             8.4455    [8.0614, 8.8297]    [8.0626, 8.8366]   7.3788  -3.121  17.099
+  largest t-vs-BCa edge discrepancy: 0.00691 (si_sdr), 10000 resamples, seed 20260913
+
+=== voicebank16k / specsub: 824 utterances in 33.1s (12 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       2.0844    [2.0341, 2.1348]    [2.0342, 2.1350]   2.0016   1.038   4.068
+  stoi               0.9197    [0.9147, 0.9246]    [0.9145, 0.9243]   0.9388   0.541   1.000
+  estoi              0.7913    [0.7814, 0.8012]    [0.7812, 0.8007]   0.8178   0.291   0.998
+  si_sdr            11.3963  [11.0199, 11.7727]  [11.0176, 11.7769]  11.8852  -0.062  23.675
+  largest t-vs-BCa edge discrepancy: 0.00421 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_mos_lqo by noise x snr_db  (cells, BCa 95% per cell):
+    bus 2.5                n=42   mean 1.8186  sd 0.5132  [1.6766, 1.9869]
+    bus 7.5                n=41   mean 2.3852  sd 0.5805  [2.2084, 2.5589]
+    bus 12.5               n=41   mean 2.7376  sd 0.5270  [2.5543, 2.8776]
+    bus 17.5               n=40   mean 3.1881  sd 0.4823  [3.0213, 3.3166]
+    cafe 2.5               n=42   mean 1.1861  sd 0.1210  [1.1541, 1.2277]
+    cafe 7.5               n=40   mean 1.4285  sd 0.2498  [1.3634, 1.5202]
+    cafe 12.5              n=41   mean 1.6810  sd 0.3331  [1.5777, 1.7805]
+    cafe 17.5              n=41   mean 2.1797  sd 0.4455  [2.0403, 2.3082]
+    living 2.5             n=42   mean 1.2546  sd 0.1564  [1.2111, 1.3052]
+    living 7.5             n=42   mean 1.5783  sd 0.3204  [1.4813, 1.6730]
+    living 12.5            n=42   mean 1.8602  sd 0.4084  [1.7403, 1.9893]
+    living 17.5            n=40   mean 2.4664  sd 0.3075  [2.3681, 2.5559]
+    office 2.5             n=40   mean 1.9311  sd 0.4870  [1.7787, 2.0740]
+    office 7.5             n=41   mean 2.5250  sd 0.4502  [2.3725, 2.6451]
+    office 12.5            n=42   mean 2.8010  sd 0.5583  [2.6188, 2.9548]
+    office 17.5            n=41   mean 3.2536  sd 0.4431  [3.1034, 3.3732]
+    psquare 2.5            n=41   mean 1.3345  sd 0.2093  [1.2769, 1.4048]
+    psquare 7.5            n=42   mean 1.5871  sd 0.3189  [1.4937, 1.6852]
+    psquare 12.5           n=41   mean 2.0033  sd 0.5293  [1.8445, 2.1637]
+    psquare 17.5           n=42   mean 2.5550  sd 0.4221  [2.4190, 2.6735]
+    20 cells, min N = 40, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+
+=== voicebank16k / wiener: 824 utterances in 33.0s (12 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       2.2824    [2.2350, 2.3298]    [2.2348, 2.3291]   2.2258   1.065   3.933
+  stoi               0.9016    [0.8959, 0.9073]    [0.8956, 0.9070]   0.9251   0.521   0.999
+  estoi              0.7797    [0.7696, 0.7898]    [0.7694, 0.7894]   0.8086   0.295   0.995
+  si_sdr            15.6499  [15.3074, 15.9923]  [15.3073, 15.9885]  16.2964   1.574  26.832
+  largest t-vs-BCa edge discrepancy: 0.00379 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_mos_lqo by noise x snr_db  (cells, BCa 95% per cell):
+    bus 2.5                n=42   mean 2.0753  sd 0.5299  [1.9165, 2.2322]
+    bus 7.5                n=41   mean 2.5578  sd 0.4943  [2.4076, 2.7026]
+    bus 12.5               n=41   mean 2.8466  sd 0.4915  [2.6880, 2.9890]
+    bus 17.5               n=40   mean 3.2311  sd 0.4177  [3.0953, 3.3530]
+    cafe 2.5               n=42   mean 1.2526  sd 0.1350  [1.2170, 1.2977]
+    cafe 7.5               n=40   mean 1.5595  sd 0.2411  [1.4931, 1.6414]
+    cafe 12.5              n=41   mean 1.8863  sd 0.2640  [1.8036, 1.9597]
+    cafe 17.5              n=41   mean 2.3089  sd 0.3038  [2.2179, 2.4018]
+    living 2.5             n=42   mean 1.4195  sd 0.1945  [1.3664, 1.4838]
+    living 7.5             n=42   mean 1.8292  sd 0.3740  [1.7189, 1.9426]
+    living 12.5            n=42   mean 2.0433  sd 0.3503  [1.9502, 2.1588]
+    living 17.5            n=40   mean 2.5531  sd 0.3793  [2.4383, 2.6680]
+    office 2.5             n=40   mean 2.2965  sd 0.3886  [2.1747, 2.4137]
+    office 7.5             n=41   mean 2.8158  sd 0.3939  [2.6887, 2.9296]
+    office 12.5            n=42   mean 2.9841  sd 0.4734  [2.8251, 3.1085]
+    office 17.5            n=41   mean 3.4276  sd 0.3044  [3.3278, 3.5132]
+    psquare 2.5            n=41   mean 1.6189  sd 0.2684  [1.5398, 1.7000]
+    psquare 7.5            n=42   mean 1.9107  sd 0.2801  [1.8254, 1.9939]
+    psquare 12.5           n=41   mean 2.3633  sd 0.3628  [2.2370, 2.4617]
+    psquare 17.5           n=42   mean 2.7299  sd 0.3453  [2.6177, 2.8264]
+    20 cells, min N = 40, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+
+=== voicebank16k / mmse: 824 utterances in 34.4s (12 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       2.2452    [2.1986, 2.2918]    [2.1981, 2.2901]   2.2247   1.042   3.940
+  stoi               0.9064    [0.9011, 0.9117]    [0.9008, 0.9114]   0.9270   0.556   0.999
+  estoi              0.7779    [0.7676, 0.7881]    [0.7675, 0.7879]   0.8098   0.293   0.996
+  si_sdr            14.3498  [13.9941, 14.7055]  [13.9986, 14.7082]  14.8091   1.436  26.852
+  largest t-vs-BCa edge discrepancy: 0.00447 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_mos_lqo by noise x snr_db  (cells, BCa 95% per cell):
+    bus 2.5                n=42   mean 2.0538  sd 0.5217  [1.9021, 2.2087]
+    bus 7.5                n=41   mean 2.6206  sd 0.4664  [2.4734, 2.7514]
+    bus 12.5               n=41   mean 2.8570  sd 0.4513  [2.7040, 2.9802]
+    bus 17.5               n=40   mean 3.1858  sd 0.4851  [3.0213, 3.3212]
+    cafe 2.5               n=42   mean 1.2340  sd 0.1248  [1.2003, 1.2754]
+    cafe 7.5               n=40   mean 1.5301  sd 0.2341  [1.4652, 1.6087]
+    cafe 12.5              n=41   mean 1.8458  sd 0.2867  [1.7508, 1.9224]
+    cafe 17.5              n=41   mean 2.3005  sd 0.3204  [2.1992, 2.3928]
+    living 2.5             n=42   mean 1.3902  sd 0.1920  [1.3369, 1.4530]
+    living 7.5             n=42   mean 1.7980  sd 0.3406  [1.6960, 1.9010]
+    living 12.5            n=42   mean 2.0532  sd 0.3255  [1.9630, 2.1587]
+    living 17.5            n=40   mean 2.4801  sd 0.2940  [2.3885, 2.5675]
+    office 2.5             n=40   mean 2.2681  sd 0.3596  [2.1428, 2.3666]
+    office 7.5             n=41   mean 2.7203  sd 0.3222  [2.6195, 2.8135]
+    office 12.5            n=42   mean 2.9404  sd 0.4087  [2.8020, 3.0471]
+    office 17.5            n=41   mean 3.2933  sd 0.2967  [3.2011, 3.3794]
+    psquare 2.5            n=41   mean 1.5585  sd 0.2804  [1.4745, 1.6442]
+    psquare 7.5            n=42   mean 1.8454  sd 0.2928  [1.7558, 1.9308]
+    psquare 12.5           n=41   mean 2.2692  sd 0.4837  [2.1002, 2.3990]
+    psquare 17.5           n=42   mean 2.7176  sd 0.3245  [2.6130, 2.8081]
+    20 cells, min N = 40, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+
+  bypass: every utterance bit-identical to its input; scores ARE the Noisy row.
+
+=== voicebank16k: enhanced (B) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 12 tests (headline-pooled-per-corpus)
+
+  --- specsub
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.9707   2.0844   +0.1020  [+0.0947, +0.1094]    0.10  2.06e-85      0.67  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.7876   (paired wilcoxon, n = 824)
+  stoi            0.9210   0.9197   -0.0006  [-0.0008, -0.0004]    0.01  1.92e-07 1.37e-115  different but equivalent (real, below the margin that matters)
+               rank-biserial r = -0.2094   (paired wilcoxon, n = 824)
+  estoi           0.7867   0.7913   +0.0035  [+0.0030, +0.0042]    0.01  2.53e-28  2.51e-45  different but equivalent (real, below the margin that matters)
+               rank-biserial r = +0.4438   (paired wilcoxon, n = 824)
+  si_sdr          8.4455  11.3963   +2.9508  [+2.8471, +3.0545]    0.50 1.76e-234         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = +1.6324   (paired t, n = 824)
+
+  --- wiener
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.9707   2.2824   +0.2729  [+0.2533, +0.2929]    0.10   1.1e-99         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.8523   (paired wilcoxon, n = 824)
+  stoi            0.9210   0.9016   -0.0158  [-0.0170, -0.0147]    0.01 2.57e-120         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.9379   (paired wilcoxon, n = 824)
+  estoi           0.7867   0.7797   -0.0066  [-0.0078, -0.0053]    0.01  8.79e-17  2.85e-06  different but equivalent (real, below the margin that matters)
+               rank-biserial r = -0.3346   (paired wilcoxon, n = 824)
+  si_sdr          8.4455  15.6499   +7.2043  [+6.9577, +7.4510]    0.50 2.69e-241         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = +1.6755   (paired t, n = 824)
+
+  --- mmse
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.9707   2.2452   +0.2270  [+0.2095, +0.2455]    0.10  1.74e-97         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.8426   (paired wilcoxon, n = 824)
+  stoi            0.9210   0.9064   -0.0124  [-0.0133, -0.0116]    0.01 3.01e-116         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.9217   (paired wilcoxon, n = 824)
+  estoi           0.7867   0.7779   -0.0073  [-0.0084, -0.0063]    0.01  4.73e-28  4.19e-05  different but equivalent (real, below the margin that matters)
+               rank-biserial r = -0.4416   (paired wilcoxon, n = 824)
+  si_sdr          8.4455  14.3498   +5.9043  [+5.7234, +6.0852]    0.50 2.06e-271         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = +1.8723   (paired t, n = 824)
+
+  Holm-adjusted p(diff):
+    specsub pesq_mos_lqo   raw  2.06e-85  adj  1.03e-84  significant
+    specsub stoi           raw  1.92e-07  adj  1.92e-07  significant
+    specsub estoi          raw  2.53e-28  adj  1.01e-27  significant
+    specsub si_sdr         raw 1.76e-234  adj 1.76e-233  significant
+    wiener  pesq_mos_lqo   raw   1.1e-99  adj  7.73e-99  significant
+    wiener  stoi           raw 2.57e-120  adj 2.31e-119  significant
+    wiener  estoi          raw  8.79e-17  adj  1.76e-16  significant
+    wiener  si_sdr         raw 2.69e-241  adj 2.96e-240  significant
+    mmse    pesq_mos_lqo   raw  1.74e-97  adj  1.04e-96  significant
+    mmse    stoi           raw 3.01e-116  adj 2.41e-115  significant
+    mmse    estoi          raw  4.73e-28  adj  1.42e-27  significant
+    mmse    si_sdr         raw 2.06e-271  adj 2.47e-270  significant
+
+=== DONE
+exit=0

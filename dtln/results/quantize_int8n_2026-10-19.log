@@ -1,0 +1,154 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792398807.579822   87729 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1792398807.580287   87729 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792398808.462463   87729 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1792398808.462749   87729 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+E0000 00:00:1792398808.933981   87729 cuda_executor.cc:1737] INTERNAL: CUDA Runtime error: Failed call to cudaGetRuntimeVersion: Error loading CUDA libraries. GPU will not be used.: Error loading CUDA libraries. GPU will not be used.
+[DTLN_norm_500h.h5, states split] split models rebuilt: 362,883 + 624,384 params
+Saved artifact at '/tmp/tmpvtlv27_s'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name='a_mag'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s0'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s1'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s2'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s3')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None)]
+Captures:
+  125532541004368: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541002640: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541005904: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541004752: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541006864: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541005136: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541003600: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541007440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541007632: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541006480: TensorSpec(shape=(), dtype=tf.resource, name=None)
+Saved artifact at '/tmp/tmptq0cpnmp'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name='a_frame'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s0'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s1'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s2'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s3')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None)]
+Captures:
+  125532541005328: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541008016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541006672: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541005520: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541006288: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541009360: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541008400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541008208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541009168: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541008976: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541008592: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541003792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+float export:
+  model_f32n_1.tflite: 1,461,992 B; 47 ops, 13 distinct: ADDx9 FULLY_CONNECTEDx5 LOGx1 LOGISTICx7 MEANx2 MULx8 RESHAPEx4 RSQRTx1 SPLITx2 SQUARED_DIFFERENCEx1 SUBx1 TANHx4 UNPACKx2
+    populated buffers: FLOAT32 1,451,536 B, INT32 24 B
+    in  serving_default_b_s2:0               (1, 128)           float32  
+    in  serving_default_b_s1:0               (1, 128)           float32  
+    in  serving_default_b_s0:0               (1, 128)           float32  
+    in  serving_default_a_mag:0              (1, 1, 257)        float32  
+    in  serving_default_b_s3:0               (1, 128)           float32  
+    out StatefulPartitionedCall_1:4          (1, 128)           float32  
+    out StatefulPartitionedCall_1:1          (1, 128)           float32  
+    out StatefulPartitionedCall_1:3          (1, 128)           float32  
+    out StatefulPartitionedCall_1:0          (1, 1, 257)        float32  
+    out StatefulPartitionedCall_1:2          (1, 128)           float32  
+  model_f32n_2.tflite: 2,512,788 B; 52 ops, 13 distinct: ADDx8 CONV_2Dx2 FULLY_CONNECTEDx5 LOGISTICx7 MEANx2 MULx9 RESHAPEx8 RSQRTx1 SPLITx2 SQUARED_DIFFERENCEx1 SUBx1 TANHx4 UNPACKx2
+    populated buffers: FLOAT32 2,500,612 B, INT32 80 B
+    in  serving_default_a_frame:0            (1, 1, 512)        float32  
+    in  serving_default_b_s2:0               (1, 128)           float32  
+    in  serving_default_b_s1:0               (1, 128)           float32  
+    in  serving_default_b_s0:0               (1, 128)           float32  
+    in  serving_default_b_s3:0               (1, 128)           float32  
+    out StatefulPartitionedCall_1:4          (1, 128)           float32  
+    out StatefulPartitionedCall_1:1          (1, 128)           float32  
+    out StatefulPartitionedCall_1:3          (1, 128)           float32  
+    out StatefulPartitionedCall_1:0          (1, 1, 512)        float32  
+    out StatefulPartitionedCall_1:2          (1, 128)           float32  
+  re-export on p257_110.wav: finite output, rms 2639.0 LSB (no shipped TFLite pair to compare with)
+representative dataset: 200 calib utterances, every 16th hop -> 4610 samples per stage
+Saved artifact at '/tmp/tmpicjpyjr5'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name='a_mag'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s0'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s1'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s2'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s3')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 257), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None)]
+Captures:
+  125532541004368: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541002640: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541005904: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541004752: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541006864: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541005136: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541003600: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541007440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541007632: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541006480: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/home/jurica/Desktop/benchmark/.venv/lib/python3.11/site-packages/tensorflow/lite/python/convert.py:846: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+/home/jurica/Desktop/benchmark/.venv/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+Saved artifact at '/tmp/tmpz449nn0m'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name='a_frame'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s0'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s1'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s2'), TensorSpec(shape=(1, 128), dtype=tf.float32, name='b_s3')]
+Output Type:
+  List[TensorSpec(shape=(1, 1, 512), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None), TensorSpec(shape=(1, 128), dtype=tf.float32, name=None)]
+Captures:
+  125532541005328: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541008016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541006672: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541005520: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541006288: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541009360: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541008400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541008208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541009168: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541008976: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541008592: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  125532541003792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+/home/jurica/Desktop/benchmark/.venv/lib/python3.11/site-packages/tensorflow/lite/python/convert.py:846: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+/home/jurica/Desktop/benchmark/.venv/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+
+int8n (full-integer, int8 I/O, states split):
+  model_int8n_1.tflite: 408,016 B; 47 ops, 13 distinct: ADDx9 FULLY_CONNECTEDx5 LOGx1 LOGISTICx7 MEANx2 MULx8 RESHAPEx4 RSQRTx1 SPLITx2 SQUARED_DIFFERENCEx1 SUBx1 TANHx4 UNPACKx2
+    populated buffers: INT8 362,627 B, INT32 1,052 B
+    in  serving_default_b_s2:0               (1, 128)           int8     scale 0.00784301 zp 0
+    in  serving_default_b_s1:0               (1, 128)           int8     scale 1.81992 zp 43
+    in  serving_default_b_s0:0               (1, 128)           int8     scale 0.00784265 zp 0
+    in  serving_default_a_mag:0              (1, 1, 257)        int8     scale 0.360781 zp -128
+    in  serving_default_b_s3:0               (1, 128)           int8     scale 6.42465 zp 2
+    out StatefulPartitionedCall_1:4          (1, 128)           int8     scale 6.43191 zp 2
+    out StatefulPartitionedCall_1:1          (1, 128)           int8     scale 0.00784038 zp 0
+    out StatefulPartitionedCall_1:3          (1, 128)           int8     scale 0.00784306 zp -1
+    out StatefulPartitionedCall_1:0          (1, 1, 257)        int8     scale 0.00390625 zp -128
+    out StatefulPartitionedCall_1:2          (1, 128)           int8     scale 1.82739 zp 43
+  model_int8n_2.tflite: 692,960 B; 52 ops, 13 distinct: ADDx8 CONV_2Dx2 FULLY_CONNECTEDx5 LOGISTICx7 MEANx2 MULx9 RESHAPEx8 RSQRTx1 SPLITx2 SQUARED_DIFFERENCEx1 SUBx1 TANHx4 UNPACKx2
+    populated buffers: INT8 624,129 B, INT32 4,176 B
+    in  serving_default_a_frame:0            (1, 1, 512)        int8     scale 4.98266e-05 zp 0
+    in  serving_default_b_s2:0               (1, 128)           int8     scale 0.00780637 zp -1
+    in  serving_default_b_s1:0               (1, 128)           int8     scale 0.0337197 zp -12
+    in  serving_default_b_s0:0               (1, 128)           int8     scale 0.00769716 zp 0
+    in  serving_default_b_s3:0               (1, 128)           int8     scale 0.11709 zp -20
+    out StatefulPartitionedCall_1:4          (1, 128)           int8     scale 0.121443 zp -20
+    out StatefulPartitionedCall_1:1          (1, 128)           int8     scale 0.0076403 zp 1
+    out StatefulPartitionedCall_1:3          (1, 128)           int8     scale 0.00781022 zp 0
+    out StatefulPartitionedCall_1:0          (1, 1, 512)        int8     scale 0.0026886 zp 7
+    out StatefulPartitionedCall_1:2          (1, 128)           int8     scale 0.0318354 zp -21
+  pair total 1,100,976 B; 14 distinct ops: ['ADD', 'CONV_2D', 'FULLY_CONNECTED', 'LOG', 'LOGISTIC', 'MEAN', 'MUL', 'RESHAPE', 'RSQRT', 'SPLIT', 'SQUARED_DIFFERENCE', 'SUB', 'TANH', 'UNPACK']
+  float32 bytes left in the pair: 0 B (biases/params only)

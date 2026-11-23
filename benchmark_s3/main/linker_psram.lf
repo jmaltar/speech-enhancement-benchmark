@@ -1,0 +1,14 @@
+# Places bench_kernels.c's .bss -- which is dominated by the 64 KB weight pool
+# and the signal buffers -- into external octal PSRAM instead of internal SRAM.
+#
+# This is the ESP32-S3's counterpart of the H723's BENCH_RAM=DTCM|AXI switch,
+# and it is implemented the same way and for the same reason: as a LINKER
+# decision, not a source edit. The pool is declared in the region of
+# bench_kernels.c kept identical to the STM32 tiers, so adding EXT_RAM_BSS_ATTR
+# to it would break that property for a build-configuration choice.
+#
+# Applied only when the project is configured with -DBENCH_MEM=1.
+[mapping:bench_psram]
+archive: libmain.a
+entries:
+    bench_kernels (extram_bss)

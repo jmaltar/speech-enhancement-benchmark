@@ -1,0 +1,4 @@
+conditions: {"threads": 4, "affinity": [0, 1, 2, 3], "torch": "2.15.0+cpu", "machine": "aarch64", "node": "rpibench", "governor": "performance", "throttled": "throttled=0x0"}
+verify lowmem vs shipped on warm-up 10 s: shape (1, 4, 2, 441000) DIFFER, max |d| 2.235e-08
+lowmem forward is not bit-identical to the shipped forward -- refusing to run
+=== exit 1 memory.peak=

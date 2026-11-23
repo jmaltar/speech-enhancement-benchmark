@@ -1,0 +1,30 @@
+voicebank48k: 12 utterances drawn (seed 20261019) of 824; 33 of all 824 are a whole number of 480-hops
+
+[1] framing anchor at 960/480 (bypass bit-identical, 48 kHz): 824/824 OK
+
+[2] alignment: RNNoise(clean) vs clean, best integer lag over +/-2000 samples
+    id             lag    corr  rms out/in
+    p232_057         0  0.9833      0.9905
+    p232_128         0  0.9896      0.9931
+    p232_163         0  0.9873      0.9968
+    p232_218         0  0.9853      0.9931
+    p232_230         0  0.9863      0.9958
+    p232_294         0  0.9865      0.9983
+    p232_349         0  0.9826      0.9917
+    p232_397        -1  0.9880      0.9922
+    p257_048         0  0.9852      0.9905
+    p257_120         0  0.9823      0.9922
+    p257_213         0  0.9895      0.9928
+    p257_400         0  0.9888      0.9921
+    max |lag| 1 samples (a lag error would read +/-480): OK
+
+[3] determinism on p232_057: bit-identical
+
+[4] v0.1.1 (as shipped) vs v0.1 (paper-era), same weights, noisy input:
+    id            maxLSB  differ %  NMSE dB
+    p232_057         107      29.8   -46.05
+    p232_128         306      31.3   -45.63
+    p232_163         258      27.2   -43.21
+    p232_218         254      33.5   -44.68
+    p232_230         268      24.9   -47.37
+    p232_294         283      35.1   -39.37

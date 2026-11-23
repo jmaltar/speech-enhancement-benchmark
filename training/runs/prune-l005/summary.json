@@ -1,0 +1,27 @@
+{
+ "mode": "learned-threshold pruning, lambda 0.005, temp 0.2, start quantile 0.05",
+ "epochs": 6,
+ "steps": 500,
+ "batch": 32,
+ "seg_seconds": 4.0,
+ "start_val": -1.6336637735366821,
+ "best_val": -14.947401441376785,
+ "best_epoch": 2,
+ "final_epoch": 6,
+ "final_val": -14.842692802692282,
+ "live_units": [
+  63,
+  96,
+  22,
+  82
+ ],
+ "dense_params": 510157,
+ "dense_params_full": 986753,
+ "minutes": 167.2368290980657,
+ "steps_per_s": 0.29897720657380195,
+ "train_utterances": 10660,
+ "val_speakers": [
+  "p239",
+  "p244"
+ ]
+}

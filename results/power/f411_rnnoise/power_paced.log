@@ -1,0 +1,9 @@
+# host port=/dev/serial/by-id/usb-STMicroelectronics_STM32_STLink_066BFF373841423043114439-if01 shunt_ohm=0.1 gain=1.0 started=1793871769.655
+1793871769.655 6
+1793871769.663 unparsed 'D,3274,11396na226-logger 1 uid=0058002B3130510F35363330 clk=hsi16 i2c=sw90k uart=115200'
+1793871769.668 # usb_clock=off pa11_pa12=analog sysclk=hsi reset=0x0E
+1793871769.672 # ina226 mfg=0x5449 die=0x2260 cfg=0x4527
+1793871769.683 # fields D,seq,t_us,vshunt_raw,vbus_raw  lsb_shunt_nV=2500 lsb_bus_uV=1250  vbus is the supply side: v_board = vbus - vshunt
+1793871769.703 # i2c scan: scl=1 sda=1 ack: 0x40
+1793871769.707 gap seq 3273 -> 5721
+# stopped=1793878938.318 rows=203116 drops=2447

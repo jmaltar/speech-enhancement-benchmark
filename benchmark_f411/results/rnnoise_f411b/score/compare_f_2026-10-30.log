@@ -1,0 +1,10 @@
+=== voicebank48k: rnnoise-f411-f (B) vs rnnoise (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+pesq_mos_lqo    2.3180   2.3180   +0.0000  [+0.0000, +0.0000]    0.10     0.083  8.4e-137  EQUIVALENT (same to the stated precision)
+stoi            0.9197   0.9197   -0.0000  [-0.0000, +0.0000]    0.01     0.402 8.44e-137  EQUIVALENT (same to the stated precision)
+estoi           0.8160   0.8160   +0.0000  [-0.0000, +0.0000]    0.01     0.267 8.44e-137  EQUIVALENT (same to the stated precision)
+si_sdr         13.0564  13.0564   +0.0000  [-0.0000, +0.0000]    0.50     0.398         0  EQUIVALENT (same to the stated precision)
+=== voicebank48k: rnnoise-f411-f (B) vs rnnoise-f411 (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+pesq_mos_lqo    2.3180   2.3180   +0.0000  [-0.0000, +0.0000]    0.10     0.773  8.4e-137  EQUIVALENT (same to the stated precision)
+stoi            0.9197   0.9197   +0.0000  [-0.0000, +0.0000]    0.01     0.908 8.44e-137  EQUIVALENT (same to the stated precision)
+estoi           0.8160   0.8160   +0.0000  [-0.0000, +0.0000]    0.01     0.311 8.44e-137  EQUIVALENT (same to the stated precision)
+si_sdr         13.0564  13.0564   +0.0000  [-0.0000, +0.0000]    0.50     0.634         0  EQUIVALENT (same to the stated precision)

@@ -1,0 +1,2 @@
+id,variant,hops,nres,overruns,crc_errors,resyncs,proc_min,proc_max,proc_mean,proc_median_data,e2e_median_us,ref,max_abs_lsb,n_diff,nmse_db,status
+p232_001,dtln-i16,218,221,0,0,0,1710358,1714921,1712230.1,1712196,7233,,,,,ok

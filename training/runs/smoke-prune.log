@@ -1,0 +1,138 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792402868.687969  134289 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792402869.930837  134289 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+GPU: [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+loading VoiceBank train:   0%|          | 0/600 [00:00<?, ?utt/s]loading VoiceBank train:  44%|████▍     | 267/600 [00:00<00:00, 2663.92utt/s]loading VoiceBank train:  93%|█████████▎| 560/600 [00:00<00:00, 2816.97utt/s]                                                                             train 554 utterances (0.44 h, 26 speakers) | val 46 (2.1 min, speakers ['p239', 'p244'])
+mode: learned-threshold pruning, lambda 0.02, temp 0.2, start quantile 0.05
+val @ start:   0%|          | 0/2 [00:00<?, ?batch/s]val @ start:  50%|█████     | 1/2 [00:02<00:02,  2.04s/batch]val @ start: 100%|██████████| 2/2 [00:03<00:00,  1.46s/batch]                                                             start: validation loss (neg. SNR) -2.041 dB, live units [121, 121, 121, 121]
+epochs:   0%|          | 0/2 [00:00<?, ?epoch/s]
+epoch 1/2:   0%|          | 0/50 [00:00<?, ?step/s][AWARNING:tensorflow:You are casting an input of type complex64 to an incompatible dtype float32.  This will discard the imaginary part and may not be what you intended.
+WARNING:tensorflow:You are casting an input of type complex64 to an incompatible dtype float32.  This will discard the imaginary part and may not be what you intended.
+
+epoch 1/2:   0%|          | 0/50 [00:05<?, ?step/s, loss=-1.624, rate=0.19 step/s, units=120/121/121/122][A
+epoch 1/2:   2%|▏         | 1/50 [00:05<04:18,  5.27s/step, loss=-1.624, rate=0.19 step/s, units=120/121/121/122][A
+epoch 1/2:   4%|▍         | 2/50 [00:06<02:09,  2.69s/step, loss=-1.624, rate=0.19 step/s, units=120/121/121/122][A
+epoch 1/2:   6%|▌         | 3/50 [00:07<01:27,  1.86s/step, loss=-1.624, rate=0.19 step/s, units=120/121/121/122][A
+epoch 1/2:   8%|▊         | 4/50 [00:07<01:08,  1.48s/step, loss=-1.624, rate=0.19 step/s, units=120/121/121/122][A
+epoch 1/2:  10%|█         | 5/50 [00:08<00:56,  1.26s/step, loss=-1.624, rate=0.19 step/s, units=120/121/121/122][A
+epoch 1/2:  12%|█▏        | 6/50 [00:09<00:49,  1.13s/step, loss=-1.624, rate=0.19 step/s, units=120/121/121/122][A
+epoch 1/2:  14%|█▍        | 7/50 [00:10<00:45,  1.05s/step, loss=-1.624, rate=0.19 step/s, units=120/121/121/122][A
+epoch 1/2:  16%|█▌        | 8/50 [00:11<00:42,  1.00s/step, loss=-1.624, rate=0.19 step/s, units=120/121/121/122][A
+epoch 1/2:  18%|█▊        | 9/50 [00:12<00:39,  1.04step/s, loss=-1.624, rate=0.19 step/s, units=120/121/121/122][A
+epoch 1/2:  20%|██        | 10/50 [00:13<00:37,  1.07step/s, loss=-1.624, rate=0.19 step/s, units=120/121/121/122][A
+epoch 1/2:  20%|██        | 10/50 [00:14<00:37,  1.07step/s, loss=-9.132, rate=0.78 step/s, units=117/120/119/123][A
+epoch 1/2:  22%|██▏       | 11/50 [00:14<00:36,  1.08step/s, loss=-9.132, rate=0.78 step/s, units=117/120/119/123][A
+epoch 1/2:  24%|██▍       | 12/50 [00:15<00:34,  1.10step/s, loss=-9.132, rate=0.78 step/s, units=117/120/119/123][A
+epoch 1/2:  26%|██▌       | 13/50 [00:15<00:33,  1.10step/s, loss=-9.132, rate=0.78 step/s, units=117/120/119/123][A
+epoch 1/2:  28%|██▊       | 14/50 [00:16<00:32,  1.10step/s, loss=-9.132, rate=0.78 step/s, units=117/120/119/123][A
+epoch 1/2:  30%|███       | 15/50 [00:17<00:31,  1.11step/s, loss=-9.132, rate=0.78 step/s, units=117/120/119/123][A
+epoch 1/2:  32%|███▏      | 16/50 [00:18<00:30,  1.11step/s, loss=-9.132, rate=0.78 step/s, units=117/120/119/123][A
+epoch 1/2:  34%|███▍      | 17/50 [00:19<00:29,  1.12step/s, loss=-9.132, rate=0.78 step/s, units=117/120/119/123][A
+epoch 1/2:  36%|███▌      | 18/50 [00:20<00:28,  1.12step/s, loss=-9.132, rate=0.78 step/s, units=117/120/119/123][A
+epoch 1/2:  38%|███▊      | 19/50 [00:21<00:27,  1.12step/s, loss=-9.132, rate=0.78 step/s, units=117/120/119/123][A
+epoch 1/2:  40%|████      | 20/50 [00:22<00:26,  1.13step/s, loss=-9.132, rate=0.78 step/s, units=117/120/119/123][A
+epoch 1/2:  40%|████      | 20/50 [00:23<00:26,  1.13step/s, loss=-10.854, rate=0.91 step/s, units=111/119/118/123][A
+epoch 1/2:  42%|████▏     | 21/50 [00:23<00:25,  1.13step/s, loss=-10.854, rate=0.91 step/s, units=111/119/118/123][A
+epoch 1/2:  44%|████▍     | 22/50 [00:23<00:24,  1.13step/s, loss=-10.854, rate=0.91 step/s, units=111/119/118/123][A
+epoch 1/2:  46%|████▌     | 23/50 [00:24<00:23,  1.13step/s, loss=-10.854, rate=0.91 step/s, units=111/119/118/123][A
+epoch 1/2:  48%|████▊     | 24/50 [00:25<00:22,  1.13step/s, loss=-10.854, rate=0.91 step/s, units=111/119/118/123][A
+epoch 1/2:  50%|█████     | 25/50 [00:26<00:21,  1.14step/s, loss=-10.854, rate=0.91 step/s, units=111/119/118/123][A
+epoch 1/2:  52%|█████▏    | 26/50 [00:27<00:21,  1.14step/s, loss=-10.854, rate=0.91 step/s, units=111/119/118/123][A
+epoch 1/2:  54%|█████▍    | 27/50 [00:28<00:20,  1.15step/s, loss=-10.854, rate=0.91 step/s, units=111/119/118/123][A
+epoch 1/2:  56%|█████▌    | 28/50 [00:29<00:19,  1.15step/s, loss=-10.854, rate=0.91 step/s, units=111/119/118/123][A
+epoch 1/2:  58%|█████▊    | 29/50 [00:30<00:18,  1.14step/s, loss=-10.854, rate=0.91 step/s, units=111/119/118/123][A
+epoch 1/2:  60%|██████    | 30/50 [00:30<00:17,  1.13step/s, loss=-10.854, rate=0.91 step/s, units=111/119/118/123][A
+epoch 1/2:  60%|██████    | 30/50 [00:31<00:17,  1.13step/s, loss=-11.932, rate=0.97 step/s, units=108/119/113/123][A
+epoch 1/2:  62%|██████▏   | 31/50 [00:31<00:16,  1.13step/s, loss=-11.932, rate=0.97 step/s, units=108/119/113/123][A
+epoch 1/2:  64%|██████▍   | 32/50 [00:32<00:16,  1.12step/s, loss=-11.932, rate=0.97 step/s, units=108/119/113/123][A
+epoch 1/2:  66%|██████▌   | 33/50 [00:33<00:15,  1.12step/s, loss=-11.932, rate=0.97 step/s, units=108/119/113/123][A
+epoch 1/2:  68%|██████▊   | 34/50 [00:34<00:14,  1.12step/s, loss=-11.932, rate=0.97 step/s, units=108/119/113/123][A
+epoch 1/2:  70%|███████   | 35/50 [00:35<00:13,  1.13step/s, loss=-11.932, rate=0.97 step/s, units=108/119/113/123][A
+epoch 1/2:  72%|███████▏  | 36/50 [00:36<00:12,  1.13step/s, loss=-11.932, rate=0.97 step/s, units=108/119/113/123][A
+epoch 1/2:  74%|███████▍  | 37/50 [00:37<00:11,  1.13step/s, loss=-11.932, rate=0.97 step/s, units=108/119/113/123][A
+epoch 1/2:  76%|███████▌  | 38/50 [00:38<00:10,  1.13step/s, loss=-11.932, rate=0.97 step/s, units=108/119/113/123][A
+epoch 1/2:  78%|███████▊  | 39/50 [00:38<00:09,  1.13step/s, loss=-11.932, rate=0.97 step/s, units=108/119/113/123][A
+epoch 1/2:  80%|████████  | 40/50 [00:39<00:08,  1.13step/s, loss=-11.932, rate=0.97 step/s, units=108/119/113/123][A
+epoch 1/2:  80%|████████  | 40/50 [00:40<00:08,  1.13step/s, loss=-12.489, rate=1.01 step/s, units=106/118/109/122][A
+epoch 1/2:  82%|████████▏ | 41/50 [00:40<00:07,  1.13step/s, loss=-12.489, rate=1.01 step/s, units=106/118/109/122][A
+epoch 1/2:  84%|████████▍ | 42/50 [00:41<00:07,  1.13step/s, loss=-12.489, rate=1.01 step/s, units=106/118/109/122][A
+epoch 1/2:  86%|████████▌ | 43/50 [00:42<00:06,  1.14step/s, loss=-12.489, rate=1.01 step/s, units=106/118/109/122][A
+epoch 1/2:  88%|████████▊ | 44/50 [00:43<00:05,  1.13step/s, loss=-12.489, rate=1.01 step/s, units=106/118/109/122][A
+epoch 1/2:  90%|█████████ | 45/50 [00:44<00:04,  1.13step/s, loss=-12.489, rate=1.01 step/s, units=106/118/109/122][A
+epoch 1/2:  92%|█████████▏| 46/50 [00:45<00:03,  1.13step/s, loss=-12.489, rate=1.01 step/s, units=106/118/109/122][A
+epoch 1/2:  94%|█████████▍| 47/50 [00:45<00:02,  1.13step/s, loss=-12.489, rate=1.01 step/s, units=106/118/109/122][A
+epoch 1/2:  96%|█████████▌| 48/50 [00:46<00:01,  1.12step/s, loss=-12.489, rate=1.01 step/s, units=106/118/109/122][A
+epoch 1/2:  98%|█████████▊| 49/50 [00:47<00:00,  1.13step/s, loss=-12.489, rate=1.01 step/s, units=106/118/109/122][A
+epoch 1/2:  98%|█████████▊| 49/50 [00:48<00:00,  1.13step/s, loss=-12.810, rate=1.03 step/s, units=103/117/105/121][A
+epoch 1/2: 100%|██████████| 50/50 [00:48<00:00,  1.13step/s, loss=-12.810, rate=1.03 step/s, units=103/117/105/121][A
+                                                                                                                   [A
+val @ epoch 1:   0%|          | 0/2 [00:00<?, ?batch/s][A
+val @ epoch 1:  50%|█████     | 1/2 [00:00<00:00,  2.17batch/s][A
+val @ epoch 1: 100%|██████████| 2/2 [00:00<00:00,  2.20batch/s][A
+                                                               [A                                                epochs:   0%|          | 0/2 [00:49<?, ?epoch/s]epochs:  50%|█████     | 1/2 [00:49<00:49, 49.59s/epoch]epoch 1: train -12.810  val -14.997 dB  units [103, 117, 105, 121]  1.03 step/s (49 s)  <- best
+
+epoch 2/2:   0%|          | 0/50 [00:00<?, ?step/s][A
+epoch 2/2:   0%|          | 0/50 [00:00<?, ?step/s, loss=-15.826, rate=1.14 step/s, units=103/117/105/121][A
+epoch 2/2:   2%|▏         | 1/50 [00:00<00:43,  1.13step/s, loss=-15.826, rate=1.14 step/s, units=103/117/105/121][A
+epoch 2/2:   4%|▍         | 2/50 [00:01<00:41,  1.14step/s, loss=-15.826, rate=1.14 step/s, units=103/117/105/121][A
+epoch 2/2:   6%|▌         | 3/50 [00:02<00:41,  1.13step/s, loss=-15.826, rate=1.14 step/s, units=103/117/105/121][A
+epoch 2/2:   8%|▊         | 4/50 [00:03<00:40,  1.14step/s, loss=-15.826, rate=1.14 step/s, units=103/117/105/121][A
+epoch 2/2:  10%|█         | 5/50 [00:04<00:39,  1.14step/s, loss=-15.826, rate=1.14 step/s, units=103/117/105/121][A
+epoch 2/2:  12%|█▏        | 6/50 [00:05<00:38,  1.14step/s, loss=-15.826, rate=1.14 step/s, units=103/117/105/121][A
+epoch 2/2:  14%|█▍        | 7/50 [00:06<00:37,  1.14step/s, loss=-15.826, rate=1.14 step/s, units=103/117/105/121][A
+epoch 2/2:  16%|█▌        | 8/50 [00:07<00:36,  1.14step/s, loss=-15.826, rate=1.14 step/s, units=103/117/105/121][A
+epoch 2/2:  18%|█▊        | 9/50 [00:07<00:36,  1.14step/s, loss=-15.826, rate=1.14 step/s, units=103/117/105/121][A
+epoch 2/2:  20%|██        | 10/50 [00:08<00:35,  1.14step/s, loss=-15.826, rate=1.14 step/s, units=103/117/105/121][A
+epoch 2/2:  20%|██        | 10/50 [00:09<00:35,  1.14step/s, loss=-14.699, rate=1.13 step/s, units=103/117/102/122][A
+epoch 2/2:  22%|██▏       | 11/50 [00:09<00:35,  1.11step/s, loss=-14.699, rate=1.13 step/s, units=103/117/102/122][A
+epoch 2/2:  24%|██▍       | 12/50 [00:10<00:36,  1.04step/s, loss=-14.699, rate=1.13 step/s, units=103/117/102/122][A
+epoch 2/2:  26%|██▌       | 13/50 [00:11<00:35,  1.05step/s, loss=-14.699, rate=1.13 step/s, units=103/117/102/122][A
+epoch 2/2:  28%|██▊       | 14/50 [00:12<00:33,  1.07step/s, loss=-14.699, rate=1.13 step/s, units=103/117/102/122][A
+epoch 2/2:  30%|███       | 15/50 [00:13<00:32,  1.09step/s, loss=-14.699, rate=1.13 step/s, units=103/117/102/122][A
+epoch 2/2:  32%|███▏      | 16/50 [00:14<00:30,  1.10step/s, loss=-14.699, rate=1.13 step/s, units=103/117/102/122][A
+epoch 2/2:  34%|███▍      | 17/50 [00:15<00:29,  1.11step/s, loss=-14.699, rate=1.13 step/s, units=103/117/102/122][A
+epoch 2/2:  36%|███▌      | 18/50 [00:16<00:28,  1.11step/s, loss=-14.699, rate=1.13 step/s, units=103/117/102/122][A
+epoch 2/2:  38%|███▊      | 19/50 [00:17<00:27,  1.11step/s, loss=-14.699, rate=1.13 step/s, units=103/117/102/122][A
+epoch 2/2:  40%|████      | 20/50 [00:17<00:26,  1.11step/s, loss=-14.699, rate=1.13 step/s, units=103/117/102/122][A
+epoch 2/2:  40%|████      | 20/50 [00:18<00:26,  1.11step/s, loss=-14.617, rate=1.11 step/s, units=98/116/97/120]  [A
+epoch 2/2:  42%|████▏     | 21/50 [00:18<00:25,  1.12step/s, loss=-14.617, rate=1.11 step/s, units=98/116/97/120][A
+epoch 2/2:  44%|████▍     | 22/50 [00:19<00:24,  1.12step/s, loss=-14.617, rate=1.11 step/s, units=98/116/97/120][A
+epoch 2/2:  46%|████▌     | 23/50 [00:20<00:24,  1.12step/s, loss=-14.617, rate=1.11 step/s, units=98/116/97/120][A
+epoch 2/2:  48%|████▊     | 24/50 [00:21<00:23,  1.12step/s, loss=-14.617, rate=1.11 step/s, units=98/116/97/120][A
+epoch 2/2:  50%|█████     | 25/50 [00:22<00:22,  1.12step/s, loss=-14.617, rate=1.11 step/s, units=98/116/97/120][A
+epoch 2/2:  52%|█████▏    | 26/50 [00:23<00:21,  1.11step/s, loss=-14.617, rate=1.11 step/s, units=98/116/97/120][A
+epoch 2/2:  54%|█████▍    | 27/50 [00:24<00:20,  1.11step/s, loss=-14.617, rate=1.11 step/s, units=98/116/97/120][A
+epoch 2/2:  56%|█████▌    | 28/50 [00:25<00:19,  1.11step/s, loss=-14.617, rate=1.11 step/s, units=98/116/97/120][A
+epoch 2/2:  58%|█████▊    | 29/50 [00:26<00:19,  1.06step/s, loss=-14.617, rate=1.11 step/s, units=98/116/97/120][A
+epoch 2/2:  60%|██████    | 30/50 [00:27<00:19,  1.01step/s, loss=-14.617, rate=1.11 step/s, units=98/116/97/120][A
+epoch 2/2:  60%|██████    | 30/50 [00:28<00:19,  1.01step/s, loss=-14.589, rate=1.09 step/s, units=96/115/92/120][A
+epoch 2/2:  62%|██████▏   | 31/50 [00:28<00:20,  1.05s/step, loss=-14.589, rate=1.09 step/s, units=96/115/92/120][A
+epoch 2/2:  64%|██████▍   | 32/50 [00:30<00:22,  1.26s/step, loss=-14.589, rate=1.09 step/s, units=96/115/92/120][A
+epoch 2/2:  66%|██████▌   | 33/50 [00:31<00:20,  1.19s/step, loss=-14.589, rate=1.09 step/s, units=96/115/92/120][A
+epoch 2/2:  68%|██████▊   | 34/50 [00:32<00:18,  1.17s/step, loss=-14.589, rate=1.09 step/s, units=96/115/92/120][A
+epoch 2/2:  70%|███████   | 35/50 [00:33<00:17,  1.17s/step, loss=-14.589, rate=1.09 step/s, units=96/115/92/120][A
+epoch 2/2:  72%|███████▏  | 36/50 [00:35<00:17,  1.26s/step, loss=-14.589, rate=1.09 step/s, units=96/115/92/120][A
+epoch 2/2:  74%|███████▍  | 37/50 [00:36<00:15,  1.20s/step, loss=-14.589, rate=1.09 step/s, units=96/115/92/120][A
+epoch 2/2:  76%|███████▌  | 38/50 [00:37<00:13,  1.17s/step, loss=-14.589, rate=1.09 step/s, units=96/115/92/120][A
+epoch 2/2:  78%|███████▊  | 39/50 [00:38<00:12,  1.12s/step, loss=-14.589, rate=1.09 step/s, units=96/115/92/120][A
+epoch 2/2:  80%|████████  | 40/50 [00:39<00:11,  1.19s/step, loss=-14.589, rate=1.09 step/s, units=96/115/92/120][A
+epoch 2/2:  80%|████████  | 40/50 [00:40<00:11,  1.19s/step, loss=-14.558, rate=1.01 step/s, units=92/114/85/119][A
+epoch 2/2:  82%|████████▏ | 41/50 [00:40<00:10,  1.14s/step, loss=-14.558, rate=1.01 step/s, units=92/114/85/119][A
+epoch 2/2:  84%|████████▍ | 42/50 [00:41<00:08,  1.07s/step, loss=-14.558, rate=1.01 step/s, units=92/114/85/119][A
+epoch 2/2:  86%|████████▌ | 43/50 [00:42<00:07,  1.02s/step, loss=-14.558, rate=1.01 step/s, units=92/114/85/119][A
+epoch 2/2:  88%|████████▊ | 44/50 [00:43<00:05,  1.02step/s, loss=-14.558, rate=1.01 step/s, units=92/114/85/119][A
+epoch 2/2:  90%|█████████ | 45/50 [00:44<00:04,  1.05step/s, loss=-14.558, rate=1.01 step/s, units=92/114/85/119][A
+epoch 2/2:  92%|█████████▏| 46/50 [00:45<00:03,  1.07step/s, loss=-14.558, rate=1.01 step/s, units=92/114/85/119][A
+epoch 2/2:  94%|█████████▍| 47/50 [00:45<00:02,  1.09step/s, loss=-14.558, rate=1.01 step/s, units=92/114/85/119][A
+epoch 2/2:  96%|█████████▌| 48/50 [00:46<00:01,  1.10step/s, loss=-14.558, rate=1.01 step/s, units=92/114/85/119][A
+epoch 2/2:  98%|█████████▊| 49/50 [00:47<00:00,  1.11step/s, loss=-14.558, rate=1.01 step/s, units=92/114/85/119][A
+epoch 2/2:  98%|█████████▊| 49/50 [00:48<00:00,  1.11step/s, loss=-14.519, rate=1.03 step/s, units=91/114/83/119][A
+epoch 2/2: 100%|██████████| 50/50 [00:48<00:00,  1.11step/s, loss=-14.519, rate=1.03 step/s, units=91/114/83/119][A
+                                                                                                                 [A
+val @ epoch 2:   0%|          | 0/2 [00:00<?, ?batch/s][A
+val @ epoch 2:  50%|█████     | 1/2 [00:00<00:00,  2.38batch/s][A
+val @ epoch 2: 100%|██████████| 2/2 [00:00<00:00,  2.43batch/s][A
+                                                               [A                                                        epochs:  50%|█████     | 1/2 [01:39<00:49, 49.59s/epoch]epochs: 100%|██████████| 2/2 [01:39<00:00, 49.52s/epoch]epochs: 100%|██████████| 2/2 [01:39<00:00, 49.53s/epoch]
+epoch 2: train -14.519  val -15.169 dB  units [91, 114, 83, 119]  1.03 step/s (49 s)  <- best
+val @ final (masks hard):   0%|          | 0/2 [00:00<?, ?batch/s]val @ final (masks hard):  50%|█████     | 1/2 [00:00<00:00,  2.28batch/s]val @ final (masks hard): 100%|██████████| 2/2 [00:00<00:00,  2.33batch/s]                                                                          done in 1.7 min: start -2.041 -> best -15.169 (epoch 2) -> final (epoch 2, hard masks) -15.169 dB; live units [91, 114, 83, 119], dense params 753,411 of 986,753 (76.4 %); exported training/runs/smoke-prune/best.authors.weights.h5

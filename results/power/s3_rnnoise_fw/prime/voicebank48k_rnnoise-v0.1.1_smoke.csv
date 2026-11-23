@@ -1,0 +1,2 @@
+id,variant,hops,nres,overruns,crc_errors,resyncs,proc_min,proc_max,proc_mean,proc_median_data,e2e_median_us,ref,max_abs_lsb,n_diff,nmse_db,status
+p232_001,rnnoise-v0.1.1,175,176,1,0,0,2093780,10203897,2200084.9,2159019,33023,/mnt/data/benchmark-data/enhanced/rnnoise/voicebank48k/p232_001.wav,1,36,-103.03,ok

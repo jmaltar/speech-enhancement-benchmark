@@ -1,0 +1,40 @@
+=== 2026-10-30T16:23:03+01:00 flash spconst (benchmark_f411/results/rnnoise_spconst_image.bin)
+Bus 003 Device 007: ID cafe:4001 Benchmark STM32F411 Audio Bench
+=== 2026-10-30T16:23:19+01:00 corpus spconst
+device   : STM32F411 build 'Release 20261030T1309+S' image_crc32=c4c678c2 tick_hz=96000000  (verified against benchmark_f411/results/rnnoise_spconst_image.bin)
+[25/824] 353s  last p232_029: hops=342 overruns=343 proc_mean=2618524.4 max|d|=1 status=ok
+[50/824] 524s  last p232_054: hops=371 overruns=372 proc_mean=2619067.1 max|d|=1 status=ok
+[75/824] 700s  last p232_079: hops=240 overruns=241 proc_mean=2607410.6 max|d|=1 status=ok
+[100/824] 876s  last p232_104: hops=392 overruns=393 proc_mean=2614501.4 max|d|=1 status=ok
+[125/824] 1064s  last p232_131: hops=306 overruns=307 proc_mean=2618433.4 max|d|=1 status=ok
+[150/824] 1230s  last p232_158: hops=269 overruns=270 proc_mean=2621648.2 max|d|=1 status=ok
+[175/824] 1415s  last p232_185: hops=286 overruns=287 proc_mean=2610170.5 max|d|=1 status=ok
+[200/824] 1593s  last p232_211: hops=141 overruns=142 proc_mean=2603113.8 max|d|=1 status=ok
+[225/824] 1779s  last p232_239: hops=187 overruns=188 proc_mean=2622180.6 max|d|=1 status=ok
+[250/824] 1980s  last p232_265: hops=189 overruns=190 proc_mean=2619027.7 max|d|=1 status=ok
+[275/824] 2174s  last p232_290: hops=188 overruns=189 proc_mean=2599695.6 max|d|=1 status=ok
+[300/824] 2345s  last p232_316: hops=164 overruns=165 proc_mean=2617273.3 max|d|=1 status=ok
+[325/824] 2519s  last p232_341: hops=260 overruns=261 proc_mean=2621613.3 max|d|=1 status=ok
+[350/824] 2701s  last p232_367: hops=183 overruns=184 proc_mean=2615915.6 max|d|=1 status=ok
+[375/824] 2892s  last p232_393: hops=328 overruns=329 proc_mean=2603935.1 max|d|=1 status=ok
+[400/824] 3113s  last p257_008: hops=559 overruns=560 proc_mean=2612504.4 max|d|=1 status=ok
+[425/824] 3375s  last p257_034: hops=192 overruns=193 proc_mean=2606284.7 max|d|=1 status=ok
+[450/824] 3548s  last p257_059: hops=373 overruns=374 proc_mean=2609160.3 max|d|=1 status=ok
+[475/824] 3728s  last p257_084: hops=289 overruns=290 proc_mean=2614467.5 max|d|=1 status=ok
+[500/824] 3909s  last p257_109: hops=212 overruns=213 proc_mean=2606523.5 max|d|=1 status=ok
+[525/824] 4087s  last p257_135: hops=349 overruns=350 proc_mean=2613693.4 max|d|=1 status=ok
+[550/824] 4264s  last p257_160: hops=252 overruns=253 proc_mean=2604012.2 max|d|=1 status=ok
+[575/824] 4448s  last p257_185: hops=225 overruns=226 proc_mean=2605482.6 max|d|=1 status=ok
+[600/824] 4637s  last p257_210: hops=252 overruns=253 proc_mean=2609182.1 max|d|=1 status=ok
+[625/824] 4828s  last p257_235: hops=226 overruns=227 proc_mean=2612056.8 max|d|=1 status=ok
+[650/824] 5024s  last p257_260: hops=271 overruns=272 proc_mean=2606541.0 max|d|=1 status=ok
+[675/824] 5206s  last p257_285: hops=146 overruns=147 proc_mean=2600910.0 max|d|=1 status=ok
+[700/824] 5380s  last p257_310: hops=157 overruns=158 proc_mean=2618502.1 max|d|=1 status=ok
+[725/824] 5546s  last p257_335: hops=159 overruns=160 proc_mean=2604943.1 max|d|=1 status=ok
+[750/824] 5732s  last p257_360: hops=283 overruns=284 proc_mean=2608402.9 max|d|=1 status=ok
+[775/824] 5913s  last p257_385: hops=222 overruns=223 proc_mean=2597177.8 max|d|=1 status=ok
+[800/824] 6085s  last p257_410: hops=359 overruns=360 proc_mean=2607961.9 max|d|=1 status=ok
+[824/824] 6247s  last p257_434: hops=209 overruns=210 proc_mean=2590043.7 max|d|=1 status=ok
+done     : 824 runs in 6247s -> benchmark_f411/results/rnnoise_f411b/spconst_corpus/voicebank48k_rnnoise-v0.1.1_paced.csv
+summary  : fails=0 total_overruns=208429 worst max|d|=228 LSB  worst n_diff=27901  worst NMSE=-53.9 dB
+=== 2026-10-30T18:07:26+01:00 done spconst (exit 0)

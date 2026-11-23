@@ -1,0 +1,41 @@
+=== bypass default unpaced 12:26:01
+device   : RPI5 build 'Release gcc14.2 20261016T1226' tick_hz=1000000000 (ns)  conditions: core=2 affinity=ok sched_policy=1(SCHED_FIFO) rtprio=50 mlockall=ok cur_khz=2400000 max_khz=2400000
+platform : platform  : governor performance on 4 cpus, throttled=0x0
+[200/824] 3s  last p232_211: hops=88 overruns=0 proc_mean=74.3 ns max|d|=0 duty=0.0 void=0 status=ok
+[400/824] 5s  last p257_008: hops=349 overruns=0 proc_mean=69.4 ns max|d|=0 duty=0.0 void=0 status=ok
+[600/824] 8s  last p257_210: hops=158 overruns=0 proc_mean=72.7 ns max|d|=0 duty=0.0 void=0 status=ok
+[800/824] 11s  last p257_410: hops=224 overruns=0 proc_mean=69.4 ns max|d|=0 duty=0.0 void=0 status=ok
+[824/824] 11s  last p257_434: hops=131 overruns=0 proc_mean=74.3 ns max|d|=0 duty=0.0 void=0 status=ok
+done     : 824 runs in 11s -> /dev/shm/results/voicebank16k_bypass.csv
+summary  : fails=0 void_runs=0 total_overruns=0 worst max|d|=0 LSB  worst n_diff=0  worst NMSE=-inf dB
+=== specsub mcra unpaced 12:26:12
+device   : RPI5 build 'Release gcc14.2 20261016T1226' tick_hz=1000000000 (ns)  conditions: core=2 affinity=ok sched_policy=1(SCHED_FIFO) rtprio=50 mlockall=ok cur_khz=2400000 max_khz=2400000
+platform : platform  : governor performance on 4 cpus, throttled=0x0
+[200/824] 4s  last p232_211: hops=88 overruns=0 proc_mean=29970.0 ns max|d|=1 duty=0.00187 void=0 status=ok
+[400/824] 7s  last p257_008: hops=349 overruns=0 proc_mean=29906.4 ns max|d|=1 duty=0.00187 void=0 status=ok
+[600/824] 11s  last p257_210: hops=158 overruns=0 proc_mean=29937.0 ns max|d|=1 duty=0.00187 void=0 status=ok
+[800/824] 15s  last p257_410: hops=224 overruns=0 proc_mean=29839.7 ns max|d|=1 duty=0.00186 void=0 status=ok
+[824/824] 15s  last p257_434: hops=131 overruns=0 proc_mean=29623.1 ns max|d|=1 duty=0.00185 void=0 status=ok
+done     : 824 runs in 15s -> /dev/shm/results/voicebank16k_specsub-mcra.csv
+summary  : fails=0 void_runs=0 total_overruns=0 worst max|d|=2 LSB  worst n_diff=1810  worst NMSE=-81.6 dB
+=== wiener mcra unpaced 12:26:28
+device   : RPI5 build 'Release gcc14.2 20261016T1226' tick_hz=1000000000 (ns)  conditions: core=2 affinity=ok sched_policy=1(SCHED_FIFO) rtprio=50 mlockall=ok cur_khz=2400000 max_khz=2400000
+platform : platform  : governor performance on 4 cpus, throttled=0x0
+[200/824] 4s  last p232_211: hops=88 overruns=0 proc_mean=30417.6 ns max|d|=1 duty=0.0019 void=0 status=ok
+[400/824] 7s  last p257_008: hops=349 overruns=0 proc_mean=30180.3 ns max|d|=1 duty=0.00189 void=0 status=ok
+[600/824] 11s  last p257_210: hops=158 overruns=0 proc_mean=30051.6 ns max|d|=1 duty=0.00188 void=0 status=ok
+[800/824] 14s  last p257_410: hops=224 overruns=0 proc_mean=29924.2 ns max|d|=1 duty=0.00187 void=0 status=ok
+[824/824] 15s  last p257_434: hops=131 overruns=0 proc_mean=30010.3 ns max|d|=1 duty=0.00188 void=0 status=ok
+done     : 824 runs in 15s -> /dev/shm/results/voicebank16k_wiener-mcra.csv
+summary  : fails=0 void_runs=0 total_overruns=0 worst max|d|=1 LSB  worst n_diff=1285  worst NMSE=-87.9 dB
+=== mmse mcra unpaced 12:26:43
+device   : RPI5 build 'Release gcc14.2 20261016T1226' tick_hz=1000000000 (ns)  conditions: core=2 affinity=ok sched_policy=1(SCHED_FIFO) rtprio=50 mlockall=ok cur_khz=2400000 max_khz=2400000
+platform : platform  : governor performance on 4 cpus, throttled=0x0
+[200/824] 4s  last p232_211: hops=88 overruns=0 proc_mean=38744.4 ns max|d|=1 duty=0.00242 void=0 status=ok
+[400/824] 8s  last p257_008: hops=349 overruns=0 proc_mean=38658.7 ns max|d|=1 duty=0.00242 void=0 status=ok
+[600/824] 12s  last p257_210: hops=158 overruns=0 proc_mean=38691.4 ns max|d|=1 duty=0.00242 void=0 status=ok
+[800/824] 16s  last p257_410: hops=224 overruns=0 proc_mean=38384.1 ns max|d|=1 duty=0.0024 void=0 status=ok
+[824/824] 16s  last p257_434: hops=131 overruns=0 proc_mean=38822.4 ns max|d|=1 duty=0.00243 void=0 status=ok
+done     : 824 runs in 16s -> /dev/shm/results/voicebank16k_mmse-mcra.csv
+summary  : fails=0 void_runs=0 total_overruns=0 worst max|d|=1 LSB  worst n_diff=1098  worst NMSE=-85.1 dB
+=== all done 12:26:59

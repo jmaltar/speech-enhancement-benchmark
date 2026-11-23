@@ -1,0 +1,10 @@
+# RPi5 smoke, 2026-10-29: Skelpolu - Resurrection (396 s, the longest-vocals-sparse track; the host's OOM track) through the lowmem path, unit umx-smoke, 4 threads, SD card output
+start 12:59:53 temp=temp=53.2'C throttled=0x0
+Finished with result: success
+Service runtime: 3min 53.721s
+CPU time consumed: 14min 45.019s
+end 13:03:47 temp=temp=60.4'C throttled=0x0
+conditions: {"threads": 4, "affinity": [0, 1, 2, 3], "torch": "2.15.0+cpu", "machine": "aarch64", "node": "rpibench", "governor": "performance", "throttled": "throttled=0x0"}
+[1/1] Skelpolu - Resurrection                  395.663 s  wall 220.941 s  rtf 0.5584  ok
+done: 1 tracks in 225 s -> smoke_out/umx_run_umxhq-smoke-skelpolu_t4.csv
+

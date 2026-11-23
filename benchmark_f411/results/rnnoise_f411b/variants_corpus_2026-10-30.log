@@ -1,0 +1,50 @@
+=== 2026-10-30T14:10:24+01:00 flash splibm (benchmark_f411/results/rnnoise_splibm_image.bin)
+Bus 003 Device 011: ID cafe:4001 Benchmark STM32F411 Audio Bench
+=== 2026-10-30T14:10:40+01:00 corpus splibm
+device   : STM32F411 build 'Release 20261030T1249+F' image_crc32=d915433a tick_hz=96000000  (verified against benchmark_f411/results/rnnoise_splibm_image.bin)
+[25/824] 373s  last p232_029: hops=342 overruns=343 proc_mean=2773249.9 max|d|=1 status=ok
+[50/824] 552s  last p232_054: hops=371 overruns=372 proc_mean=2774538.8 max|d|=1 status=ok
+[75/824] 737s  last p232_079: hops=240 overruns=241 proc_mean=2763406.2 max|d|=1 status=ok
+[100/824] 923s  last p232_104: hops=392 overruns=393 proc_mean=2768930.2 max|d|=1 status=ok
+[125/824] 1121s  last p232_131: hops=306 overruns=307 proc_mean=2774235.5 max|d|=1 status=ok
+[150/824] 1296s  last p232_158: hops=269 overruns=270 proc_mean=2776647.0 max|d|=1 status=ok
+[175/824] 1491s  last p232_185: hops=286 overruns=287 proc_mean=2765645.3 max|d|=1 status=ok
+[200/824] 1679s  last p232_211: hops=141 overruns=142 proc_mean=2756367.1 max|d|=1 status=ok
+[225/824] 1875s  last p232_239: hops=187 overruns=188 proc_mean=2776758.5 max|d|=1 status=ok
+[250/824] 2086s  last p232_265: hops=189 overruns=190 proc_mean=2774075.9 max|d|=1 status=ok
+[275/824] 2291s  last p232_290: hops=188 overruns=189 proc_mean=2754504.4 max|d|=1 status=ok
+[300/824] 2471s  last p232_316: hops=164 overruns=165 proc_mean=2770387.4 max|d|=1 status=ok
+[325/824] 2655s  last p232_341: hops=260 overruns=261 proc_mean=2776401.2 max|d|=1 status=ok
+[350/824] 2846s  last p232_367: hops=183 overruns=184 proc_mean=2770588.0 max|d|=1 status=ok
+[375/824] 3047s  last p232_393: hops=328 overruns=329 proc_mean=2759605.3 max|d|=1 status=ok
+[400/824] 3280s  last p257_008: hops=559 overruns=560 proc_mean=2767464.8 max|d|=1 status=ok
+[425/824] 3557s  last p257_034: hops=192 overruns=193 proc_mean=2759432.8 max|d|=1 status=ok
+[450/824] 3739s  last p257_059: hops=373 overruns=374 proc_mean=2765916.9 max|d|=1 status=ok
+[475/824] 3928s  last p257_084: hops=289 overruns=290 proc_mean=2770499.1 max|d|=1 status=ok
+[500/824] 4119s  last p257_109: hops=212 overruns=213 proc_mean=2761426.1 max|d|=1 status=ok
+[525/824] 4307s  last p257_135: hops=349 overruns=350 proc_mean=2768484.7 max|d|=1 status=ok
+[550/824] 4493s  last p257_160: hops=252 overruns=253 proc_mean=2758968.6 max|d|=1 status=ok
+[575/824] 4687s  last p257_185: hops=225 overruns=226 proc_mean=2761839.0 max|d|=1 status=ok
+[600/824] 4886s  last p257_210: hops=252 overruns=253 proc_mean=2762741.7 max|d|=1 status=ok
+[625/824] 5088s  last p257_235: hops=226 overruns=227 proc_mean=2765316.6 max|d|=1 status=ok
+[650/824] 5294s  last p257_260: hops=271 overruns=272 proc_mean=2761166.8 max|d|=1 status=ok
+[675/824] 5486s  last p257_285: hops=146 overruns=147 proc_mean=2756752.3 max|d|=1 status=ok
+[700/824] 5670s  last p257_310: hops=157 overruns=158 proc_mean=2771659.1 max|d|=1 status=ok
+[725/824] 5844s  last p257_335: hops=159 overruns=160 proc_mean=2757602.8 max|d|=1 status=ok
+[750/824] 6041s  last p257_360: hops=283 overruns=284 proc_mean=2764392.4 max|d|=1 status=ok
+[775/824] 6232s  last p257_385: hops=222 overruns=223 proc_mean=2752794.1 max|d|=1 status=ok
+[800/824] 6413s  last p257_410: hops=359 overruns=360 proc_mean=2762899.7 max|d|=1 status=ok
+[824/824] 6583s  last p257_434: hops=209 overruns=210 proc_mean=2744607.5 max|d|=1 status=ok
+done     : 824 runs in 6583s -> benchmark_f411/results/rnnoise_f411b/splibm_corpus/voicebank48k_rnnoise-v0.1.1_paced.csv
+summary  : fails=0 total_overruns=208429 worst max|d|=228 LSB  worst n_diff=27882  worst NMSE=-53.9 dB
+=== 2026-10-30T16:00:23+01:00 done splibm (exit 0)
+=== 2026-10-30T16:00:23+01:00 flash spconst (benchmark_f411/results/rnnoise_spconst_image.bin)
+Bus 003 Device 013: ID cafe:4001 Benchmark STM32F411 Audio Bench
+=== 2026-10-30T16:00:39+01:00 corpus spconst
+device   : STM32F411 build 'Release 20261030T1309+S' image_crc32=c4c678c2 tick_hz=96000000  (verified against benchmark_f411/results/rnnoise_spconst_image.bin)
+[25/824] 353s  last p232_029: hops=342 overruns=343 proc_mean=2618501.9 max|d|=1 status=ok
+[50/824] 524s  last p232_054: hops=371 overruns=372 proc_mean=2619108.3 max|d|=1 status=ok
+[75/824] 700s  last p232_079: hops=240 overruns=241 proc_mean=2607426.7 max|d|=1 status=ok
+[100/824] 876s  last p232_104: hops=392 overruns=393 proc_mean=2614603.9 max|d|=1 status=ok
+[125/824] 1064s  last p232_131: hops=306 overruns=307 proc_mean=2618465.4 max|d|=1 status=ok
+=== 2026-10-30T16:19:23+01:00 spconst STOPPED at the user's request after 99 of 824 (head-of-manifest partial, trap 14 — not the corpus figure); directory renamed spconst_partial_99_2026-10-30

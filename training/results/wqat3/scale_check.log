@@ -1,0 +1,16 @@
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+int8 FC weight tensors in i16pt stage 2: [('dtln_2_shrunk_1/dense2_1/Tensordot/MatMu', (256, 11)), ('dtln_2_shrunk_1/lstm3_1/lstm_cell_1/MatM', (44, 1)), ('dtln_2_shrunk_1/lstm3_1/lstm_cell_1/MatM', (44, 11))]
+f32 FC tensors (256,<=128): [('dtln_2_shrunk_1/dense2_1/Tensordot/MatMu', (256, 11))]
+live dense2 rows: [3, 14, 45, 46, 59, 68, 79, 85, 99, 109, 122]
+== encoder basis: training scales (256,), flatbuffer scales (256,), zero points unique [0]
+   ratio fb/train: min 1.000000 max 1.000000 mean 1.000000; identical to 1e-6 rel: True
+   int8 values differ: 0 of 131072  max |diff| 0
+== decoder basis: training scales (512,), flatbuffer scales (512,), zero points unique [0]
+   ratio fb/train: min 1.000000 max 1.000000 mean 1.000000; identical to 1e-6 rel: True
+   int8 values differ: 0 of 131072  max |diff| 0
+dense2 absmax: full kernel 6.44501  live rows only 2.65121  dead rows only 6.44501
+== mask dense (dense2), training = full-size per-tensor: training scales (1,), flatbuffer scales (1,), zero points unique [0]
+   ratio fb/train: min 0.411359 max 0.411359 mean 0.411359; identical to 1e-6 rel: False
+   live-rows-only scale 0.0208757 vs flatbuffer 0.0208757  ratio 1.000000
+   int8 values (training grid) vs flatbuffer differ: 2808 of 2816  max |diff| 75
+   training grid step / flatbuffer step = 2.4309645

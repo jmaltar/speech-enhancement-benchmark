@@ -1,0 +1,8 @@
+    raise KeyError(key) from err
+KeyError: 'pesq_mos_lqo'
+=== voicebank48k / rnnoise-s3: 824 utterances in 0.2s; failed 824
+    824  ValueError: voicebank48k: wideband PESQ requires 16 kHz, got 48000
+    raise KeyError(key) from err
+KeyError: 'pesq_mos_lqo'
+=== voicebank48k / rnnoise-s3-fw: 824 utterances in 0.1s; failed 824
+    824  ValueError: voicebank48k: wideband PESQ requires 16 kHz, got 48000

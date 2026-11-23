@@ -1,0 +1,220 @@
+Provenance (asserted, not assumed):
+  pesq_itu_sources   P.862/.1/.2 v2.0 (Oct 2005), vendored
+  pystoi             0.4.1
+  resampler          resample_poly(1,3), 577-tap Kaiser(12) @ 7800 Hz
+
+=== dns / bypass: 150 utterances in 12.6s (14 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       1.5822    [1.5082, 1.6563]    [1.5163, 1.6652]   1.4536   1.034   3.337
+  stoi               0.9152    [0.9047, 0.9257]    [0.9041, 0.9249]   0.9312   0.687   0.997
+  estoi              0.8099    [0.7902, 0.8295]    [0.7895, 0.8284]   0.8406   0.391   0.990
+  si_sdr             9.2295   [8.3320, 10.1271]   [8.3433, 10.0922]   8.9981  -0.010  21.482
+  largest t-vs-BCa edge discrepancy: 0.03484 (si_sdr), 10000 resamples, seed 20260913
+INFO: INFO: INFO: INFO: INFO: INFO: INFO: INFO: INFO: INFO: INFO: INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.
+
+
+
+
+
+
+
+
+
+
+
+
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+=== dns / dtln-int8: 150 utterances in 16.5s (14 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       1.1744    [1.1554, 1.1934]    [1.1577, 1.1957]   1.1352   1.027   1.734
+  stoi               0.8416    [0.8301, 0.8530]    [0.8298, 0.8524]   0.8512   0.623   0.958
+  estoi              0.6642    [0.6445, 0.6839]    [0.6441, 0.6833]   0.6717   0.319   0.884
+  si_sdr             4.3513    [3.8468, 4.8557]    [3.8296, 4.8178]   4.9550  -3.958   9.470
+  largest t-vs-BCa edge discrepancy: 0.03785 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_mos_lqo by snr_bin  (bins, BCa 95% per bin):
+    0-4 dB                 n=36   mean 1.0828  sd 0.0485  [1.0690, 1.1006]
+    5-9 dB                 n=44   mean 1.1569  sd 0.0693  [1.1383, 1.1786]
+    10-14 dB               n=40   mean 1.1831  sd 0.0934  [1.1565, 1.2142]
+    15-19 dB               n=30   mean 1.2984  sd 0.1517  [1.2503, 1.3572]
+    4 bins, min N = 30, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.INFO: INFO: 
+INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.INFO: 
+
+Created TensorFlow Lite XNNPACK delegate for CPU.
+
+Created TensorFlow Lite XNNPACK delegate for CPU.
+
+INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+=== dns / dtln-int8p: 150 utterances in 15.8s (14 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       1.0570    [1.0307, 1.0834]    [1.0424, 1.1239]   1.0350   1.019   3.007
+  stoi               0.5216    [0.5000, 0.5432]    [0.4996, 0.5427]   0.5317   0.207   0.765
+  estoi              0.2745    [0.2501, 0.2989]    [0.2508, 0.2987]   0.2526   0.005   0.627
+  si_sdr            -6.8728  [-7.5485, -6.1971]  [-7.5358, -6.2140]  -7.0469 -16.720   3.030
+  largest t-vs-BCa edge discrepancy: 0.04052 (pesq_mos_lqo), 10000 resamples, seed 20260913
+
+  pesq_mos_lqo by snr_bin  (bins, BCa 95% per bin):
+    0-4 dB                 n=36   mean 1.0992  sd 0.3284  [1.0420, 1.3665]
+    5-9 dB                 n=44   mean 1.0443  sd 0.0260  [1.0385, 1.0549]
+    10-14 dB               n=40   mean 1.0431  sd 0.0394  [1.0358, 1.0662]
+    15-19 dB               n=30   mean 1.0437  sd 0.0206  [1.0374, 1.0524]
+    4 bins, min N = 30, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.
+
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: INFO: INFO: INFO: INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.
+Created TensorFlow Lite XNNPACK delegate for CPU.
+
+
+Created TensorFlow Lite XNNPACK delegate for CPU.
+
+
+
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+=== dns / dtln-f32n: 150 utterances in 14.4s (14 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       2.3723    [2.2809, 2.4637]    [2.2830, 2.4646]   2.3318   1.294   3.654
+  stoi               0.9451    [0.9379, 0.9523]    [0.9372, 0.9515]   0.9587   0.735   0.997
+  estoi              0.8853    [0.8729, 0.8978]    [0.8720, 0.8968]   0.9016   0.520   0.990
+  si_sdr            16.5133  [15.7863, 17.2403]  [15.7748, 17.2176]  16.7932   4.210  28.059
+  largest t-vs-BCa edge discrepancy: 0.02273 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_mos_lqo by snr_bin  (bins, BCa 95% per bin):
+    0-4 dB                 n=36   mean 1.7985  sd 0.3854  [1.6828, 1.9350]
+    5-9 dB                 n=44   mean 2.2227  sd 0.4281  [2.1071, 2.3576]
+    10-14 dB               n=40   mean 2.6745  sd 0.4279  [2.5450, 2.8047]
+    15-19 dB               n=30   mean 2.8772  sd 0.3454  [2.7496, 2.9930]
+    4 bins, min N = 30, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.
+
+INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Created TensorFlow Lite XNNPACK delegate for CPU.
+
+INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.INFO: 
+
+Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: INFO: INFO: Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.Created TensorFlow Lite XNNPACK delegate for CPU.
+
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/jurica/Desktop/benchmark/eval_harness/enhance.py", line 310, in <module>
+    main()
+  File "/home/jurica/Desktop/benchmark/eval_harness/enhance.py", line 281, in main
+    dns_vs_published(dfs)
+  File "/home/jurica/Desktop/benchmark/eval_harness/enhance.py", line 196, in dns_vs_published
+    p = pub[key]
+        ~~~^^^^^
+KeyError: 'dtln-int8'
+
+=== dns / dtln-int8n: 150 utterances in 15.4s (14 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       1.0976    [1.0790, 1.1161]    [1.0844, 1.1266]   1.0741   1.028   2.032
+  stoi               0.6430    [0.6331, 0.6530]    [0.6328, 0.6525]   0.6428   0.427   0.797
+  estoi              0.4984    [0.4845, 0.5123]    [0.4844, 0.5116]   0.5095   0.230   0.692
+  si_sdr            -2.3040  [-2.5536, -2.0543]  [-2.5543, -2.0695]  -2.2180  -7.621   1.598
+  largest t-vs-BCa edge discrepancy: 0.01517 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_mos_lqo by snr_bin  (bins, BCa 95% per bin):
+    0-4 dB                 n=36   mean 1.1182  sd 0.2215  [1.0666, 1.2330]
+    5-9 dB                 n=44   mean 1.0751  sd 0.0272  [1.0682, 1.0845]
+    10-14 dB               n=40   mean 1.1038  sd 0.0639  [1.0878, 1.1283]
+    15-19 dB               n=30   mean 1.0973  sd 0.0278  [1.0880, 1.1074]
+    4 bins, min N = 30, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+
+  bypass: every utterance bit-identical to its input; scores ARE the Noisy row.
+
+=== dns: enhanced (B, noise tracker mcra) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 16 tests (headline-pooled-per-corpus)
+
+  --- dtln-int8
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.5822   1.1744   -0.3394  [-0.3979, -0.2937]    0.10  2.44e-26         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.9995   (paired wilcoxon, n = 150)
+  stoi            0.9152   0.8416   -0.0682  [-0.0754, -0.0616]    0.01   2.3e-26         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -1.0000   (paired wilcoxon, n = 150)
+  estoi           0.8099   0.6642   -0.1375  [-0.1511, -0.1251]    0.01   2.3e-26         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -1.0000   (paired wilcoxon, n = 150)
+  si_sdr          9.2295   4.3513   -4.8783  [-5.3077, -4.4488]    0.50  3.62e-41         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = -1.5351   (paired t, n = 150)
+
+  --- dtln-int8p
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.5822   1.0570   -0.4723  [-0.5471, -0.4109]    0.10  8.43e-25         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.9679   (paired wilcoxon, n = 150)
+  stoi            0.9152   0.5216   -0.3939  [-0.4127, -0.3738]    0.01   2.3e-26         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -1.0000   (paired wilcoxon, n = 150)
+  estoi           0.8099   0.2745   -0.5345  [-0.5608, -0.5067]    0.01   2.3e-26         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -1.0000   (paired wilcoxon, n = 150)
+  si_sdr          9.2295  -6.8728  -16.1023[-16.8945, -15.3101]    0.50  1.72e-71         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = -2.7469   (paired t, n = 150)
+
+  --- dtln-f32n
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.5822   2.3723   +0.7875  [+0.7441, +0.8312]    0.10   2.3e-26         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +1.0000   (paired wilcoxon, n = 150)
+  stoi            0.9152   0.9451   +0.0277  [+0.0236, +0.0317]    0.01  5.83e-23         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.9287   (paired wilcoxon, n = 150)
+  estoi           0.8099   0.8853   +0.0715  [+0.0637, +0.0795]    0.01  6.26e-26         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.9912   (paired wilcoxon, n = 150)
+  si_sdr          9.2295  16.5133   +7.2838  [+6.8295, +7.7380]    0.50  2.46e-58         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = +2.1669   (paired t, n = 150)
+
+  --- dtln-int8n
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.5822   1.0976   -0.4299  [-0.5015, -0.3700]    0.10  2.59e-24         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -0.9576   (paired wilcoxon, n = 150)
+  stoi            0.9152   0.6430   -0.2728  [-0.2802, -0.2652]    0.01   2.3e-26         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -1.0000   (paired wilcoxon, n = 150)
+  estoi           0.8099   0.4984   -0.3134  [-0.3243, -0.3024]    0.01   2.3e-26         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = -1.0000   (paired wilcoxon, n = 150)
+  si_sdr          9.2295  -2.3040  -11.5335[-12.2096, -10.8573]    0.50  1.11e-61         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = -2.3052   (paired t, n = 150)
+
+  Holm-adjusted p(diff):
+    dtln-int8   pesq_mos_lqo   raw  2.44e-26  adj  2.76e-25  significant
+    dtln-int8   stoi           raw   2.3e-26  adj  2.76e-25  significant
+    dtln-int8   estoi          raw   2.3e-26  adj  2.76e-25  significant
+    dtln-int8   si_sdr         raw  3.62e-41  adj  4.71e-40  significant
+    dtln-int8p  pesq_mos_lqo   raw  8.43e-25  adj  2.53e-24  significant
+    dtln-int8p  stoi           raw   2.3e-26  adj  2.76e-25  significant
+    dtln-int8p  estoi          raw   2.3e-26  adj  2.76e-25  significant
+    dtln-int8p  si_sdr         raw  1.72e-71  adj  2.75e-70  significant
+    dtln-f32n   pesq_mos_lqo   raw   2.3e-26  adj  2.76e-25  significant
+    dtln-f32n   stoi           raw  5.83e-23  adj  5.83e-23  significant
+    dtln-f32n   estoi          raw  6.26e-26  adj  2.76e-25  significant
+    dtln-f32n   si_sdr         raw  2.46e-58  adj  3.45e-57  significant
+    dtln-int8n  pesq_mos_lqo   raw  2.59e-24  adj  5.19e-24  significant
+    dtln-int8n  stoi           raw   2.3e-26  adj  2.76e-25  significant
+    dtln-int8n  estoi          raw   2.3e-26  adj  2.76e-25  significant
+    dtln-int8n  si_sdr         raw  1.11e-61  adj  1.67e-60  significant
+
+  DNS no-reverb: ours (N=150) beside the published DTLN rows
+  (Westhausen & Meyer 2020 (DTLN), Table 2 row 'DTLN'; github.com/breizhn/DTLN README 'Results' table for the TF-lite rows; DNS INTERSPEECH-2020 synthetic no-reverb)
+  (STOI and SI-SDR comparable; pesq_nb is narrowband P.862 (their ref. [31]) -- NOT our wideband)
+  row        STOI ours     pub   delta  SI-SDR ours     pub   delta  PESQ wb ours pub (NB!)
+  noisy         0.9152  0.9152 -0.0000         9.23    9.07   +0.16        1.5822      2.45

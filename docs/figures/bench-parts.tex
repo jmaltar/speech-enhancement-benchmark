@@ -1,0 +1,347 @@
+% bench-parts.tex -- TikZ drawings of the power-measurement bench parts, top view, real millimetres.
+% \input this inside a tikzpicture document that sets [x=<s>mm, y=<s>mm]; text keeps its own size.
+% Sources for the geometry:
+%   WeAct Black Pill F411  : WeAct pinout diagram v2.0+ (components/nCgeolTh.jpeg), 53 x 21 mm, rows 0.6 in apart
+%   WeAct STM32H723 board  : WeAct BoardShape V12 (40.64 x 66.88 mm), github.com/WeActStudio/WeActStudio.MiniSTM32H723
+%   WeAct Mini Debugger    : photos components/IMG_1398.JPG (front) and IMG_1399.JPG (silkscreen side); harness
+%                            colours sampled from the photo, order 3V3 SWDIO SWCLK GND SWO NRST TXD RXD GND 5V
+%   INA226 module          : photo components/IMG_1400.JPG (blue, 8-pin header, no terminal block)
+%   USB-A female breakout  : generic until checked against the part on the bench.
+
+\usetikzlibrary{calc}
+
+% ---------------------------------------------------------------- palette
+\definecolor{pcbblack}{HTML}{1B1B1E}
+\definecolor{pcbedge}{HTML}{000000}
+\definecolor{gold}{HTML}{D9A933}
+\definecolor{golddk}{HTML}{8A6A16}
+\definecolor{hole}{HTML}{2A2416}
+\definecolor{silk}{HTML}{F4F4F4}
+\definecolor{metal}{HTML}{C9CDD2}
+\definecolor{metaldk}{HTML}{8E949B}
+\definecolor{chip}{HTML}{2C2C30}
+\definecolor{dbgpurple}{HTML}{7B2A90}
+\definecolor{inapurple}{HTML}{4B2A86}
+\definecolor{bogreen}{HTML}{1E6B45}
+\definecolor{termblue}{HTML}{2E6FD8}
+\definecolor{cablegrey}{HTML}{2F3034}
+\definecolor{laptopgrey}{HTML}{3A3D43}
+\definecolor{alu}{HTML}{C9CDD3}
+\definecolor{aludk}{HTML}{8D939B}
+\definecolor{plugbody}{HTML}{26272B}
+% harness wires, sampled from the photo
+\definecolor{hRed}{HTML}{E3574E}
+\definecolor{hBlack}{HTML}{25211F}
+\definecolor{hYellow}{HTML}{F2D93A}
+\definecolor{hTeal}{HTML}{1F7A68}
+\definecolor{hNavy}{HTML}{2B3990}
+\definecolor{hWhite}{HTML}{EEEEF2}
+\definecolor{hOrange}{HTML}{EE8A5C}
+\definecolor{hPurple}{HTML}{5A2F8C}
+\definecolor{hBrown}{HTML}{5B4038}
+\definecolor{hGrey}{HTML}{D6D6D6}
+% jumper wires
+\definecolor{jRed}{HTML}{D7261E}
+\definecolor{jBlack}{HTML}{1E1E1E}
+\definecolor{jWhite}{HTML}{F2F2F2}
+\definecolor{jGreen}{HTML}{2BA84A}
+\definecolor{jYellow}{HTML}{F5C518}
+\definecolor{jBlue}{HTML}{1F6FE0}
+\definecolor{jOrange}{HTML}{F28C1C}
+
+\tikzset{
+  silktxt/.style={text=silk, inner sep=0pt, font=\fontsize{2.3}{2.3}\selectfont\sffamily},
+  silkbig/.style={text=silk, inner sep=0pt, font=\fontsize{3.6}{3.6}\selectfont\sffamily\bfseries},
+  partlabel/.style={font=\footnotesize\sffamily, align=left, inner sep=1pt},
+  pinlabel/.style={font=\scriptsize\sffamily, inner sep=1.2pt, rounded corners=1.2pt},
+}
+
+% ---------------------------------------------------------------- small pieces
+% pad: \pad{(x,y)}  (round, gold ring with a hole); \sqpad for pin 1
+\newcommand{\pad}[1]{\fill[gold] #1 circle (0.85); \fill[hole] #1 circle (0.42);}
+\newcommand{\sqpad}[1]{\fill[gold] ($#1+(-0.85,-0.85)$) rectangle +(1.7,1.7); \fill[hole] #1 circle (0.42);}
+% Dupont housing seen from above, centred on a pin
+\newcommand{\dupont}[1]{\fill[black!88, rounded corners=0.3pt] ($#1+(-1.32,-1.32)$) rectangle +(2.64,2.64);
+  \fill[black!65] ($#1+(-0.75,-0.75)$) rectangle +(1.5,1.5);}
+% a loose Dupont housing lying flat, pointing in direction #2 (degrees) from #1
+\newcommand{\dupontflat}[2]{\begin{scope}[shift={#1}, rotate=#2]
+  \fill[black!88, rounded corners=0.4pt] (0,-1.3) rectangle (14,1.3); \fill[black!70] (11,-0.7) rectangle (13.6,0.7);
+  \end{scope}}
+% wires: \jumper{colour}{path}  (Dupont jumper, 1.6 mm);  \hwire{colour}{path}  (debugger harness, 1.1 mm)
+\newcommand{\jumper}[2]{%
+  \draw[line width=3.3pt, #1!45!black, line cap=round, line join=round] #2;
+  \draw[line width=2.5pt, #1, line cap=round, line join=round] #2;
+  \draw[line width=0.7pt, white, opacity=0.35, line cap=round, line join=round] #2;}
+\newcommand{\hwire}[2]{%
+  \draw[line width=2.3pt, #1!45!black, line cap=round, line join=round] #2;
+  \draw[line width=1.7pt, #1, line cap=round, line join=round] #2;
+  \draw[line width=0.5pt, white, opacity=0.35, line cap=round, line join=round] #2;}
+\newcommand{\usbcable}[1]{%
+  \draw[line width=5.4pt, black, line cap=round, line join=round] #1;
+  \draw[line width=4.5pt, cablegrey, line cap=round, line join=round] #1;
+  \draw[line width=1.1pt, white, opacity=0.18, line cap=round, line join=round] #1;}
+
+% USB-C plug, tip at #1, pointing in direction #2 (degrees)
+\newcommand{\usbCplug}[2]{\begin{scope}[shift={#1}, rotate=#2]
+  \fill[metal, draw=metaldk, line width=0.3pt, rounded corners=1pt] (-6.6,-4.15) rectangle (0.4,4.15);
+  \fill[plugbody, rounded corners=2.2pt] (-20,-5.4) rectangle (-6.2,5.4);
+  \fill[white, opacity=0.10, rounded corners=1pt] (-19.4,-1.2) rectangle (-6.8,1.6);
+  \end{scope}}
+% USB-A plug, tip at #1, pointing in direction #2
+\newcommand{\usbAplug}[2]{\begin{scope}[shift={#1}, rotate=#2]
+  \fill[metal, draw=metaldk, line width=0.3pt] (-12,-6.1) rectangle (0,6.1);
+  \foreach \y in {-3,3} \fill[metaldk] (-5,\y-0.8) rectangle (-2.5,\y+0.8);
+  \fill[plugbody, rounded corners=2.4pt] (-27,-7.4) rectangle (-11.5,7.4);
+  \fill[white, opacity=0.10, rounded corners=1pt] (-26.4,-1.4) rectangle (-12.1,1.8);
+  \foreach \x in {-25,-23.6,-22.2}{\draw[white, opacity=0.12, line width=0.4pt] (\x,-6.2) -- (\x,6.2);}
+  \end{scope}}
+
+% ---------------------------------------------------------------- WeAct Black Pill (STM32F411CEU6)
+% \BlackPill{prefix}{x0}{y0}{rotation}{show-labels y/n}: local frame USB-C at the top, origin bottom-left, 21 x 53 mm.
+% Rotation 90 about (x0,y0) puts the USB-C at the left: the board then occupies (x0-53..x0, y0..y0+21).
+% Named coordinates: <prefix>-<pin> for every header pin, duplicates as 5VL/GL/3V3L (left column, B12 side) and
+% 5VR/GR/3V3R (right column, 5V side); SWD header <prefix>-SW3V3/SWDIO/SWCLK/SWGND.
+\newcommand{\BlackPill}[5]{%
+\begin{scope}[shift={(#2,#3)}, rotate=#4]
+  % PCB
+  \fill[pcbblack, draw=pcbedge, line width=0.4pt, rounded corners=1.2pt] (0,0) rectangle (21,53);
+  % silk column lines
+  \draw[silk, line width=0.35pt] (5.6,3.2) -- (5.6,47.2) (15.4,3.2) -- (15.4,47.2);
+  % header pads and names
+  \foreach \n/\t [count=\k from 1] in {B12/B12,B13/B13,B14/B14,B15/B15,A8/A8,A9/A9,A10/A10,A11/A11,A12/A12,A15/A15,
+      B3/B3,B4/B4,B5/B5,B6/B6,B7/B7,B8/B8,B9/B9,5VL/5V,GL/G,3V3L/3V3}{
+    \coordinate (#1-\n) at (2.88,{50-(\k-1)*2.54});
+    \ifnum\k=1 \sqpad{(#1-\n)} \else \pad{(#1-\n)} \fi
+    \ifx#5y\node[silktxt, rotate=#4-90] at (4.5,{50-(\k-1)*2.54}) {\t};\fi }
+  \foreach \n/\t [count=\k from 1] in {5VR/5V,GR/G,3V3R/3V3,B10/B10,B2/B2,B1/B1,B0/B0,A7/A7,A6/A6,A5/A5,A4/A4,A3/A3,
+      A2/A2,A1/A1,A0/A0,R/R,C15/C15,C14/C14,C13/C13,VB/VB}{
+    \coordinate (#1-\n) at (18.12,{50-(\k-1)*2.54});
+    \ifnum\k=1 \sqpad{(#1-\n)} \else \pad{(#1-\n)} \fi
+    \ifx#5y\node[silktxt, rotate=#4-90] at (16.5,{50-(\k-1)*2.54}) {\t};\fi }
+  % SWD header (3V3 square, DIO, SCK, GND)
+  \foreach \n/\x in {SW3V3/6.0,SWDIO/8.54,SWCLK/11.08,SWGND/13.62}{\coordinate (#1-\n) at (\x,5.55);}
+  \sqpad{(#1-SW3V3)} \pad{(#1-SWDIO)} \pad{(#1-SWCLK)} \pad{(#1-SWGND)}
+  \ifx#5y\foreach \t/\x in {3V3/6.0,DIO/8.54,SCK/11.08,GND/13.62}{\node[silktxt, rotate=#4-90] at (\x,3.0) {\t};}\fi
+  % USB-C receptacle
+  \coordinate (#1-USB) at (10.5,54.4);
+  \fill[metal, draw=metaldk, line width=0.3pt, rounded corners=0.8pt] (6.03,46.4) rectangle (14.97,54.4);
+  \fill[metaldk!70!black, rounded corners=1.2pt] (7.0,52.6) rectangle (14.0,54.2);
+  \draw[metaldk, line width=0.3pt] (6.6,48.0) -- (14.4,48.0);
+  % buttons BOOT0, NRST, KEY
+  \foreach \x/\y in {5.9/35.0, 10.9/35.0, 6.6/8.4}{
+    \fill[white!93!black, rounded corners=0.6pt] (\x,\y) rectangle +(3.5,5.0);
+    \fill[black!85] ($(\x,\y)+(1.75,2.5)$) ellipse (1.0 and 1.6);}
+  % MCU (QFN48, 7 x 7, at 45 degrees)
+  \begin{scope}[shift={(10.5,26.0)}, rotate=45]
+    \foreach \i in {0,...,11}{\fill[gold!80] (-3.0+\i*0.5,-3.75) rectangle +(0.24,0.45);
+      \fill[gold!80] (-3.0+\i*0.5,3.3) rectangle +(0.24,0.45);
+      \fill[gold!80] (-3.75,-3.0+\i*0.5) rectangle +(0.45,0.24);
+      \fill[gold!80] (3.3,-3.0+\i*0.5) rectangle +(0.45,0.24);}
+    \fill[chip, rounded corners=0.4pt] (-3.3,-3.3) rectangle (3.3,3.3);
+    \fill[white, opacity=0.6] (-2.6,-2.6) circle (0.3);
+  \end{scope}
+  % crystals
+  \fill[metal, rounded corners=0.4pt] (11.4,15.9) rectangle (14.9,18.8);
+  \fill[white!88!black, rounded corners=0.3pt] (7.0,16.2) rectangle (10.3,18.0);
+  % LEDs
+  \foreach \x in {4.9,14.6}{\fill[white!90!black] (\x,9.6) rectangle +(1.0,1.8); \fill[yellow!70!orange] (\x+0.2,10.1) rectangle +(0.6,0.8);}
+  % passives
+  \foreach \x/\y in {7.0/43.2, 8.6/43.2, 12.6/43.2, 7.6/30.8, 13.6/31.5, 15.0/22.0, 5.8/21.5, 8.0/13.6, 13.0/13.0, 12.0/8.8}{
+    \fill[black!55] (\x,\y) rectangle +(1.0,0.6); \fill[gold!70] (\x,\y) rectangle +(0.22,0.6); \fill[gold!70] (\x+0.78,\y) rectangle +(0.22,0.6);}
+\end{scope}}
+
+% ---------------------------------------------------------------- WeAct STM32H723VGT6 core board
+% \HSevenTwoThree{prefix}{x0}{y0}: upright, USB-C at the bottom, 40.64 x 66.88 mm, origin bottom-left.
+% Named coordinates: <prefix>-SWGND/SWCLK/SWDIO/SW3V3, <prefix>-USB (centre of the USB-C opening).
+\newcommand{\HSevenTwoThree}[3]{%
+\begin{scope}[shift={(#2,#3)}]
+  \fill[pcbblack, draw=pcbedge, line width=0.4pt, rounded corners=3pt] (0,0) rectangle (40.64,66.88);
+  % mounting holes
+  \foreach \x/\y in {2.9/2.8, 37.74/2.8, 2.9/64.08, 37.74/64.08}{\fill[gold] (\x,\y) circle (2.3); \fill[white] (\x,\y) circle (1.55);}
+  % 2 x 22 headers on each side
+  \foreach \k in {0,...,21}{\foreach \x in {1.27,3.81,36.83,39.37}{
+     \pgfmathsetmacro{\yy}{60.04-2.54*\k}
+     \ifnum\k=21 \sqpad{(\x,\yy)} \else \pad{(\x,\yy)} \fi}}
+  % SWD header: GND CLK DIO 3.3V (3.3V square)
+  \foreach \n/\x in {SWGND/25.7,SWCLK/28.24,SWDIO/30.78,SW3V3/33.32}{\coordinate (#1-\n) at (\x,58.8);}
+  \draw[silk, line width=0.3pt] (24.3,57.4) rectangle (34.7,60.2);
+  \pad{(#1-SWGND)} \pad{(#1-SWCLK)} \pad{(#1-SWDIO)} \sqpad{(#1-SW3V3)}
+  \foreach \t/\x in {GND/25.7,CLK/28.24,DIO/30.78,3.3V/33.32}{\node[silktxt, rotate=90, anchor=west] at (\x,61.0) {\t};}
+  \node[silktxt, rotate=90, anchor=west] at (35.6,61.0) {SW};
+  % buttons NR, B0, K1
+  \foreach \x/\t in {11.8/NR,16.0/B0,20.3/K1}{
+    \fill[white!88!black, rounded corners=0.5pt] (\x-1.9,59.2) rectangle (\x+1.9,65.0);
+    \fill[black!85] (\x,62.1) circle (1.25);
+    \node[silktxt] at (\x,58.2) {\t};}
+  \fill[green!60!black] (7.0,61.6) rectangle +(1.1,0.7); \node[silktxt] at (7.6,63.6) {E3};
+  % TFT footprint
+  \draw[silk, line width=0.35pt] (6.7,46.4) -- (6.7,43.9) -- (9.2,43.9) (31.7,43.9) -- (34.2,43.9) -- (34.2,46.4)
+        (6.7,54.8) -- (6.7,57.3) -- (9.2,57.3) (31.7,57.3) -- (34.2,57.3) -- (34.2,54.8);
+  \fill[silk] (8.0,55.6) rectangle (27.6,56.3); \fill[silk] (8.0,45.0) rectangle (27.6,45.7);
+  \fill[silk, rounded corners=0.3pt] (28.9,46.6) rectangle (29.6,54.6);
+  \node[silkbig, anchor=west] at (8.0,52.4) {0.96" TFT};
+  \node[silkbig, anchor=west] at (8.0,48.6) {STM32H7XX};
+  \node[silktxt, align=center] at (32.0,50.6) {V1.0\\WeAct};
+  % MCU, LQFP100 14 x 14
+  \begin{scope}[shift={(20.3,34.8)}]
+    \foreach \i in {0,...,24}{\pgfmathsetmacro{\p}{-6.0+\i*0.5}
+      \fill[metal] (\p-0.11,7.0) rectangle +(0.22,1.0); \fill[metal] (\p-0.11,-8.0) rectangle +(0.22,1.0);
+      \fill[metal] (-8.0,\p-0.11) rectangle +(1.0,0.22); \fill[metal] (7.0,\p-0.11) rectangle +(1.0,0.22);}
+    \fill[chip, rounded corners=0.5pt] (-7,-7) rectangle (7,7);
+    \fill[white, opacity=0.5] (-5.8,5.8) circle (0.4);
+  \end{scope}
+  % microSD
+  \fill[metal, draw=metaldk, line width=0.3pt, rounded corners=0.6pt] (6.7,0.0) rectangle (16.6,16.9);
+  \foreach \i in {0,...,7}{\fill[gold!80] (7.6+\i*1.1,10.4) rectangle +(0.6,2.2);}
+  \draw[metaldk, line width=0.3pt] (7.2,3.0) -- (16.1,3.0);
+  % USB-C at the bottom edge, opening facing down
+  \coordinate (#1-USB) at (28.27,-1.0);
+  \fill[metal, draw=metaldk, line width=0.3pt, rounded corners=0.8pt] (23.8,-1.0) rectangle (32.74,6.4);
+  \fill[metaldk!70!black, rounded corners=1.2pt] (24.8,-0.8) rectangle (31.74,0.8);
+  % regulator, LED, passives
+  \fill[chip] (25.0,11.0) rectangle +(3.0,1.6); \fill[chip] (25.4,15.4) rectangle +(2.4,2.8);
+  \fill[white!90!black] (32.4,14.2) rectangle +(1.0,1.8); \fill[green!70!black] (32.6,14.7) rectangle +(0.6,0.8);
+  \node[silktxt] at (32.9,17.0) {PWR};
+  \foreach \x/\y in {20.5/18.5, 22.0/18.5, 19.0/22.0, 30.5/22.5, 32.0/24.0, 9.0/22.0, 12.5/19.0, 30.0/9.0, 21.5/9.5}{
+    \fill[black!55] (\x,\y) rectangle +(1.0,0.6); \fill[gold!70] (\x,\y) rectangle +(0.22,0.6); \fill[gold!70] (\x+0.78,\y) rectangle +(0.22,0.6);}
+\end{scope}}
+
+% ---------------------------------------------------------------- WeAct Mini Debugger
+% \MiniDebugger{prefix}{x0}{y0}: component side up, USB-C at the left, 10-pin JST-SH at the right; 36 x 14 mm.
+% Named coordinates: <prefix>-USB (centre of the USB-C opening), <prefix>-w0 ... w9 (wire exits, top to bottom:
+% 3V3, SWDIO, SWCLK, GND, SWO, NRST, TXD, RXD, GND, 5V).
+\newcommand{\MiniDebugger}[3]{%
+\begin{scope}[shift={(#2,#3)}]
+  \fill[dbgpurple, draw=dbgpurple!60!black, line width=0.4pt, rounded corners=2pt] (0,0) rectangle (36,14);
+  % USB-C
+  \coordinate (#1-USB) at (-2.0,7.0);
+  \fill[metal, draw=metaldk, line width=0.3pt, rounded corners=0.8pt] (-2.0,2.53) rectangle (5.4,11.47);
+  \fill[metaldk!70!black, rounded corners=1.2pt] (-1.8,3.5) rectangle (-0.3,10.5);
+  % MCU, LQFP48
+  \begin{scope}[shift={(20.6,7.0)}]
+    \foreach \i in {0,...,11}{\pgfmathsetmacro{\p}{-2.75+\i*0.5}
+      \fill[metal] (\p-0.11,3.5) rectangle +(0.22,0.9); \fill[metal] (\p-0.11,-4.4) rectangle +(0.22,0.9);
+      \fill[metal] (-4.4,\p-0.11) rectangle +(0.9,0.22); \fill[metal] (3.5,\p-0.11) rectangle +(0.9,0.22);}
+    \fill[chip, rounded corners=0.4pt] (-3.5,-3.5) rectangle (3.5,3.5);
+    \fill[white, opacity=0.5] (-2.7,2.7) circle (0.3);
+  \end{scope}
+  % crystal
+  \fill[white!92!black, rounded corners=0.3pt] (11.4,8.2) rectangle (14.6,10.4);
+  \node[inner sep=0pt, font=\fontsize{1.6}{1.6}\selectfont\sffamily, rotate=180] at (13.0,9.3) {8.000};
+  % passives and small parts
+  \foreach \x/\y in {7.2/9.6, 7.2/4.0, 9.4/4.4, 11.6/3.2, 15.4/12.0, 26.4/10.6, 26.4/8.4, 26.4/4.2, 28.0/6.3, 9.6/11.6}{
+    \fill[black!65] (\x,\y) rectangle +(1.2,0.7); \fill[gold!70] (\x,\y) rectangle +(0.25,0.7); \fill[gold!70] (\x+0.95,\y) rectangle +(0.25,0.7);}
+  \fill[chip] (6.6,6.0) rectangle +(2.4,1.6);
+  % JST-SH 10-pin receptacle (cream) and plug (white)
+  \fill[yellow!25!white!88!black, rounded corners=0.3pt] (30.4,0.5) rectangle (35.4,13.5);
+  \foreach \i in {0,...,9}{\fill[gold!85] (29.6,{11.5-\i}) rectangle +(0.9,0.35);}
+  \fill[white, draw=black!25, line width=0.2pt, rounded corners=0.3pt] (35.4,0.9) rectangle (37.8,13.1);
+  \foreach \i in {0,...,9}{\coordinate (#1-w\i) at (37.8,{11.5-\i});}
+  % clear heat-shrink sleeve
+  \fill[white, opacity=0.10, rounded corners=2.5pt] (-0.6,-0.6) rectangle (36.6,14.6);
+  \draw[white, opacity=0.45, line width=0.5pt, line cap=round] (1.5,13.3) -- (34.5,13.3);
+\end{scope}}
+
+% ---------------------------------------------------------------- INA226 current-sense module
+% \INAmodule{prefix}{x0}{y0}{shunt}: the blue module on the bench (photo components/IMG_1400.JPG), 19.5 x 20.6 mm,
+% origin bottom-left. 8-pin header down the left edge, pins pointing down (wires attach underneath):
+% IN+ IN- VBS ALE SCL SDA GND VCC from the top. Shunt 2512 upright; four plated holes on the right (the middle two,
+% boxed, are IN+ and IN-). Named coordinates: <prefix>-INP, INM, VBS, ALE, SCL, SDA, GND, VCC.
+\definecolor{inablue}{HTML}{1F2B6F}
+\newcommand{\INAmodule}[4]{%
+\begin{scope}[shift={(#2,#3)}]
+  \fill[inablue, draw=inablue!55!black, line width=0.4pt, rounded corners=0.8pt] (0,0) rectangle (19.5,20.6);
+  \foreach \n/\t [count=\k from 0] in {INP/IN+,INM/IN-,VBS/VBS,ALE/ALE,SCL/SCL,SDA/SDA,GND/GND,VCC/VCC}{
+     \coordinate (#1-\n) at (1.47,{19.1-2.54*\k});
+     \fill[metal!85!white] (#1-\n) circle (0.85); \fill[metal!60!black] (#1-\n) circle (0.35);
+     \node[text=silk, inner sep=0pt, anchor=west, font=\fontsize{2.7}{2.7}\selectfont\sffamily\bfseries]
+        at (2.55,{19.1-2.54*\k}) {\t};}
+  % INA226, MSOP-10, leads up and down
+  \foreach \i in {0,...,4}{\fill[metal] ({5.45+0.55*\i},1.2) rectangle +(0.28,1.7);
+                           \fill[metal] ({5.45+0.55*\i},5.5) rectangle +(0.28,1.6);}
+  \fill[chip] (5.2,2.9) rectangle (8.1,5.5);
+  % small capacitor above the shunt
+  \fill[metal] (10.0,16.7) rectangle (11.7,17.3); \fill[metal] (10.0,19.0) rectangle (11.7,19.5);
+  \fill[black!10!yellow!30!brown!60!white] (10.0,17.3) rectangle (11.7,19.0);
+  % shunt, 2512, upright
+  \fill[metal, rounded corners=0.3pt] (9.8,6.9) rectangle (13.2,13.9);
+  \fill[black!88] (9.8,8.2) rectangle (13.2,12.6);
+  \node[rotate=90, text=white, inner sep=0pt, font=\fontsize{3.0}{3.0}\selectfont\sffamily\bfseries] at (11.5,10.4) {#4};
+  % three resistors and two small parts, with their silk boxes
+  \foreach \y in {11.0,9.0,6.6}{\draw[silk, line width=0.3pt] (5.3,\y) rectangle +(2.7,1.5);
+     \fill[black!80] (5.9,\y+0.25) rectangle +(1.5,1.0); \fill[metal] (5.6,\y+0.25) rectangle +(0.35,1.0);
+     \fill[metal] (7.35,\y+0.25) rectangle +(0.35,1.0);}
+  \foreach \x in {5.0,6.9}{\draw[silk, line width=0.3pt] (\x,3.2) rectangle +(1.35,2.2);
+     \fill[white!90!black] (\x+0.25,4.4) rectangle +(0.85,0.7);}
+  % plated holes; IN+ / IN- boxed
+  \draw[silk, line width=0.35pt] (13.6,5.5) rectangle (19.1,15.5);
+  \foreach \y in {18.1,13.0,8.1,3.3}{\fill[metal!80!white] (16.5,\y) circle (2.0); \fill[white] (16.5,\y) circle (1.35);}
+  \node[rotate=-90, text=silk, inner sep=0pt, font=\fontsize{2.7}{2.7}\selectfont\sffamily\bfseries] at (13.0,15.0) {IN+};
+  \node[rotate=-90, text=silk, inner sep=0pt, font=\fontsize{2.7}{2.7}\selectfont\sffamily\bfseries] at (13.0,5.6) {IN-};
+\end{scope}}
+
+% ---------------------------------------------------------------- USB-A female breakout (generic)
+% \USBAbreakout{prefix}{x0}{y0}: 18 x 22 mm, pin column on the left (GND, D+, D-, VBUS from top), receptacle opening
+% to the right. Named coordinates: <prefix>-GND/DP/DM/VBUS, <prefix>-OPEN (centre of the opening).
+\newcommand{\USBAbreakout}[3]{%
+\begin{scope}[shift={(#2,#3)}]
+  \fill[bogreen, draw=bogreen!60!black, line width=0.4pt, rounded corners=1pt] (0,0) rectangle (18,22);
+  \foreach \n/\t [count=\k from 0] in {GND/GND,DP/D+,DM/D-,VBUS/VBUS}{
+     \coordinate (#1-\n) at (2.6,{14.81-2.54*\k});
+     \pad{(#1-\n)} \node[silktxt, anchor=west] at (4.0,{14.81-2.54*\k}) {\t};}
+  \coordinate (#1-OPEN) at (20.0,11.0);
+  \fill[metal, draw=metaldk, line width=0.3pt] (6.6,4.45) rectangle (20.0,17.55);
+  \foreach \y in {7.4,14.6}{\fill[metaldk] (12.0,\y-0.7) rectangle +(3.0,1.4);}
+  \draw[metaldk, line width=0.3pt] (8.0,4.45) -- (8.0,17.55);
+\end{scope}}
+
+% ---------------------------------------------------------------- key rows
+% \keywire{x}{y}{h|j}{colour}{text}: a short wire swatch and its meaning
+\newcommand{\keywire}[5]{%
+  \if#3h\hwire{#4}{(#1,#2) -- ++(9,0)}\else\jumper{#4}{(#1,#2) -- ++(9,0)}\fi
+  \node[font=\scriptsize\sffamily, anchor=west, inner sep=0pt] at (#1+12,#2) {#5};}
+
+% ---------------------------------------------------------------- ESP32-S3-DevKitC-1 v1.1
+% \DevKitS{prefix}{x0}{y0}: upright, module (antenna) at the top, two USB-C at the bottom (USB left, COM right --
+% the bench board is an S3R8 devkit with a CH343 bridge, silkscreened COM/USB; verified against the board 2026-11-04);
+% 25.4 x 63 mm PCB, origin bottom-left. Named coordinates: <prefix>-USB, <prefix>-UART (centres of the openings).
+\newcommand{\DevKitS}[3]{%
+\begin{scope}[shift={(#2,#3)}]
+  \fill[pcbblack, draw=pcbedge, line width=0.4pt, rounded corners=1.5pt] (0,0) rectangle (25.4,63);
+  \foreach \t [count=\k from 0] in {3V3,3V3,RST,4,5,6,7,15,16,17,18,8,3,46,9,10,11,12,13,14,5V,G}{
+    \pgfmathsetmacro{\yy}{61.4-2.54*\k}
+    \ifnum\k=0 \sqpad{(1.27,\yy)} \else \pad{(1.27,\yy)} \fi
+    \node[silktxt] at (3.4,\yy) {\t};}
+  \foreach \t [count=\k from 0] in {G,TX,RX,1,2,42,41,40,39,38,37,36,35,0,45,48,47,21,20,19,G,G}{
+    \pgfmathsetmacro{\yy}{61.4-2.54*\k}
+    \pad{(24.13,\yy)} \node[silktxt] at (22.0,\yy) {\t};}
+  % WROOM module: antenna overhang and shield
+  \fill[pcbblack!85!white, draw=black, line width=0.3pt] (3.8,38.3) rectangle (21.7,69.2);
+  \draw[gold!80, line width=0.5pt] (5.2,67.6) -- (19.8,67.6) -- (19.8,64.0) -- (17.6,64.0) -- (17.6,66.4) -- (15.4,66.4)
+        -- (15.4,64.0) -- (13.2,64.0) -- (13.2,66.4) -- (11.0,66.4) -- (11.0,64.0) -- (8.8,64.0) -- (8.8,66.4) -- (6.6,66.4) -- (6.6,63.4);
+  \fill[metal, draw=metaldk, line width=0.3pt, rounded corners=0.5pt] (4.5,39.0) rectangle (21.0,62.2);
+  \node[inner sep=0pt, text=black!55, font=\fontsize{2.2}{2.2}\selectfont\sffamily] at (12.75,59.8) {ESP32-S3-WROOM-1};
+  \draw[black!35, line width=0.6pt] (12.75,50.6) circle (3.0); \fill[black!35] (12.75,50.6) circle (1.0);
+  % USB-C x 2
+  \coordinate (#1-USB) at (6.0,-1.5); \coordinate (#1-COM) at (19.3,-1.5);
+  \foreach \x in {6.0,19.3}{
+    \fill[metal, draw=metaldk, line width=0.3pt, rounded corners=0.8pt] (\x-4.47,-1.5) rectangle (\x+4.47,5.8);
+    \fill[metaldk!70!black, rounded corners=1.2pt] (\x-3.5,-1.3) rectangle (\x+3.5,0.3);}
+  \node[silktxt] at (6.0,7.4) {USB}; \node[silktxt] at (19.3,7.4) {COM};
+  % BOOT, RESET
+  \foreach \x/\t in {7.5/BOOT,18.0/RESET}{
+    \fill[metal, rounded corners=0.4pt] (\x-2.6,12.6) rectangle (\x+2.6,16.0);
+    \fill[black!85] (\x,14.3) ellipse (1.4 and 0.8); \node[silktxt] at (\x,17.2) {\t};}
+  % RGB LED, CH343 bridge, regulator
+  \fill[white!92!black] (5.2,27.2) rectangle +(4.6,4.6); \fill[white] (7.5,29.5) circle (1.4);
+  \fill[chip] (11.2,18.1) rectangle +(5.0,5.0);
+  \fill[chip] (10.0,32.0) rectangle +(3.6,4.4); \fill[chip] (14.6,32.4) rectangle +(1.6,3.4);
+  \foreach \x/\y in {17.6/28.0, 17.6/25.6, 9.4/24.2, 15.2/11.0, 10.4/11.0}{
+    \fill[black!55] (\x,\y) rectangle +(1.0,0.6); \fill[gold!70] (\x,\y) rectangle +(0.22,0.6); \fill[gold!70] (\x+0.78,\y) rectangle +(0.22,0.6);}
+\end{scope}}
+
+% coordinates of the INA226 module's header pins, for wires drawn before (under) the module
+\newcommand{\INAcoords}[3]{\begin{scope}[shift={(#2,#3)}]
+  \foreach \n [count=\k from 0] in {INP,INM,VBS,ALE,SCL,SDA,GND,VCC}{\coordinate (#1-\n) at (1.47,{19.1-2.54*\k});}
+  \end{scope}}
+\definecolor{jGrey}{HTML}{9AA0A6}

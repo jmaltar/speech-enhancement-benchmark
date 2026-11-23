@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Build trees (firmware, PC tools)
+build/
+build-*/
+build_*/
+CMakeCache.txt
+CMakeFiles/
+
+# LaTeX (run logs named *.log and *.out are results and are kept)
+*.aux
+*.toc
+*.bbl
+*.blg
+
+# Audio is never committed (it is derived from the corpora)
+*.wav
+*.abf
+
+# TensorFlow Lite Micro trees are generated from upstream (see README)
+tflm_tree*/
+tflite-micro/
+
+# Backups and editor files
+*.bak
+*.FCBak
+*~
+.DS_Store

@@ -1,0 +1,104 @@
+Provenance (asserted, not assumed):
+  pesq_itu_sources   P.862/.1/.2 v2.0 (Oct 2005), vendored
+  pystoi             0.4.1
+  resampler          resample_poly(1,3), 577-tap Kaiser(12) @ 7800 Hz
+
+=== dns / bypass: 150 utterances in 12.1s (14 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       1.5822    [1.5082, 1.6563]    [1.5163, 1.6652]   1.4536   1.034   3.337
+  stoi               0.9152    [0.9047, 0.9257]    [0.9041, 0.9249]   0.9312   0.687   0.997
+  estoi              0.8099    [0.7902, 0.8295]    [0.7895, 0.8284]   0.8406   0.391   0.990
+  si_sdr             9.2295   [8.3320, 10.1271]   [8.3433, 10.0922]   8.9981  -0.010  21.482
+  largest t-vs-BCa edge discrepancy: 0.03484 (si_sdr), 10000 resamples, seed 20260913
+
+
+
+
+
+=== dns / dtln-f32: 150 utterances in 14.1s (14 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       2.3593    [2.2682, 2.4505]    [2.2711, 2.4494]   2.3352   1.266   3.617
+  stoi               0.9477    [0.9408, 0.9545]    [0.9401, 0.9538]   0.9591   0.763   0.997
+  estoi              0.8866    [0.8742, 0.8990]    [0.8733, 0.8980]   0.9075   0.553   0.990
+  si_sdr            16.4724  [15.7763, 17.1686]  [15.7816, 17.1554]  16.9100   4.763  26.412
+  largest t-vs-BCa edge discrepancy: 0.01314 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_mos_lqo by snr_bin  (bins, BCa 95% per bin):
+    0-4 dB                 n=36   mean 1.7888  sd 0.3965  [1.6787, 1.9403]
+    5-9 dB                 n=44   mean 2.2057  sd 0.4161  [2.0955, 2.3401]
+    10-14 dB               n=40   mean 2.6712  sd 0.4189  [2.5445, 2.8003]
+    15-19 dB               n=30   mean 2.8535  sd 0.3626  [2.7183, 2.9759]
+    4 bins, min N = 30, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+
+
+
+
+
+
+
+=== dns / dtln-drq: 150 utterances in 12.4s (14 workers)
+
+  metric               mean            t-CI 95%             BCa 95%   median     min     max
+  pesq_mos_lqo       2.1897    [2.1144, 2.2651]    [2.1163, 2.2642]   2.2277   1.270   3.352
+  stoi               0.9450    [0.9382, 0.9519]    [0.9375, 0.9513]   0.9570   0.760   0.996
+  estoi              0.8804    [0.8678, 0.8929]    [0.8668, 0.8920]   0.8994   0.535   0.987
+  si_sdr            15.9591  [15.3151, 16.6031]  [15.3181, 16.5830]  16.4331   3.779  24.209
+  largest t-vs-BCa edge discrepancy: 0.02011 (si_sdr), 10000 resamples, seed 20260913
+
+  pesq_mos_lqo by snr_bin  (bins, BCa 95% per bin):
+    0-4 dB                 n=36   mean 1.7032  sd 0.3240  [1.6102, 1.8233]
+    5-9 dB                 n=44   mean 2.0621  sd 0.3093  [1.9759, 2.1564]
+    10-14 dB               n=40   mean 2.4534  sd 0.3391  [2.3510, 2.5571]
+    15-19 dB               n=30   mean 2.6094  sd 0.3160  [2.5003, 2.7263]
+    4 bins, min N = 30, ALL >= 20  (project minimum is 20 per cell)
+  (per-cell: EXPLORATORY, unadjusted -- Metric Stack Decision 6)
+
+  bypass: every utterance bit-identical to its input; scores ARE the Noisy row.
+
+=== dns: enhanced (B, noise tracker mcra) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 8 tests (headline-pooled-per-corpus)
+
+  --- dtln-f32
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.5822   2.3593   +0.7658  [+0.7248, +0.8076]    0.10   2.3e-26         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +1.0000   (paired wilcoxon, n = 150)
+  stoi            0.9152   0.9477   +0.0302  [+0.0261, +0.0341]    0.01  4.79e-25         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.9730   (paired wilcoxon, n = 150)
+  estoi           0.8099   0.8866   +0.0721  [+0.0646, +0.0803]    0.01  3.87e-26         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.9954   (paired wilcoxon, n = 150)
+  si_sdr          9.2295  16.4724   +7.2429  [+6.7843, +7.7015]    0.50  1.58e-57         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = +2.1343   (paired t, n = 150)
+
+  --- dtln-drq
+  metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+  pesq_mos_lqo    1.5822   2.1897   +0.6068  [+0.5692, +0.6392]    0.10  2.87e-26         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.9981   (paired wilcoxon, n = 150)
+  stoi            0.9152   0.9450   +0.0276  [+0.0236, +0.0316]    0.01  2.46e-23         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.9368   (paired wilcoxon, n = 150)
+  estoi           0.8099   0.8804   +0.0660  [+0.0585, +0.0743]    0.01  1.44e-25         1  DIFFERENT (exceeds the pre-specified margin)
+               rank-biserial r = +0.9838   (paired wilcoxon, n = 150)
+  si_sdr          9.2295  15.9591   +6.7295  [+6.2629, +7.1962]    0.50  8.98e-53         1  DIFFERENT (exceeds the pre-specified margin)
+               Cohen's d_z = +1.9489   (paired t, n = 150)
+
+  Holm-adjusted p(diff):
+    dtln-f32  pesq_mos_lqo   raw   2.3e-26  adj  1.38e-25  significant
+    dtln-f32  stoi           raw  4.79e-25  adj  9.57e-25  significant
+    dtln-f32  estoi          raw  3.87e-26  adj  1.55e-25  significant
+    dtln-f32  si_sdr         raw  1.58e-57  adj  1.26e-56  significant
+    dtln-drq  pesq_mos_lqo   raw  2.87e-26  adj  1.43e-25  significant
+    dtln-drq  stoi           raw  2.46e-23  adj  2.46e-23  significant
+    dtln-drq  estoi          raw  1.44e-25  adj  4.32e-25  significant
+    dtln-drq  si_sdr         raw  8.98e-53  adj  6.29e-52  significant
+
+  DNS no-reverb: ours (N=150) beside the published DTLN rows
+  (Westhausen & Meyer 2020 (DTLN), Table 2 row 'DTLN'; github.com/breizhn/DTLN README 'Results' table for the TF-lite rows; DNS INTERSPEECH-2020 synthetic no-reverb)
+  (STOI and SI-SDR comparable; pesq_nb is narrowband P.862 (their ref. [31]) -- NOT our wideband)
+  row        STOI ours     pub   delta  SI-SDR ours     pub   delta  PESQ wb ours pub (NB!)
+  noisy         0.9152  0.9152 -0.0000         9.23    9.07   +0.16        1.5822      2.45
+  dtln-f32      0.9477  0.9475 +0.0002        16.47   16.20   +0.27        2.3593      2.98
+  dtln-drq      0.9450  0.9447 +0.0003        15.96   15.71   +0.25        2.1897      2.95
+  (Table 2)             0.9476                        16.34                            3.04   <- model.h5 whole-file, the paper's row
+
+=== DONE

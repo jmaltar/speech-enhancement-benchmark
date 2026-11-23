@@ -1,0 +1,26 @@
+# every file is stored byte for byte (no line-ending conversion): the third-party code and the
+# shared headers must stay exactly as they were built and measured
+* -text
+
+# measurement and model files
+*.bin binary
+*.elf binary
+*.h5 binary
+*.tflite binary
+*.pb binary
+*.pdf binary
+*.png binary
+*.gz binary
+*.FCStd binary
+*.mex binary
+
+# third-party code, kept as it was built: not counted in the language statistics
+benchmark_f411/Drivers/** linguist-vendored
+benchmark_f411/Middlewares/** linguist-vendored
+benchmark_h723/Drivers/** linguist-vendored
+benchmark_h723/Middlewares/** linguist-vendored
+benchmark_s3/managed_components/** linguist-vendored
+rnnoise/xiph-v0.1/** linguist-vendored
+rnnoise/xiph-v0.1.1/** linguist-vendored
+dtln/upstream/** linguist-vendored
+dtln/port/dtln_model_*.c linguist-generated

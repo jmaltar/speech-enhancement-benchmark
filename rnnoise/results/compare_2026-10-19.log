@@ -1,0 +1,61 @@
+=== voicebank48k: rnnoise (B) vs rnnoise-v01 (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    2.3098   2.3180   +0.0033  [+0.0020, +0.0046]    0.10  2.15e-05 1.43e-127  different but equivalent (real, below the margin that matters)
+             rank-biserial r = +0.1708   (paired wilcoxon, n = 824)
+stoi            0.9196   0.9197   -0.0000  [-0.0001, -0.0000]    0.01    0.0514 9.11e-137  EQUIVALENT (same to the stated precision)
+             rank-biserial r = -0.0783   (paired wilcoxon, n = 824)
+estoi           0.8164   0.8160   -0.0003  [-0.0004, -0.0002]    0.01   4.4e-07 1.22e-136  different but equivalent (real, below the margin that matters)
+             rank-biserial r = -0.2031   (paired wilcoxon, n = 824)
+si_sdr         13.0835  13.0564   -0.0271  [-0.0295, -0.0246]    0.50  1.33e-63         0  different but equivalent (real, below the margin that matters)
+             Cohen's d_z = -0.6411   (paired t, n = 824)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw  2.15e-05  adj   4.3e-05  significant
+  stoi           raw    0.0514  adj    0.0514  n.s.
+  estoi          raw   4.4e-07  adj  1.32e-06  significant
+  si_sdr         raw  1.33e-63  adj   5.3e-63  significant
+
+=== voicebank16k: rnnoise [voicebank48k] (B) vs mmse-mcra (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    2.1957   2.3180   +0.1327  [+0.1174, +0.1478]    0.10  2.84e-37         1  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = +0.5130   (paired wilcoxon, n = 824)
+stoi            0.9055   0.9197   +0.0132  [+0.0120, +0.0145]    0.01  8.09e-56         1  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = +0.6330   (paired wilcoxon, n = 824)
+estoi           0.7759   0.8160   +0.0377  [+0.0351, +0.0403]    0.01 5.95e-102         1  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = +0.8621   (paired wilcoxon, n = 824)
+si_sdr         12.4496  13.0564   +0.6069  [+0.3877, +0.8261]    0.50  5.92e-06     0.789  DIFFERENT (exceeds the pre-specified margin)
+             Cohen's d_z = +0.1588   (paired t, n = 824)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw  2.84e-37  adj  5.67e-37  significant
+  stoi           raw  8.09e-56  adj  2.43e-55  significant
+  estoi          raw 5.95e-102  adj 2.38e-101  significant
+  si_sdr         raw  5.92e-06  adj  5.92e-06  significant
+
+=== voicebank16k: rnnoise [voicebank48k] (B) vs wiener-mcra (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    2.1725   2.3180   +0.1476  [+0.1316, +0.1637]    0.10   1.9e-41         1  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = +0.5423   (paired wilcoxon, n = 824)
+stoi            0.8992   0.9197   +0.0187  [+0.0171, +0.0203]    0.01  3.26e-71         1  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = +0.7175   (paired wilcoxon, n = 824)
+estoi           0.7732   0.8160   +0.0408  [+0.0383, +0.0433]    0.01 2.44e-107         1  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = +0.8850   (paired wilcoxon, n = 824)
+si_sdr         13.6763  13.0564   -0.6199  [-0.8255, -0.4143]    0.50  8.35e-07     0.831  DIFFERENT (exceeds the pre-specified margin)
+             Cohen's d_z = -0.1730   (paired t, n = 824)
+
+=== voicebank48k: dtln-f32 [voicebank16k] (B) vs rnnoise (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    2.3180   2.4350   +0.1112  [+0.0951, +0.1277]    0.10  7.52e-27     0.873  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = +0.4314   (paired wilcoxon, n = 824)
+stoi            0.9197   0.9196   +0.0009  [-0.0003, +0.0021]    0.01     0.194  2.45e-34  EQUIVALENT (same to the stated precision)
+             rank-biserial r = +0.0522   (paired wilcoxon, n = 824)
+estoi           0.8160   0.8259   +0.0088  [+0.0072, +0.0104]    0.01  2.31e-18     0.104  DIFFERENT (exceeds the pre-specified margin)
+             rank-biserial r = +0.3515   (paired wilcoxon, n = 824)
+si_sdr         13.0564  16.8498   +3.7933  [+3.6175, +3.9692]    0.50 2.92e-168         1  DIFFERENT (exceeds the pre-specified margin)
+             Cohen's d_z = +1.2373   (paired t, n = 824)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw  7.52e-27  adj  2.26e-26  significant
+  stoi           raw     0.194  adj     0.194  n.s.
+  estoi          raw  2.31e-18  adj  4.61e-18  significant
+  si_sdr         raw 2.92e-168  adj 1.17e-167  significant

@@ -1,0 +1,4 @@
+device   : ESP32S3 build 'Release 20261028T0956+W' image_crc32=f17b64ae tick_hz=240000000  (verified against results/rnnoise/variant_ramw_smoke_2026-10-28/image.bin)
+[2/2] 5s  last p232_002: hops=272 overruns=0 proc_mean=1334.0 max|d|=0 status=ok
+done     : 2 runs in 5s -> results/rnnoise/variant_ramw_smoke_2026-10-28/voicebank48k_bypass_paced_smoke.csv
+summary  : fails=0 total_overruns=0 worst max|d|=0 LSB  worst n_diff=0  worst NMSE=-inf dB

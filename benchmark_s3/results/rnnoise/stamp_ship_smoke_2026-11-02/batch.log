@@ -1,0 +1,20 @@
+=== 2026-11-02T11:09:33+01:00 flash benchmark_s3/results/rnnoise_stamp_image.bin
+Hash of data verified.
+
+Hard resetting via RTS pin...
+=== 2026-11-02T11:09:43+01:00 batch smoke -> benchmark_s3/results/rnnoise/stamp_ship_smoke_2026-11-02
+device   : ESP32S3 build 'Release 20261102T1006' image_crc32=19b77504 tick_hz=240000000  (verified against benchmark_s3/results/rnnoise_stamp_image.bin)
+[2/2] 7s  last p232_002: hops=272 overruns=273 proc_mean=3134925.6 max|d|=1 status=ok
+done     : 2 runs in 7s -> benchmark_s3/results/rnnoise/stamp_ship_smoke_2026-11-02/voicebank48k_rnnoise-v0.1.1_paced_smoke.csv
+summary  : fails=0 total_overruns=449 worst max|d|=1 LSB  worst n_diff=50  worst NMSE=-103.5 dB
+=== 2026-11-02T11:09:51+01:00 batch done; waiting for the console's RN_STAGES line
+== RNNoise stage sums stamp_ship_smoke: frames=449 silent=0 total=1,395,450,277 cycles  per-frame=3,107,907   (1 RN_STAGES line(s) in the log; the last is used)
+  0 hp + analysis window + 960-pt fwd transform + band E          233,775,618       520,658/frame   16.8 %
+  1 pitch downsample + pitch search + doubling                    117,815,313       262,395/frame    8.4 %
+  2 pitch window + 960-pt fwd transform + band E/corr              96,122,353       214,081/frame    6.9 %
+  3 remaining features (log, DCTs, cepstra, variability)           52,378,508       116,656/frame    3.8 %
+  4 GRU network (compute_rnn)                                     727,498,099     1,620,263/frame   52.1 %
+  5 pitch filter + gain smoothing + interp + apply                114,784,918       255,646/frame    8.2 %
+  6 synthesis: 960-pt inv transform + window + OLA                 53,075,468       118,208/frame    3.8 %
+  7 (unused)                                                                0             0/frame    0.0 %
+=== 2026-11-02T11:09:56+01:00 stamps read

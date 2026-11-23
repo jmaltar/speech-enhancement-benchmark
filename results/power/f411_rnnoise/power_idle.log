@@ -1,0 +1,4 @@
+# host port=/dev/serial/by-id/usb-STMicroelectronics_STM32_STLink_066BFF373841423043114439-if01 shunt_ohm=0.1 gain=1.0 started=1793815544.963
+1793815544.985 unparsed 'D,D,144771,732423756,1090,3782'
+1793815545.020 gap seq 144563 -> 144772
+# stopped=1793815604.993 rows=1754 drops=208

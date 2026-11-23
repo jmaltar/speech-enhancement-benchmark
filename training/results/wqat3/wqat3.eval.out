@@ -1,0 +1,27 @@
+scored wqat3: ['f32', 'i16pt'] on voicebank16k; log /home/jurica/benchmark/training/runs/wqat3/eval.log
+  === voicebank16k: enhanced (B, noise tracker mcra) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 8 tests (headline-pooled-per-corpus
+  === voicebank16k: dtln-wqat3-shrunk-f32 (B) vs dtln-prune-learned-shrunk-f32 (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.4371   2.3335   -0.0894  [-0.0955, -0.0836]    0.10 1.52e-132   0.00239  different but equivalent (real, below the margin that matte
+  stoi            0.9263   0.9258   -0.0005  [-0.0006, -0.0005]    0.01  1.15e-47 8.56e-137  different but equivalent (real, below the margin that matte
+  si_sdr         18.4478  18.1989   -0.2489  [-0.2638, -0.2340]    0.50  5.6e-119 8.69e-121  different but equivalent (real, below the margin that matte
+  === voicebank16k: dtln-wqat3-shrunk-i16pt-tflm (B) vs dtln-prune-learned-shrunk-f32 (A), paired by utterance, n = 824; Holm over 4 metrics of this pai
+  pesq_mos_lqo    2.4371   2.2916   -0.1269  [-0.1350, -0.1191]    0.10 2.48e-131         1  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9263   0.9250   -0.0013  [-0.0014, -0.0012]    0.01  1.96e-58 6.94e-136  different but equivalent (real, below the margin that matte
+  si_sdr         18.4478  18.0590   -0.3887  [-0.4105, -0.3670]    0.50 8.53e-131  7.58e-17  different but equivalent (real, below the margin that matte
+=== voicebank16k: dtln-wqat3-shrunk-i16pt-tflm (B) vs dtln-prune-learned-shrunk-i16pt-tflm (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+metric               A        B       B-A              90% CI  margin   p(diff)   p(TOST)  verdict
+pesq_mos_lqo    2.3371   2.2916   -0.0398  [-0.0426, -0.0371]    0.10 9.38e-120 2.12e-102  different but equivalent (real, below the margin that matters)
+             rank-biserial r = -0.9357   (paired wilcoxon, n = 824)
+stoi            0.9255   0.9250   -0.0005  [-0.0005, -0.0004]    0.01  3.27e-35 1.37e-136  different but equivalent (real, below the margin that matters)
+             rank-biserial r = -0.4979   (paired wilcoxon, n = 824)
+estoi           0.8168   0.8156   -0.0012  [-0.0013, -0.0010]    0.01  9.93e-41 8.72e-136  different but equivalent (real, below the margin that matters)
+             rank-biserial r = -0.5374   (paired wilcoxon, n = 824)
+si_sdr         18.3060  18.0590   -0.2469  [-0.2630, -0.2309]    0.50  1.9e-105  1.2e-109  different but equivalent (real, below the margin that matters)
+             Cohen's d_z = -0.8843   (paired t, n = 824)
+
+Holm-adjusted p(diff):
+  pesq_mos_lqo   raw 9.38e-120  adj 3.75e-119  significant
+  stoi           raw  3.27e-35  adj  3.27e-35  significant
+  estoi          raw  9.93e-41  adj  1.99e-40  significant
+  si_sdr         raw  1.9e-105  adj  5.7e-105  significant
+WQAT3_QUEUE_DONE

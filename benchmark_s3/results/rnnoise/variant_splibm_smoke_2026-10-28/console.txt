@@ -1,0 +1,13 @@
+RNNOISE frames=1 heap_int_used=136 heap_psram_used=0 stack_hw=95996 stack=98304 mallinfo=0 v0.1.1
+RNNOISE frames=101 heap_int_used=136 heap_psram_used=0 stack_hw=95996 stack=98304 mallinfo=0 v0.1.1
+RNNOISE frames=15 heap_int_used=136 heap_psram_used=0 stack_hw=95996 stack=98304 mallinfo=0 v0.1.1
+RNNOISE frames=115 heap_int_used=136 heap_psram_used=0 stack_hw=95996 stack=98304 mallinfo=0 v0.1.1
+RNNOISE frames=216 heap_int_used=136 heap_psram_used=0 stack_hw=95996 stack=98304 mallinfo=0 v0.1.1
+RNNOISE frames=16 heap_int_used=29436 heap_psram_used=0 stack_hw=46540 stack=98304 mallinfo=0 v0.1.1
+RNNOISE frames=88 heap_int_used=29436 heap_psram_used=0 stack_hw=46540 stack=98304 mallinfo=0 v0.1.1
+RNNOISE frames=160 heap_int_used=29436 heap_psram_used=0 stack_hw=46540 stack=98304 mallinfo=0 v0.1.1
+RNNOISE frames=45 heap_int_used=29436 heap_psram_used=0 stack_hw=46540 stack=98304 mallinfo=0 v0.1.1
+RNNOISE frames=117 heap_int_used=29436 heap_psram_used=0 stack_hw=46540 stack=98304 mallinfo=0 v0.1.1
+RNNOISE frames=189 heap_int_used=29436 heap_psram_used=0 stack_hw=46540 stack=98304 mallinfo=0 v0.1.1
+RNNOISE frames=261 heap_int_used=29436 heap_psram_used=0 stack_hw=46540 stack=98304 mallinfo=0 v0.1.1
+RNNOISE frames=273 heap_int_used=29436 heap_psram_used=0 stack_hw=46540 stack=98304 mallinfo=0 v0.1.1

@@ -1,0 +1,71 @@
+=== dtln p020 voicebank16k paced 07:45:58
+device   : RPI5 build 'Release gcc14.2 20261027T0745' tick_hz=1000000000 (ns)  conditions: core=2 affinity=ok sched_policy=1(SCHED_FIFO) rtprio=50 mlockall=ok cur_khz=2400000 max_khz=2400000
+platform : platform  : governor performance on 4 cpus, throttled=0x0
+[100/824] 293s  last p232_104: hops=490 overruns=0 proc_mean=519754.4 ns max|d|=8 duty=0.06497 void=0 status=ok
+[200/824] 533s  last p232_211: hops=176 overruns=0 proc_mean=521534.0 ns max|d|=1 duty=0.06519 void=0 status=ok
+[300/824] 784s  last p232_316: hops=204 overruns=0 proc_mean=519784.1 ns max|d|=1 duty=0.06497 void=0 status=ok
+[400/824] 1041s  last p257_008: hops=698 overruns=0 proc_mean=521038.8 ns max|d|=13 duty=0.06513 void=0 status=ok
+[500/824] 1308s  last p257_109: hops=265 overruns=0 proc_mean=521343.2 ns max|d|=1 duty=0.06517 void=0 status=ok
+[600/824] 1552s  last p257_210: hops=315 overruns=0 proc_mean=520886.8 ns max|d|=1 duty=0.06511 void=0 status=ok
+[700/824] 1801s  last p257_310: hops=196 overruns=0 proc_mean=521402.2 ns max|d|=3 duty=0.06518 void=0 status=ok
+[800/824] 2037s  last p257_410: hops=448 overruns=0 proc_mean=521820.8 ns max|d|=3 duty=0.06523 void=0 status=ok
+[824/824] 2091s  last p257_434: hops=261 overruns=0 proc_mean=520979.6 ns max|d|=3 duty=0.06512 void=0 status=ok
+done     : 824 runs in 2091s -> /dev/shm/results_dtln/p020/voicebank16k_dtln-i16_paced.csv
+summary  : fails=0 void_runs=0 total_overruns=0 worst max|d|=27 LSB  worst n_diff=61307  worst NMSE=-54.7 dB
+=== dtln p020 dns paced 08:20:49
+device   : RPI5 build 'Release gcc14.2 20261027T0745' tick_hz=1000000000 (ns)  conditions: core=2 affinity=ok sched_policy=1(SCHED_FIFO) rtprio=50 mlockall=ok cur_khz=2400000 max_khz=2400000
+platform : platform  : governor performance on 4 cpus, throttled=0x0
+[100/150] 1005s  last fileid_289: hops=1250 overruns=0 proc_mean=521295.6 ns max|d|=75 duty=0.06516 void=0 status=ok
+[150/150] 1508s  last fileid_96: hops=1250 overruns=0 proc_mean=523331.8 ns max|d|=10 duty=0.06542 void=0 status=ok
+done     : 150 runs in 1508s -> /dev/shm/results_dtln/p020/dns_dtln-i16_paced.csv
+summary  : fails=0 void_runs=0 total_overruns=0 worst max|d|=159 LSB  worst n_diff=109415  worst NMSE=-47.6 dB
+=== dtln p020 voicebank16k unpaced 08:45:57
+device   : RPI5 build 'Release gcc14.2 20261027T0745' tick_hz=1000000000 (ns)  conditions: core=2 affinity=ok sched_policy=1(SCHED_FIFO) rtprio=50 mlockall=ok cur_khz=2400000 max_khz=2400000
+platform : platform  : governor performance on 4 cpus, throttled=0x0
+[100/824] 21s  last p232_104: hops=490 overruns=0 proc_mean=520681.4 ns max|d|=8 duty=0.06509 void=0 status=ok
+[200/824] 39s  last p232_211: hops=176 overruns=0 proc_mean=521156.8 ns max|d|=1 duty=0.06514 void=0 status=ok
+[300/824] 57s  last p232_316: hops=204 overruns=0 proc_mean=519035.8 ns max|d|=1 duty=0.06488 void=0 status=ok
+[400/824] 75s  last p257_008: hops=698 overruns=0 proc_mean=520055.2 ns max|d|=13 duty=0.06501 void=0 status=ok
+[500/824] 94s  last p257_109: hops=265 overruns=0 proc_mean=520662.0 ns max|d|=1 duty=0.06508 void=0 status=ok
+[600/824] 112s  last p257_210: hops=315 overruns=0 proc_mean=520665.1 ns max|d|=1 duty=0.06508 void=0 status=ok
+[700/824] 130s  last p257_310: hops=196 overruns=0 proc_mean=520994.0 ns max|d|=3 duty=0.06512 void=0 status=ok
+[800/824] 147s  last p257_410: hops=448 overruns=0 proc_mean=523052.6 ns max|d|=3 duty=0.06538 void=0 status=ok
+[824/824] 151s  last p257_434: hops=261 overruns=0 proc_mean=520937.3 ns max|d|=3 duty=0.06512 void=0 status=ok
+done     : 824 runs in 151s -> /dev/shm/results_dtln/p020/voicebank16k_dtln-i16.csv
+summary  : fails=0 void_runs=0 total_overruns=0 worst max|d|=27 LSB  worst n_diff=61307  worst NMSE=-54.7 dB
+=== dtln full voicebank16k paced 08:48:28
+device   : RPI5 build 'Release gcc14.2 20261027T0745' tick_hz=1000000000 (ns)  conditions: core=2 affinity=ok sched_policy=1(SCHED_FIFO) rtprio=50 mlockall=ok cur_khz=2400000 max_khz=2400000
+platform : platform  : governor performance on 4 cpus, throttled=0x0
+[100/824] 294s  last p232_104: hops=490 overruns=0 proc_mean=1297209.4 ns max|d|=32 duty=0.16215 void=0 status=ok
+[200/824] 534s  last p232_211: hops=176 overruns=0 proc_mean=1297286.8 ns max|d|=20 duty=0.16216 void=0 status=ok
+[300/824] 786s  last p232_316: hops=204 overruns=0 proc_mean=1296230.9 ns max|d|=28 duty=0.16203 void=0 status=ok
+[400/824] 1043s  last p257_008: hops=698 overruns=0 proc_mean=1295579.0 ns max|d|=57 duty=0.16195 void=0 status=ok
+[500/824] 1311s  last p257_109: hops=265 overruns=0 proc_mean=1297998.3 ns max|d|=16 duty=0.16225 void=0 status=ok
+[600/824] 1555s  last p257_210: hops=315 overruns=0 proc_mean=1297485.3 ns max|d|=23 duty=0.16219 void=0 status=ok
+[700/824] 1805s  last p257_310: hops=196 overruns=0 proc_mean=1298265.6 ns max|d|=13 duty=0.16228 void=0 status=ok
+[800/824] 2041s  last p257_410: hops=448 overruns=0 proc_mean=1299304.1 ns max|d|=36 duty=0.16241 void=0 status=ok
+[824/824] 2096s  last p257_434: hops=261 overruns=0 proc_mean=1297410.8 ns max|d|=12 duty=0.16218 void=0 status=ok
+done     : 824 runs in 2096s -> /dev/shm/results_dtln/full/voicebank16k_dtln-i16_paced.csv
+summary  : fails=0 void_runs=0 total_overruns=0 worst max|d|=300 LSB  worst n_diff=132349  worst NMSE=-37.4 dB
+=== dtln full dns paced 09:23:24
+device   : RPI5 build 'Release gcc14.2 20261027T0745' tick_hz=1000000000 (ns)  conditions: core=2 affinity=ok sched_policy=1(SCHED_FIFO) rtprio=50 mlockall=ok cur_khz=2400000 max_khz=2400000
+platform : platform  : governor performance on 4 cpus, throttled=0x0
+[100/150] 1007s  last fileid_289: hops=1250 overruns=0 proc_mean=1297389.9 ns max|d|=188 duty=0.16217 void=0 status=ok
+[150/150] 1510s  last fileid_96: hops=1250 overruns=0 proc_mean=1296985.6 ns max|d|=52 duty=0.16212 void=0 status=ok
+done     : 150 runs in 1510s -> /dev/shm/results_dtln/full/dns_dtln-i16_paced.csv
+summary  : fails=0 void_runs=0 total_overruns=0 worst max|d|=523 LSB  worst n_diff=145598  worst NMSE=-35.5 dB
+=== dtln full voicebank16k unpaced 09:48:34
+device   : RPI5 build 'Release gcc14.2 20261027T0745' tick_hz=1000000000 (ns)  conditions: core=2 affinity=ok sched_policy=1(SCHED_FIFO) rtprio=50 mlockall=ok cur_khz=2400000 max_khz=2400000
+platform : platform  : governor performance on 4 cpus, throttled=0x0
+[100/824] 50s  last p232_104: hops=490 overruns=0 proc_mean=1297023.9 ns max|d|=32 duty=0.16213 void=0 status=ok
+[200/824] 91s  last p232_211: hops=176 overruns=0 proc_mean=1295265.7 ns max|d|=20 duty=0.16191 void=0 status=ok
+[300/824] 134s  last p232_316: hops=204 overruns=0 proc_mean=1296825.0 ns max|d|=28 duty=0.1621 void=0 status=ok
+[400/824] 177s  last p257_008: hops=698 overruns=0 proc_mean=1294938.4 ns max|d|=57 duty=0.16187 void=0 status=ok
+[500/824] 223s  last p257_109: hops=265 overruns=0 proc_mean=1296683.2 ns max|d|=16 duty=0.16209 void=0 status=ok
+[600/824] 264s  last p257_210: hops=315 overruns=0 proc_mean=1296048.9 ns max|d|=23 duty=0.16201 void=0 status=ok
+[700/824] 307s  last p257_310: hops=196 overruns=0 proc_mean=1297295.3 ns max|d|=13 duty=0.16216 void=0 status=ok
+[800/824] 347s  last p257_410: hops=448 overruns=0 proc_mean=1297283.5 ns max|d|=36 duty=0.16216 void=0 status=ok
+[824/824] 356s  last p257_434: hops=261 overruns=0 proc_mean=1295308.4 ns max|d|=12 duty=0.16191 void=0 status=ok
+done     : 824 runs in 356s -> /dev/shm/results_dtln/full/voicebank16k_dtln-i16.csv
+summary  : fails=0 void_runs=0 total_overruns=0 worst max|d|=300 LSB  worst n_diff=132349  worst NMSE=-37.4 dB
+=== all done 09:54:30

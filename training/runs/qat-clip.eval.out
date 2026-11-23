@@ -1,0 +1,27 @@
+scored qat-clip: ['f32', 'i16', 'int8'] on voicebank16k,dns; log /home/jurica/benchmark/training/runs/qat-clip/eval.log
+  === voicebank16k: enhanced (B, noise tracker mcra) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 12 tests (headline-pooled-per-corpu
+  === voicebank16k: dtln-qat-clip-shrunk-f32 (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.4574   2.5254   +0.0630  [+0.0535, +0.0728]    0.10  2.59e-27  1.82e-09  different but equivalent (real, below the margin that matte
+  stoi            0.9334   0.9264   -0.0064  [-0.0069, -0.0058]    0.01  1.34e-61  1.18e-21  different but equivalent (real, below the margin that matte
+  si_sdr         19.0215  18.7318   -0.2897  [-0.3263, -0.2531]    0.50  1.92e-35  1.57e-20  different but equivalent (real, below the margin that matte
+  === voicebank16k: dtln-qat-clip-shrunk-i16-tflm (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.4574   2.4510   -0.0025  [-0.0123, +0.0071]    0.10     0.655   1.3e-45  EQUIVALENT (same to the stated precision)
+  stoi            0.9334   0.9252   -0.0073  [-0.0080, -0.0067]    0.01  6.04e-67  2.08e-11  different but equivalent (real, below the margin that matte
+  si_sdr         19.0215  18.6694   -0.3521  [-0.3898, -0.3143]    0.50  6.57e-47  9.73e-11  different but equivalent (real, below the margin that matte
+  === voicebank16k: dtln-qat-clip-shrunk-int8-tflm (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 824; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.4574   1.4367   -1.0073  [-1.0394, -0.9761]    0.10 1.86e-136         1  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9334   0.8644   -0.0627  [-0.0657, -0.0598]    0.01 2.24e-134         1  DIFFERENT (exceeds the pre-specified margin)
+  si_sdr         19.0215  16.0082   -3.0133  [-3.1279, -2.8986]    0.50 3.42e-214         1  DIFFERENT (exceeds the pre-specified margin)
+  === dns: enhanced (B, noise tracker mcra) vs noisy (A), paired by utterance -- HEADLINE family, Holm over 12 tests (headline-pooled-per-corpus)
+  === dns: dtln-qat-clip-shrunk-f32 (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 150; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.0536   1.9278   -0.1116  [-0.1313, -0.0941]    0.10  4.88e-18      0.86  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9259   0.9149   -0.0105  [-0.0120, -0.0091]    0.01   1.1e-20     0.729  DIFFERENT (exceeds the pre-specified margin)
+  si_sdr         14.0664  13.4701   -0.5964  [-0.8285, -0.3643]    0.50  3.71e-05     0.753  DIFFERENT (exceeds the pre-specified margin)
+  === dns: dtln-qat-clip-shrunk-i16-tflm (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 150; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.0536   1.8840   -0.1540  [-0.1765, -0.1334]    0.10  1.31e-21         1  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9259   0.9124   -0.0128  [-0.0145, -0.0114]    0.01  6.09e-22     0.999  DIFFERENT (exceeds the pre-specified margin)
+  si_sdr         14.0664  13.2543   -0.8121  [-1.0485, -0.5756]    0.50  6.69e-08     0.985  DIFFERENT (exceeds the pre-specified margin)
+  === dns: dtln-qat-clip-shrunk-int8-tflm (B) vs dtln-ft-f32-f32 (A), paired by utterance, n = 150; Holm over 4 metrics of this pair
+  pesq_mos_lqo    2.0536   1.1906   -0.8445  [-0.9167, -0.7664]    0.10   2.3e-26         1  DIFFERENT (exceeds the pre-specified margin)
+  stoi            0.9259   0.6917   -0.2194  [-0.2489, -0.1911]    0.01   2.3e-26         1  DIFFERENT (exceeds the pre-specified margin)
+  si_sdr         14.0664   5.7559   -8.3105  [-9.0601, -7.5609]    0.50  4.55e-40         1  DIFFERENT (exceeds the pre-specified margin)

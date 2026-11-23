@@ -1,0 +1,47 @@
+=== drq   authors' hybrid (int8 weights, float activations)
+  -- model_quant_1.tflite
+     REFUSED by TFLite Micro: TFLM failed to allocate tensors
+  -- model_quant_2.tflite
+     REFUSED by TFLite Micro: TFLM failed to allocate tensors
+=== int8p full-integer int8, authors' packed state layout
+  -- model_int8p_1.tflite
+[RecordingMicroAllocator] Arena allocation total 26416 bytes
+     TFLM vs LiteRT, same inputs, 100 frames, max |delta| per output (steps): (1, 2, 128, 2) 0, (1, 1, 257) 0
+  -- model_int8p_2.tflite
+[RecordingMicroAllocator] Arena allocation total 35664 bytes
+     TFLM vs LiteRT, same inputs, 100 frames, max |delta| per output (steps): (1, 2, 128, 2) 8, (1, 1, 512) 30
+=== int8  full-integer int8, split states
+  -- model_int8_1.tflite
+[RecordingMicroAllocator] Arena allocation total 27408 bytes
+     TFLM vs LiteRT, same inputs, 100 frames, max |delta| per output (steps): (1, 128) 0, (1, 128) 0, (1, 128) 3, (1, 1, 257) 6, (1, 128) 0
+  -- model_int8_2.tflite
+[RecordingMicroAllocator] Arena allocation total 36512 bytes
+     TFLM vs LiteRT, same inputs, 100 frames, max |delta| per output (steps): (1, 128) 2, (1, 128) 164, (1, 128) 118, (1, 1, 512) 6, (1, 128) 38
+=== int8n full-integer int8, split states, norm weights
+  -- model_int8n_1.tflite
+[RecordingMicroAllocator] Arena allocation total 29168 bytes
+     accepted at allocation but INVOKE FAILED in TFLM: RuntimeError: Interpreter invocation failed.
+  -- model_int8n_2.tflite
+[RecordingMicroAllocator] Arena allocation total 36512 bytes
+     TFLM vs LiteRT, same inputs, 100 frames, max |delta| per output (steps): (1, 128) 3, (1, 128) 66, (1, 128) 30, (1, 1, 512) 40, (1, 128) 41
+=== i16   16x8: int16 activations, int8 weights, split states
+  -- model_i16_1.tflite
+[RecordingMicroAllocator] Arena allocation total 29456 bytes
+     TFLM vs LiteRT, same inputs, 100 frames, max |delta| per output (steps): (1, 128) 4, (1, 128) 567, (1, 128) 147, (1, 1, 257) 62, (1, 128) 1
+  -- model_i16_2.tflite
+[RecordingMicroAllocator] Arena allocation total 39056 bytes
+     TFLM vs LiteRT, same inputs, 100 frames, max |delta| per output (steps): (1, 128) 701, (1, 128) 4.734e+04, (1, 128) 3.156e+04, (1, 1, 512) 466, (1, 128) 1.001e+04
+=== i16n  16x8, norm weights
+  -- model_i16n_1.tflite
+[RecordingMicroAllocator] Arena allocation total 31456 bytes
+     accepted at allocation but INVOKE FAILED in TFLM: RuntimeError: Interpreter invocation failed.
+  -- model_i16n_2.tflite
+[RecordingMicroAllocator] Arena allocation total 39056 bytes
+     TFLM vs LiteRT, same inputs, 100 frames, max |delta| per output (steps): (1, 128) 46, (1, 128) 666, (1, 128) 433, (1, 1, 512) 44, (1, 128) 270
+=== f32   shipped float pair (reference; does not fit any MCU)
+  -- model_1.tflite
+[RecordingMicroAllocator] Arena allocation total 16512 bytes
+     TFLM vs LiteRT, same inputs, 100 frames, max |delta| per output (float): (1, 1, 257) 3.874e-07, (1, 2, 128, 2) 6.676e-06
+  -- model_2.tflite
+[RecordingMicroAllocator] Arena allocation total 26560 bytes
+     TFLM vs LiteRT, same inputs, 100 frames, max |delta| per output (float): (1, 1, 512) 1.341e-07, (1, 2, 128, 2) 7.629e-06

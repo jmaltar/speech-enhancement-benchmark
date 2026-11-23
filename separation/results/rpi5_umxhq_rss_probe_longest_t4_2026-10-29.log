@@ -1,0 +1,4 @@
+conditions: {"threads": 4, "affinity": [0, 1, 2, 3], "torch": "2.15.0+cpu", "machine": "aarch64", "node": "rpibench", "governor": "performance", "throttled": "throttled=0x0"}
+[1/1] Georgia Wonder - Siren                   430.375 s  wall 242.316 s  rtf 0.563  ok
+done: 1 tracks in 247 s -> rss_out/umx_run_umxhq-rssprobe_t4.csv
+umx-rss.service max_rss_kb=5700224 (5.44 GiB)

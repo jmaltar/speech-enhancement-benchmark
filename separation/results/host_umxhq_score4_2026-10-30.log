@@ -1,0 +1,81 @@
+=== separation tier: FOUR-TARGET BSS Eval anchor (vocals/drums/bass/other) ===
+    museval 0.4.1, BSS Eval v4, win=44100, hop=44100; one child process per track, shortest first
+
+  PR - Happy Daze (163 s) ... vocals -15.224 dB, peak 3.26 GB, 47.8 s
+  Tom McKenzie - Directions (176 s) ... vocals 7.006 dB, peak 3.34 GB, 44.4 s
+  Signe Jakobsen - What Have You Done To Me (177 s) ... vocals 8.549 dB, peak 3.35 GB, 49.6 s
+  Angels In Amplifiers - I'm Alright (180 s) ... vocals 8.050 dB, peak 3.37 GB, 49.4 s
+  Enda Reilly - Cur An Long Ag Seol (187 s) ... vocals 7.846 dB, peak 3.41 GB, 49.6 s
+  Detsky Sad - Walkie Talkie (190 s) ... vocals 5.016 dB, peak 5.1 GB, 84.2 s
+  Moosmusic - Big Dummy Shake (199 s) ... vocals 7.948 dB, peak 5.15 GB, 90.0 s
+  Al James - Schoolboy Facination (201 s) ... vocals 6.524 dB, peak 5.16 GB, 91.2 s
+  James Elder & Mark M Thompson - The English Actor (205 s) ... vocals 5.686 dB, peak 5.19 GB, 87.2 s
+  We Fell From The Sky - Not You (208 s) ... vocals 4.876 dB, peak 5.2 GB, 86.9 s
+  AM Contra - Heart Peripheral (210 s) ... vocals 7.245 dB, peak 5.21 GB, 90.7 s
+  Raft Monk - Tiring (212 s) ... vocals 4.239 dB, peak 5.23 GB, 89.0 s
+  Arise - Run Run Run (219 s) ... vocals 4.291 dB, peak 5.27 GB, 87.9 s
+  BKS - Too Much (220 s) ... vocals 9.724 dB, peak 5.27 GB, 89.6 s
+  Bobby Nobody - Stitch Up (221 s) ... vocals 7.931 dB, peak 5.28 GB, 90.9 s
+  Punkdisco - Oral Hygiene (222 s) ... vocals 4.370 dB, peak 5.28 GB, 85.3 s
+  Lyndsey Ollard - Catching Up (227 s) ... vocals 10.323 dB, peak 5.32 GB, 87.2 s
+  Zeno - Signs (234 s) ... vocals 6.485 dB, peak 5.36 GB, 92.3 s
+  The Easton Ellises (Baumi) - SDRNR (235 s) ... vocals 2.144 dB, peak 5.36 GB, 94.0 s
+  Triviul feat. The Fiend - Widow (235 s) ... vocals 7.071 dB, peak 5.36 GB, 93.9 s
+  Side Effects Project - Sing With Me (244 s) ... vocals 10.323 dB, peak 5.41 GB, 93.8 s
+  The Mountaineering Club - Mallory (244 s) ... vocals 7.777 dB, peak 5.42 GB, 86.4 s
+  Motor Tapes - Shore (247 s) ... vocals 2.808 dB, peak 5.43 GB, 88.3 s
+  The Easton Ellises - Falcon 69 (247 s) ... vocals 2.263 dB, peak 5.43 GB, 88.6 s
+  Carlos Gonzalez - A Place For Us (250 s) ... vocals 4.407 dB, peak 5.45 GB, 90.8 s
+  Secretariat - Over The Top (251 s) ... vocals 6.541 dB, peak 5.46 GB, 85.4 s
+  Timboz - Pony (253 s) ... vocals 3.240 dB, peak 5.47 GB, 90.3 s
+  Speak Softly - Broken Man (253 s) ... vocals 2.554 dB, peak 5.47 GB, 85.6 s
+  Cristina Vane - So Easy (254 s) ... vocals 8.656 dB, peak 5.47 GB, 89.1 s
+  Ben Carrigan - We'll Talk About It All Tonight (255 s) ... vocals 2.388 dB, peak 5.48 GB, 84.0 s
+  Juliet's Rescue - Heartbeats (268 s) ... vocals 7.504 dB, peak 5.56 GB, 88.5 s
+  M.E.R.C. Music - Knockout (270 s) ... vocals 8.528 dB, peak 5.58 GB, 86.6 s
+  Mu - Too Bright (272 s) ... vocals 8.177 dB, peak 5.59 GB, 82.7 s
+  Forkupines - Semantics (274 s) ... vocals 5.756 dB, peak 5.6 GB, 84.5 s
+  Buitraker - Revo X (276 s) ... vocals 2.797 dB, peak 5.62 GB, 88.7 s
+  Little Chicago's Finest - My Own (282 s) ... vocals 8.170 dB, peak 5.67 GB, 90.0 s
+  Secretariat - Borderline (287 s) ... vocals 4.703 dB, peak 5.71 GB, 91.9 s
+  Louis Cressy Band - Good Time (293 s) ... vocals 6.415 dB, peak 5.76 GB, 86.7 s
+  The Long Wait - Dark Horses (306 s) ... vocals 7.292 dB, peak 5.86 GB, 93.8 s
+  Speak Softly - Like Horses (313 s) ... vocals 6.114 dB, peak 5.91 GB, 86.3 s
+  Girls Under Glass - We Feel Alright (317 s) ... vocals 4.081 dB, peak 5.95 GB, 87.4 s
+  Sambasevam Shanmugam - Kaathaadi (318 s) ... vocals 10.156 dB, peak 5.95 GB, 87.1 s
+  The Sunshine Garcia Band - For I Am The Moon (320 s) ... vocals 9.171 dB, peak 5.97 GB, 93.9 s
+  The Doppler Shift - Atrophy (331 s) ... vocals 5.793 dB, peak 6.06 GB, 97.8 s
+  BKS - Bulldozer (337 s) ... vocals 2.882 dB, peak 6.1 GB, 97.4 s
+  Nerve 9 - Pray For The Rain (344 s) ... vocals 5.505 dB, peak 6.16 GB, 90.6 s
+  Skelpolu - Resurrection (396 s) ... vocals 0.000 dB, peak 9.01 GB, 295.7 s
+  Georgia Wonder - Siren (430 s) ... /home/jurica/Desktop/work/benchmark/.venv/lib/python3.11/site-packages/scipy/stats/_resampling.py:155: RuntimeWarning: invalid value encountered in scalar divide
+  a_hat = 1/6 * sum(nums) / sum(dens)**(3/2)
+/home/jurica/Desktop/work/benchmark/.venv/lib/python3.11/site-packages/scipy/_lib/_util.py:365: DegenerateDataWarning: The BCa confidence interval cannot be calculated. This problem is known to occur when the distribution is degenerate or the statistic is np.min.
+  return fun(*args, **kwargs)
+vocals 4.755 dB, peak 9.01 GB, 298.4 s
+
+  four-target BSS Eval v4, 50 track(s); median over tracks of the per-track median over 1 s frames, BCa 95 % on the median
+  metric                   median        BCa 95% (median)     mean      min      max
+  vocals_sdr                6.265          [4.876, 7.142]    5.297  -15.224   10.323
+  vocals_isr               13.662        [10.461, 14.629]   12.106   -9.094   22.165
+  vocals_sir                9.831         [7.960, 13.074]    8.366  -35.695   21.390
+  vocals_sar                4.968          [4.491, 6.573]    5.498   -0.582   12.672
+  drums_sdr                 5.734          [5.119, 6.774]    6.325    0.838   12.298
+  drums_isr                11.288         [9.705, 13.146]   11.771    1.708   24.579
+  drums_sir                10.534         [8.618, 11.915]    8.154  -11.873   20.447
+  drums_sar                 5.735          [4.310, 6.532]    5.403   -1.083   16.941
+  bass_sdr                  5.004          [3.923, 6.250]    4.669   -6.999   13.414
+  bass_isr                  5.375          [2.613, 9.733]    5.107  -14.002   21.699
+  bass_sir                 10.444         [7.698, 12.263]    9.630   -5.612   24.070
+  bass_sar                  3.784          [1.731, 5.675]    4.610   -1.098   15.535
+  other_sdr                 4.327          [3.180, 4.614]    3.462   -8.258    8.263
+  other_isr                 9.593         [8.500, 10.680]    9.145    0.011   16.320
+  other_sir                 3.956          [0.136, 6.472]    2.553  -14.830   11.988
+  other_sar                 3.281          [2.315, 4.835]    3.503   -6.377   10.866
+
+  child peak RSS: max 9.01 GB over 50 track(s)
+
+  vocals SDR, four-target minus two-source, 50 paired tracks: median +0.000 dB [nan, nan], mean -0.025, range [-1.488, +1.585]
+  two-source vocals SDR median on the same tracks: 6.392; four-target: 6.265
+
+  per-track results -> separation/results/host_umxhq_score4_2026-10-30.csv

@@ -1,0 +1,36 @@
+{
+ "mode": "fixed magnitude pruning to [30, 58, 0, 11] units, then fine-tune + learned-threshold BASIS pruning, lambda 0.01",
+ "epochs": 2,
+ "steps": 50,
+ "batch": 32,
+ "seg_seconds": 4.0,
+ "start_val": -12.510138511657715,
+ "best_val": -15.02316665649414,
+ "best_epoch": 2,
+ "final_epoch": 2,
+ "final_val": -15.02316665649414,
+ "live_units": [
+  30,
+  58,
+  0,
+  11
+ ],
+ "live_basis": 236,
+ "dense_params": 315867,
+ "dense_params_full": 986753,
+ "fq_sites": null,
+ "prune_basis_lambda": 0.01,
+ "fq_scheme": null,
+ "fq_bits": 8,
+ "calibration": null,
+ "unstructured": null,
+ "lstm_weight_nonzeros": 55340,
+ "fq_clips": null,
+ "minutes": 1.0104412714640298,
+ "steps_per_s": 1.6494443702322559,
+ "train_utterances": 554,
+ "val_speakers": [
+  "p239",
+  "p244"
+ ]
+}

@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this code or its measurements, please cite this repository. The paper is in preparation; this entry will be updated when it is published."
+title: "Speech enhancement on four embedded platforms: predicted and measured cost (code and data)"
+type: software
+authors:
+  - family-names: Maltar
+    given-names: Jurica
+  - family-names: Ševerdija
+    given-names: Domagoj
+  - family-names: Čorić
+    given-names: Rebeka
+  - family-names: Benić
+    given-names: Juraj
+repository-code: "https://github.com/jmaltar/speech-enhancement-benchmark"
+date-released: 2026-11-23
+license: MIT
+keywords:
+  - speech enhancement
+  - embedded systems
+  - microcontrollers
+  - cost model
+  - real-time systems
+  - energy consumption
+  - RNNoise
+  - DTLN

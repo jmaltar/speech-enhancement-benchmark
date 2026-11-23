@@ -1,0 +1,28 @@
+=== separation tier: FOUR-TARGET BSS Eval anchor (vocals/drums/bass/other) ===
+    museval 0.4.1, BSS Eval v4, win=44100, hop=44100; one child process per track, shortest first
+
+  PR - Oh No (76 s) ... vocals -11.052 dB, peak 1.96 GB, 23.9 s
+  Hollow Ground - Ill Fate (142 s) ... vocals 7.063 dB, peak 3.14 GB, 44.1 s
+
+  four-target BSS Eval v4, 2 track(s); median over tracks of the per-track median over 1 s frames, BCa 95 % on the median
+  metric                   median        BCa 95% (median)     mean      min      max
+  vocals_sdr               -1.995        [-11.052, 7.063]   -1.995  -11.052    7.063
+  vocals_isr                7.899         [1.231, 14.566]    7.899    1.231   14.566
+  vocals_sir               -5.910       [-25.921, 14.100]   -5.910  -25.921   14.100
+  vocals_sar                5.429          [2.787, 8.071]    5.429    2.787    8.071
+  drums_sdr                 5.079          [4.986, 5.171]    5.079    4.986    5.171
+  drums_isr                 8.627          [7.549, 9.705]    8.627    7.549    9.705
+  drums_sir                11.363        [10.355, 12.371]   11.363   10.355   12.371
+  drums_sar                 7.212          [5.816, 8.608]    7.212    5.816    8.608
+  bass_sdr                  0.532         [-0.106, 1.170]    0.532   -0.106    1.170
+  bass_isr                  7.621         [2.923, 12.318]    7.621    2.923   12.318
+  bass_sir                  8.362        [-1.638, 18.363]    8.362   -1.638   18.363
+  bass_sar                  5.443          [1.720, 9.165]    5.443    1.720    9.165
+  other_sdr                 0.674         [-0.678, 2.025]    0.674   -0.678    2.025
+  other_isr                 4.042          [2.117, 5.968]    4.042    2.117    5.968
+  other_sir                 2.212         [-2.949, 7.372]    2.212   -2.949    7.372
+  other_sar                 4.317          [2.662, 5.973]    4.317    2.662    5.973
+
+  child peak RSS: max 3.14 GB over 2 track(s)
+
+  per-track results -> separation/results/host_umxhq_anchor4_probe_2026-10-30.csv

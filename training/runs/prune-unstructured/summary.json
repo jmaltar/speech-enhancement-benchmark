@@ -1,0 +1,44 @@
+{
+ "mode": "unstructured magnitude pruning to 55,340 of 655,872 LSTM weights (matched to prune-learned's [30, 58, 0, 11]), then fine-tune",
+ "epochs": 6,
+ "steps": 500,
+ "batch": 32,
+ "seg_seconds": 4.0,
+ "start_val": -0.5289978066395069,
+ "best_val": -14.094894968230149,
+ "best_epoch": 6,
+ "final_epoch": 6,
+ "final_val": -14.094894968230149,
+ "live_units": [
+  128,
+  128,
+  128,
+  128
+ ],
+ "dense_params": 986753,
+ "dense_params_full": 986753,
+ "fq_scheme": null,
+ "fq_bits": 8,
+ "calibration": null,
+ "unstructured": {
+  "lstm_weights_total": 655872,
+  "lstm_weights_kept": 55340,
+  "threshold": 0.5461622476577759,
+  "matched_run": "training/runs/prune-learned",
+  "matched_live_units": [
+   30,
+   58,
+   0,
+   11
+  ]
+ },
+ "lstm_weight_nonzeros": 55340,
+ "fq_clips": null,
+ "minutes": 122.27491339842479,
+ "steps_per_s": 0.40891462206215823,
+ "train_utterances": 10660,
+ "val_speakers": [
+  "p239",
+  "p244"
+ ]
+}

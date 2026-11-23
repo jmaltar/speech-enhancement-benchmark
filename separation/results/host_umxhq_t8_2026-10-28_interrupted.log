@@ -1,0 +1,5 @@
+conditions: {"threads": 8, "affinity": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], "torch": "2.14.1+cu130", "machine": "x86_64", "node": "jurica-Legion-Pro-5-16ARX8", "governor": "powersave", "throttled": "n/a"}
+[1/50] AM Contra - Heart Peripheral             210.106 s  wall 9.809 s  rtf 0.0467  ok
+[2/50] Al James - Schoolboy Facination          200.527 s  wall 9.413 s  rtf 0.0469  ok
+[3/50] Angels In Amplifiers - I'm Alright       179.594 s  wall 12.278 s  rtf 0.0684  ok
+[4/50] Arise - Run Run Run                      219.393 s  wall 10.558 s  rtf 0.0481  ok
